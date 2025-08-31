@@ -1,0 +1,33 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sat, 05 Jul 2025 21:14:12 at https://pathivu.dreamstechnologies.com/html/template/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://pathivu.dreamstechnologies.com/html/template/index.html -O1 "D:\templates\legalsrevice" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/circle-bg.png (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/home5/group.png (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/overview-bg.png (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/event-bg.jpg (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/bg.jpg (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/counter-bg.jpg (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/books.jpg (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/active.png (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/location.png (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/search.png (from https://pathivu.dreamstechnologies.com/html/template/assets/css/style.css)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/equ-01.png (from https://pathivu.dreamstechnologies.com/html/template/index-two.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/equ-02.png (from https://pathivu.dreamstechnologies.com/html/template/index-two.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/equ-03.png (from https://pathivu.dreamstechnologies.com/html/template/index-two.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/img/equ-04.png (from https://pathivu.dreamstechnologies.com/html/template/index-two.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/profile.html (from https://pathivu.dreamstechnologies.com/html/template/index-seven.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/blog-details.html.html (from https://pathivu.dreamstechnologies.com/html/template/index-eight.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/Booking.html (from https://pathivu.dreamstechnologies.com/html/template/index-eleven.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/home13/img/coaches/4.jpg (from https://pathivu.dreamstechnologies.com/html/template/index-thirteen.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/edit-billing.html (from https://pathivu.dreamstechnologies.com/html/template/student-profile.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/dependent.html (from https://pathivu.dreamstechnologies.com/html/template/student-dashboard.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/customer-dashboard.html (from https://pathivu.dreamstechnologies.com/html/template/favourites.html)
+21:17:50	Error: 	"Not Found" (404) at link https://pathivu.dreamstechnologies.com/html/template/assets/css/owl.video.play.png (from https://pathivu.dreamstechnologies.com/html/template/assets/css/owl.carousel.min.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 3 minutes 38 seconds : 701 links scanned, 678 files written (29423693 bytes overall) [26063538 bytes received at 119557 bytes/sec], 5148244 bytes transferred using HTTP compression in 121 files, ratio 24%, 233.6 requests per connection
+(22 errors, 0 warnings, 0 messages)
