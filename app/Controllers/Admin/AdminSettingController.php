@@ -43,7 +43,7 @@ class AdminSettingController extends BaseController
             "google_map"=>$this->request->getPost('google_map'),
             "school_time"=>$this->request->getPost('school_time'),
             "email"=>$this->request->getPost('email'),
-            "mobile"=>$this->request->getPost('mobile'),
+            "mobile"=>json_encode($this->request->getPost('mobile')),
             "facebook"=>$this->request->getPost('facebook'),
             "twitter"=>$this->request->getPost('twitter'),
             "whatsapp"=>$this->request->getPost('whatsapp'),
@@ -53,6 +53,56 @@ class AdminSettingController extends BaseController
             "instagram"=>$this->request->getPost('instagram'),
             "telegram"=>$this->request->getPost('telegram'),
             "linkedin"=>$this->request->getPost('linkedin'),            
+        ]);
+
+        $entryStatus = false;        
+        if($this->db->table($this->arr_values['table_name'])->where('id', $id)->update($data)) $entryStatus = true;
+        else $entryStatus = false;        
+        if($entryStatus)
+        {
+            $action = 'edit';
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Success';
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);            
+        }
+        else
+        {
+            $action = 'add';
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = $this->db->error()['message'];
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+    }
+
+
+    public function about()
+    {
+        $session = session()->get('user');
+        $id = 14;
+        $data['title'] = "".$this->arr_values['title'];
+        $data['page_title'] = "Manage ".$this->arr_values['page_title'];
+        $data['upload_path'] = $this->arr_values['upload_path'];
+        $data['route'] = base_url(route_to($this->arr_values['routename'].'about-update'));      
+        $data['pagenation'] = array($this->arr_values['title']);
+        $row = $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->get()->getFirstRow();
+        $form_data = json_decode($row->data);
+        return view($this->arr_values['folder_name'].'/about-form',compact('data','form_data','row'));
+    }
+    public function about_update()
+    {
+        $session = session()->get('user');
+        $id = decript($this->request->getPost('id'));
+
+        $data['data'] = json_encode([
+            "home"=>$this->request->getPost('home'),
+            "sort"=>$this->request->getPost('sort'),
+            "full"=>$this->request->getPost('full'),
         ]);
 
         $entryStatus = false;        
@@ -102,6 +152,7 @@ class AdminSettingController extends BaseController
             "terms_policy"=>$this->request->getPost('terms_policy'),      
             "privacy_policy"=>$this->request->getPost('privacy_policy'),      
             "refund_policy"=>$this->request->getPost('refund_policy'),      
+            "disclaimer"=>$this->request->getPost('disclaimer'),      
         ]);
 
         $entryStatus = false;        

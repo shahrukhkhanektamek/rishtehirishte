@@ -3,9 +3,8 @@
         <tr>
             <th data-ordering="false">Name</th>
             <th data-ordering="false">Price</th>
-            <th data-ordering="false">Discount(%) </th>
-            <th data-ordering="false">Final Price</th>
             <th data-ordering="false">Validity</th>
+            <th data-ordering="false">Contact View</th>
             <th data-ordering="false">Status</th>
             <th>Action</th>
         </tr>
@@ -17,10 +16,8 @@
             <tr>
                 <td><?=$value->name?></td>
                 <td><?=price_formate($value->price)?></td>
-                <td><?=$value->discount?></td>
-                <td><?=price_formate($value->final_price)?></td>
-                <td><?=$value->validation?> Months</td>
-                <!-- <td><img class="img-thumbnail" src="<?=image_check($value->image)?>" style="width: auto;height: 45px;"></td> -->
+                <td><?=$value->validity?> Month<?php if($value->validity>1)echo's'; ?></td>
+                <td><?=$value->contact_view?></td>
                 <td><?=status_get($value->status)?></td>
                 <td>
                     <a href="<?=$data['route'].'/edit/'.encript($value->id)?>" class="btn btn-sm btn-outline-primary btn-icon waves-effect" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="ri-ball-pen-line"></i></a>

@@ -38,43 +38,24 @@
                         <div class="live-preview">
                             <div class="row g-3">
                                 
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <label class="form-label">Title <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="name" placeholder="" value="<?=@$row->name?>" required>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <label class="form-label">Sub Title <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="sub_name" placeholder="" value="<?=@$row->sub_name?>" required>
+                                <div class="col-md-3">
+                                    <label class="form-label">Validity (Month) <span class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" name="validity" placeholder="" value="<?=@$row->validity?>" required>
                                 </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label">Validity (Days) <span class="text-danger">*</span></label>
-                                    <input type="number" class="form-control" name="validation" placeholder="" value="<?=@$row->validation?>" required>
-                                </div>
-
-                                <div class="col-md-6 hide">
-                                    <label class="form-label">Slug <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="slug" placeholder="" value="<?=@$row->slug?>" >
-                                </div>
-
                                 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <label class="form-label">Price <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control" name="price" placeholder="" value="<?=@$row->price?>" id="price" required>
                                 </div>
-
-                                <div class="col-md-4">
-                                    <label class="form-label">Discount(%) <span class="text-danger">*</span></label>
-                                    <input type="number" class="form-control" name="discount" placeholder="" value="<?=@$row->discount?>" id="discount" required>
+                                <div class="col-md-3">
+                                    <label class="form-label">Contact View <span class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" name="contact_view" placeholder="" value="<?=@$row->contact_view?>" id="price" required>
                                 </div>
-
-                                <div class="col-md-4">
-                                    <label class="form-label">Final Price <span class="text-danger">*</span></label>
-                                    <input type="number" class="form-control" name="final_price" placeholder="" readonly value="<?=@$row->final_price?>" id="final_price" required>
-                                </div>
-
-                                
 
 
                                 <div class="col-lg-12">
@@ -83,15 +64,7 @@
                                     <script>CKEDITOR.replace( 'full_description' );</script>
                                 </div>
 
-                                <div class="col-lg-12 hide">
-                                    <label class="form-label">Image <span class="text-danger">*</span> <small>If you want to covert .webp file <a href="https://cloudconvert.com/jpg-to-webp" target="_blank">Click to open link</a></small></label>
-                                    <div class="col-lg-12">
-                                        <input class="form-control upload-single-image" type="file" name="image" data-target="image" accept="image/*" @if(empty($row))  @endif>
-                                        <img class="upload-img-view img-thumbnail mt-2 mb-2 image" id="viewer" style="width:auto;height:120px;overflow:hidden;" src="<?=image_check(@$row->image)?>" alt="banner image"/>
-                                    </div>
-                                </div>
-
-                               
+                                                           
 
 
                                 <?php //view('backend/meta') ?>
@@ -121,28 +94,6 @@
     </div>
     <!-- container-fluid -->
 </div><!-- End Page-content -->
-
-
-
-
-<script>
-    $(document).on("keyup", "#price, #discount, #final_price",(function(e) {
-      var price = parseFloat($("#price").val());
-      var discount = parseFloat($("#discount").val());
-      var final_price = parseFloat($("#final_price").val());
-
-      if(price>0 && discount>0)
-      {
-        var discountAmt = price*discount/100;
-        $("#final_price").val(price-discountAmt);
-      }
-      else
-      {
-        $("#final_price").val(price);
-      }
-
-   }));
-</script>
 
 
 <?=view('backend/include/footer') ?>

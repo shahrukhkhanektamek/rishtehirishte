@@ -24,7 +24,7 @@
                                                         </div>
                                                         <div class="avatar-sm flex-shrink-0">
                                                             <span class="avatar-title bg-white bg-opacity-25 rounded fs-2">
-                                                                <i class="ri-message-2-line text-warning"></i>
+                                                                <i class="ri-user-line text-warning"></i>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -48,7 +48,7 @@
                                                         </div>
                                                         <div class="avatar-sm flex-shrink-0">
                                                             <span class="avatar-title bg-white bg-opacity-25 rounded fs-2">
-                                                                <i class="ri-message-2-line text-warning"></i>
+                                                                <i class="ri-user-fill text-warning"></i>
                                                             </span>
                                                         </div>
                                                     </div>

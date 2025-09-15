@@ -30,29 +30,20 @@
 
                                             
                                             <div class="col-lg-12 mb-3">
-                                                <label class="form-label" for="product-title-input">Terms & Conditions</label>
-                                                <textarea class="form-control" name="terms_policy" required><?=@$form_data->terms_policy?></textarea>
-                                                <script>CKEDITOR.replace( 'terms_policy' );</script>
+                                                <label class="form-label" for="product-title-input">Home</label>
+                                                <textarea class="form-control" name="home" required><?=@$form_data->home?></textarea>
+                                                <script>CKEDITOR.replace( 'home' );</script>
                                             </div>
                                             <div class="col-lg-12 mb-3">
-                                                <label class="form-label" for="product-title-input">Privacy Policy </label>
-                                                <textarea class="form-control" name="privacy_policy" required><?=@$form_data->privacy_policy?></textarea>
-                                                <script>CKEDITOR.replace( 'privacy_policy' );</script>
+                                                <label class="form-label" for="product-title-input">About Page Sort </label>
+                                                <textarea class="form-control" name="sort" required><?=@$form_data->sort?></textarea>
+                                                <script>CKEDITOR.replace( 'sort' );</script>
                                             </div>
                                             <div class="col-lg-12 mb-3">
-                                                <label class="form-label" for="product-title-input">Refund Policy </label>
-                                                <textarea class="form-control" name="refund_policy" required><?=@$form_data->refund_policy?></textarea>
-                                                <script>CKEDITOR.replace( 'refund_policy' );</script>
+                                                <label class="form-label" for="product-title-input">About Page Full </label>
+                                                <textarea class="form-control" name="full" required><?=@$form_data->full?></textarea>
+                                                <script>CKEDITOR.replace( 'full' );</script>
                                             </div>
-                                            <div class="col-lg-12 mb-3">
-                                                <label class="form-label" for="product-title-input">Disclaimer Policy </label>
-                                                <textarea class="form-control" name="disclaimer" required><?=@$form_data->disclaimer?></textarea>
-                                                <script>CKEDITOR.replace( 'disclaimer' );</script>
-                                            </div>
-
-                                           
-
-
 
 
 

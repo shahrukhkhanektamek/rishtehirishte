@@ -46,20 +46,24 @@ class AdminCountryController extends BaseController
         $data['upload_path'] = $this->arr_values['upload_path'];
         $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));   
 
-        $data_list = $this->db->table($this->arr_values['table_name'])
-        ->where([$this->arr_values['table_name'] . '.status' => $status])
-                ->orderBy($this->arr_values['table_name'] . '.id', $order_by)
         
-        ->limit($limit, $offset)
-        ->get()->getResult();
-          
+        $builder = $this->db->table($this->arr_values['table_name'])
+            ->where($this->arr_values['table_name'] . '.status', $status);
 
+        if (!empty($filter_search_value)) {
+            $builder->like($this->arr_values['table_name'].'.name', $filter_search_value);
+        }
 
-        $total = $this->db->table($this->arr_values['table_name'])->countAll();
+        
+        $total = $builder->countAllResults(false);        
+        $data_list = $builder->orderBy($this->arr_values['table_name'] . '.id', $order_by)->limit($limit, $offset)->get()->getResult();
+
+        
         $data['pager'] = $this->pager->makeLinks($page, $limit, $total);
         $data['totalData'] = $total;
-        $data['startData'] = $offset+1;
+        $data['startData'] = $total > 0 ? $offset + 1 : 0;
         $data['endData'] = ($offset + $limit > $total) ? $total : ($offset + $limit);
+        $data['data_list'] = $data_list;
           
 
         

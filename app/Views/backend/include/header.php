@@ -120,7 +120,7 @@ $logo_setting = $setting['logo'];
     }
 
     .select2-container {
-        z-index: 1102;
+        /*z-index: 1102;*/
     }
 
     .ui-sortable-handle {

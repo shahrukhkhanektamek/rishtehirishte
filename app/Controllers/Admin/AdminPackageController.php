@@ -118,20 +118,12 @@ class AdminPackageController extends BaseController
         $add_by = $session['id'];
 
         $price = $this->request->getPost('price');
-        $discount = $this->request->getPost('discount');
-
-        $discountAmt = $price*$discount/100;
-
-        $final_price = $price-$discountAmt;
-
 
         $data = [
             "name"=>$this->request->getPost('name'),
-            "sub_name"=>$this->request->getPost('sub_name'),
-            "validation"=>$this->request->getPost('validation'),
+            "validity"=>$this->request->getPost('validity'),
             "price"=>$this->request->getPost('price'),
-            "discount"=>$this->request->getPost('discount'),
-            "final_price"=>$final_price,
+            "contact_view"=>$this->request->getPost('contact_view'),
             "full_description"=>$this->request->getPost('full_description'),            
             "status"=>$this->request->getPost('status'),
             "is_delete"=>0,
@@ -157,47 +149,6 @@ class AdminPackageController extends BaseController
 
         if($entryStatus)
         {
-            $name = $data['name'];
-            if(empty($this->request->getPost('slug'))) $slug = slug($name);
-            else $slug = slug($this->request->getPost('slug'));
-            $p_id = $id;
-            $table_name = $this->arr_values['table_name'];
-            $new_slug = insert_slug($slug,$p_id,$table_name,$this->arr_values['page_name']);
-
-            // insert_meta_tag($new_slug,$name);
-
-
-            $ImageModel = new ImageModel();
-
-
-           $image = $ImageModel->upload_image('image', $this->request);
-           if(!empty($image)) $update_data['image'] = $image;
-
-
-            $all_image_column_names = ['image2'];
-            $return_image_array = $ImageModel->upload_multiple_image($all_image_column_names,$this->arr_values['table_name'],$id,$this->request);
-            if(!empty($return_image_array))
-            {
-                foreach ($return_image_array as $key => $value)
-                {
-                    if(!empty($value)) $update_data[$key] = $value;
-                }
-            }
-            else
-            {
-                foreach ($all_image_column_names as $key => $value)
-                {
-                    $update_data[$value] = json_encode([]);
-                }
-            }
-
-            if(!empty($update_data))
-            {
-                $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->update($update_data);
-            } 
-
-
-
             $action = 'add';
             if(empty($insertId)) $action = 'edit';
             $responseCode = 200;

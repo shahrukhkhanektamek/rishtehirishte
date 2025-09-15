@@ -20,6 +20,9 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->get('main', 'AdminSettingController::main', ['as' => 'setting.main']);
         $routes->post('main-update', 'AdminSettingController::main_update', ['as' => 'setting.main-update']);
 
+        $routes->get('about', 'AdminSettingController::about', ['as' => 'setting.about']);
+        $routes->post('about-update', 'AdminSettingController::about_update', ['as' => 'setting.about-update']);
+
         $routes->get('policy', 'AdminSettingController::policy', ['as' => 'setting.policy']);
         $routes->post('policy-update', 'AdminSettingController::policy_update', ['as' => 'setting.policy-update']);
 

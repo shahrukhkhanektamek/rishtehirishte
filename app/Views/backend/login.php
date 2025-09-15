@@ -61,7 +61,7 @@
                     <div class="col-lg-12">
                         <div class="text-center mt-sm-5 mb-1 text-white-50">
                             <div>
-                                <a href="<?=route_to('auth.login')?>" class="d-inline-block auth-logo" style="background:#FFF;padding:5px 15px 6px;border-radius:5px;">
+                                <a href="<?=route_to('auth.login')?>" class="d-inline-block auth-logo" style="background:#000000;padding:5px 15px 6px;border-radius:5px;">
                                     <img src="<?=base_url('upload/').'/'.$logo_setting->logo_image?>" loading="lazy" alt="logo" height="46">
                                 </a>
                             </div>
