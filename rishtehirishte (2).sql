@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2025 at 09:35 PM
+-- Generation Time: Sep 16, 2025 at 09:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -6579,7 +6579,7 @@ INSERT INTO `login_history` (`id`, `user_id`, `role`, `ip_address`, `date`, `tim
 (346, '3', 2, '::1', '2025-08-07', '00:54:06', '', NULL, '', NULL, 1, 'e10adc3949ba59abbe56e057f20f883e'),
 (347, '1', 1, '::1', '2025-08-07', '00:57:27', '', NULL, '', NULL, 0, 'e10adc3949ba59abbe56e057f20f883e'),
 (348, '1', 1, '::1', '2025-08-31', '21:21:54', '', NULL, '', NULL, 0, 'e10adc3949ba59abbe56e057f20f883e'),
-(349, '1', 1, '::1', '2025-09-15', '23:59:24', '', NULL, '', NULL, 1, 'e10adc3949ba59abbe56e057f20f883e');
+(349, '1', 1, '::1', '2025-09-15', '23:59:24', '', NULL, '', NULL, 0, 'e10adc3949ba59abbe56e057f20f883e');
 
 -- --------------------------------------------------------
 
