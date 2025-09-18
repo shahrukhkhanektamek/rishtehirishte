@@ -398,6 +398,43 @@ $(document).ready(function () {
         }
       }
     });
+
+    $('#education-category').select2({
+      ajax: {
+        url: "<?=base_url(route_to('education-category'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('#religion').select2({
+      ajax: {
+        url: "<?=base_url(route_to('religion'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
 </script>
 
 

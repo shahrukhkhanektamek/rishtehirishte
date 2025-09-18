@@ -358,10 +358,48 @@ class Home extends BaseController
         $data['results'] = $return_data;
         return $this->response->setStatusCode(200)->setJSON($data);       
     }
+    public function education_category($value='')
+    {        
+        $search = $this->request->getVar('search');
+        $table_name = 'education_category';
+        $builder = $this->db->table($table_name)->where("{$table_name}.status", 1);
+        if (!empty($search)) {
+            $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
+        }
+        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $return_data = [];
+        foreach ($data_list as $key => $value) {
+            $return_data[] = [
+                "id" => $value->id,
+                "text" => $value->name,
+            ];
+        }
+        $data['results'] = $return_data;
+        return $this->response->setStatusCode(200)->setJSON($data);       
+    }
     public function search_education($value='')
     {        
         $search = $this->request->getVar('search');
         $table_name = 'education';
+        $builder = $this->db->table($table_name)->where("{$table_name}.status", 1);
+        if (!empty($search)) {
+            $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
+        }
+        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $return_data = [];
+        foreach ($data_list as $key => $value) {
+            $return_data[] = [
+                "id" => $value->id,
+                "text" => $value->name,
+            ];
+        }
+        $data['results'] = $return_data;
+        return $this->response->setStatusCode(200)->setJSON($data);       
+    }
+    public function search_religion($value='')
+    {        
+        $search = $this->request->getVar('search');
+        $table_name = 'religion';
         $builder = $this->db->table($table_name)->where("{$table_name}.status", 1);
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();

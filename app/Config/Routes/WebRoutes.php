@@ -18,7 +18,9 @@ $routes->post('search-employee', 'Home::search_employee');
 $routes->post('search-country', 'Home::search_country');
 $routes->post('search-state', 'Home::search_state');
 $routes->post('search-city', 'Home::search_city');
+$routes->post('education-category', 'Home::education_category');
 $routes->post('search-education', 'Home::search_education');
+$routes->post('religion', 'Home::search_religion');
 
 
 $routes->post('contact-enquiry', 'Enquiry::contact_enquiry');

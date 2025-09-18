@@ -5,16 +5,16 @@ use CodeIgniter\Database\Database;
 use CodeIgniter\Config\Services;
 use App\Models\ImageModel;
 
-class AdminEducationController extends BaseController
+class AdminCasteController extends BaseController
 {
      protected $arr_values = array(
-        'routename'=>'education.', 
-        'title'=>'Education', 
-        'table_name'=>'education',
-        'page_title'=>'Education',
-        "folder_name"=>'backend/admin/education',
+        'routename'=>'caste.', 
+        'title'=>'Caste', 
+        'table_name'=>'caste',
+        'page_title'=>'Caste',
+        "folder_name"=>'backend/admin/caste',
         "upload_path"=>'upload/',
-        "page_name"=>'educations.php',
+        "page_name"=>'caste.php',
        );
 
       public function __construct()
@@ -51,8 +51,8 @@ class AdminEducationController extends BaseController
             ->where([
                 $this->arr_values['table_name'] . '.status' => $status
             ]);
-        $query->join("education_category as education_category","education_category.id={$this->arr_values['table_name']}.category","left");
-        $query->select([$this->arr_values['table_name'].".*","education_category.name as category_name"]);
+        $query->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left");
+        $query->select([$this->arr_values['table_name'].".*","religion.name as category_name"]);
         
         if (!empty($filter_search_value)) {
             $query->groupStart()
@@ -60,9 +60,9 @@ class AdminEducationController extends BaseController
                 ->groupEnd();
         }
 
-        if(!empty($this->request->getVar('category')))
+        if($this->request->getVar('religion'))
         {
-            $query->where('category', $this->request->getVar('category'));
+            $query->where('religion', $this->request->getVar('religion'));
         }
         
         $total = $query->countAllResults(false);
@@ -136,7 +136,7 @@ class AdminEducationController extends BaseController
 
         $data = [
             "name"=>$this->request->getPost('name'),
-            "category"=>$this->request->getPost('category'),
+            "religion"=>$this->request->getPost('religion'),
             "status"=>$this->request->getPost('status'),
             "is_delete"=>0,
         ];

@@ -5,16 +5,16 @@ use CodeIgniter\Database\Database;
 use CodeIgniter\Config\Services;
 use App\Models\ImageModel;
 
-class AdminEducationController extends BaseController
+class AdminEducationCategoryController extends BaseController
 {
      protected $arr_values = array(
-        'routename'=>'education.', 
-        'title'=>'Education', 
-        'table_name'=>'education',
-        'page_title'=>'Education',
-        "folder_name"=>'backend/admin/education',
+        'routename'=>'education-category.', 
+        'title'=>'Education Category', 
+        'table_name'=>'education_category',
+        'page_title'=>'Education Category',
+        "folder_name"=>'backend/admin/education-category',
         "upload_path"=>'upload/',
-        "page_name"=>'educations.php',
+        "page_name"=>'education-category.php',
        );
 
       public function __construct()
@@ -46,41 +46,20 @@ class AdminEducationController extends BaseController
         $data['upload_path'] = $this->arr_values['upload_path'];
         $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));   
 
+        $data_list = $this->db->table($this->arr_values['table_name'])
+        ->where([$this->arr_values['table_name'] . '.status' => $status])
+        ->orderBy($this->arr_values['table_name'] . '.id', $order_by)
+        
+        ->limit($limit, $offset)
+        ->get()->getResult();
+          
 
-        $query = $this->db->table($this->arr_values['table_name'])
-            ->where([
-                $this->arr_values['table_name'] . '.status' => $status
-            ]);
-        $query->join("education_category as education_category","education_category.id={$this->arr_values['table_name']}.category","left");
-        $query->select([$this->arr_values['table_name'].".*","education_category.name as category_name"]);
-        
-        if (!empty($filter_search_value)) {
-            $query->groupStart()
-                ->like($this->arr_values['table_name'] . '.name', $filter_search_value)
-                ->groupEnd();
-        }
 
-        if(!empty($this->request->getVar('category')))
-        {
-            $query->where('category', $this->request->getVar('category'));
-        }
-        
-        $total = $query->countAllResults(false);
-        
-        $data_list = $query
-            ->orderBy($this->arr_values['table_name'] . '.id', $order_by)
-            ->limit($limit, $offset)
-            ->get()
-            ->getResult();
-
-        
+        $total = $this->db->table($this->arr_values['table_name'])->countAll();
         $data['pager'] = $this->pager->makeLinks($page, $limit, $total);
         $data['totalData'] = $total;
-        $data['startData'] = ($total > 0) ? $offset + 1 : 0;
+        $data['startData'] = $offset+1;
         $data['endData'] = ($offset + $limit > $total) ? $total : ($offset + $limit);
-        $data['data_list'] = $data_list;
-
-
           
 
         
@@ -136,7 +115,6 @@ class AdminEducationController extends BaseController
 
         $data = [
             "name"=>$this->request->getPost('name'),
-            "category"=>$this->request->getPost('category'),
             "status"=>$this->request->getPost('status'),
             "is_delete"=>0,
         ];
@@ -169,8 +147,6 @@ class AdminEducationController extends BaseController
             $new_slug = insert_slug($slug,$p_id,$table_name,$this->arr_values['page_name']);
 
             insert_meta_tag($new_slug,$name);
-
-
 
             $action = 'add';
             if(empty($insertId)) $action = 'edit';

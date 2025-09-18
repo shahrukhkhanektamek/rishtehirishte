@@ -37,25 +37,20 @@
                                                <option value="0">Inactive</option>
                                             </select>
                                          </div>
-                                         <div class="col-md-2 hide">
+                                         <div class="col-md-2">
                                             <select class="form-control order_by" id="order_by">
                                                <option value="desc">DESC</option>
                                                <option value="asc">ASC</option>
                                             </select>
                                          </div>
-                                         <div class="col-md-1">
+                                         <div class="col-md-2">
                                             <select class="form-control limit" id="limit">
                                                <option value="12">12</option>
                                                <option value="24">24</option>
                                                <option value="36">36</option>
                                                <option value="100">100</option>
                                             </select>
-                                         </div>
-                                         <div class="col-md-4">
-                                            <select class="form-control" id="country">
-                                               <option value="">Select Country</option>
-                                            </select>
-                                         </div>
+                                         </div>                                             
                                          <div class="col-md-3">
                                             <div class="navbar-item navbar-form">
                                                   <div class="form-group">
@@ -63,7 +58,7 @@
                                                   </div>
                                             </div>
                                          </div>
-                                         <div class="col-md-2">
+                                         <div class="col-md-3">
                                             <button href="<?=$data['route']?>" class="btn btn-dark search w-100"><i class="ri-search-line align-bottom me-1"></i> Search</button>
                                          </div>
                                     </div>
@@ -98,15 +93,14 @@
    {
        var status = $("#statuschange").val();
        var order_by = $("#order_by").val();
-       var country = $("#country").val();
        var limit = $("#limit").val();
        var filter_search_value = $(".search-input").val();
-       data = `status=${status}&country=${country}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
+       data = `status=${status}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
    }
     get_url_data();
    url = main_url+'?'+data;
    load_table();
-   $(document).on("change", "#statuschange, .order_by, .limit, #country",(function(e) {
+   $(document).on("change", "#statuschange, .order_by, .limit",(function(e) {
       get_url_data();
       url =main_url+"?"+data;
       load_table();

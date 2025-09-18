@@ -79,6 +79,18 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->post('delete/(:any)', 'AdminCityController::delete/$1', ['as' => 'city.delete']);
         $routes->post('block_unblock/(:any)', 'AdminCityController::block_unblock/$1', ['as' => 'city.block_unblock']);
     });
+
+
+    $routes->group('education-category', function($routes) {
+        $routes->get('/', 'AdminEducationCategoryController::index', ['as' => 'education-category.list']);
+        $routes->get('load_data', 'AdminEducationCategoryController::load_data', ['as' => 'education-category.load_data']);
+        $routes->get('add', 'AdminEducationCategoryController::add', ['as' => 'education-category.add']);
+        $routes->get('edit/(:any)?', 'AdminEducationCategoryController::edit/$1', ['as' => 'education-category.edit']);
+        $routes->get('view/(:any)', 'AdminEducationCategoryController::view/$1', ['as' => 'education-category.view']);
+        $routes->post('update', 'AdminEducationCategoryController::update', ['as' => 'education-category.update']);
+        $routes->post('delete/(:any)', 'AdminEducationCategoryController::delete/$1', ['as' => 'education-category.delete']);
+        $routes->post('block_unblock/(:any)', 'AdminEducationCategoryController::block_unblock/$1', ['as' => 'education-category.block_unblock']);
+    });
     $routes->group('education', function($routes) {
         $routes->get('/', 'AdminEducationController::index', ['as' => 'education.list']);
         $routes->get('load_data', 'AdminEducationController::load_data', ['as' => 'education.load_data']);
@@ -88,6 +100,36 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->post('update', 'AdminEducationController::update', ['as' => 'education.update']);
         $routes->post('delete/(:any)', 'AdminEducationController::delete/$1', ['as' => 'education.delete']);
         $routes->post('block_unblock/(:any)', 'AdminEducationController::block_unblock/$1', ['as' => 'education.block_unblock']);
+    });
+    $routes->group('occupation', function($routes) {
+        $routes->get('/', 'AdminOccupationController::index', ['as' => 'occupation.list']);
+        $routes->get('load_data', 'AdminOccupationController::load_data', ['as' => 'occupation.load_data']);
+        $routes->get('add', 'AdminOccupationController::add', ['as' => 'occupation.add']);
+        $routes->get('edit/(:any)?', 'AdminOccupationController::edit/$1', ['as' => 'occupation.edit']);
+        $routes->get('view/(:any)', 'AdminOccupationController::view/$1', ['as' => 'occupation.view']);
+        $routes->post('update', 'AdminOccupationController::update', ['as' => 'occupation.update']);
+        $routes->post('delete/(:any)', 'AdminOccupationController::delete/$1', ['as' => 'occupation.delete']);
+        $routes->post('block_unblock/(:any)', 'AdminOccupationController::block_unblock/$1', ['as' => 'occupation.block_unblock']);
+    });
+    $routes->group('religion', function($routes) {
+        $routes->get('/', 'AdminReligionController::index', ['as' => 'religion.list']);
+        $routes->get('load_data', 'AdminReligionController::load_data', ['as' => 'religion.load_data']);
+        $routes->get('add', 'AdminReligionController::add', ['as' => 'religion.add']);
+        $routes->get('edit/(:any)?', 'AdminReligionController::edit/$1', ['as' => 'religion.edit']);
+        $routes->get('view/(:any)', 'AdminReligionController::view/$1', ['as' => 'religion.view']);
+        $routes->post('update', 'AdminReligionController::update', ['as' => 'religion.update']);
+        $routes->post('delete/(:any)', 'AdminReligionController::delete/$1', ['as' => 'religion.delete']);
+        $routes->post('block_unblock/(:any)', 'AdminReligionController::block_unblock/$1', ['as' => 'religion.block_unblock']);
+    });
+    $routes->group('caste', function($routes) {
+        $routes->get('/', 'AdminCasteController::index', ['as' => 'caste.list']);
+        $routes->get('load_data', 'AdminCasteController::load_data', ['as' => 'caste.load_data']);
+        $routes->get('add', 'AdminCasteController::add', ['as' => 'caste.add']);
+        $routes->get('edit/(:any)?', 'AdminCasteController::edit/$1', ['as' => 'caste.edit']);
+        $routes->get('view/(:any)', 'AdminCasteController::view/$1', ['as' => 'caste.view']);
+        $routes->post('update', 'AdminCasteController::update', ['as' => 'caste.update']);
+        $routes->post('delete/(:any)', 'AdminCasteController::delete/$1', ['as' => 'caste.delete']);
+        $routes->post('block_unblock/(:any)', 'AdminCasteController::block_unblock/$1', ['as' => 'caste.block_unblock']);
     });
     
     $routes->group('certification', function($routes) {

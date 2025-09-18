@@ -104,7 +104,7 @@
     </div>
 </li>
 
-<li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Manage Other</span></li>
+<li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Manage Country/State</span></li>
 <li class="nav-item">
     <a class="nav-link menu-link" href="<?=base_url(route_to('country.list'))?>">
         <i class="ri-image-line"></i> <span data-key="t-transaction">Country</span>
@@ -115,16 +115,58 @@
         <i class="ri-image-line"></i> <span data-key="t-transaction">State</span>
     </a>
 </li>
+
+<li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Manage Education</span></li>
+
+<li class="nav-item">
+    <a class="nav-link menu-link" href="<?=base_url(route_to('education-category.list'))?>">
+        <i class="ri-image-line"></i> <span data-key="t-transaction">Category</span>
+    </a>
+</li>
 <li class="nav-item">
     <a class="nav-link menu-link" href="<?=base_url(route_to('education.list'))?>">
         <i class="ri-image-line"></i> <span data-key="t-transaction">Education</span>
     </a>
 </li>
-<!-- <li class="nav-item">
-    <a class="nav-link menu-link" href="<?=base_url(route_to('certification.list'))?>">
-        <i class="ri-image-line"></i> <span data-key="t-transaction">Certification</span>
+
+
+<li class="nav-item">
+    <a class="nav-link menu-link" href="<?=base_url(route_to('occupation.list'))?>">
+        <i class="ri-image-line"></i> <span data-key="t-transaction">Occupation</span>
     </a>
-</li> -->
+</li>
+
+
+
+<li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Religion/Caste</span></li>
+<li class="nav-item">
+    <a class="nav-link menu-link" href="<?=base_url(route_to('religion.list'))?>">
+        <i class="ri-image-line"></i> <span data-key="t-transaction">Religion</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link menu-link" href="<?=base_url(route_to('caste.list'))?>">
+        <i class="ri-image-line"></i> <span data-key="t-transaction">Caste</span>
+    </a>
+</li>
+
+
+
+
+
+
+<li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Website</span></li>
+
+<li class="nav-item">
+    <a class="nav-link menu-link" href="<?=base_url(route_to('banner.list'))?>">
+        <i class="ri-image-line"></i> <span data-key="t-transaction">Banner</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link menu-link" href="<?=base_url(route_to('client-logo.list'))?>">
+        <i class="ri-markup-line"></i> <span data-key="t-transaction">Client Logo</span>
+    </a>
+</li>
 <li class="nav-item">
     <a class="nav-link menu-link" href="<?=base_url(route_to('testimonial.list'))?>">
         <i class="ri-image-line"></i> <span data-key="t-transaction">Testimonial</span>
@@ -132,25 +174,6 @@
 </li>
 
 
-
-<li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Website</span></li>
-
-<!-- <li class="nav-item">
-    <a class="nav-link menu-link" href="<?=base_url(route_to('banner.list'))?>">
-        <i class="ri-image-line"></i> <span data-key="t-transaction">Banner</span>
-    </a>
-</li> -->
-<!-- <li class="nav-item">
-    <a class="nav-link menu-link" href="<?=base_url(route_to('client-logo.list'))?>">
-        <i class="ri-markup-line"></i> <span data-key="t-transaction">Post Brands</span>
-    </a>
-</li> -->
-
-<!-- <li class="nav-item">
-    <a class="nav-link menu-link" href="<?=base_url(route_to('city.list'))?>">
-        <i class="ri-road-map-line"></i> <span data-key="t-transaction">Add Cities</span>
-    </a>
-</li> -->
 
 <li class="nav-item">
     <a class="nav-link menu-link" href="#blog" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="blog">

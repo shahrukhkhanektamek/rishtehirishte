@@ -59,6 +59,10 @@ class AdminStateController extends BaseController
             $builder->like($this->arr_values['table_name'].'.name', $filter_search_value);
         }
 
+        if($this->request->getVar('country'))
+        {
+            $builder->where("country_id", $this->request->getVar('country'));
+        }
         
         $total = $builder->countAllResults(false);        
         $data_list = $builder->orderBy($this->arr_values['table_name'] . '.id', $order_by)->limit($limit, $offset)->get()->getResult();

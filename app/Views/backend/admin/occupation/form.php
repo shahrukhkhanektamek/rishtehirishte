@@ -38,19 +38,6 @@
                         <div class="live-preview">
                             <div class="row g-3">
 
-                                <div class="col-md-12">
-                                    <label class="form-label">Category <span class="text-danger">*</span></label>
-                                    <select class="" name="category" id="education-category"  required>
-                                        <option value="" >Select Category</option>
-                                        <?php if(!empty($row)){
-                                            $category = $db->table('education_category')->where("id",$row->category)->get()->getFirstRow();
-                                            if(!empty($category))
-                                            {
-                                        ?>
-                                            <option value="<?=$category->id ?>" selected><?=$category->name ?></option>
-                                        <?php }} ?>
-                                    </select>
-                                </div>
 
                                 <div class="col-md-6">
                                     <label class="form-label">Title <span class="text-danger">*</span></label>

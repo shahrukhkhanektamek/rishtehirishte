@@ -39,11 +39,11 @@
                             <div class="row g-3">
 
                                 <div class="col-md-12">
-                                    <label class="form-label">Category <span class="text-danger">*</span></label>
-                                    <select class="" name="category" id="education-category"  required>
-                                        <option value="" >Select Category</option>
+                                    <label class="form-label">Religion <span class="text-danger">*</span></label>
+                                    <select class="" name="category" id="religion"  required>
+                                        <option value="" >Select Religion</option>
                                         <?php if(!empty($row)){
-                                            $category = $db->table('education_category')->where("id",$row->category)->get()->getFirstRow();
+                                            $category = $db->table('religion')->where("id",$row->religion)->get()->getFirstRow();
                                             if(!empty($category))
                                             {
                                         ?>
@@ -66,8 +66,8 @@
 
                                
                                 <div class="col-md-6">
-                                    <label class="form-label">Status <span class="text-danger">*</span></label>
-                                    <select class="js-example-basic-single" name="status"  required>
+                                    <label for="planStatus" class="form-label">Status <span class="text-danger">*</span></label>
+                                    <select class="js-example-basic-single" id="planStatus" name="status" data-minimum-results-for-search="Infinity" required>
                                         <option value="1" <?php if(!empty(@$row) && @$row->status==1) echo'selected' ?> >Active</option>
                                         <option value="0" <?php if(!empty(@$row) && @$row->status==0) echo'selected' ?> >Disable</option>
                                     </select>

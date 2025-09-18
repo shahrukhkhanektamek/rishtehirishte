@@ -51,12 +51,12 @@
                                                <option value="100">100</option>
                                             </select>
                                          </div>
-                                         <div class="col-md-4">
-                                            <select class="form-control" id="country">
-                                               <option value="">Select Country</option>
+                                         <div class="col-md-3">
+                                            <select class="form-control" id="religion">
+                                               <option value="">Seelct Religion</option>
                                             </select>
                                          </div>
-                                         <div class="col-md-3">
+                                         <div class="col-md-4">
                                             <div class="navbar-item navbar-form">
                                                   <div class="form-group">
                                                      <input type="text" class="form-control search-input" placeholder="Enter keyword">
@@ -98,15 +98,15 @@
    {
        var status = $("#statuschange").val();
        var order_by = $("#order_by").val();
-       var country = $("#country").val();
+       var religion = $("#religion").val();
        var limit = $("#limit").val();
        var filter_search_value = $(".search-input").val();
-       data = `status=${status}&country=${country}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
+       data = `religion=${religion}&status=${status}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
    }
     get_url_data();
    url = main_url+'?'+data;
    load_table();
-   $(document).on("change", "#statuschange, .order_by, .limit, #country",(function(e) {
+   $(document).on("change", "#statuschange, .order_by, .limit, #religion",(function(e) {
       get_url_data();
       url =main_url+"?"+data;
       load_table();
