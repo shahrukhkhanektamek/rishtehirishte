@@ -1,14 +1,9 @@
 <table id="buttons-datatables1" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
     <thead>
         <tr>
-            <th data-ordering="false">Registered Date</th>
-            <th data-ordering="false">ID/Name</th>
-            <th data-ordering="false">Phone/Email</th>
-            <th data-ordering="false">Sex/Age</th>
-            <th data-ordering="false">Edu / Occup / Annual Income</th>
-            <th data-ordering="false">Caste / Religion / M-Tongue</th>
-            <th data-ordering="false">State/City</th>
-            <th data-ordering="false">Requirement for partner</th>
+            <th data-ordering="false">Date Time</th>
+            <th data-ordering="false">Name</th>
+            <th data-ordering="false">Image</th>            
             <th data-ordering="false">Status</th>
             <th>Action</th>
         </tr>
@@ -20,17 +15,10 @@
             <tr>
                 <td><?=date("d M, Y h:i A", strtotime($value->add_date_time)) ?></td>
                 <td><?=$value->name?></td>
-                <td><?=$value->name?></td>
-                <td><?=$value->name?></td>
-                <td><?=$value->name?></td>
-                <td><?=$value->name?></td>
-                <td><?=$value->phone?></td>
-                <td><?=$value->email?></td>
+                <td><img class="img-thumbnail" src="<?=image_check($value->image)?>" style="width: auto;height: 45px;"></td>
                 <td><?=status_get($value->status)?></td>
                 <td>
                     <a href="<?=$data['route'].'/edit/'.encript($value->id)?>" class="btn btn-sm btn-outline-primary btn-icon waves-effect" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="ri-ball-pen-line"></i></a>
-
-                    <a href="<?=$data['route'].'/view/'.encript($value->id)?>" class="btn btn-sm btn-outline-primary btn-icon waves-effect" data-bs-toggle="tooltip" data-bs-placement="top" title="View"><i class="ri-eye-fill"></i></a>
 
                     <a href="<?=$data['route'].'/block_unblock/'.encript($value->id)?>" data-value="<?=$value->status?>" class="btn btn-sm btn-outline-danger btn-icon waves-effect block-item-btn"  data-bs-placement="top" title="Disble"><i class="ri-settings-6-line"></i></a>
 
@@ -43,7 +31,7 @@
 </table>
 
 <div class="pagination">
-    <div class="pagination-result">
+        <div class="pagination-result">
         Showing
         <span class="start-data">  <?=$data['startData'] ?></span>
         <span>to</span>

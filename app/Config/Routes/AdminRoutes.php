@@ -131,18 +131,18 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->post('delete/(:any)', 'AdminCasteController::delete/$1', ['as' => 'caste.delete']);
         $routes->post('block_unblock/(:any)', 'AdminCasteController::block_unblock/$1', ['as' => 'caste.block_unblock']);
     });
-    
-    $routes->group('certification', function($routes) {
-        $routes->get('/', 'AdminCertificationController::index', ['as' => 'certification.list']);
-        $routes->get('load_data', 'AdminCertificationController::load_data', ['as' => 'certification.load_data']);
-        $routes->get('add', 'AdminCertificationController::add', ['as' => 'certification.add']);
-        $routes->get('edit/(:any)?', 'AdminCertificationController::edit/$1', ['as' => 'certification.edit']);
-        $routes->get('view/(:any)', 'AdminCertificationController::view/$1', ['as' => 'certification.view']);
-        $routes->post('update', 'AdminCertificationController::update', ['as' => 'certification.update']);
-        $routes->post('delete/(:any)', 'AdminCertificationController::delete/$1', ['as' => 'certification.delete']);
-        $routes->post('block_unblock/(:any)', 'AdminCertificationController::block_unblock/$1', ['as' => 'certification.block_unblock']);
+    $routes->group('success-story', function($routes) {
+        $routes->get('/', 'AdminSuccessStoryController::index', ['as' => 'success-story.list']);
+        $routes->get('load_data', 'AdminSuccessStoryController::load_data', ['as' => 'success-story.load_data']);
+        $routes->get('add', 'AdminSuccessStoryController::add', ['as' => 'success-story.add']);
+        $routes->get('edit/(:any)?', 'AdminSuccessStoryController::edit/$1', ['as' => 'success-story.edit']);
+        $routes->get('view/(:any)', 'AdminSuccessStoryController::view/$1', ['as' => 'success-story.view']);
+        $routes->post('update', 'AdminSuccessStoryController::update', ['as' => 'success-story.update']);
+        $routes->post('delete/(:any)', 'AdminSuccessStoryController::delete/$1', ['as' => 'success-story.delete']);
+        $routes->post('block_unblock/(:any)', 'AdminSuccessStoryController::block_unblock/$1', ['as' => 'success-story.block_unblock']);
     });
-
+    
+ 
 
 
 
@@ -163,23 +163,6 @@ $adminEmployeeRoutes = function ($routes) {
 
 
 
-    $routes->group('kyc', function($routes) {
-        $routes->get('/', 'AdminKycController::index', ['as' => 'kyc.list']);
-        $routes->get('load_data', 'AdminKycController::load_data', ['as' => 'kyc.load_data']);
-        $routes->get('add', 'AdminKycController::add', ['as' => 'kyc.add']);
-        $routes->get('edit/(:any)?', 'AdminKycController::edit/$1', ['as' => 'kyc.edit']);
-        $routes->get('view/(:any)', 'AdminKycController::view/$1', ['as' => 'kyc.view']);
-        $routes->post('update', 'AdminKycController::update', ['as' => 'kyc.update']);
-
-        $routes->get('change-password/(:any)', 'AdminKycController::change_password/$1', ['as' => 'kyc.change-password']);
-        $routes->post('change-password-action', 'AdminKycController::change_password_action', ['as' => 'kyc.change-password-action']);
-
-        $routes->post('delete/(:any)', 'AdminKycController::delete/$1', ['as' => 'kyc.delete']);
-        $routes->post('block_unblock/(:any)', 'AdminKycController::block_unblock/$1', ['as' => 'kyc.block_unblock']);
-    });
-
-  
-
     $routes->group('transaction', function($routes) {
         $routes->get('/', 'AdminTransactionController::index', ['as' => 'transaction.list']);
         $routes->get('load_data', 'AdminTransactionController::load_data', ['as' => 'transaction.load_data']);
@@ -191,15 +174,15 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->post('block_unblock/(:any)', 'AdminTransactionController::block_unblock/$1', ['as' => 'transaction.block_unblock']);
     });
 
-    $routes->group('vendor-package', function($routes) {
-        $routes->get('/', 'AdminVendorPackageController::index', ['as' => 'vendor-package.list']);
-        $routes->get('load_data', 'AdminVendorPackageController::load_data', ['as' => 'vendor-package.load_data']);
-        $routes->get('add', 'AdminVendorPackageController::add', ['as' => 'vendor-package.add']);
-        $routes->get('edit/(:any)?', 'AdminVendorPackageController::edit/$1', ['as' => 'vendor-package.edit']);
-        $routes->get('view/(:any)', 'AdminVendorPackageController::view/$1', ['as' => 'vendor-package.view']);
-        $routes->post('update', 'AdminVendorPackageController::update', ['as' => 'vendor-package.update']);
-        $routes->post('delete/(:any)', 'AdminVendorPackageController::delete/$1', ['as' => 'vendor-package.delete']);
-        $routes->post('block_unblock/(:any)', 'AdminVendorPackageController::block_unblock/$1', ['as' => 'vendor-package.block_unblock']);
+    $routes->group('user-package', function($routes) {
+        $routes->get('/', 'AdminUserPackageController::index', ['as' => 'user-package.list']);
+        $routes->get('load_data', 'AdminUserPackageController::load_data', ['as' => 'user-package.load_data']);
+        $routes->get('add', 'AdminUserPackageController::add', ['as' => 'user-package.add']);
+        $routes->get('edit/(:any)?', 'AdminUserPackageController::edit/$1', ['as' => 'user-package.edit']);
+        $routes->get('view/(:any)', 'AdminUserPackageController::view/$1', ['as' => 'user-package.view']);
+        $routes->post('update', 'AdminUserPackageController::update', ['as' => 'user-package.update']);
+        $routes->post('delete/(:any)', 'AdminUserPackageController::delete/$1', ['as' => 'user-package.delete']);
+        $routes->post('block_unblock/(:any)', 'AdminUserPackageController::block_unblock/$1', ['as' => 'user-package.block_unblock']);
     });
 
     $routes->group('banner', function($routes) {
@@ -322,25 +305,6 @@ $adminEmployeeRoutes = function ($routes) {
             $routes->get('load_data', 'AdminContactEnquiryController::load_data', ['as' => 'contact-enquiry.load_data']);
             $routes->get('view/(:any)', 'AdminContactEnquiryController::view/$1', ['as' => 'contact-enquiry.view']);
             $routes->post('delete/(:any)', 'AdminContactEnquiryController::delete/$1', ['as' => 'contact-enquiry.delete']);
-        });
-
-        $routes->group('lead-enquiry', function($routes) {
-            $routes->get('/', 'AdminLeadEnquiryController::index', ['as' => 'lead-enquiry.list']);
-            $routes->get('load_data', 'AdminLeadEnquiryController::load_data', ['as' => 'lead-enquiry.load_data']);
-            $routes->post('time_line', 'AdminLeadEnquiryController::time_line', ['as' => 'lead-enquiry.time_line']);
-            $routes->post('transfer_now', 'AdminLeadEnquiryController::transfer_now', ['as' => 'lead-enquiry.transfer_now']);
-            $routes->post('update', 'AdminLeadEnquiryController::update', ['as' => 'lead-enquiry.update']);
-            $routes->post('assign', 'AdminLeadEnquiryController::assign', ['as' => 'lead-enquiry.assign']);
-            $routes->get('view/(:any)', 'AdminLeadEnquiryController::view/$1', ['as' => 'lead-enquiry.view']);
-            $routes->post('delete/(:any)', 'AdminLeadEnquiryController::delete/$1', ['as' => 'lead-enquiry.delete']);
-        });
-
-        $routes->group('booking-enquiry', function($routes) {
-            $routes->get('/', 'AdminBookingEnquiryController::index', ['as' => 'booking-enquiry.list']);
-            $routes->get('load_data', 'AdminBookingEnquiryController::load_data', ['as' => 'booking-enquiry.load_data']);
-            $routes->post('transfer_now', 'AdminBookingEnquiryController::transfer_now', ['as' => 'booking-enquiry.transfer_now']);
-            $routes->get('view/(:any)', 'AdminBookingEnquiryController::view/$1', ['as' => 'booking-enquiry.view']);
-            $routes->post('delete/(:any)', 'AdminBookingEnquiryController::delete/$1', ['as' => 'booking-enquiry.delete']);
         });
 
         $routes->group('blog-enquiry', function($routes) {

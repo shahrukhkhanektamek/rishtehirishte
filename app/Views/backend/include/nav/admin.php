@@ -1,27 +1,10 @@
+
+<li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Menu</span></li>
 <li class="nav-item">
     <a class="nav-link menu-link" href="<?=base_url(route_to('admin.dashboard'))?>">
         <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboard">Dashboard</span>
     </a>
 </li>
-
-<!-- <li class="nav-item">
-    <a class="nav-link menu-link" href="#managePartner" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="managePartner">
-        <i class="ri-contacts-line"></i> <span data-key="t-dashboards">Manage Partner</span>
-    </a>
-    <div class="collapse menu-dropdown" id="managePartner">
-        <ul class="nav nav-sm flex-column">
-            <li class="nav-item">
-                <a href="<?=base_url(route_to('admin-user.list')).'?type=3'?>" class="nav-link" data-key="t-analytics"> Advocates </a>
-            </li>
-            <li class="nav-item">
-                <a href="<?=base_url(route_to('admin-user.list')).'?type=4'?>" class="nav-link" data-key="t-analytics"> CA </a>
-            </li>
-            <li class="nav-item">
-                <a href="<?=base_url(route_to('admin-user.list')).'?type=5'?>" class="nav-link" data-key="t-analytics"> Advisers </a>
-            </li>
-        </ul>
-    </div>
-</li> -->
 
 <li class="nav-item">
     <a class="nav-link menu-link" href="#manageuser" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="manageuser">
@@ -45,7 +28,6 @@
     <div class="collapse menu-dropdown" id="manageLeads">
         <ul class="nav nav-sm flex-column">
 
-            <!-- <li class="nav-item"><a href="<?=base_url(route_to('lead-enquiry.list')).'?type=2'?>" class="nav-link" data-key="t-analytics"> Leads </a></li> -->
             <li class="nav-item"><a href="<?=base_url(route_to('contact-enquiry.list'))?>" class="nav-link" data-key="t-analytics"> Contact Leads </a></li>
 
         </ul>
@@ -53,23 +35,19 @@
 </li>
 
 
-<!-- <li class="nav-item">
-    <a class="nav-link menu-link" href="<?=base_url(route_to('kyc.list'))?>">
-        <i class="ri-wallet-line"></i> <span data-key="t-transaction">Kyc</span>
+<li class="nav-item">
+    <a class="nav-link menu-link" href="<?=base_url(route_to('success-story.list'))?>">
+        <i class="ri-wallet-line"></i> <span data-key="t-transaction">Success Stories</span>
     </a>
-</li> -->
+</li>
 
 <li class="nav-item">
     <a class="nav-link menu-link" href="<?=base_url(route_to('transaction.list'))?>">
         <i class="ri-wallet-line"></i> <span data-key="t-transaction">Payment History</span>
     </a>
 </li>
-<!-- <li class="nav-item">
-    <a class="nav-link menu-link" href="<?=base_url(route_to('transaction.list'))?>">
-        <i class="ri-wallet-line"></i> <span data-key="t-transaction">Cases</span>
-    </a>
-</li>
- -->
+
+
 <li class="nav-item">
     <a class="nav-link menu-link" href="#services" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="services">
         <i class="ri-message-2-line"></i> <span data-key="t-dashboards">Services</span>
@@ -98,7 +76,7 @@
                 <a href="<?=base_url(route_to('package.list'))?>" class="nav-link" data-key="t-analytics"> Packages </a>
             </li>
             <li class="nav-item">
-                <a href="<?=base_url(route_to('vendor-package.list'))?>" class="nav-link" data-key="t-analytics"> History </a>
+                <a href="<?=base_url(route_to('user-package.list'))?>" class="nav-link" data-key="t-analytics"> History </a>
             </li>
         </ul>
     </div>

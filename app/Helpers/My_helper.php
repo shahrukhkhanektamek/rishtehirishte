@@ -525,13 +525,202 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
         return $arr;
       return $arr[$value];
   }
-  function years($value='')
+  function years($value = '')
   {
-      $arr = array('2024','2025','2026');
+      $currentYear = date('Y'); 
+      $startYear = $currentYear - 100;
+      $arr = range($startYear, $currentYear);
+      if (empty($value)) {
+          return $arr;
+      }
+      return isset($arr[$value]) ? $arr[$value] : null;
+  }
+  function create_for($value='')
+  {
+      $arr = array('Self','Son','Daughter','Brother','Sister','Other');
       if(empty($value))
         return $arr;
       return $arr[$value];
   }
+
+  function challenged($value='')
+  {
+      $arr = array('No','Physical From Birth','Physical Due to Accident','Mentally by birth','Mentally by accident');
+      if(empty($value))
+        return $arr;
+      return $arr[$value];
+  }
+  function marital_status($value='')
+  {
+      $arr = array('Never Married','Never Married','Awaiting Divorce','Divorced','Widowed','Separated','Annulled');
+      if(empty($value))
+        return $arr;
+      return $arr[$value];
+  }
+  
+  function have_children($value='')
+  {
+      $arr = array('No','Yes, living together','Yes, living separately','Other');
+      if(empty($value))
+        return $arr;
+      return $arr[$value];
+  }
+  function manglik($value='')
+  {
+      $arr = array('Non-manglik','Manglik','Anshik manglik','Does not matter');
+      if(empty($value))
+        return $arr;
+      return $arr[$value];
+  }
+  function heights($value = '')
+  {
+      $arr = [
+          "4.0"  => "4' 0\" (1.22 mts)",
+          "4.1"  => "4' 1\" (1.24 mts)",
+          "4.2"  => "4' 2\" (1.28 mts)",
+          "4.3"  => "4' 3\" (1.31 mts)",
+          "4.4"  => "4' 4\" (1.34 mts)",
+          "4.5"  => "4' 5\" (1.35 mts)",
+          "4.6"  => "4' 6\" (1.37 mts)",
+          "4.7"  => "4' 7\" (1.40 mts)",
+          "4.8"  => "4' 8\" (1.42 mts)",
+          "4.9"  => "4' 9\" (1.45 mts)",
+          "4.10" => "4' 10\" (1.47 mts)",
+          "4.11" => "4' 11\" (1.50 mts)",
+          "5.0"  => "5' 0\" (1.52 mts)",
+          "5.1"  => "5' 1\" (1.55 mts)",
+          "5.2"  => "5' 2\" (1.58 mts)",
+          "5.3"  => "5' 3\" (1.60 mts)",
+          "5.4"  => "5' 4\" (1.63 mts)",
+          "5.5"  => "5' 5\" (1.65 mts)",
+          "5.6"  => "5' 6\" (1.68 mts)",
+          "5.7"  => "5' 7\" (1.70 mts)",
+          "5.8"  => "5' 8\" (1.73 mts)",
+          "5.9"  => "5' 9\" (1.75 mts)",
+          "5.10" => "5' 10\" (1.78 mts)",
+          "5.11" => "5' 11\" (1.80 mts)",
+          "6.0"  => "6' 0\" (1.83 mts)",
+          "6.1"  => "6' 1\" (1.85 mts)",
+          "6.2"  => "6' 2\" (1.88 mts)",
+          "6.3"  => "6' 3\" (1.91 mts)",
+          "6.4"  => "6' 4\" (1.93 mts)",
+          "6.5"  => "6' 5\" (1.96 mts)",
+          "6.6"  => "6' 6\" (1.98 mts)",
+          "6.7"  => "6' 7\" (2.01 mts)",
+          "6.8"  => "6' 8\" (2.03 mts)",
+          "6.9"  => "6' 9\" (2.06 mts)",
+          "6.10" => "6' 10\" (2.08 mts)",
+          "6.11" => "6' 11\" (2.11 mts)",
+          "7"    => "7' (2.13 mts) plus"
+      ];
+
+      if (empty($value)) {
+          return $arr; // pura array return hoga
+      }
+
+      return isset($arr[$value]) ? $arr[$value] : null; // ek specific value return hogi
+  }
+  function complexion($value='')
+  {
+      $arr = array('Fair','Very Fair','Fair','Wheatish');
+      if(empty($value))
+        return $arr;
+      return $arr[$value];
+  }
+  function body_type($value='')
+  {
+      $arr = array('Slim','Average','Medium','Athletic','Healthy');
+      if(empty($value))
+        return $arr;
+      return $arr[$value];
+  }
+  function family_type($value='')
+  {
+      $arr = array('Upper Middle Class','Rich/Affluent','Upper Class','Upper Middle Class','Middle Class','Others');
+      if(empty($value))
+        return $arr;
+      return $arr[$value];
+  }
+  function incomes_inr($value = '')
+  {
+      $arr = array(
+          'No Income',
+          'Rs. 0 - 1 Lakh',
+          'Rs. 1 - 2 Lakh',
+          'Rs. 2 - 3 Lakh',
+          'Rs. 3 - 4 Lakh',
+          'Rs. 4 - 5 Lakh',
+          'Rs. 5 - 7.5 Lakh',
+          'Rs. 7.5 - 10 Lakh',
+          'Rs. 10 - 15 Lakh',
+          'Rs. 15 - 20 Lakh',
+          'Rs. 20 - 25 Lakh',
+          'Rs. 25 - 30 Lakh',
+          'Rs. 30 - 35 Lakh',
+          'Rs. 35 - 50 Lakh',
+          'Rs. 50 - 70 Lakh',
+          'Rs. 70 Lakh - 1 crore',
+          'Rs. 1 crore - 2 crore',
+          'Rs. 2 crore - 3 crore',
+          'Rs. 3 crore - 5 crore',
+          'Rs. 5 crore - 7 crore',
+          'Rs. 7 crore - 10 crore',
+          'Rs. 10 crore & above'
+      );
+
+      if ($value === '' || $value === null) {
+          return $arr; // pura array return karega
+      }
+
+      return isset($arr[$value]) ? $arr[$value] : null; // safe check
+  }
+  function incomes_doller($value = '')
+  {
+      $arr = array(
+          'No Income',
+          'Under $25,000',
+          '$25,001 - 40,000',
+          '$40,001 - 60,000',
+          '$60,001 - 80,000',
+          '$80,001 - 100,000',
+          '$100,001 - 150,000',
+          '$150,001 - 200,000',
+          '$200,001 and above'
+      );
+
+      if ($value === '' || $value === null) {
+          return $arr; // pura array return karega
+      }
+
+      return isset($arr[$value]) ? $arr[$value] : null; // safe check
+  }
+  function married_unmarried($value='')
+  {
+      $arr = array('1','2','3','4','4+');
+      if(empty($value))
+        return $arr;
+      return $arr[$value];
+  }
+  function ages($value = '')
+  {
+      $startAge = 1; 
+      $endAge = 100;
+      $arr = range($startAge, $endAge);
+      if (empty($value)) {
+          return $arr;
+      }
+      return isset($arr[$value]) ? $arr[$value] : null;
+  }
+  function diets($value='')
+  {
+      $arr = array('Non Vegetarian','Vegetarian','Non Vegetarian','Eggitarien');
+      if(empty($value))
+        return $arr;
+      return $arr[$value];
+  }
+
+
+  
 
 
     function my_plans($vendor_id)
