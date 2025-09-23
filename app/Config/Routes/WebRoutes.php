@@ -6,6 +6,8 @@ $routes->add('(.*)', 'Home::all/$1');
 // $routes->add('user/(:any)', 'Home::all/$1');
 $routes->get('for-testing', 'Test::index');
 
+$routes->get('users', 'DataSet::users');
+
 
 $routes->post('bike-modal', 'Home::bike_modal');
 

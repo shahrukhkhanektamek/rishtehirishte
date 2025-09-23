@@ -70,7 +70,7 @@
                                                     </div>
                                                     <div class="d-flex align-items-end justify-content-between mt-2">
                                                         <div>
-                                                            <h4 class="fs-22 fw-semibold ff-secondary text-white mb-2"><span class="counter-value" data-target="<?=$db->table('enquiry_lead')->countAllResults()?>"></span></h4>
+                                                            <h4 class="fs-22 fw-semibold ff-secondary text-white mb-2"><span class="counter-value" data-target="<?=$db->table('enquiry_contact')->countAllResults()?>"></span></h4>
                                                         </div>
                                                         <div class="avatar-sm flex-shrink-0">
                                                             <span class="avatar-title bg-white bg-opacity-25 rounded fs-2">

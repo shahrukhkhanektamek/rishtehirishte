@@ -1,0 +1,1271 @@
+WARNING - 2025-09-24 00:18:45 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:18:45 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:18:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:19:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:19:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:19:16 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:19:16 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:20:39 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:20:39 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:51:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:51:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 00:51:55 --> ErrorException: Undefined property: stdClass::$image1
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 30.
+ 1 APPPATH\Controllers\DataSet.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$image1', 'D:\\xamp\\htdocs\\projects\\dimplemam\\rishtehirishte\\app\\Controllers\\DataSet.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:52:00 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:52:00 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:52:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 00:52:00 --> ErrorException: Undefined property: stdClass::$image1
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 30.
+ 1 APPPATH\Controllers\DataSet.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$image1', 'D:\\xamp\\htdocs\\projects\\dimplemam\\rishtehirishte\\app\\Controllers\\DataSet.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:52:28 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:52:28 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:52:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:52:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:52:50 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:52:50 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:52:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 00:52:50 --> ErrorException: Undefined property: stdClass::$male
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 46.
+ 1 APPPATH\Controllers\DataSet.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$male', 'D:\\xamp\\htdocs\\projects\\dimplemam\\rishtehirishte\\app\\Controllers\\DataSet.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:52:53 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:52:53 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:52:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 00:52:53 --> ErrorException: Undefined property: stdClass::$male
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 46.
+ 1 APPPATH\Controllers\DataSet.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$male', 'D:\\xamp\\htdocs\\projects\\dimplemam\\rishtehirishte\\app\\Controllers\\DataSet.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:53:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:53:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:53:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:53:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:53:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:53:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:54:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:54:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:58:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:58:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:58:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-24 00:58:21 --> mysqli_sql_exception: Table 'rishtehirishte_temp.countries' doesn't exist in D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\app\Controllers\DataSet.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(933): App\Controllers\DataSet->users()
+#6 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+#7 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-09-24 00:58:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'rishtehirishte_temp.countries' doesn't exist
+[Method: GET, Route: users]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `countries`
+WHERE `name` = :name:', [...], false)
+ 2 APPPATH\Controllers\DataSet.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 00:58:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'rishtehirishte_temp.countries' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `countries`
+WHERE `name` = :name:', [...], false)
+ 4 APPPATH\Controllers\DataSet.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 00:58:21 --> [Caused by] mysqli_sql_exception: Table 'rishtehirishte_temp.countries' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `countries`
+WHERE `name` = :name:', [...], false)
+ 5 APPPATH\Controllers\DataSet.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:58:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:58:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-24 00:58:24 --> mysqli_sql_exception: Table 'rishtehirishte_temp.countries' doesn't exist in D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\app\Controllers\DataSet.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(933): App\Controllers\DataSet->users()
+#6 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+#7 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-09-24 00:58:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'rishtehirishte_temp.countries' doesn't exist
+[Method: GET, Route: users]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `countries`
+WHERE `name` = :name:', [...], false)
+ 2 APPPATH\Controllers\DataSet.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 00:58:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'rishtehirishte_temp.countries' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `countries`
+WHERE `name` = :name:', [...], false)
+ 4 APPPATH\Controllers\DataSet.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 00:58:24 --> [Caused by] mysqli_sql_exception: Table 'rishtehirishte_temp.countries' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `countries`
+WHERE `name` = \'India\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `countries`
+WHERE `name` = :name:', [...], false)
+ 5 APPPATH\Controllers\DataSet.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:58:29 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:58:29 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:58:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:58:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 00:58:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 00:58:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 00:58:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:04:43 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:04:43 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:04:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 01:04:43 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::insertID()
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 106.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:04:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:04:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 01:04:56 --> ErrorException: Undefined variable $data
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 106.
+ 1 APPPATH\Controllers\DataSet.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\xamp\\htdocs\\projects\\dimplemam\\rishtehirishte\\app\\Controllers\\DataSet.php', 106)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:05:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:05:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:21:23 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:21:23 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:21:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-24 01:21:23 --> mysqli_sql_exception: Duplicate entry '26' for key 'PRIMARY' in D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\app\Controllers\DataSet.php(106): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(933): App\Controllers\DataSet->users()
+#6 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+#7 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-09-24 01:21:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '26' for key 'PRIMARY'
+[Method: GET, Route: users]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (:id:, :user_id:, :role:, :name:, :email:, :password:, :phone:, :dob:, :profilefor:, :gender:, :mothertongue:, :maritalstatus:, :havechildren:, :religion:, :caste:, :manglik:, :height:, :country:, :state:, :city:, :pincode:, :image:, :images:, :highestdegree:, :collegename:, :occupation:, :annualincome:, :expressyou:, :family_type:, :family_living:, :father_occupation:, :father_annualincome:, :mother_occupation:, :mother_annualincome:, :brother_married:, :brother_unmarried:, :sister_married:, :sister_unmarried:, :address:, :aboutfamily:, :age:, :diet:, :register_by:, :father_name:, :mother_name:, :time_of_birth:, :place_of_birth:, :add_date_time:, :alt_phone:, :challenged:, :annualincomeindoller:, :package_id:, :ip_address:, :complexion:, :body_type:)', [...], false)
+ 2 APPPATH\Controllers\DataSet.php(106): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 01:21:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '26' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (:id:, :user_id:, :role:, :name:, :email:, :password:, :phone:, :dob:, :profilefor:, :gender:, :mothertongue:, :maritalstatus:, :havechildren:, :religion:, :caste:, :manglik:, :height:, :country:, :state:, :city:, :pincode:, :image:, :images:, :highestdegree:, :collegename:, :occupation:, :annualincome:, :expressyou:, :family_type:, :family_living:, :father_occupation:, :father_annualincome:, :mother_occupation:, :mother_annualincome:, :brother_married:, :brother_unmarried:, :sister_married:, :sister_unmarried:, :address:, :aboutfamily:, :age:, :diet:, :register_by:, :father_name:, :mother_name:, :time_of_birth:, :place_of_birth:, :add_date_time:, :alt_phone:, :challenged:, :annualincomeindoller:, :package_id:, :ip_address:, :complexion:, :body_type:)', [...], false)
+ 4 APPPATH\Controllers\DataSet.php(106): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 01:21:23 --> [Caused by] mysqli_sql_exception: Duplicate entry '26' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (:id:, :user_id:, :role:, :name:, :email:, :password:, :phone:, :dob:, :profilefor:, :gender:, :mothertongue:, :maritalstatus:, :havechildren:, :religion:, :caste:, :manglik:, :height:, :country:, :state:, :city:, :pincode:, :image:, :images:, :highestdegree:, :collegename:, :occupation:, :annualincome:, :expressyou:, :family_type:, :family_living:, :father_occupation:, :father_annualincome:, :mother_occupation:, :mother_annualincome:, :brother_married:, :brother_unmarried:, :sister_married:, :sister_unmarried:, :address:, :aboutfamily:, :age:, :diet:, :register_by:, :father_name:, :mother_name:, :time_of_birth:, :place_of_birth:, :add_date_time:, :alt_phone:, :challenged:, :annualincomeindoller:, :package_id:, :ip_address:, :complexion:, :body_type:)', [...], false)
+ 5 APPPATH\Controllers\DataSet.php(106): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:21:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:21:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:21:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-24 01:21:25 --> mysqli_sql_exception: Duplicate entry '26' for key 'PRIMARY' in D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\app\Controllers\DataSet.php(106): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(933): App\Controllers\DataSet->users()
+#6 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+#7 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\xamp\htdocs\projects\dimplemam\rishtehirishte\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-09-24 01:21:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '26' for key 'PRIMARY'
+[Method: GET, Route: users]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (:id:, :user_id:, :role:, :name:, :email:, :password:, :phone:, :dob:, :profilefor:, :gender:, :mothertongue:, :maritalstatus:, :havechildren:, :religion:, :caste:, :manglik:, :height:, :country:, :state:, :city:, :pincode:, :image:, :images:, :highestdegree:, :collegename:, :occupation:, :annualincome:, :expressyou:, :family_type:, :family_living:, :father_occupation:, :father_annualincome:, :mother_occupation:, :mother_annualincome:, :brother_married:, :brother_unmarried:, :sister_married:, :sister_unmarried:, :address:, :aboutfamily:, :age:, :diet:, :register_by:, :father_name:, :mother_name:, :time_of_birth:, :place_of_birth:, :add_date_time:, :alt_phone:, :challenged:, :annualincomeindoller:, :package_id:, :ip_address:, :complexion:, :body_type:)', [...], false)
+ 2 APPPATH\Controllers\DataSet.php(106): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 01:21:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '26' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (:id:, :user_id:, :role:, :name:, :email:, :password:, :phone:, :dob:, :profilefor:, :gender:, :mothertongue:, :maritalstatus:, :havechildren:, :religion:, :caste:, :manglik:, :height:, :country:, :state:, :city:, :pincode:, :image:, :images:, :highestdegree:, :collegename:, :occupation:, :annualincome:, :expressyou:, :family_type:, :family_living:, :father_occupation:, :father_annualincome:, :mother_occupation:, :mother_annualincome:, :brother_married:, :brother_unmarried:, :sister_married:, :sister_unmarried:, :address:, :aboutfamily:, :age:, :diet:, :register_by:, :father_name:, :mother_name:, :time_of_birth:, :place_of_birth:, :add_date_time:, :alt_phone:, :challenged:, :annualincomeindoller:, :package_id:, :ip_address:, :complexion:, :body_type:)', [...], false)
+ 4 APPPATH\Controllers\DataSet.php(106): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 01:21:25 --> [Caused by] mysqli_sql_exception: Duplicate entry '26' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (\'26\', \'26\', 2, \'Naresh  mongia\', \'harry6243@gmail.com\', \'naresh\', \'9871471871\', \'11-20-1988\', \'Son\', 1, \'Punjabi\', \'Never Married\', \'No\', \'Hindu\', \'Arora\', \'Non-manglik\', \'5.6\', \'99\', \'21\', \'Delhi\', \'\', \'15023840851718051524pic-1-A.jpg\', \'[{\\"image_path\\":\\"1502384085722212113pic-2-B.jpg\\"},{\\"image_path\\":\\"15023840851006303324pic-3-C.jpg\\"}]\', \'High School\', \'12th (Under Graduate)\', \'Businessperson\', \'Select\', \'                                                                   Boy is non drinker ans non smoker . own mobile shop at nabi karim , delhi                                                                         \', \'Middle Class\', \'Delhi\', \'Business/Entrepreneur\', \'No Income\', \'Housewife\', \'No Income\', \'Not Selected\', \'Not Selected\', \'1\', \'2\', \'                                 shop at nabi karim , delhi                                                                                  \', \'                                                                         Own house , own shop , other properties                                                                   \', \'29\', \'Non Vegetarian\', \'admin\', \'\', \'\', \'\', \'\', \'\', \'\', \'No\', \'\', NULL, \'\', \'\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`id`, `user_id`, `role`, `name`, `email`, `password`, `phone`, `dob`, `profilefor`, `gender`, `mothertongue`, `maritalstatus`, `havechildren`, `religion`, `caste`, `manglik`, `height`, `country`, `state`, `city`, `pincode`, `image`, `images`, `highestdegree`, `collegename`, `occupation`, `annualincome`, `expressyou`, `family_type`, `family_living`, `father_occupation`, `father_annualincome`, `mother_occupation`, `mother_annualincome`, `brother_married`, `brother_unmarried`, `sister_married`, `sister_unmarried`, `address`, `aboutfamily`, `age`, `diet`, `register_by`, `father_name`, `mother_name`, `time_of_birth`, `place_of_birth`, `add_date_time`, `alt_phone`, `challenged`, `annualincomeindoller`, `package_id`, `ip_address`, `complexion`, `body_type`) VALUES (:id:, :user_id:, :role:, :name:, :email:, :password:, :phone:, :dob:, :profilefor:, :gender:, :mothertongue:, :maritalstatus:, :havechildren:, :religion:, :caste:, :manglik:, :height:, :country:, :state:, :city:, :pincode:, :image:, :images:, :highestdegree:, :collegename:, :occupation:, :annualincome:, :expressyou:, :family_type:, :family_living:, :father_occupation:, :father_annualincome:, :mother_occupation:, :mother_annualincome:, :brother_married:, :brother_unmarried:, :sister_married:, :sister_unmarried:, :address:, :aboutfamily:, :age:, :diet:, :register_by:, :father_name:, :mother_name:, :time_of_birth:, :place_of_birth:, :add_date_time:, :alt_phone:, :challenged:, :annualincomeindoller:, :package_id:, :ip_address:, :complexion:, :body_type:)', [...], false)
+ 5 APPPATH\Controllers\DataSet.php(106): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:21:43 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:21:43 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:29:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:29:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:29:53 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:29:53 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:32:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:32:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:33:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:33:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:33:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:33:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:40:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:40:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 01:40:52 --> Error: Class "App\Controllers\DateTime" not found
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:40:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:40:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 01:40:54 --> Error: Class "App\Controllers\DateTime" not found
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:40:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:40:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 01:40:55 --> Error: Class "App\Controllers\DateTime" not found
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:41:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:41:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 01:41:12 --> ErrorException: Undefined variable $dob
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 47.
+ 1 APPPATH\Controllers\DataSet.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dob', 'D:\\xamp\\htdocs\\projects\\dimplemam\\rishtehirishte\\app\\Controllers\\DataSet.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:41:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:41:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 01:41:24 --> ErrorException: Undefined variable $dob
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 47.
+ 1 APPPATH\Controllers\DataSet.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dob', 'D:\\xamp\\htdocs\\projects\\dimplemam\\rishtehirishte\\app\\Controllers\\DataSet.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:41:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:41:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:41:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 01:41:35 --> Error: Call to a member function format() on bool
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 47.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:41:37 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:41:37 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:41:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-24 01:41:37 --> Error: Call to a member function format() on bool
+[Method: GET, Route: users]
+in APPPATH\Controllers\DataSet.php on line 47.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataSet->users()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataSet))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:42:18 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:42:18 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:42:19 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:42:19 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:46:38 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:46:38 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:47:08 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:47:08 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:47:13 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:47:13 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:47:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:47:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:48:29 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:48:29 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:55:47 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:55:47 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:56:01 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:56:01 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:56:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:56:10 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$db2 is deprecated in APPPATH\Controllers\DataSet.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\DataSet->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:56:10 --> [DEPRECATED] Creation of dynamic property App\Controllers\DataSet::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-24 01:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:56:51 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthBackend::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:56:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthBackend::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:56:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$pager is deprecated in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:56:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$pager is deprecated in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-24 01:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-24 01:56:53 --> CSRF token verified.
+WARNING - 2025-09-24 01:56:53 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthBackend::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-24 01:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:56:53 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminDashboardController::$pager is deprecated in APPPATH\Controllers\BaseController.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:56:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$pager is deprecated in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:56:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$pager is deprecated in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:56:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$pager is deprecated in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-24 01:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-24 01:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:01 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:57:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$pager is deprecated in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:57:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$pager is deprecated in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$pager is deprecated in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-24 01:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-24 01:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:20 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 01:57:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/404.php"
+[Method: GET, Route: admin/admin-user/edit/assets/libs/flatpickr/flatpickr.min.js]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/404.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/404', [], true)
+ 3 APPPATH\Controllers\Admin\AdminUserController.php(106): view('admin/404', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AdminUserController->edit(false, 'libs', 'flatpickr', 'flatpickr.min.js')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminUserController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-24 01:57:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$pager is deprecated in APPPATH\Controllers\Home.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-24 01:57:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\AdminUserController::$pager is deprecated in APPPATH\Controllers\Admin\AdminUserController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\AdminUserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-24 01:57:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/404.php"
+[Method: GET, Route: admin/admin-user/edit/assets/libs/choices.js/public/assets/scripts/choices.min.js]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/404.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/404', [], true)
+ 3 APPPATH\Controllers\Admin\AdminUserController.php(106): view('admin/404', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AdminUserController->edit(false, 'libs', 'choices.js', 'public', 'assets', 'scripts', 'choices.min.js')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminUserController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-09-24 01:57:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
