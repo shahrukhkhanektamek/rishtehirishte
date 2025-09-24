@@ -552,7 +552,7 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
   }
   function marital_status($value='')
   {
-      $arr = array('Never Married','Never Married','Awaiting Divorce','Divorced','Widowed','Separated','Annulled');
+      $arr = array('Never Married','Awaiting Divorce','Divorced','Widowed','Separated','Annulled');
       if(empty($value))
         return $arr;
       return $arr[$value];

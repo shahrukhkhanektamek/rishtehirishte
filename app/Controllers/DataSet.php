@@ -21,7 +21,7 @@ class DataSet extends BaseController
 
         $usersData = [];
         $oldUsers = $this->db2->table("rform")
-        ->limit(5)
+        ->limit(1000)
         ->offset(0)
         ->getWhere(["status"=>1,])->getResultObject();
 
@@ -89,7 +89,7 @@ class DataSet extends BaseController
                 "brother_unmarried"=>$value->bunmarried,
                 "sister_married"=>$value->smarried,
                 "sister_unmarried"=>$value->sunmarried,
-                "address"=>$value->address,
+                "address"=>trim($value->address),
                 "aboutfamily"=>$value->aboutfamily,
                 "age"=>$value->extra1,
                 "diet"=>$value->extra2,
@@ -111,7 +111,7 @@ class DataSet extends BaseController
                 "complexion"=>$value->complexion,
                 "body_type"=>$value->body_type,
             ];
-            // $this->db->table("users")->insert($usersData);
+            $this->db->table("users")->insert($usersData);
             // print_r($usersData);
         }
 
@@ -174,6 +174,335 @@ class DataSet extends BaseController
             $new_slug = insert_slug($slug,$p_id,$table_name,$page_name);
             insert_meta_tag($new_slug,$name);
         }
+
+    }
+
+    public function educations()
+    {
+        $educationData = [];
+        $oldedu = $this->db2->table("edu")
+        // ->limit(5)
+        ->offset(0)
+        ->getWhere(["status"=>1,])->getResultObject();
+        foreach ($oldedu as $key => $value) {
+
+            $category = 0;
+            $education_category = $this->db->table('education_category')->where(["name"=>$value->label,])->get()->getFirstRow();
+            if(!empty($education_category)) $category = $education_category->id;            
+            $educationData = [
+                "status"=>1,
+                "name"=>$value->title,
+                "category"=>$category,
+                
+            ];
+            $this->db->table("education")->insert($educationData);
+            // print_r($educationData);
+        }
+    }
+
+    public function set_language()
+    {
+        $languageData = [];
+        $oldlanguage = $this->db->table("users")
+        ->groupBy('mothertongue')
+        ->offset(0)
+        ->getWhere(["status"=>1,])->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $languages = $this->db->table('languages')->where(["name"=>$value->mothertongue,])->get()->getFirstRow();
+            if(!empty($languages)) $idd = $languages->id;            
+            $languageData = [
+                "mothertongue"=>$idd,
+            ];
+             $this->db->table("users")->where(["mothertongue"=>$value->mothertongue,])->update($languageData);
+        }
+
+
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("users")
+        ->groupBy('religion')
+        ->offset(0)
+        ->getWhere(["status"=>1,])->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $religions = $this->db->table('religion')->where(["name"=>$value->religion,])->get()->getFirstRow();
+            if(!empty($religions)) $idd = $religions->id;                
+            $languageData = [
+                "religion"=>$idd,
+            ];
+             $this->db->table("users")->where(["religion"=>$value->religion,])->update($languageData);
+        }
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("users")
+        ->groupBy('caste')
+        ->offset(0)
+        ->getWhere(["status"=>1,])->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $castes = $this->db->table('caste')->where(["name"=>$value->caste,])->get()->getFirstRow();
+            if(!empty($castes)) $idd = $castes->id;                
+            $languageData = [
+                "caste"=>$idd,
+            ];
+             $this->db->table("users")->where(["caste"=>$value->caste,])->update($languageData);
+        }
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("users")
+        ->groupBy('highestdegree')
+        ->offset(0)
+        ->getWhere(["status"=>1,])->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $highestdegrees = $this->db->table('education')->where(["name"=>$value->highestdegree,])->get()->getFirstRow();
+            if(!empty($highestdegrees)) $idd = $highestdegrees->id;                
+            $languageData = [
+                "highestdegree"=>$idd,
+            ];
+             $this->db->table("users")->where(["highestdegree"=>$value->highestdegree,])->update($languageData);
+        }
+
+
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("users")
+        ->groupBy('occupation')
+        ->offset(0)
+        ->getWhere(["status"=>1,])->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $occupations = $this->db->table('occupation')->where(["name"=>$value->occupation,])->get()->getFirstRow();
+            if(!empty($occupations)) $idd = $occupations->id;
+            else
+            {
+                $this->db->table('occupation')->insert(["name"=>$value->occupation,"status"=>1,]);
+                $idd = $this->db->insertID();
+            }
+            $languageData = [
+                "occupation"=>$idd,
+            ];
+             $this->db->table("users")->where(["occupation"=>$value->occupation,])->update($languageData);
+        }
+
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("users")
+        ->groupBy('family_living')
+        ->offset(0)
+        ->getWhere(["status"=>1,])->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $family_livings = $this->db->table('states')->where(["name"=>$value->family_living,])->get()->getFirstRow();
+            if(!empty($family_livings)) $idd = $family_livings->id;                
+            $languageData = [
+                "family_living"=>$idd,
+            ];
+             $this->db->table("users")->where(["family_living"=>$value->family_living,])->update($languageData);
+        }
+
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("users")
+        ->groupBy('father_occupation')
+        ->offset(0)
+        ->getWhere(["status"=>1,])->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $father_occupations = $this->db->table('occupation')->where(["name"=>$value->father_occupation,])->get()->getFirstRow();
+            if(!empty($father_occupations)) $idd = $father_occupations->id;
+            else
+            {
+                $this->db->table('occupation')->insert(["name"=>$value->father_occupation,"status"=>1,]);
+                $idd = $this->db->insertID();
+            }
+            $languageData = [
+                "father_occupation"=>$idd,
+            ];
+             $this->db->table("users")->where(["father_occupation"=>$value->father_occupation,])->update($languageData);
+        }
+
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("users")
+        ->groupBy('mother_occupation')
+        ->offset(0)
+        ->getWhere(["status"=>1,])->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $mother_occupations = $this->db->table('occupation')->where(["name"=>$value->mother_occupation,])->get()->getFirstRow();
+            if(!empty($mother_occupations)) $idd = $mother_occupations->id;
+            else
+            {
+                $this->db->table('occupation')->insert(["name"=>$value->mother_occupation,"status"=>1,]);
+                $idd = $this->db->insertID();
+            }
+            $languageData = [
+                "mother_occupation"=>$idd,
+            ];
+             $this->db->table("users")->where(["mother_occupation"=>$value->mother_occupation,])->update($languageData);
+        }
+
+
+
+
+
+
+
+
+
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("requirement_form")
+        ->groupBy('education')
+        ->offset(0)
+        ->get()->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $educations = $this->db->table('education')->where(["name"=>$value->education,])->get()->getFirstRow();
+            if(!empty($educations)) $idd = $educations->id;                
+            $languageData = [
+                "education"=>$idd,
+            ];
+             $this->db->table("requirement_form")->where(["education"=>$value->education,])->update($languageData);
+        }
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("requirement_form")
+        ->groupBy('occupation')
+        ->offset(0)
+        ->get()->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $occupations = $this->db->table('occupation')->where(["name"=>$value->occupation,])->get()->getFirstRow();
+            if(!empty($occupations)) $idd = $occupations->id;
+            else
+            {
+                $this->db->table('occupation')->insert(["name"=>$value->occupation,"status"=>1,]);
+                $idd = $this->db->insertID();
+            }
+            $languageData = [
+                "occupation"=>$idd,
+            ];
+             $this->db->table("requirement_form")->where(["occupation"=>$value->occupation,])->update($languageData);
+        }
+        
+        $languageData = [];
+        $oldlanguage = $this->db->table("requirement_form")
+        ->groupBy('country')
+        ->offset(0)
+        ->get()->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $countrys = $this->db->table('countries')->where(["name"=>$value->country,])->get()->getFirstRow();
+            if(!empty($countrys)) $idd = $countrys->id;                
+            $languageData = [
+                "country"=>$idd,
+            ];
+             $this->db->table("requirement_form")->where(["country"=>$value->country,])->update($languageData);
+        }
+
+
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("requirement_form")
+        ->groupBy('state')
+        ->offset(0)
+        ->get()->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $states = $this->db->table('states')->where(["name"=>$value->state,])->get()->getFirstRow();
+            if(!empty($states)) $idd = $states->id;                
+            $languageData = [
+                "state"=>$idd,
+            ];
+             $this->db->table("requirement_form")->where(["state"=>$value->state,])->update($languageData);
+        }
+
+
+
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("requirement_form")
+        ->groupBy('religion')
+        ->offset(0)
+        ->get()->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $religions = $this->db->table('religion')->where(["name"=>$value->religion,])->get()->getFirstRow();
+            if(!empty($religions)) $idd = $religions->id;                
+            $languageData = [
+                "religion"=>$idd,
+            ];
+             $this->db->table("requirement_form")->where(["religion"=>$value->religion,])->update($languageData);
+        }
+
+
+        $languageData = [];
+        $oldlanguage = $this->db->table("requirement_form")
+        ->groupBy('caste')
+        ->offset(0)
+        ->get()->getResultObject();
+        foreach ($oldlanguage as $key => $value) {
+
+            $idd = 0;
+            $castes = $this->db->table('caste')->where(["name"=>$value->caste,])->get()->getFirstRow();
+            if(!empty($castes)) $idd = $castes->id;                
+            $languageData = [
+                "caste"=>$idd,
+            ];
+             $this->db->table("requirement_form")->where(["caste"=>$value->caste,])->update($languageData);
+        }
+
+
+        $this->db->table("requirement_form")->where(["manglik"=>'Not Selected',])->update(["manglik"=>'',]);
+        $this->db->table("requirement_form")->where(["education"=>'Not Selected',])->update(["education"=>'',]);
+        $this->db->table("requirement_form")->where(["occupation"=>'Not Selected',])->update(["occupation"=>'',]);
+        $this->db->table("requirement_form")->where(["city"=>'Not Selected',])->update(["city"=>'',]);
+        $this->db->table("requirement_form")->where(["maritalstatus"=>'Not Selected',])->update(["maritalstatus"=>'',]);
+        $this->db->table("requirement_form")->where(["children"=>'Not Selected',])->update(["children"=>'',]);
+        $this->db->table("requirement_form")->where(["challenged"=>'Not Selected',])->update(["challenged"=>'',]);
+
+
+        $this->db->table("users")->where(["manglik"=>'Not Selected',])->update(["manglik"=>'',]);
+        $this->db->table("users")->where(["challenged"=>'Not Selected',])->update(["challenged"=>'',]);
+        $this->db->table("users")->where(["profilefor"=>'Not Selected',])->update(["profilefor"=>'',]);
+        $this->db->table("users")->where(["maritalstatus"=>'Not Selected',])->update(["maritalstatus"=>'',]);
+        $this->db->table("users")->where(["havechildren"=>'Not Selected',])->update(["havechildren"=>'',]);
+        $this->db->table("users")->where(["height"=>'Not Selected',])->update(["height"=>'',]);
+        $this->db->table("users")->where(["annualincome"=>'Not Selected',])->update(["annualincome"=>'',]);
+        $this->db->table("users")->where(["family_type"=>'Not Selected',])->update(["family_type"=>'',]);
+        $this->db->table("users")->where(["father_annualincome"=>'Not Selected',])->update(["father_annualincome"=>'',]);
+        $this->db->table("users")->where(["father_annualincome"=>'Not Selected',])->update(["father_annualincome"=>'',]);
+        $this->db->table("users")->where(["brother_married"=>'Not Selected',])->update(["brother_married"=>'',]);
+        $this->db->table("users")->where(["brother_unmarried"=>'Not Selected',])->update(["brother_unmarried"=>'',]);
+        $this->db->table("users")->where(["sister_married"=>'Not Selected',])->update(["sister_married"=>'',]);
+        $this->db->table("users")->where(["sister_unmarried"=>'Not Selected',])->update(["sister_unmarried"=>'',]);
+        $this->db->table("users")->where(["diet"=>'Not Selected',])->update(["diet"=>'',]);
+        $this->db->table("users")->where(["annualincomeindoller"=>'Not Selected',])->update(["annualincomeindoller"=>'',]);
+        $this->db->table("users")->where(["complexion"=>'Not Selected',])->update(["complexion"=>'',]);
+        $this->db->table("users")->where(["body_type"=>'Not Selected',])->update(["body_type"=>'',]);
+
+
+
+
+
+
+
 
     }
     

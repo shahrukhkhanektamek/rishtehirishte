@@ -308,7 +308,7 @@ class Home extends BaseController
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.name", 'desc')->limit(50, 0)->get()->getResult();
         $return_data = [];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
@@ -324,11 +324,13 @@ class Home extends BaseController
         $search = $this->request->getVar('search');
         $id = $this->request->getVar('id');
         $table_name = 'states';
-        $builder = $this->db->table($table_name)->where("{$table_name}.status", 1)->where("{$table_name}.country_id",$id);
+        $builder = $this->db->table($table_name)
+        // ->where("{$table_name}.country_id",$id)
+        ->where("{$table_name}.status", 1);
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.name", 'asc')->limit(50, 0)->get()->getResult();
         $return_data = [];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
@@ -347,7 +349,7 @@ class Home extends BaseController
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.name", 'desc')->limit(50, 0)->get()->getResult();
         $return_data = [];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
@@ -381,6 +383,65 @@ class Home extends BaseController
     {        
         $search = $this->request->getVar('search');
         $table_name = 'education';
+        $builder = $this->db->table($table_name)
+        ->join("education_category as education_category","education_category.id=$table_name.category","left")
+        ->select([
+            "$table_name.*",
+            "education_category.name as category_name"
+        ])
+        ->where("{$table_name}.status", 1);
+
+        if (!empty($search)) {
+            $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
+        }
+
+        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+
+        $groups = [];
+
+        foreach ($data_list as $item) {
+            // Yaha assume kar rahe hai ki aapke table me 'category' column hai
+            $group_name = $item->category_name ?? 'Others';
+
+            if (!isset($groups[$group_name])) {
+                $groups[$group_name] = [
+                    'text' => $group_name,
+                    'children' => []
+                ];
+            }
+
+            $groups[$group_name]['children'][] = [
+                'id' => $item->id,
+                'text' => $item->name
+            ];
+        }
+
+        $data['results'] = array_values($groups); // array_values zaruri hai for JSON
+        return $this->response->setStatusCode(200)->setJSON($data);     
+    }
+    public function search_religion($value='')
+    {        
+        $search = $this->request->getVar('search');
+        $table_name = 'religion';
+        $builder = $this->db->table($table_name)->where("{$table_name}.status", 1);
+        if (!empty($search)) {
+            $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
+        }
+        $data_list = $builder->orderBy("{$table_name}.name", 'desc')->limit(50, 0)->get()->getResult();
+        $return_data = [];
+        foreach ($data_list as $key => $value) {
+            $return_data[] = [
+                "id" => $value->id,
+                "text" => $value->name,
+            ];
+        }
+        $data['results'] = $return_data;
+        return $this->response->setStatusCode(200)->setJSON($data);       
+    }
+    public function search_caste($value='')
+    {        
+        $search = $this->request->getVar('search');
+        $table_name = 'caste';
         $builder = $this->db->table($table_name)->where("{$table_name}.status", 1);
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
@@ -396,10 +457,29 @@ class Home extends BaseController
         $data['results'] = $return_data;
         return $this->response->setStatusCode(200)->setJSON($data);       
     }
-    public function search_religion($value='')
+    public function search_occupation($value='')
     {        
         $search = $this->request->getVar('search');
-        $table_name = 'religion';
+        $table_name = 'occupation';
+        $builder = $this->db->table($table_name)->where("{$table_name}.status", 1);
+        if (!empty($search)) {
+            $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
+        }
+        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $return_data = [];
+        foreach ($data_list as $key => $value) {
+            $return_data[] = [
+                "id" => $value->id,
+                "text" => $value->name,
+            ];
+        }
+        $data['results'] = $return_data;
+        return $this->response->setStatusCode(200)->setJSON($data);       
+    }
+    public function search_languages($value='')
+    {        
+        $search = $this->request->getVar('search');
+        $table_name = 'languages';
         $builder = $this->db->table($table_name)->where("{$table_name}.status", 1);
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();

@@ -19,13 +19,33 @@
         <?php foreach($data_list as $key=> $value) { ?>
             <tr>
                 <td><?=date("d M, Y h:i A", strtotime($value->add_date_time)) ?></td>
-                <td><?=$value->name?></td>
-                <td><?=$value->name?></td>
-                <td><?=$value->name?></td>
-                <td><?=$value->name?></td>
-                <td><?=$value->name?></td>
-                <td><?=$value->phone?></td>
-                <td><?=$value->email?></td>
+                <td>
+                    <b>Reg Id:</b> <?=env('APP_SORT') ?>-<?=$value->user_id ?><br>
+                    <b>Name:</b> <?=$value->name ?>
+                </td>
+                <td>
+                    <b>Email:</b> <?=$value->email?><br>
+                    <b>Mobile:</b> <?=$value->phone?>
+                </td>
+                <td>
+                    <b>Age:</b> 33<br>
+                    <b>Sex:</b> <?=$value->gender==1?'Male':'Female'?>
+                </td>
+                <td>
+                    Edu:B.Arch
+                    Occup:Architect
+                    Anu-Inco:Rs. Not Selected
+                </td>
+                <td>
+                    Cast:Brahmin
+                    Religion:Hindu
+                    M-Tongue:Haryanavi
+                </td>
+                <td>
+                    State:Birmingham
+                    City:
+                </td>
+                <td>Not Fill</td>
                 <td><?=status_get($value->status)?></td>
                 <td>
                     <a href="<?=$data['route'].'/edit/'.encript($value->id)?>" class="btn btn-sm btn-outline-primary btn-icon waves-effect" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="ri-ball-pen-line"></i></a>

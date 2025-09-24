@@ -342,7 +342,7 @@ $(document).ready(function () {
       }
     });
 
-    $('#country').select2({
+    $('.country').select2({
       ajax: {
         url: "<?=base_url(route_to('search-country'))?>",
         method:"post",
@@ -360,7 +360,7 @@ $(document).ready(function () {
         }
       }
     });
-    $('#select-state').select2({
+    $('.state').select2({
       ajax: {
         url: "<?=base_url(route_to('search-state'))?>",
         method:"post",
@@ -399,9 +399,9 @@ $(document).ready(function () {
       }
     });
 
-    $('#education-category').select2({
+    $('.religion').select2({
       ajax: {
-        url: "<?=base_url(route_to('education-category'))?>",
+        url: "<?=base_url(route_to('religion'))?>",
         method:"post",
         "headers": {
         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -417,9 +417,81 @@ $(document).ready(function () {
         }
       }
     });
-    $('#religion').select2({
+    $('.caste').select2({
       ajax: {
-        url: "<?=base_url(route_to('religion'))?>",
+        url: "<?=base_url(route_to('caste'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.languages').select2({
+      ajax: {
+        url: "<?=base_url(route_to('languages'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.occupation').select2({
+      ajax: {
+        url: "<?=base_url(route_to('occupation'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.education').select2({
+      ajax: {
+        url: "<?=base_url(route_to('search-education'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.education-category').select2({
+      ajax: {
+        url: "<?=base_url(route_to('education-category'))?>",
         method:"post",
         "headers": {
         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')

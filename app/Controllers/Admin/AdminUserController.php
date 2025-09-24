@@ -51,6 +51,12 @@ class AdminUserController extends BaseController
         $data_list = $this->db->table($this->arr_values['table_name'])->where([$this->arr_values['table_name'].'.status' => $status,])        
         ->where($this->arr_values['table_name'].'.role =', $type);
 
+        if (!empty($filter_search_value)) {
+            $data_list->like($this->arr_values['table_name'].'.name', $filter_search_value);
+            // $data_list->like($this->arr_values['table_name'].'.email', $filter_search_value);
+            // $data_list->like($this->arr_values['table_name'].'.phone', $filter_search_value);
+        }
+
 
         $total = $data_list->countAllResults(false);
         $data_list = $data_list->orderBy($this->arr_values['table_name'].'.id',$order_by)
@@ -247,15 +253,46 @@ class AdminUserController extends BaseController
 
         $data = [
             "name"=>$this->request->getPost('name'),
-            "phone"=>$this->request->getPost('phone'),
             "email"=>$this->request->getPost('email'),
+            "phone"=>$this->request->getPost('phone'),
+            "alt_phone"=>$this->request->getPost('alt_phone'),
             "gender"=>$this->request->getPost('gender'),
-            "dob"=>$this->request->getPost('dob'),
-            "address"=>$this->request->getPost('address'),
+            "gender"=>$this->request->getPost('gender'),
+            "dob"=>$this->request->getPost('year').'-'.$this->request->getPost('month').'-'.$this->request->getPost('day'),
+            "place_of_birth"=>$this->request->getPost('place_of_birth'),
+            "time_of_birth"=>$this->request->getPost('time_of_birth'),
+            "profilefor"=>$this->request->getPost('profilefor'),
             "country"=>$this->request->getPost('country'),
             "state"=>$this->request->getPost('state'),
             "city"=>$this->request->getPost('city'),
             "pincode"=>$this->request->getPost('pincode'),
+            "address"=>$this->request->getPost('address'),
+            
+            "mothertongue"=>$this->request->getPost('mothertongue'),
+            "challenged"=>$this->request->getPost('challenged'),
+            "maritalstatus"=>$this->request->getPost('maritalstatus'),
+            "havechildren"=>$this->request->getPost('havechildren'),
+            "religion"=>$this->request->getPost('religion'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+            "address"=>$this->request->getPost('address'),
+
+
+
+
+
+
             "status"=>$this->request->getPost('status'),
             "is_delete"=>0,
         ];
