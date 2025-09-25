@@ -44,18 +44,43 @@ class AdminUserController extends BaseController
         $offset = ($page - 1) * $limit;
 
 
+
+        $register_by = $this->request->getVar('register_by');
+        $search_by = $this->request->getVar('search_by');
+
+
+
+
         $data['table_name'] = $this->arr_values['table_name'];
         $data['upload_path'] = $this->arr_values['upload_path'];
         $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));   
 
-        $data_list = $this->db->table($this->arr_values['table_name'])->where([$this->arr_values['table_name'].'.status' => $status,])        
+        $data_list = $this->db->table($this->arr_values['table_name'])->where([$this->arr_values['table_name'].'.status' => $status,])
+        ->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
+        ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
+        ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
+        ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
+        ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
+        ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
+        ->select([
+            "{$this->arr_values['table_name']}.*",
+            "education.name as education_name",
+            "occupation.name as occupation_name",
+            "religion.name as religion_name",
+            "caste.name as caste_name",
+            "languages.name as mothertongue_name",
+            "states.name as state_name",
+        ])
         ->where($this->arr_values['table_name'].'.role =', $type);
 
         if (!empty($filter_search_value)) {
-            $data_list->like($this->arr_values['table_name'].'.name', $filter_search_value);
-            // $data_list->like($this->arr_values['table_name'].'.email', $filter_search_value);
-            // $data_list->like($this->arr_values['table_name'].'.phone', $filter_search_value);
+            if($search_by==1) $data_list->like($this->arr_values['table_name'].'.name', $filter_search_value);
+            if($search_by==2) $data_list->like($this->arr_values['table_name'].'.email', $filter_search_value);
+            if($search_by==3) $data_list->like($this->arr_values['table_name'].'.phone', $filter_search_value);
+            if($search_by==4) $data_list->like($this->arr_values['table_name'].'.user_id', $filter_search_value);            
         }
+
+        if(!empty($register_by)) $data_list->where("register_by",$register_by);
 
 
         $total = $data_list->countAllResults(false);
@@ -104,8 +129,10 @@ class AdminUserController extends BaseController
         $row = $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->get()->getFirstRow();
         if(!empty($row))
         {
+            $rowR = $this->db->table("requirement_form")->where(["user_id"=>$row->id,])->get()->getFirstRow();
+
             $db=$this->db;
-            return view($this->arr_values['folder_name'].'/form',compact('data','row','db'));
+            return view($this->arr_values['folder_name'].'/form',compact('data','row','rowR','db'));
         }
         else
         {
@@ -273,25 +300,30 @@ class AdminUserController extends BaseController
             "maritalstatus"=>$this->request->getPost('maritalstatus'),
             "havechildren"=>$this->request->getPost('havechildren'),
             "religion"=>$this->request->getPost('religion'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-            "address"=>$this->request->getPost('address'),
-
-
-
-
-
+            "caste"=>$this->request->getPost('caste'),
+            "manglik"=>$this->request->getPost('manglik'),
+            "height"=>$this->request->getPost('height'),
+            "complexion"=>$this->request->getPost('complexion'),
+            "body_type"=>$this->request->getPost('body_type'),
+            "highestdegree"=>$this->request->getPost('highestdegree'),
+            "collegename"=>$this->request->getPost('collegename'),
+            "occupation"=>$this->request->getPost('occupation'),
+            "annualincome"=>$this->request->getPost('annualincome'),
+            "annualincomeindoller"=>$this->request->getPost('annualincomeindoller'),
+            "diet"=>$this->request->getPost('diet'),
+            "expressyou"=>$this->request->getPost('expressyou'),
+            "family_type"=>$this->request->getPost('family_type'),
+            "family_living"=>$this->request->getPost('family_living'),
+            "father_name"=>$this->request->getPost('father_name'),
+            "father_occupation"=>$this->request->getPost('father_occupation'),
+            "father_annualincome"=>$this->request->getPost('father_annualincome'),
+            "mother_name"=>$this->request->getPost('mother_name'),
+            "mother_annualincome"=>$this->request->getPost('mother_annualincome'),
+            "brother_married"=>$this->request->getPost('brother_married'),
+            "brother_unmarried"=>$this->request->getPost('brother_unmarried'),
+            "sister_married"=>$this->request->getPost('sister_married'),
+            "sister_unmarried"=>$this->request->getPost('sister_unmarried'),
+            "aboutfamily"=>$this->request->getPost('aboutfamily'),
 
             "status"=>$this->request->getPost('status'),
             "is_delete"=>0,
@@ -303,7 +335,7 @@ class AdminUserController extends BaseController
         if(!empty($checkEmail))
         {
             $action = 'add';
-            if(empty($insertId)) $action = 'edit';
+            if(empty($id)) $action = 'edit';
             $responseCode = 400;
             $result['status'] = $responseCode;
             $result['message'] = 'Email id exist!';
@@ -319,6 +351,7 @@ class AdminUserController extends BaseController
         $entryStatus = false;
         if(empty($id))
         {
+            $data['register_by'] = 'admin';
             $data['add_by'] = $add_by;
             $data['add_date_time'] = date("Y-m-d H:i:s");
             $data['update_date_time'] = date("Y-m-d H:i:s");
@@ -336,6 +369,74 @@ class AdminUserController extends BaseController
 
         if($entryStatus)
         {
+
+
+            $requirmentData = [
+                "agestart"=>$this->request->getPost("agestartR"),
+                "ageend"=>$this->request->getPost("ageendR"),
+                "heightstart"=>$this->request->getPost("heightstartR"),
+                "heightend"=>$this->request->getPost("heightendR"),
+                "children"=>$this->request->getPost("childrenR"),
+                "income"=>$this->request->getPost("incomeR"),
+                "incomeend"=>$this->request->getPost("incomeendR"),
+                "incomedollar"=>$this->request->getPost("incomedollarR"),
+                "incomeenddollar"=>$this->request->getPost("incomeenddollarR"),
+
+                "religion"=>json_encode($this->request->getPost("religionR")),
+                "caste"=>json_encode($this->request->getPost("casteR")),
+                "maritalstatus"=>json_encode($this->request->getPost("maritalstatusR")),
+                "manglik"=>json_encode($this->request->getPost("manglikR")),
+                "education"=>json_encode($this->request->getPost("educationR")),
+                "occupation"=>json_encode($this->request->getPost("occupationR")),
+                "country"=>json_encode($this->request->getPost("countryR")),
+                "state"=>json_encode($this->request->getPost("stateR")),
+                "challenged"=>json_encode($this->request->getPost("challengedR")),
+                "otherrequirements"=>$this->request->getPost("otherrequirementsR"),
+            ];
+            $check = $this->db->table("requirement_form")->where(["user_id"=>$id,])->get()->getFirstRow();
+            if(empty($check))
+            {
+                $this->db->table('requirement_form')->insert($requirmentData);
+            }
+            else
+            {
+                $this->db->table('requirement_form')->where(["user_id"=>$id,])->update($requirmentData);
+            }
+
+
+
+
+
+
+
+            $ImageModel = new ImageModel();
+
+            $all_image_column_names = ['images'];
+            $return_image_array = $ImageModel->upload_multiple_image($all_image_column_names,$this->arr_values['table_name'],$id,$this->request);
+            if(!empty($return_image_array))
+            {
+                foreach ($return_image_array as $key => $value)
+                {
+                    if(!empty($value)) $update_data[$key] = $value;
+                }
+            }
+            else
+            {
+                foreach ($all_image_column_names as $key => $value)
+                {
+                    $update_data[$value] = json_encode([]);
+                }
+            }
+
+            if(!empty($update_data))
+            {
+                $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->update($update_data);
+            } 
+
+
+
+
+
             $action = 'add';
             if(empty($insertId)) $action = 'edit';
             $responseCode = 200;

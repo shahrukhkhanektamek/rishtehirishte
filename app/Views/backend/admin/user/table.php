@@ -32,18 +32,18 @@
                     <b>Sex:</b> <?=$value->gender==1?'Male':'Female'?>
                 </td>
                 <td>
-                    Edu:B.Arch
-                    Occup:Architect
-                    Anu-Inco:Rs. Not Selected
+                    <b>Edu:</b> <?=$value->education_name?><br>
+                    <b>Occup:</b> <?=$value->occupation_name?><br>
+                    <b>Anu-Inco:</b> <?=$value->annualincome?>
                 </td>
                 <td>
-                    Cast:Brahmin
-                    Religion:Hindu
-                    M-Tongue:Haryanavi
+                    <b>Cast:</b> <?=$value->caste_name?><br>
+                    <b>Religion</b>:<?=$value->religion_name ?><br>
+                    <b>M-Tongue:</b> <?=$value->mothertongue_name?>
                 </td>
                 <td>
-                    State:Birmingham
-                    City:
+                    <b>State:</b> <?=$value->state_name?><br>
+                    <b>City:</b> <?=$value->city?>
                 </td>
                 <td>Not Fill</td>
                 <td><?=status_get($value->status)?></td>

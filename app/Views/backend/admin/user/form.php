@@ -68,9 +68,9 @@
                                     <label class="form-label">Gender <span class="text-danger">*</span></label>
                                     <select class="select"  name="gender" required>
                                         <option value="">Select Gender</option>
-                                        <option value="1" <?php if($row->gender==1)echo'selected'; ?> >Male</option>
-                                        <option value="2" <?php if($row->gender==2)echo'selected'; ?> >Female</option>
-                                        <option value="3" <?php if($row->gender==3)echo'selected'; ?> >Transgender</option>
+                                        <option value="1" <?php if(@$row->gender==1)echo'selected'; ?> >Male</option>
+                                        <option value="2" <?php if(@$row->gender==2)echo'selected'; ?> >Female</option>
+                                        <option value="3" <?php if(@$row->gender==3)echo'selected'; ?> >Transgender</option>
                                     </select>
                                 </div>
 
@@ -80,11 +80,11 @@
                                     $day = '';
                                     $month = '';
                                     $year= '';
-                                    if(!empty($row->dob))
+                                    if(!empty(@$row->dob))
                                     {
-                                        $month = date("m", strtotime($row->dob));
-                                        $day = date("d", strtotime($row->dob));
-                                        $year = date("Y", strtotime($row->dob));
+                                        $month = date("m", strtotime(@$row->dob));
+                                        $day = date("d", strtotime(@$row->dob));
+                                        $year = date("Y", strtotime(@$row->dob));
                                     }
                                     ?>
                                     <div class="btn-group w-100">
@@ -273,7 +273,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Are you manglik ? <span class="text-danger">*</span></label>
-                                    <select class="select"  name="manglik" required>
+                                    <select class="select"  name="manglik" >
                                         <option value="">Select</option>
                                         <?php foreach (manglik() as $key => $value) {?>
                                             <option value="<?=$value ?>" <?php if(@$row->manglik==$value)echo'selected'; ?>><?=$value ?></option>
@@ -317,7 +317,7 @@
                                                  "columna_name"=>"images",
                                                  "multiple"=>true,
                                                  "accept"=>'image/*',
-                                                 "col"=>"col-md-12",
+                                                 "col"=>"col-md-3",
                                                  "alt_text"=>"none",
                                                  "row"=>$row,
                                              );
@@ -576,82 +576,82 @@
 
                                 <div class="col-md-4">
                                     <label class="form-label">From Age <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" required>
+                                    <select class="select" name="agestartR" required >
                                         <option value="">Select</option>
                                         <?php foreach (ages() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                            <option value="<?=$value ?>" <?php if(@$rowR->agestart==$value)echo'selected'; ?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">To Age <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" required>
+                                    <select class="select" name="ageendR" >
                                         <option value="">Select</option>
                                         <?php foreach (ages() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                            <option value="<?=$value ?>" <?php if(@$rowR->ageend==$value)echo'selected'; ?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">From Height <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" required>
+                                    <select class="select" name="heightstartR" >
                                         <option value="">Select</option>
                                         <?php foreach (heights() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                            <option value="<?=$key ?>" <?php if(@$rowR->heightstart==$key)echo'selected'; ?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">To Height <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" required>
+                                    <select class="select" name="heightendR" >
                                         <option value="">Select</option>
                                         <?php foreach (heights() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                            <option value="<?=$key ?>" <?php if(@$rowR->heightend==$key)echo'selected'; ?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Have Children ? <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" required>
+                                    <select class="select" name="childrenR" >
                                         <option value="">Select</option>
                                         <?php foreach (have_children() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                            <option value="<?=$value ?>" <?php if(@$rowR->children==$value)echo'selected'; ?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Income From <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" required>
+                                    <select class="select" name="incomeR" >
                                         <option value="">Select</option>
                                         <?php foreach (incomes_inr() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                            <option value="<?=$value ?>" <?php if(@$rowR->income==$value)echo'selected'; ?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Income To <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" required>
+                                    <select class="select" name="incomeendR" >
                                         <option value="">Select</option>
                                         <?php foreach (incomes_inr() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                            <option value="<?=$value ?>" <?php if(@$rowR->incomeend==$value)echo'selected'; ?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Annual Incom ( In $) <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" required>
+                                    <select class="select" name="incomedollarR" >
                                         <option value="">Select</option>
                                         <?php foreach (incomes_doller() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                            <option value="<?=$value ?>" <?php if(@$rowR->incomedollar==$value)echo'selected'; ?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Annual Upto ( In $) <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" required>
+                                    <select class="select" name="incomeenddollarR" >
                                         <option value="">Select</option>
                                         <?php foreach (incomes_doller() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                            <option value="<?=$value ?>" <?php if(@$rowR->incomeenddollar==$value)echo'selected'; ?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -659,119 +659,160 @@
 
                                 <div class="col-md-4">
                                     <label class="form-label">Religion <span class="text-danger">*</span></label>
-                                    <select class="religion"  name="for" multiple >
+                                    <select class="religion" name="religionR[]" multiple >
                                         <option value="">Select</option>
                                         <?php
                                         if(!empty($row))
                                         {
-                                            $religions = $db->table("religion")->where(["id"=>$row->religion,])->get()->getFirstRow();
+                                            if(!empty(json_decode(@$rowR->religion)))
+                                            $religions = $db->table("religion")->whereIn("id", json_decode(@$rowR->religion))->get()->getResult();
                                             if(!empty($religions))
                                             {
+                                                foreach ($religions as $key => $value) {
                                         ?>
-                                        <option value="<?=$religions->id ?>" selected><?=$religions->name ?></option>
-                                        <?php }} ?>
+                                                <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
+                                        <?php }}} ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Caste <span class="text-danger">*</span></label>
-                                    <select class="caste"  name="for" multiple >
+                                    <select class="caste"  name="casteR[]" multiple >
                                         <option value="">Select</option>
                                         <?php
                                         if(!empty($row))
                                         {
-                                            $castes = $db->table("caste")->where(["id"=>$row->caste,])->get()->getFirstRow();
+                                            if(!empty(json_decode(@$rowR->caste)))
+                                            $castes = $db->table("caste")->whereIn("id", json_decode(@$rowR->caste))->get()->getResult();
                                             if(!empty($castes))
                                             {
+                                                foreach ($castes as $key => $value) {
                                         ?>
-                                        <option value="<?=$castes->id ?>" selected><?=$castes->name ?></option>
-                                        <?php }} ?>
+                                                <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
+                                        <?php }}} ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Marital Status <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" multiple >
+                                    <select class="select"  name="maritalstatusR[]" multiple >
                                         <option value="">Select</option>
-                                        <?php foreach (marital_status() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                        <?php foreach (marital_status() as $key => $value) {
+                                            $selected = '';
+                                            $selectedCheck = json_decode(@$rowR->maritalstatus);
+                                            if(!empty($selectedCheck))
+                                            {
+                                                if(in_array($value, $selectedCheck))
+                                                    $selected = 'selected';
+                                            }
+                                            ?>
+                                            <option value="<?=$value ?>" <?=$selected?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Manglik  <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" multiple >
+                                    <select class="select"  name="manglikR[]" multiple >
                                         <option value="">Select</option>
-                                        <?php foreach (manglik() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                        <?php foreach (manglik() as $key => $value) {
+                                            $selected = '';
+                                            $selectedCheck = json_decode(@$rowR->manglik);
+                                            if(!empty($selectedCheck))
+                                            {
+                                                if(in_array($value, $selectedCheck))
+                                                    $selected = 'selected';
+                                            }
+                                            ?>
+                                            <option value="<?=$value ?>" <?=$selected?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Education <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" multiple >
-                                        <option value="">Select</option>
-                                        <?php foreach (create_for() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Occupation <span class="text-danger">*</span></label>
-                                    <select class="occupation"  name="for" multiple >
+                                    <select class="education" name="educationR[]" multiple >
                                         <option value="">Select</option>
                                         <?php
                                         if(!empty($row))
                                         {
-                                            $occupations = $db->table("occupation")->where(["id"=>$row->occupation,])->get()->getFirstRow();
+                                            if(!empty(json_decode(@$rowR->education)))
+                                            $educations = $db->table("education")->whereIn("id", json_decode(@$rowR->education))->get()->getResult();
+                                            if(!empty($educations))
+                                            {
+                                                foreach ($educations as $key => $value) {
+                                        ?>
+                                                <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
+                                        <?php }}} ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Occupation <span class="text-danger">*</span></label>
+                                    <select class="occupation"  name="occupationR[]" multiple >
+                                        <option value="">Select</option>
+                                        <?php
+                                        if(!empty($row))
+                                        {
+                                            if(!empty(json_decode(@$rowR->occupation)))
+                                            $occupations = $db->table("occupation")->whereIn("id", json_decode(@$rowR->occupation))->get()->getResult();
                                             if(!empty($occupations))
                                             {
+                                                foreach ($occupations as $key => $value) {
                                         ?>
-                                        <option value="<?=$occupations->id ?>" selected><?=$occupations->name ?></option>
-                                        <?php }} ?>
+                                                <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
+                                        <?php }}} ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Country <span class="text-danger">*</span></label>
-                                    <select class="country"  name="for" multiple >
+                                    <select class="country"  name="countryR[]" multiple >
                                         <option value="">Select</option>
-                                        <?php  
+                                        <?php
                                         if(!empty($row))
                                         {
-                                            $country = $db->table("countries")->where(["id"=>$row->country,])->get()->getFirstRow();
-                                            if(!empty($country))
+                                            if(!empty(json_decode(@$rowR->country)))
+                                            $countries = $db->table("countries")->whereIn("id", json_decode(@$rowR->country))->get()->getResult();
+                                            if(!empty($countries))
                                             {
+                                                foreach ($countries as $key => $value) {
                                         ?>
-                                        <option value="<?=$country->id ?>" selected><?=$country->name ?></option>
-                                        <?php }} ?>
+                                                <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
+                                        <?php }}} ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">State <span class="text-danger">*</span></label>
-                                    <select class="state"  name="for" multiple >
+                                    <select class="state"  name="stateR[]" multiple >
                                         <option value="">Select</option>
-                                        <?php  
+                                        <?php
                                         if(!empty($row))
                                         {
-                                            $state = $db->table("states")->where(["id"=>$row->state,])->get()->getFirstRow();
-                                            if(!empty($state))
+                                            if(!empty(json_decode(@$rowR->state)))
+                                            $states = $db->table("states")->whereIn("id", json_decode(@$rowR->state))->get()->getResult();
+                                            if(!empty($states))
                                             {
+                                                foreach ($states as $key => $value) {
                                         ?>
-                                        <option value="<?=$state->id ?>" selected><?=$state->name ?></option>
-                                        <?php }} ?>
+                                                <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
+                                        <?php }}} ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Challenged <span class="text-danger">*</span></label>
-                                    <select class="select"  name="for" multiple >
+                                    <select class="select"  name="challengedR[]" multiple >
                                         <option value="">Select</option>
-                                        <?php foreach (challenged() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$row->for==$value)echo'selected'; ?>><?=$value ?></option>
+                                        <?php foreach (challenged() as $key => $value) {$selected = '';
+                                            $selectedCheck = json_decode(@$rowR->challenged);
+                                            if(!empty($selectedCheck))
+                                            {
+                                                if(in_array($value, $selectedCheck))
+                                                    $selected = 'selected';
+                                            }
+                                            ?>
+                                            <option value="<?=$value ?>" <?=$selected?>><?=$value ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label class="form-label">Other Requirements <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" name="about_family" rows="4" required><?=@$row->about_family?></textarea>
+                                    <textarea class="form-control" name="otherrequirementsR" rows="4" ><?=@$rowR->otherrequirements?></textarea>
                                 </div>
 
 
