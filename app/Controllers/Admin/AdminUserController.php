@@ -5,6 +5,9 @@ use CodeIgniter\Database\Database;
 use CodeIgniter\Config\Services;
 use App\Models\ImageModel;
 
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
 class AdminUserController extends BaseController
 {
      protected $arr_values = array(
@@ -178,7 +181,7 @@ class AdminUserController extends BaseController
         }
         else
         {
-            return view('admin/404',compact('data'));            
+            return view('backend/404',compact('data'));            
         }
     }
     public function view($id=null)
@@ -191,33 +194,36 @@ class AdminUserController extends BaseController
         $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));           
         $data['pagenation'] = array($this->arr_values['title']);
 
-        $row = $this->db->table($this->arr_values['table_name'])
-        ->join('countries', 'countries.id = ' . $this->arr_values['table_name'] . '.country', 'left')
-        ->join('states', 'states.id = ' . $this->arr_values['table_name'] . '.state', 'left')
+        $data_list = $this->db->table($this->arr_values['table_name'])
+        ->where([$this->arr_values['table_name'] .".id"=>$id,])
+        ->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
+        ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
+        ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
+        ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
+        ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
+        ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
+        ->select([
+            "{$this->arr_values['table_name']}.*",
+            "education.name as education_name",
+            "occupation.name as occupation_name",
+            "religion.name as religion_name",
+            "caste.name as caste_name",
+            "languages.name as mothertongue_name",
+            "states.name as state_name",
+            "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age", // 👈 Age calculation
+        ])
+        ->where($this->arr_values['table_name'].'.role =', 2);        
+        $row = $data_list->get()->getFirstRow();
 
-        ->select("
-                {$this->arr_values['table_name']}.*, 
-                CASE
-                    WHEN {$this->arr_values['table_name']}.role = 2 THEN 'User'
-                    WHEN {$this->arr_values['table_name']}.role = 3 THEN 'Advocate'
-                    WHEN {$this->arr_values['table_name']}.role = 4 THEN 'CA'
-                    WHEN {$this->arr_values['table_name']}.role = 5 THEN 'Adviser'
-                    WHEN {$this->arr_values['table_name']}.role = 6 THEN 'Employee'
-                    ELSE 'other'
-                END AS role_name,
-                states.name as state_name,
-                countries.name as country_name,
-            ")
-
-        ->where([$this->arr_values['table_name'] .".id"=>$id,])->get()->getFirstRow();
         if(!empty($row))
         {
+            $rowR = $this->db->table("requirement_form")->where(["user_id"=>$row->id,])->get()->getFirstRow();
             $db=$this->db;
-            return view($this->arr_values['folder_name'].'/account-view',compact('data','row','db'));
+            return view($this->arr_values['folder_name'].'/view',compact('data','row','db','rowR'));
         }
         else
         {
-            return view('admin/404',compact('data'));            
+            return view('backend/404',compact('data'));            
         }
     }
     public function change_password($id=null)
@@ -237,9 +243,8 @@ class AdminUserController extends BaseController
         ->select("
                 {$this->arr_values['table_name']}.*, 
                 CASE
-                    WHEN {$this->arr_values['table_name']}.role = 3 THEN 'Advocate'
-                    WHEN {$this->arr_values['table_name']}.role = 4 THEN 'CA'
-                    WHEN {$this->arr_values['table_name']}.role = 5 THEN 'Adviser'
+                    WHEN {$this->arr_values['table_name']}.role = 2 THEN 'User'
+                    WHEN {$this->arr_values['table_name']}.role = 3 THEN 'CA'
                     ELSE 'other'
                 END AS role_name,
                 states.name as state_name,
@@ -254,7 +259,7 @@ class AdminUserController extends BaseController
         }
         else
         {
-            return view('admin/404',compact('data'));            
+            return view('backend/404',compact('data'));            
         }
     }
 
@@ -499,6 +504,76 @@ class AdminUserController extends BaseController
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }
     }
+
+
+    public function profilePdfSave($id = null)
+    {
+        $id = $this->request->getPost('id');
+        $id = decript($id);
+
+        // $db = \Config\Database::connect();
+        // $row = $db->table('profiles')->where('id', $id)->get()->getRow();
+        // if (!$row) return redirect()->back()->with('error','Profile not found');
+        // $data = ['row' => $row];
+        // $html = view('pdf/profile_template', $data);
+
+
+
+
+        $data_list = $this->db->table($this->arr_values['table_name'])
+        ->where([$this->arr_values['table_name'] .".id"=>$id,])
+        ->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
+        ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
+        ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
+        ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
+        ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
+        ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
+        ->select([
+            "{$this->arr_values['table_name']}.*",
+            "education.name as education_name",
+            "occupation.name as occupation_name",
+            "religion.name as religion_name",
+            "caste.name as caste_name",
+            "languages.name as mothertongue_name",
+            "states.name as state_name",
+            "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age", // 👈 Age calculation
+        ])
+        ->where($this->arr_values['table_name'].'.role =', 2);        
+        $row = $data_list->get()->getFirstRow();
+
+        $rowR = $this->db->table("requirement_form")->where(["user_id"=>$row->id,])->get()->getFirstRow();
+        $db=$this->db;
+        $html = view($this->arr_values['folder_name'].'/profile-pdf',compact('row','db','rowR'));
+        
+
+
+
+
+
+        $options = new Options();
+        $options->set('isRemoteEnabled', true);
+        $options->set('defaultFont', 'DejaVu Sans');
+        $options->set('dpi', 96); // Default screen DPI
+        $dompdf = new Dompdf($options);
+
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        // save to writable folder (writable path)
+        $output = $dompdf->output();
+        $filepath = FCPATH . 'upload/pdfs/';
+        if (!is_dir($filepath)) {
+            mkdir($filepath, 0777, true); // recursive create with permissions
+        }
+        echo $filepath .= 'profile_'.$id.'.pdf';
+        file_put_contents($filepath, $output);
+
+        // return redirect()->to(base_url('writable/uploads/pdfs/profile_'.$id.'.pdf'));
+    }
+
+
+
     public function block_unblock($id)
     {
         $id = decript($id);

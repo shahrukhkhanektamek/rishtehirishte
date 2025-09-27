@@ -1,13 +1,44 @@
+<?php 
+$login_user = get_user();
+$user_role = get_role_by_id($login_user->role);
+
+
+$setting = \App\Models\Setting::get();
+$logo_setting = $setting['logo'];
+
+?>
+
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
     data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
 <head>
     <meta charset="utf-8" />
     <title>{{$data['page_title']}} | {{website_name}}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Start Include Css -->
-    @include('admin.headers.maincss')
-    <!-- End Include Css -->
+
+    <meta name="_token" content="<?= csrf_hash() ?>">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="<?=base_url('upload/').'/'.$logo_setting->favicon_image?>">
+
+    <!-- One of the following themes -->
+     <link rel="stylesheet" href="<?=base_url('public/assetsadmin/libs/@simonwep/pickr/themes/classic.min.css') ?>" />
+    <link rel="stylesheet" href="<?=base_url('public/assetsadmin/libs/@simonwep/pickr/themes/monolith.min.css') ?>" />
+    <link rel="stylesheet" href="<?=base_url('public/assetsadmin/libs/@simonwep/pickr/themes/nano.min.css') ?>" />
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css" rel="stylesheet" />
+
+        <script src="<?=base_url('public/')?>/assetsadmin/js/layout.js"></script>
+        <!-- Bootstrap Css -->
+        <link href="<?=base_url('public/')?>/assetsadmin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="<?=base_url('public/')?>/assetsadmin/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="<?=base_url('public/')?>/assetsadmin/css/app.min.css" rel="stylesheet" type="text/css" />
+        <!--datatable css-->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
+        <!--datatable responsive css-->
+        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
 </head>
 <body>
 

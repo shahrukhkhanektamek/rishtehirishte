@@ -157,6 +157,8 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->get('change-password/(:any)', 'AdminUserController::change_password/$1', ['as' => 'admin-user.change-password']);
         $routes->post('change-password-action', 'AdminUserController::change_password_action', ['as' => 'admin-user.change-password-action']);
 
+        $routes->post('create-pdf', 'AdminUserController::profilePdfSave', ['as' => 'admin-user.create-pdf']);
+
         $routes->post('delete/(:any)', 'AdminUserController::delete/$1', ['as' => 'admin-user.delete']);
         $routes->post('block_unblock/(:any)', 'AdminUserController::block_unblock/$1', ['as' => 'admin-user.block_unblock']);
     });

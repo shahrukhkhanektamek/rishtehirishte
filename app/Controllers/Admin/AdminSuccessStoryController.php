@@ -103,7 +103,7 @@ class AdminSuccessStoryController extends BaseController
         }
         else
         {
-            return view('admin/404',compact('data'));            
+            return view('backend/404',compact('data'));            
         }
     }
 
