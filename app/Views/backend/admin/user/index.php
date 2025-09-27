@@ -108,7 +108,7 @@
                                           
             <div class="col-md-2">
                 <label class="form-label">Gender</label>
-                <select class="select"  id="gender" >
+                <select class="select" id="gender" >
                     <option value="">Select Gender</option>
                     <option value="1" >Male</option>
                     <option value="2">Female</option>
@@ -116,7 +116,7 @@
                 </select>
             </div>
 
-            <div class="col-md-1">
+            <div class="col-md-2">
                 <label class="form-label">From Age</label>
                 <select class="select" id="agestart"  >
                     <option value="">Select</option>
@@ -126,7 +126,7 @@
                 </select>
             </div>
 
-            <div class="col-md-1">
+            <div class="col-md-2">
                 <label class="form-label">To Age</label>
                 <select class="select" id="ageend" >
                     <option value="">Select</option>
@@ -138,7 +138,7 @@
 
             <div class="col-md-2">
                 <label class="form-label">From Height</label>
-                <select class="select"  id="height" >
+                <select class="select"  id="fromheight" >
                     <option value="">Select</option>
                     <?php foreach (heights() as $key => $value) {?>
                         <option value="<?=$key ?>"><?=$value ?></option>
@@ -148,7 +148,7 @@
 
             <div class="col-md-2">
                 <label class="form-label">To Height</label>
-                <select class="select"  id="height" >
+                <select class="select"  id="toheight" >
                     <option value="">Select</option>
                     <?php foreach (heights() as $key => $value) {?>
                         <option value="<?=$key ?>"><?=$value ?></option>
@@ -180,7 +180,7 @@
                 </select>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <label class="form-label">Country</label>
                 <select class="form-control country"  id="country">
                     <option value="">Select Country</option>
@@ -206,7 +206,7 @@
                 </select>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <label class="form-label">Highest Degree</label>
                 <select class="education"  id="highestdegree" >
                     <option value="">Select</option>
@@ -224,8 +224,7 @@
 
 
              
-             <div class="col-md-4">
-                <label class="form-label" style="color:transparent;">Search</label>
+             <div class="col-md-4 mt-2" style="margin: 0 auto;">
                 <button href="<?=$data['route']?>" class="btn btn-dark search w-100"><i class="ri-search-line align-bottom me-1"></i> Search</button>
              </div>
         </div>
@@ -279,7 +278,7 @@
        var register_by = $("#register_by").val();
        var limit = $("#limit").val();
        var filter_search_value = $(".search-input").val();
-       data = `register_by=${register_by}&search_by=${search_by}&type=${type}&status=${status}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
+       data = `register_by=${register_by}&search_by=${search_by}&type=${type}&gender=${$("#gender").val()}&agestart=${$("#agestart").val()}&ageend=${$("#ageend").val()}&fromheight=${$("#fromheight").val()}&toheight=${$("#toheight").val()}&religion=${$("#religion").val()}&caste=${$("#caste").val()}&maritalstatus=${$("#maritalstatus").val()}&country=${$("#country").val()}&state=${$("#state").val()}&manglik=${$("#manglik").val()}&highestdegree=${$("#highestdegree").val()}&occupation=${$("#occupation").val()}&status=${status}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
    }
     get_url_data();
    url = main_url+'?'+data;

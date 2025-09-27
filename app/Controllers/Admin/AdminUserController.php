@@ -47,6 +47,21 @@ class AdminUserController extends BaseController
 
         $register_by = $this->request->getVar('register_by');
         $search_by = $this->request->getVar('search_by');
+        
+        $gender = $this->request->getVar('gender');
+        $agestart = $this->request->getVar('agestart');
+        $ageend = $this->request->getVar('ageend');
+        $fromheight = $this->request->getVar('fromheight');
+        $toheight = $this->request->getVar('toheight');
+
+        $religion = $this->request->getVar('religion');
+        $caste = $this->request->getVar('caste');
+        $maritalstatus = $this->request->getVar('maritalstatus');
+        $country = $this->request->getVar('country');
+        $state = $this->request->getVar('state');
+        $manglik = $this->request->getVar('manglik');
+        $highestdegree = $this->request->getVar('highestdegree');
+        $occupation = $this->request->getVar('occupation');
 
 
 
@@ -70,6 +85,7 @@ class AdminUserController extends BaseController
             "caste.name as caste_name",
             "languages.name as mothertongue_name",
             "states.name as state_name",
+            "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age", // 👈 Age calculation
         ])
         ->where($this->arr_values['table_name'].'.role =', $type);
 
@@ -81,6 +97,32 @@ class AdminUserController extends BaseController
         }
 
         if(!empty($register_by)) $data_list->where("register_by",$register_by);
+
+
+        if(!empty($gender)) $data_list->where("{$this->arr_values['table_name']}.gender",$gender);
+        if(!empty($religion)) $data_list->where("{$this->arr_values['table_name']}.religion",$religion);
+        if(!empty($caste)) $data_list->where("{$this->arr_values['table_name']}.caste",$caste);
+        if(!empty($maritalstatus)) $data_list->where("{$this->arr_values['table_name']}.maritalstatus",$maritalstatus);
+        if(!empty($country)) $data_list->where("{$this->arr_values['table_name']}.country",$country);
+        if(!empty($state)) $data_list->where("{$this->arr_values['table_name']}.state",$state);
+        if(!empty($manglik)) $data_list->where("{$this->arr_values['table_name']}.manglik",$manglik);
+        if(!empty($highestdegree)) $data_list->where("{$this->arr_values['table_name']}.highestdegree",$highestdegree);
+        if(!empty($occupation)) $data_list->where("{$this->arr_values['table_name']}.occupation",$occupation);
+
+        $today = date("Y-m-d");
+        if(!empty($agestart) && !empty($ageend))
+        {
+            // Convert age to date of birth range
+            $from_date = date("Y-m-d", strtotime("-$ageend years", strtotime($today)));
+            $to_date   = date("Y-m-d", strtotime("-$agestart years", strtotime($today)));
+
+            $data_list->where("{$this->arr_values['table_name']}.dob >=", $from_date);
+            $data_list->where("{$this->arr_values['table_name']}.dob <=", $to_date);
+        }
+
+
+        if(!empty($fromheight)) $data_list->where("{$this->arr_values['table_name']}.height >=",$fromheight);
+        if(!empty($toheight)) $data_list->where("{$this->arr_values['table_name']}.height <=",$toheight);
 
 
         $total = $data_list->countAllResults(false);

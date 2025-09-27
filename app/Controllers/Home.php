@@ -248,7 +248,7 @@ class Home extends BaseController
             ->limit(50, 0)
             ->get()
             ->getResult();
-        $return_data[] = ["id"=>"","text"=>"All User",];
+        $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
                 "id" => $value->id,
@@ -309,7 +309,7 @@ class Home extends BaseController
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
         $data_list = $builder->orderBy("{$table_name}.name", 'desc')->limit(50, 0)->get()->getResult();
-        $return_data = [];
+        $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
                 "id" => $value->id,
@@ -331,7 +331,7 @@ class Home extends BaseController
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
         $data_list = $builder->orderBy("{$table_name}.name", 'asc')->limit(50, 0)->get()->getResult();
-        $return_data = [];
+        $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
                 "id" => $value->id,
@@ -350,7 +350,7 @@ class Home extends BaseController
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
         $data_list = $builder->orderBy("{$table_name}.name", 'desc')->limit(50, 0)->get()->getResult();
-        $return_data = [];
+        $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
                 "id" => $value->id,
@@ -369,7 +369,7 @@ class Home extends BaseController
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
         $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
-        $return_data = [];
+        $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
                 "id" => $value->id,
@@ -398,6 +398,7 @@ class Home extends BaseController
         $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
 
         $groups = [];
+        $groups[] = ["id"=>"","text"=>"All",];
 
         foreach ($data_list as $item) {
             // Yaha assume kar rahe hai ki aapke table me 'category' column hai
@@ -428,7 +429,7 @@ class Home extends BaseController
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
         $data_list = $builder->orderBy("{$table_name}.name", 'desc')->limit(50, 0)->get()->getResult();
-        $return_data = [];
+        $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
                 "id" => $value->id,
@@ -447,7 +448,7 @@ class Home extends BaseController
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
         $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
-        $return_data = [];
+        $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
                 "id" => $value->id,
@@ -466,7 +467,7 @@ class Home extends BaseController
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
         $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
-        $return_data = [];
+        $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
                 "id" => $value->id,
@@ -485,7 +486,7 @@ class Home extends BaseController
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
         $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
-        $return_data = [];
+        $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
                 "id" => $value->id,
