@@ -1,37 +1,57 @@
+<!--  Start Header Area -->
 <?php include"include/header.php"; ?>
-			
-			<!-- Breadcrumb -->
-			<div class="breadcrumb-bar">
-				<div class="container-fluid">
-					<div class="row align-items-center">
-						<div class="col-md-12 col-12">
-							<nav aria-label="breadcrumb" class="page-breadcrumb">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="<?=base_url() ?>">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Privacy Policy</li>
-								</ol>
-							</nav>
-							<h2 class="breadcrumb-title">Privacy Policy</h2>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Breadcrumb -->
-			
-			<!-- Page Content -->
-			<div class="content">
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<div class="terms-content">
-								<div class="terms-text">
-									<?=$policy->privacy_policy ?>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+<!-- End Header Area -->
 
-			</div>		
-			<!-- /Page Content -->
+    <div class="hom-top inner_style">
+
+    <?php include"include/header-nav.php"; ?>
+
+    <!-- BANNER -->
+    <section>
+        <div class="str">
+            <div class="ban-inn ab-ban pg-cont" style="background: linear-gradient(to right, rgb(137, 33, 107), rgb(218, 68, 83));">
+                <div class="container">
+                    <div class="row">
+                        <div class="hom-ban">
+                            <div class="ban-tit">
+                                <h1>Privacy Policy</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END -->
+
+ 
+
+
+    <!-- ABOUT START -->
+    <section class="pt-60 pb-60">
+        <div class="ab-wel">
+            <div class="container">
+                <div class="row align-items-start">
+                    
+                    <div class="col-lg-12">
+                        <div class="ab-wel-rhs">
+                            <div class="ab-wel-tit home-tit text-center">
+                                <h2 class="mb-0" style="line-height: 0.9;font-size: 45px;">Privacy Policy</h2>
+                            </div>
+                            <div class="ab-wel-tit-1 mb-0">
+                                <p class="mb-3">
+                                    <?=$policy->privacy_policy ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END -->
+
+<!--  Start Footer Area -->
 <?php include"include/footer.php"; ?>
+<!-- End Footer Area --> 

@@ -10,7 +10,7 @@ class AdminUserPackageController extends BaseController
      protected $arr_values = array(
         'routename'=>'user-package.', 
         'title'=>'Payment History', 
-        'table_name'=>'vendor_package',
+        'table_name'=>'user_package',
         'page_title'=>'Payment History',
         "folder_name"=>'backend/admin/user-package',
         "upload_path"=>'upload/',
@@ -49,11 +49,11 @@ class AdminUserPackageController extends BaseController
         $where = [];
         $data_list = $this->db->table($this->arr_values['table_name'])
         ->select("users.email as user_email, {$this->arr_values['table_name']}.*")
-        ->join('users', 'users.id = ' . $this->arr_values['table_name'] . '.vendor_id', 'left')
+        ->join('users', 'users.id = ' . $this->arr_values['table_name'] . '.user_id', 'left')
 
         ->where([$this->arr_values['table_name'] . '.status' => $status])
         ->orderBy($this->arr_values['table_name'] . '.id', $order_by)
-        ->limit($limit, $offset);
+        ;
 
 
         $from_date = $this->request->getVar('from_date');
@@ -76,12 +76,14 @@ class AdminUserPackageController extends BaseController
         }
 
         if(!empty($where)) $data_list->where($where);
-        $data_list = $data_list->get()->getResult();
+
+        $total = $data_list->countAllResults(false);
+        $data_list = $data_list->limit($limit, $offset)->get()->getResult();
 
 
-        $total = $this->db->table($this->arr_values['table_name']);
-        if(!empty($where)) $total->where($where);
-        $total = $total->countAllResults();
+        
+        
+        // $total = $total->countAllResults();
         $data['pager'] = $this->pager->makeLinks($page, $limit, $total);
         $data['totalData'] = $total;
         $data['startData'] = ($total > 0) ? $offset+1 : 0;

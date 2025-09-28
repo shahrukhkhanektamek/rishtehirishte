@@ -133,7 +133,7 @@ class AdminSettingController extends BaseController
     public function policy()
     {
         $session = session()->get('user');
-        $id = 14;
+        $id = 15;
         $data['title'] = "".$this->arr_values['title'];
         $data['page_title'] = "Manage ".$this->arr_values['page_title'];
         $data['upload_path'] = $this->arr_values['upload_path'];

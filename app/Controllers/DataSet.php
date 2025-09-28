@@ -499,11 +499,38 @@ class DataSet extends BaseController
 
 
 
+    }
+
+    public function set_user_packages()
+    {
+        $educationData = [];
+        $oldedu = $this->db2->table("package_tbl")
+        // ->limit(5)
+        ->offset(0)
+        ->getWhere()->getResultObject();
+        foreach ($oldedu as $key => $value) {
 
 
+            $amount = $value->pack_amount;
+            $educationData = [
+                "status"=>1,
+                "package_name"=>$value->pack_name,
+                "plan_start_date_time"=>date("Y-m-d H:i:s", $value->pack_pur_date),
+                "plan_end_date_time"=>date("Y-m-d H:i:s", $value->pack_exp_date),
+                "contact_limit"=>$value->pack_veiw_contact+$value->pack_totview_contact,
+                "view_contact"=>$value->pack_totview_contact,
+                "user_id"=>$value->cus_id,
+                // "validity"=>$value->cus_id,
+                "amount"=>$value->pack_amount,
+                "gst"=>0,
+                "final_amount"=>$value->pack_amount,
 
-
-
+                "add_date_time"=>date("Y-m-d H:i:s"),
+                
+            ];
+            // $this->db->table("user_package")->insert($educationData);
+            print_r($educationData);
+        }
     }
     
 }

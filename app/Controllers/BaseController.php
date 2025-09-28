@@ -136,15 +136,7 @@ abstract class BaseController extends Controller
         $data['uri2'] = $uri2;
 
 
-        if($page=='advocates.php' || $page=='ca.php' || $page=='advisers.php')
-        {
-            $page = 'partners.php';
-        }
-
-        if($page=='advocate.php' || $page=='ca.php' || $page=='adviser.php')
-        {
-            $page = 'partner-profile.php';
-        }
+        
 
         // Check if the page file exists
         $data['check_page'] = $check_page = ROOTPATH . 'app/Views/web/' . $page;

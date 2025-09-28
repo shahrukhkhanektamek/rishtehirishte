@@ -2,9 +2,9 @@
     <thead>
         <tr>
             <th data-ordering="false">Date Time</th>
-            <th data-ordering="false">Dealer&nbsp;Name</th>
-            <th data-ordering="false">Dealer Email</th>
-            <th data-ordering="false">Dealer Contact</th>
+            <th data-ordering="false">&nbsp;Name</th>
+            <th data-ordering="false"> Email</th>
+            <th data-ordering="false"> Contact</th>
             <th data-ordering="false">Package&nbsp;Details</th>
             <th data-ordering="false">Transaction Id</th>
             <th data-ordering="false">Payment Status</th>
@@ -15,9 +15,7 @@
 
 
         <?php foreach($data_list as $key=> $value) { 
-            $user = $db->table("users")->where(["id"=>$value->vendor_id,])->get()->getFirstRow();
-            $package = $db->table("package")->where(["id"=>$value->package_id,])->get()->getFirstRow();
-
+            $user = $db->table("users")->where(["id"=>$value->user_id,])->get()->getFirstRow();
             ?>       
             <tr>
                 <td>
@@ -29,7 +27,9 @@
                 <td><?=@$user->phone?></td>
                 <td>
                     <small>Price: <?=price_formate(@$value->final_amount)?></small><br>
-                    <b><?=@$value->package_name?></b>
+                    <b><?=@$value->package_name?></b><br>
+                    <b>Pur. Date:</b> <?=date("d M, Y", strtotime($value->plan_start_date_time)) ?><br>
+                    <b>Exp. Date:</b> <?=date("d M, Y", strtotime($value->plan_end_date_time)) ?>
                 </td>
                 <td><?=@$value->transaction_id?></td>
                 <td>

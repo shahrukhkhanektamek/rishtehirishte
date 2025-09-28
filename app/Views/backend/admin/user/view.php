@@ -252,16 +252,29 @@
                             </table>
 
                             
-                            <div class="row mt-3 text-center w-100 justify-content-center">
-                                <a class="btn btn-success w-auto me-4 create-pdf" style="background-color: #25D366;border: 0;">
-                                    <i class="ri-whatsapp-line"></i>
-                                    Send On Whatsapp
-                                </a>
-                                <a class="btn btn-success w-auto create-pdf" style="background-color: #EA4335;border: 0;">
-                                    <i class="ri-mail-line"></i>
-                                    Send On Mail
-                                </a>
+
+                            <div class="row mt-2">
+                              <div class="col-md-6" style="margin: 0 auto;">
+                                  
+                                  <h1 class="h3 bg-light text-center text-body-secondary p-2">Share Profile</h1>
+                                  <select class="" id="select-all-user">
+                                    <option value="">Select User</option>
+                                  </select>
+                                
+
+                                <div class="row mt-2 text-center w-100 justify-content-center">
+                                    <a class="btn btn-success w-auto me-4 create-pdf" data-type="1" style="background-color: #25D366;border: 0;">
+                                        <i class="ri-whatsapp-line"></i>
+                                        Send On Whatsapp
+                                    </a>
+                                    <a class="btn btn-success w-auto create-pdf" data-type="2" style="background-color: #EA4335;border: 0;">
+                                        <i class="ri-mail-line"></i>
+                                        Send On Mail
+                                    </a>
+                                </div>
+                              </div>
                             </div>
+
 
 
 
@@ -282,7 +295,9 @@
 
 
 <script>
+  let type = 0;
 $(document).on("click", ".create-pdf",(function(e) {
+    type = $(this).data("type")
     createPdf()
 }));
 function createPdf()
@@ -290,6 +305,8 @@ function createPdf()
     loader('show');
     var form = new FormData();
     form.append("id","<?=encript($row->id) ?>");
+    form.append("shareUserId",$("#select-all-user").val());
+    form.append("type",type);
     var settings = {
       "url": "<?=$data['route']?>/create-pdf",
       "method": "POST",
@@ -305,11 +322,87 @@ function createPdf()
     };
     $.ajax(settings).always(function (response) {
         loader(0);
-        // response = admin_response_data_check(response);
+        response = admin_response_data_check(response);
+        shareOnWhatsapp(response.data)
+
         // $("#data-list").html(response.data.list);
 
     });
 }
+
+async function shareOnWhatsapp(data)
+{
+  let pdfUrl = data.pdf;
+
+    try {
+        const response = await fetch(pdfUrl);
+        const blob = await response.blob();
+        const file = new File([blob], data.fileName, { type: 'application/pdf' });
+
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({
+                title: 'Profile PDF',
+                text: 'Here is the Profile PDF.',
+                files: [file]
+            });
+        } else if (window.ReactNativeWebView) {
+            // Send message to React Native app
+            const message = {
+                type: 'share',
+                payload: {
+                    title: 'Profile PDF',
+                    message: 'Here is the Profile PDF.',
+                    url: pdfUrl
+                }
+            };
+            window.ReactNativeWebView.postMessage(JSON.stringify(message));
+        } else {
+            alert('Sharing is not supported on this device/browser.');
+        }
+    } catch (error) {
+        console.error('Error sharing file:', error);
+        alert('Sharing failed.');
+    }
+}
+
+
+// document.getElementById('pdf-share-btn').addEventListener('click', async function() {
+//     const pdfUrl = document.getElementById('pdf-download-btn').href;
+
+//     try {
+//         const response = await fetch(pdfUrl);
+//         const blob = await response.blob();
+//         const file = new File([blob], 'OrderTransfer.pdf', { type: 'application/pdf' });
+
+//         if (navigator.canShare && navigator.canShare({ files: [file] })) {
+//             await navigator.share({
+//                 title: 'Profile PDF',
+//                 text: 'Here is the Profile PDF.',
+//                 files: [file]
+//             });
+//         } else if (window.ReactNativeWebView) {
+//             // Send message to React Native app
+//             const message = {
+//                 type: 'share',
+//                 payload: {
+//                     title: 'Profile PDF',
+//                     message: 'Here is the Profile PDF.',
+//                     url: pdfUrl
+//                 }
+//             };
+//             window.ReactNativeWebView.postMessage(JSON.stringify(message));
+//         } else {
+//             alert('Sharing is not supported on this device/browser.');
+//         }
+//     } catch (error) {
+//         console.error('Error sharing file:', error);
+//         alert('Sharing failed.');
+//     }
+// });
+
+
+
+
 </script>
 
 <?=view('backend/include/footer') ?>

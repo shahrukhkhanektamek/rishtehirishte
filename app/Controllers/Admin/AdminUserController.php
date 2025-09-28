@@ -73,34 +73,60 @@ class AdminUserController extends BaseController
         $data['upload_path'] = $this->arr_values['upload_path'];
         $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));   
 
-        $data_list = $this->db->table($this->arr_values['table_name'])->where([$this->arr_values['table_name'].'.status' => $status,])
-        ->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
-        ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
-        ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
-        ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
-        ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
-        ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
-        ->select([
-            "{$this->arr_values['table_name']}.*",
-            "education.name as education_name",
-            "occupation.name as occupation_name",
-            "religion.name as religion_name",
-            "caste.name as caste_name",
-            "languages.name as mothertongue_name",
-            "states.name as state_name",
-            "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age", // 👈 Age calculation
-        ])
-        ->where($this->arr_values['table_name'].'.role =', $type);
+
+        $date_time = date("Y-m-d H:i:s");
+        // ✅ Active package subquery (हर user का latest active package)
+        $activePackageSubQuery = "
+            SELECT up1.*
+            FROM user_package up1
+            INNER JOIN (
+                SELECT user_id, MAX(plan_end_date_time) AS latest_end
+                FROM user_package
+                WHERE is_delete=0
+                GROUP BY user_id order by 'desc'
+            ) up2
+            ON up1.user_id = up2.user_id
+            AND up1.plan_end_date_time = up2.latest_end
+        ";
+
+        $data_list = $this->db->table($this->arr_values['table_name'])
+            ->where([$this->arr_values['table_name'].'.status' => $status])
+            ->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
+            ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
+            ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
+            ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
+            ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
+            ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
+            // ✅ Active Package join
+            ->join("($activePackageSubQuery) as user_package",
+                   "user_package.user_id = {$this->arr_values['table_name']}.id",
+                   "left")
+            ->select([
+                "{$this->arr_values['table_name']}.*",
+                "education.name as education_name",
+                "occupation.name as occupation_name",
+                "religion.name as religion_name",
+                "caste.name as caste_name",
+                "languages.name as mothertongue_name",
+                "states.name as state_name",
+                "user_package.id as user_package_id",           // 👉 Active package id (null = no package)
+                "user_package.package_name as package_name",
+                "user_package.plan_start_date_time as plan_start_date_time",
+                "user_package.plan_end_date_time as plan_end_date_time",
+                "user_package.contact_limit as contact_limit",
+                "user_package.view_contact as view_contact",
+                "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age",
+            ])
+            ->where($this->arr_values['table_name'].'.role =', $type);
 
         if (!empty($filter_search_value)) {
             if($search_by==1) $data_list->like($this->arr_values['table_name'].'.name', $filter_search_value);
             if($search_by==2) $data_list->like($this->arr_values['table_name'].'.email', $filter_search_value);
             if($search_by==3) $data_list->like($this->arr_values['table_name'].'.phone', $filter_search_value);
-            if($search_by==4) $data_list->like($this->arr_values['table_name'].'.user_id', $filter_search_value);            
+            if($search_by==4) $data_list->like($this->arr_values['table_name'].'.user_id', $filter_search_value);
         }
 
         if(!empty($register_by)) $data_list->where("register_by",$register_by);
-
 
         if(!empty($gender)) $data_list->where("{$this->arr_values['table_name']}.gender",$gender);
         if(!empty($religion)) $data_list->where("{$this->arr_values['table_name']}.religion",$religion);
@@ -123,15 +149,19 @@ class AdminUserController extends BaseController
             $data_list->where("{$this->arr_values['table_name']}.dob <=", $to_date);
         }
 
-
         if(!empty($fromheight)) $data_list->where("{$this->arr_values['table_name']}.height >=",$fromheight);
         if(!empty($toheight)) $data_list->where("{$this->arr_values['table_name']}.height <=",$toheight);
 
-
         $total = $data_list->countAllResults(false);
+
         $data_list = $data_list->orderBy($this->arr_values['table_name'].'.id',$order_by)
-        ->limit($limit, $offset)
-        ->get()->getResult();
+            ->limit($limit, $offset)
+            ->get()
+            ->getResult();
+
+            // print_r($data_list);
+            // die;
+
           
 
 
@@ -509,16 +539,9 @@ class AdminUserController extends BaseController
     public function profilePdfSave($id = null)
     {
         $id = $this->request->getPost('id');
+        $shareUserId = $this->request->getPost('shareUserId');
+        $type = $this->request->getPost('type');
         $id = decript($id);
-
-        // $db = \Config\Database::connect();
-        // $row = $db->table('profiles')->where('id', $id)->get()->getRow();
-        // if (!$row) return redirect()->back()->with('error','Profile not found');
-        // $data = ['row' => $row];
-        // $html = view('pdf/profile_template', $data);
-
-
-
 
         $data_list = $this->db->table($this->arr_values['table_name'])
         ->where([$this->arr_values['table_name'] .".id"=>$id,])
@@ -546,8 +569,14 @@ class AdminUserController extends BaseController
         $html = view($this->arr_values['folder_name'].'/profile-pdf',compact('row','db','rowR'));
         
 
-
-
+        $phone = '';
+        $email = '';
+        $shareUser = $this->db->table('users')->where(["id"=>$shareUserId,])->get()->getFirstRow();
+        if(!empty($shareUser))
+        {
+            $phone = $shareUser->phone;
+            $email = $shareUser->email;
+        }
 
 
         $options = new Options();
@@ -566,8 +595,22 @@ class AdminUserController extends BaseController
         if (!is_dir($filepath)) {
             mkdir($filepath, 0777, true); // recursive create with permissions
         }
-        echo $filepath .= 'profile_'.$id.'.pdf';
+        $filepath .= 'profile_'.$id.'.pdf';
         file_put_contents($filepath, $output);
+
+        $action = 'view';
+        $responseCode = 200;
+        $result['status'] = $responseCode;
+        $result['message'] = "Success!";
+        $result['action'] = $action;
+        $result['data'] = [
+            "pdf"=>base_url().'upload/pdfs/profile_'.$id.'.pdf',
+            "fileName"=>'profile_'.$id.'.pdf',
+            "phone"=>$phone,
+            "email"=>$email,
+            "type"=>$type,
+        ];
+        return $this->response->setStatusCode($responseCode)->setJSON($result);
 
         // return redirect()->to(base_url('writable/uploads/pdfs/profile_'.$id.'.pdf'));
     }

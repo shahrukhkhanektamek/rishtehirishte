@@ -29,7 +29,7 @@
 
                         <!-- Details Grid -->
                         <div class="row mt-2">
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <p class="mb-1"><b>Email:</b> <?=$value->email?></p>
                                 <p class="mb-1"><b>Mobile:</b> <?=$value->phone?></p>
                                 <p class="mb-1"><b>Age:</b> <?=$value->age?> | 
@@ -47,7 +47,24 @@
                                 <p class="mb-1"><b>City:</b> <?=$value->city?></p>
                                 <p class="mt-2"><b>Requirement:</b> Not Fill</p>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
+                                <?php if(!empty($value->user_package_id)){ ?>
+                                    <?php if($value->plan_end_date_time>date("Y-m-d H:i:s")){ ?>
+                                        <p class="mb-1"><b>Package Name:</b> <?=$value->package_name ?></p>
+                                        <p class="mb-1"><b>Pur. Date:</b> <?=date("d M, Y", strtotime(@$value->plan_start_date_time)) ?></p>
+                                        <p class="mb-1"><b>Exp Date:</b> <?=date("d M, Y", strtotime(@$value->plan_end_date_time)) ?></p>
+                                        <p class="mb-1"><b>Contect Limit:</b> <?=$value->contact_limit ?></p>
+                                        <p class="mb-1"><b>Contect Viewed:</b> <?=$value->view_contact ?></p>
+                                        <p class="mb-1"><b>Contect Remain:</b> <?=$value->contact_limit-$value->view_contact ?></p>
+                                    <?php }else{?>
+                                        <span class="btn btn-success bg-danger">Expired</span>
+                                    <?php } ?>
+                                    
+                                <?php }else{ ?>
+                                    <span class="btn btn-success bg-danger">Unpaid</span>
+                                <?php } ?>
+                            </div>
+                            <div class="col-md-2">
                                 <!-- Actions -->
                                 <div class="mt-3">
 
