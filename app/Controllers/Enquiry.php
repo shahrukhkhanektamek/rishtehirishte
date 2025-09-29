@@ -19,8 +19,9 @@ class Enquiry extends BaseController
         $data['name'] = $this->request->getPost('name');
         $data['email'] = $this->request->getPost('email');
         $data['phone'] = $this->request->getPost('phone');
+        $data['city'] = $this->request->getPost('city');
         // $data['subject'] = $this->request->getPost('subject');
-        $data['coment'] = $this->request->getPost('message');
+        // $data['coment'] = $this->request->getPost('message');
         
 
         $data['url'] = $this->request->getPost('url');

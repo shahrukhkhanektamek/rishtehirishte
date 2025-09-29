@@ -85,7 +85,8 @@
     
             
                 <div class="content-body">
-                    <form class="contact-form__wrapper" method="POST" action="#!" role="form">
+                    <form class="contact-form__wrapper form_data" method="POST" action="<?=base_url('contact-enquiry') ?>" enctype="multipart/form-data" novalidate id="contactModalForm">
+                        <input type="hidden" name="url" value="<?=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
                         <div class="modal-header">
                             <!-- <p class="mb-0" style="line-height:1.35;">Contact our support team for quick and friendly assistance.</p> -->
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -95,21 +96,21 @@
                                 <div class="col-md-12">
                                     <div class="contact-form__input style_modal">
                                         <label>Candidate name <span>*</span></label>
-                                        <input class="form-control" type="text" name="full_name" placeholder="" required="">
+                                        <input class="form-control" type="text" name="name" placeholder="" required="">
                                         <span class="icon far fa-user"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="contact-form__input style_modal">
                                         <label>Email addess <span>*</span></label>
-                                        <input class="form-control" type="email" name="email_adress" placeholder="" required="">
+                                        <input class="form-control" type="email" name="email" placeholder="" required="">
                                         <span class="icon far fa-envelope"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="contact-form__input style_modal">
                                         <label>Phone number <span>*</span></label>
-                                        <input class="form-control" type="number" name="phone_number" placeholder="" required="">
+                                        <input class="form-control" type="number" name="phone" placeholder="" required="">
                                         <span class="icon fa-solid fa-phone"></span>
                                     </div>
                                 </div>
@@ -119,6 +120,12 @@
                                         <input class="form-control" type="text" name="city" placeholder="" required="">
                                         <span class="icon fa-solid fa-map-marker"></span>
                                     </div>
+                                </div>
+                                <div class="col-12">
+                                  <div class="recaptcha_area mb-4">
+                                    <label class="text-sm-medium neutral-1000" for="captcha">What is <?=$captcha_num1?> + <?=$captcha_num2?></label>
+                                    <input class="mb-0" type="text" name="captcha" id="captcha" placeholder="Answer..." required>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -188,7 +195,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/jquery.min.js"></script> -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/select-opt.js"></script>
@@ -196,6 +203,10 @@
     <script src="js/custom.js"></script>
     <script src="js/wizard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <script src="<?=base_url('public/')?>/toast/saber-toast.js"></script>
+    <script src="<?=base_url('public/')?>/toast/script.js"></script>
+    <script src="<?=base_url('public/')?>/assetsadmin/select2/js/select2.full.min.js"></script>
 
 <script type="text/javascript">
     //COMMON SLIDER

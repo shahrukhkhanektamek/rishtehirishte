@@ -16,6 +16,9 @@
             <li class="nav-item">
                 <a href="<?=base_url(route_to('admin-user.list')).'?type=2'?>" class="nav-link" data-key="t-analytics"> Users </a>
             </li>
+            <li class="nav-item">
+                <a href="<?=base_url(route_to('admin-featured-profile.list'))?>" class="nav-link" data-key="t-analytics"> Featured Profile </a>
+            </li>
 
         </ul>
     </div>

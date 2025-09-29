@@ -47,7 +47,7 @@
                                 <p class="mb-1"><b>City:</b> <?=$value->city?></p>
                                 <p class="mt-2"><b>Requirement:</b> Not Fill</p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <?php if(!empty($value->user_package_id)){ ?>
                                     <?php if($value->plan_end_date_time>date("Y-m-d H:i:s")){ ?>
                                         <p class="mb-1"><b>Package Name:</b> <?=$value->package_name ?></p>
@@ -64,10 +64,10 @@
                                     <span class="btn btn-success bg-danger">Unpaid</span>
                                 <?php } ?>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-12">
                                 <!-- Actions -->
-                                <div class="mt-3">
-
+                                <div class="mt-3 d-flex justify-content-end">
+                                    
                                     <a href="<?=$data['route'].'/edit/'.encript($value->id)?>" 
                                        class="mt-1 btn btn-sm btn-outline-primary me-2">
                                        <i class="ri-ball-pen-line"></i> Edit Profile

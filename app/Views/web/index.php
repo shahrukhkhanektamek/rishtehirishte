@@ -6,6 +6,27 @@
 
     <?php include"include/header-nav.php"; ?>
 
+<?php
+
+$table_name = 'featured_profile';
+$featured_list = $db->table($table_name)
+->join("users as users","users.id={$table_name}.user_id","left")
+->join("states as states","states.id=users.state","left")
+->select([
+    "{$table_name}.*",
+    "users.name as name",
+    "TIMESTAMPDIFF(YEAR, users.dob, CURDATE()) as age",
+    "users.state as state",
+    "users.user_id as user_id",
+    "users.image as image",
+    "states.name as state_name",
+])
+->where([$table_name . '.status' => 1])
+->orderBy($table_name . '.id', 'desc');
+$featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->get()->getResult();
+
+?>
+
     <!-- BANNER & SEARCH -->
     <section>
         <div class="str">
@@ -92,16 +113,17 @@
         <div class="hom-ban-sli">
             <div>
                 <ul class="ban-sli">
-                    <li>
-                        <div class="image">
-                            <img class="img-fluid" src="https://images.prismic.io/memoriesdesigner/Z1vkJ5bqstJ98dFf_image12.png" alt="image" loading="lazy">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="image">
-                            <img class="img-fluid" src="https://muddyearth.com/blog/bbs/photography-marriage-photo-stills-assets/natural-and-spontaneous-moments.webp" alt="image" loading="lazy">
-                        </div>
-                    </li>
+
+                    <?php
+                        $banners = $db->table("banner")->where(["status"=>1,])->get()->getResult();
+                        foreach ($banners as $key => $value) {
+                    ?>
+                        <li>
+                            <div class="image">
+                                <img class="img-fluid" src="<?=image_check($value->image) ?>" alt="image" loading="lazy">
+                            </div>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
@@ -119,72 +141,25 @@
                         <h2><span>Featured Profile</span></h2>
                         <span class="leaf1"></span>
                     </div>
-                    <ul>
-                        <li>
-                            <div>
-                                <!--<span class="location_tag">New Delhi</span>-->
-                                <img src="https://www.rishtehirishte.co.in/upload/20-06-2025-10-25-41-amass1.jpg" alt="USERNAME" loading="lazy" class="img-fluid lazy">
-                                <p>
-                                    <i class="fa-solid fa-user me-1"></i> 28, Gurgaon
-                                </p>
-                                <h4>Profile ID: 20920 </h4>
-                                <!--<ul class="social-light">-->
-                                <!--    <li><a href="#!">View profile <i class="fa-solid fa-arrow-right"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <!--<span class="location_tag">Surat</span>-->
-                                <img src="https://www.rishtehirishte.co.in/upload/03-06-2025-10-25-15-amarchit1.jpg" alt="USERNAME" loading="lazy" class="img-fluid lazy">
-                                <p>
-                                    <i class="fa-solid fa-user me-1"></i> 28, Gurgaon
-                                </p>
-                                <h4>Profile ID: 20920 </h4>
-                                <!--<ul class="social-light">-->
-                                <!--    <li><a href="#!">View profile <i class="fa-solid fa-arrow-right"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <!--<span class="location_tag">Panipat</span>-->
-                                <img src="https://www.rishtehirishte.co.in/upload/21-03-2025-10-30-19-amq1.jpg" alt="USERNAME" loading="lazy" class="img-fluid lazy">
-                                <p>
-                                    <i class="fa-solid fa-user me-1"></i> 28, Gurgaon
-                                </p>
-                                <h4>Profile ID: 20920 </h4>
-                                <!--<ul class="social-light">-->
-                                <!--    <li><a href="#!">View profile <i class="fa-solid fa-arrow-right"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <!--<span class="location_tag">United Kingdom</span>-->
-                                <img src="https://www.rishtehirishte.co.in/upload/28-05-2025-10-24-42-amas1.jpg" alt="USERNAME" loading="lazy" class="img-fluid lazy">
-                                <p>
-                                    <i class="fa-solid fa-user me-1"></i> 28, Gurgaon
-                                </p>
-                                <h4>Profile ID: 20920 </h4>
-                                <!--<ul class="social-light">-->
-                                <!--    <li><a href="#!">View profile <i class="fa-solid fa-arrow-right"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <!--<span class="location_tag">Mumbai</span>-->
-                                <img src="https://www.rishtehirishte.co.in/upload/12-05-2025-11-31-27-am2.jpg" alt="USERNAME" loading="lazy" class="img-fluid lazy">
-                                <p>
-                                    <i class="fa-solid fa-user me-1"></i> 28, Gurgaon
-                                </p>
-                                <h4>Profile ID: 20920 </h4>
-                                <!--<ul class="social-light">-->
-                                <!--    <li><a href="#!">View profile <i class="fa-solid fa-arrow-right"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </li>
+                    <ul class="featured-sli">
+                        <?php
+                        foreach ($featured_list as $key => $value) {
+                        ?>
+                            <li>
+                                <div>
+                                    <!--<span class="location_tag">New Delhi</span>-->
+                                    <img src="<?=image_check($value->image) ?>" alt="USERNAME" loading="lazy" class="img-fluid lazy">
+                                    <p>
+                                        <i class="fa-solid fa-user me-1"></i> <?=$value->age ?>, <?=$value->state_name ?>
+                                    </p>
+                                    <h4>Profile ID: <?=$value->user_id ?> </h4>
+                                    <!--<ul class="social-light">-->
+                                    <!--    <li><a href="#!">View profile <i class="fa-solid fa-arrow-right"></i></a></li>-->
+                                    <!--</ul>-->
+                                </div>
+                            </li>
+                        <?php } ?>
+                        
                     </ul>
                 </div>
             </div>
@@ -273,11 +248,8 @@
                                 <span class="leaf1 mx-0"></span>
                             </div>
                             <div class="ab-wel-tit-1 mb-0">
-                                <p class="mb-3"><b>Rishte Hi Rishte</b> is one of the most trusted name in the field of matrimonial Services. We offer a superior matchmaking experience for prospective brides and grooms to meet and communicate with each other by expanding the opportunities available to meet potential life partners and build fulfilling relationships.
-                                </p>
-                                <p><b>Rishte Hi Rishte</b> is one of the pioneers Matrimonial Services. Millions of happy marriages happened and continue to happen through Rishte Hi Rishte We are the only Bureau to offer verified profiles, reinforcing the trust that members have on us. We have also the highly personalized matchmaking services.
-                                
-                                    Looking to find that special someone is never an easy task. It becomes even more difficult when you are a High Net Worth Individual who doesn’t have time for casual dating or going to the usual places where you may meet potential partners.
+                                <p class="mb-3">
+                                    <?=$about->home?>
                                 </p>
                                 
                                 <a href="about.php" class="cta-dark mt-3"><span>Know more <i class="fa-solid fa-arrow-right ms-2"></i></span></a>
@@ -305,76 +277,27 @@
 
             <div class="hom-coup-test">
                 <ul class="couple-sli">
-                    <li>
-                        <div class="hom-coup-box">
-                            <div class="success-image-div2">
-                                <span class="leaf"></span>
-                                <img class="img-fluid" src="https://www.rishtehirishte.co.in/upload/20-07-2025-3-26-50-pmWa-image.jpeg" alt="USERNAME" loading="lazy">
+                    <?php
+                        $success_storys = $db->table("success_story")->where(["status"=>1,])->limit(10)->orderBy('id','desc')->get()->getResult();
+                        foreach ($success_storys as $key => $value) {
+                    ?>
+
+                        <li>
+                            <div class="hom-coup-box">
+                                <div class="success-image-div2">
+                                    <span class="leaf"></span>
+                                    <img class="img-fluid" src="<?=image_check($value->image) ?>" alt="USERNAME" loading="lazy">
+                                </div>
+                                <div class="bx">
+                                    <h4>
+                                        <?=$value->name ?> 
+                                        <span><?=$value->sort_description ?></span>
+                                    </h4>
+                                </div>
                             </div>
-                            <div class="bx">
-                                <h4>
-                                    Dany & July 
-                                    <span>Thanks Rishte hi Rishte for helping me meet my soulmate. I got married within six month of making my profile.</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="hom-coup-box">
-                            <div class="success-image-div2">
-                                <span class="leaf"></span>
-                                <img class="img-fluid" src="https://www.rishtehirishte.co.in/upload/07-02-2024-4-26-30-pmREWQ.jpeg" alt="USERNAME" loading="lazy">
-                            </div>
-                            <div class="bx">
-                                <h4>
-                                    Dany & July 
-                                    <span>Thanks Rishte hi Rishte for helping me meet my soulmate. I got married within six month of making my profile.</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="hom-coup-box">
-                            <div class="success-image-div2">
-                                <span class="leaf"></span>
-                                <img class="img-fluid" src="https://www.rishtehirishte.co.in/upload/11-08-2023-3-18-18-pmwee.jpeg" alt="USERNAME" loading="lazy">
-                            </div>
-                            <div class="bx">
-                                <h4>
-                                    Dany & July 
-                                    <span>Thanks Rishte hi Rishte for helping me meet my soulmate. I got married within six month of making my profile.</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="hom-coup-box">
-                            <div class="success-image-div2">
-                                <span class="leaf"></span>
-                                <img class="img-fluid" src="https://www.rishtehirishte.co.in/upload/22-10-2023-8-52-08-pmewr.jpeg" alt="USERNAME" loading="lazy">
-                            </div>
-                            <div class="bx">
-                                <h4>
-                                    Dany & July 
-                                    <span>Thanks Rishte hi Rishte for helping me meet my soulmate. I got married within six month of making my profile.</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="hom-coup-box">
-                            <div class="success-image-div2">
-                                <span class="leaf"></span>
-                                <img class="img-fluid" src="https://www.rishtehirishte.co.in/upload/08-11-2023-3-17-59-pmwdew.jpeg" alt="USERNAME" loading="lazy">
-                            </div>
-                            <div class="bx">
-                                <h4>
-                                    Dany & July 
-                                    <span>Thanks Rishte hi Rishte for helping me meet my soulmate. I got married within six month of making my profile.</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    <?php } ?>
+
                 </ul>
             </div>
             </div>
@@ -395,37 +318,21 @@
                     </div>
                     <div class="blog">
                         <div class="row gx-md-3">
-                            <div class="col-lg-3 col-md-4">
-                                <div class="blog-box">
-                                    <img class="img-fluid" src="https://www.wedgatematrimony.com/wp-content/uploads/2022/10/Top-6-Things-to-Keep-in-Mind-for-Destination-Wedding.jpg" loading="lazy" alt="image">
-                                    <h4>Top 6 Things to Keep in Mind for Destination Wedding</h4>
-                                    <p>India is widely recognized for destination weddings. Many national and international couples are throwing a gala for everyone.</p>
-                                    <a href="blog-details.html" class="cta-dark"><span>Read more <i class="fa-solid fa-arrow-right ms-2"></i></span></a>
+
+                            <?php
+                                $blogs = $db->table("blog")->where(["status"=>1,])->limit(10)->orderBy('id','desc')->get()->getResult();
+                                foreach ($blogs as $key => $value) {
+                            ?>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="blog-box">
+                                        <img class="img-fluid" src="<?=image_check($value->image) ?>" loading="lazy" alt="image">
+                                        <h4><?=$value->name ?></h4>
+                                        <p><?=$value->sort_description ?></p>
+                                        <a href="<?=base_url().$value->slug ?>" class="cta-dark"><span>Read more <i class="fa-solid fa-arrow-right ms-2"></i></span></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4">
-                                <div class="blog-box">
-                                    <img class="img-fluid" src="https://www.wedgatematrimony.com/wp-content/uploads/2023/07/5.-Take-Wedding-Planner%E2%80%99s-Help.jpg" loading="lazy" alt="image">
-                                    <h4>Top 6 Things to Keep in Mind for Destination Wedding</h4>
-                                    <p>India is widely recognized for destination weddings. Many national and international couples are throwing a gala for everyone.</p>
-                                    <a href="blog-details.html" class="cta-dark"><span>Read more <i class="fa-solid fa-arrow-right ms-2"></i></span></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4">
-                                <div class="blog-box">
-                                    <img class="img-fluid" src="https://www.wedgatematrimony.com/wp-content/uploads/2022/10/Visit-the-Location-in-Advance.jpg" loading="lazy" alt="image">
-                                    <h4>Top 6 Things to Keep in Mind for Destination Wedding</h4>
-                                    <p>India is widely recognized for destination weddings. Many national and international couples are throwing a gala for everyone.</p>
-                                    <a href="blog-details.html" class="cta-dark"><span>Read more <i class="fa-solid fa-arrow-right ms-2"></i></span></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4">
-                                <div class="blog-box">
-                                    <img class="img-fluid" src="https://www.wedgatematrimony.com/wp-content/uploads/2023/08/Most-Auspicious-Months-for-Marriage-in-India.jpg" loading="lazy" alt="image">
-                                    <h4>Top 6 Things to Keep in Mind for Destination Wedding</h4>
-                                    <p>India is widely recognized for destination weddings. Many national and international couples are throwing a gala for everyone.</p>
-                                    <a href="blog-details.html" class="cta-dark"><span>Read more <i class="fa-solid fa-arrow-right ms-2"></i></span></a>
-                                </div>
+                            <?php } ?>
+
                             </div>
                         </div>
                     </div>
@@ -470,39 +377,24 @@
                     </div>
                     <div class="slid-inn cus-revi">
                         <ul class="slider3">
-                            <li>
-                                <div class="cus-revi-box">
-                                    <div class="revi-im">
-                                        <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Justdial_Logo.svg" alt="image" loading="lazy">
+                                
+                            <?php
+                                $testimonials = $db->table("testimonial")->where(["status"=>1,])->orderBy('id','desc')->get()->getResult();
+                                foreach ($testimonials as $key => $value) {
+                            ?>
+                                <li>
+                                    <div class="cus-revi-box">
+                                        <div class="revi-im">
+                                            <img class="img-fluid" src="<?=image_check($value->image) ?>" alt="image" loading="lazy">
+                                        </div>
+                                        <p><?=$value->message ?></p>
+                                        <h5><?=$value->name?></h5>
+                                        <span><?=$value->designation ?></span>
                                     </div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                                    <h5>Jack danial</h5>
-                                    <span>New Delhi</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="cus-revi-box">
-                                    <div class="revi-im">
-                                        <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="image" loading="lazy">
-                                    </div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                                    <h5>Jack danial</h5>
-                                    <span>New Delhi</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="cus-revi-box">
-                                    <div class="revi-im">
-                                        <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Justdial_Logo.svg" alt="image" loading="lazy">
-                                    </div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                                    <h5>Jack danial</h5>
-                                    <span>New Delhi</span>
-                                </div>
-                            </li>
+                                </li>
+                            <?php } ?>
+
+                           
                         </ul>
                     </div>
                 </div>

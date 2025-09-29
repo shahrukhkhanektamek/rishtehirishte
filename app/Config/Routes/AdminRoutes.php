@@ -164,6 +164,17 @@ $adminEmployeeRoutes = function ($routes) {
     });
 
 
+    $routes->group('admin-featured-profile', function($routes) {
+        $routes->get('/', 'AdminFeaturedProfileController::index', ['as' => 'admin-featured-profile.list']);
+        $routes->get('load_data', 'AdminFeaturedProfileController::load_data', ['as' => 'admin-featured-profile.load_data']);
+        $routes->get('add', 'AdminFeaturedProfileController::add', ['as' => 'admin-featured-profile.add']);
+        $routes->get('edit/(:any)?', 'AdminFeaturedProfileController::edit/$1', ['as' => 'admin-featured-profile.edit']);
+        $routes->get('view/(:any)', 'AdminFeaturedProfileController::view/$1', ['as' => 'admin-featured-profile.view']);
+        $routes->post('update', 'AdminFeaturedProfileController::update', ['as' => 'admin-featured-profile.update']);
+        $routes->post('delete/(:any)', 'AdminFeaturedProfileController::delete/$1', ['as' => 'admin-featured-profile.delete']);
+    });
+
+
 
     $routes->group('transaction', function($routes) {
         $routes->get('/', 'AdminTransactionController::index', ['as' => 'transaction.list']);

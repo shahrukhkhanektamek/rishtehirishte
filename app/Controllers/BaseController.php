@@ -148,6 +148,7 @@ abstract class BaseController extends Controller
         $data['contact_detail'] = json_decode($this->db->table('setting')->getWhere(["name"=>'main',])->getRow()->data);
         $data['policy'] = json_decode($this->db->table('setting')->getWhere(["name"=>'policy',])->getRow()->data);
         $data['logo'] = json_decode($this->db->table('setting')->getWhere(["name"=>'logo',])->getRow()->data);
+        $data['about'] = json_decode($this->db->table('setting')->getWhere(["name"=>'about',])->getRow()->data);
         $data['db'] = $this->db;
         $data['request'] = $this->request;
         $data['pager'] = $this->pager;

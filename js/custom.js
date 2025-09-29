@@ -262,6 +262,36 @@ $(window).scroll(function () {
         ]
 
     });
+
+    $('.featured-sli').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 0,
+        speed: 1500,
+        centerMode: false,
+        pauseOnHover: false,
+        // cssEase: 'linear',
+        responsive: [{
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    centerMode: false
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: false
+                }
+            }
+        ]
+
+    });
     //HOME PAGE BANNER SLIDER
     $('.ban-sli').slick({
         infinite: true,

@@ -6,6 +6,12 @@
 
     <?php include"include/header-nav.php"; ?>
 
+    <style>
+        iframe{
+            width: 100% !important;
+        }
+    </style>
+
     <!-- BANNER -->
     <section>
         <div class="str">
@@ -36,9 +42,18 @@
                             <div class="we-here">
                                 <h3>Our office</h3>
                                 <p>Most Trusted and premium Matrimonial Service in the World.</p>
-                                <span><i class="fas fa-phone" aria-hidden="true"></i> 9643728995, 9953028995</span>
-                                <span><i class="far fa-envelope" aria-hidden="true"></i> rishtehirishte01@gmail.com </span>
-                                <span><i class="fas fa-map-marker" aria-hidden="true"></i> Janak Puri, New Delhi - 110058</span>
+                                <span><i class="fas fa-phone" aria-hidden="true"></i> 
+                                    <?php foreach (json_decode($contact_detail->mobile)?json_decode($contact_detail->mobile):[] as $key => $value) { ?>
+                                        <?php if($key>0)echo ", "; ?><a style="color:#212529" href="tel:<?=$value?>"><?=$value ?></a>
+                                    <?php } ?>
+                                </span>
+                                <span><i class="far fa-envelope" aria-hidden="true"></i> 
+                                    <?php 
+                                    foreach (($contact_detail->email)?($contact_detail->email):[] as $key => $value) { ?>
+                                        <?php if($key>0)echo ", "; ?><a style="color:#212529" href="mailto:<?=$value?>"><?=$value ?></a>
+                                    <?php } ?>
+                                </span>
+                                <span><i class="fas fa-map-marker" aria-hidden="true"></i> <?=$contact_detail->address?></span>
                             </div>
                         </li>
                         <li>
@@ -68,10 +83,8 @@
     <section class="pb-60">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-md-3">
-                    <iframe class="map_frame" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d224146.65889901138!2d77.090525!3d28.621023!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04ba6b064d0f%3A0xf609cdf712fe603e!2sJanakpuri%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1756275060853!5m2!1sen!2sin" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="col-md-9 ps-md-5">
+                
+                <div class="col-md-9 ps-md-5" style="margin:0 auto;">
                     <div class="login py-0 mt-0">
                     <div class="inn row">
                         <div class="lhs col-md-5">
@@ -124,6 +137,10 @@
                     </div>
                     </div>
 
+                </div>
+
+                <div class="col-md-12">
+                    <?=$contact_detail->google_map?>
                 </div>
             </div>
         </div>

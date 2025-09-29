@@ -38,9 +38,11 @@ class AdminContactEnquiryController extends BaseController
         $limit = $this->request->getVar('limit');
         $status = $this->request->getVar('status');
         $order_by = $this->request->getVar('order_by');
-        $filter_search_value = $this->request->getVar('filter_search_value');
         $page = $this->request->getVar('page') ?: 1; 
         $offset = ($page - 1) * $limit;
+
+        $filter_search_value = $this->request->getVar('filter_search_value');
+        $search_by = $this->request->getVar('search_by');
 
         $data['table_name'] = $this->arr_values['table_name'];
         $data['upload_path'] = $this->arr_values['upload_path'];
@@ -66,13 +68,18 @@ class AdminContactEnquiryController extends BaseController
             $where["add_date_time <="] = $to_date;
         }
 
+        if (!empty($filter_search_value)) {
+            if($search_by==1) $data_list->like($this->arr_values['table_name'].'.name', $filter_search_value);
+            if($search_by==2) $data_list->like($this->arr_values['table_name'].'.email', $filter_search_value);
+            if($search_by==3) $data_list->like($this->arr_values['table_name'].'.phone', $filter_search_value);
+            if($search_by==4) $data_list->like($this->arr_values['table_name'].'.user_id', $filter_search_value);
+        }
+
+        $total = $data_list->countAllResults(false);
         if(!empty($where)) $data_list->where($where);
-        $data_list = $data_list->get()->getResult();
-
-
-        $total = $this->db->table($this->arr_values['table_name']);
-        if(!empty($where)) $total->where($where);
-        $total = $total->countAllResults();
+        $data_list = $data_list->orderBy($this->arr_values['table_name'].'.id',$order_by)
+            ->limit($limit, $offset)->get()->getResult();
+        
         $data['pager'] = $this->pager->makeLinks($page, $limit, $total);
         $data['totalData'] = $total;
         $data['startData'] = ($total > 0) ? $offset+1 : 0;

@@ -27,71 +27,28 @@
             <div class="container">
                 <div class="row">
                     <ul>
-                        <li>
-                            <div class="pri-box">
-                                <div class="row align-items-end">
-                                    <div class="col-7">
-                                        <h2 class="text-start">Free</h2>
-                                        <p class="text-start mb-0">Printer took a type and scrambled </p>
+                       <?php
+                            $packages = $db->table("package")->where(["status"=>1,])->orderBy('id','desc')->get()->getResult();
+                            foreach ($packages as $key => $value) {
+                        ?>
+                            <li>
+                                <div class="pri-box">
+                                    <div class="row align-items-end">
+                                        <div class="col-12">
+                                            <h2 class="text-center"><?=$value->name ?></h2>
+                                        </div>
+                                        <div class="col-12">
+                                            <span class="pri-cou text-end"><b><?=price_formate($value->price)?></b>/<?=$value->validity?>mo</span>
+                                        </div>
                                     </div>
-                                    <div class="col-5">
-                                        <span class="pri-cou text-end"><b>$0</b>/mo</span>
-                                    </div>
-                                </div>
-                                <a href="sign-up.html" class="cta">Get Started</a>
-                                <ol>
-                                    <li><i class="far fa-times-circle close" aria-hidden="true"></i> 5 Premium Profiles view /mo
-                                    </li>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i>Free user profile can view</li>
-                                    <li><i class="far fa-times-circle close" aria-hidden="true"></i>View contact details</li>
-                                    <li><i class="far fa-times-circle close" aria-hidden="true"></i>Send interest</li>
-                                    <li><i class="far fa-times-circle close" aria-hidden="true"></i>Start Chat</li>
-                                </ol>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="pri-box pri-box-pop">
-                                <div class="row align-items-end">
-                                    <div class="col-7">
-                                        <h2 class="text-start">Gold</h2>
-                                        <p class="text-start mb-0">Printer took a type and scrambled </p>
-                                    </div>
-                                    <div class="col-5">
-                                        <span class="pop-pln">Most popular</span>
-                                        <span class="pri-cou text-end"><b>$0</b>/mo</span>
+                                    <a href="sign-up.html" class="cta">Get Started</a>
+                                    <div class="plans-description">
+                                        <?=$value->full_description ?>
                                     </div>
                                 </div>
-                                <a href="sign-up.html" class="cta">Get Started</a>
-                                <ol>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i> 20 Premium Profiles view /mo</li>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i>Free user profile can view</li>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i>View contact details</li>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i>Send interest</li>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i>Start Chat</li>
-                                </ol>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="pri-box">
-                                <div class="row align-items-end">
-                                    <div class="col-7">
-                                        <h2 class="text-start">Platinum</h2>
-                                        <p class="text-start mb-0">Printer took a type and scrambled </p>
-                                    </div>
-                                    <div class="col-5">
-                                        <span class="pri-cou text-end"><b>$0</b>/mo</span>
-                                    </div>
-                                </div>
-                                <a href="sign-up.html" class="cta">Get Started</a>
-                                <ol>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i> 50 Premium Profiles view /mo</li>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i>Free user profile can view</li>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i>View contact details</li>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i>Send interest</li>
-                                    <li><i class="far fa-check-circle" aria-hidden="true"></i>Start Chat</li>
-                                </ol>
-                            </div>
-                        </li>
+                            </li>
+                        <?php } ?>
+
                     </ul>
                 </div>
             </div>

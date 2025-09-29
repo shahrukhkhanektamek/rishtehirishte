@@ -25,6 +25,20 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+    
+    <meta name="_token" content="<?= csrf_hash() ?>">
+    <link rel="stylesheet" href="<?=base_url('public')?>/toast/saber-toast.css">
+    <link rel="stylesheet" href="<?=base_url('public')?>/toast/style.css">
+    <link rel="stylesheet" href="<?=base_url('public')?>/front_css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="<?=base_url('public')?>/front_script.js"></script>
+    <link rel="stylesheet" href="<?=base_url('public')?>/upload-multiple/style.css">
+    <script src="<?=base_url('public')?>/upload-multiple/script.js"></script>
+    <link rel="stylesheet" href="<?=base_url('public/')?>/assetsadmin/select2/css/select2.min.css">
+
+
+
 </head>
 
 <body>

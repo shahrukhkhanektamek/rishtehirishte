@@ -510,7 +510,6 @@ class DataSet extends BaseController
         ->getWhere()->getResultObject();
         foreach ($oldedu as $key => $value) {
 
-
             $amount = $value->pack_amount;
             $educationData = [
                 "status"=>1,
@@ -529,6 +528,26 @@ class DataSet extends BaseController
                 
             ];
             // $this->db->table("user_package")->insert($educationData);
+            print_r($educationData);
+        }
+    }
+
+    public function set_featured_profile()
+    {
+        $educationData = [];
+        $oldedu = $this->db2->table("featuredprofiile")
+        // ->limit(5)
+        ->offset(0)
+        ->getWhere()->getResultObject();
+        foreach ($oldedu as $key => $value) {
+            
+            $educationData = [
+                "status"=>1,
+                "user_id"=>$value->id,
+                "add_date_time"=>date("Y-m-d H:i:s"),
+                
+            ];
+            // $this->db->table("featured_profile")->insert($educationData);
             print_r($educationData);
         }
     }

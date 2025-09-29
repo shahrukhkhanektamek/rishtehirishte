@@ -47,7 +47,7 @@
                                                <option value="asc">ASC</option>
                                             </select>
                                          </div>
-                                         <div class="col-md-2">
+                                         <div class="col-md-1">
                                             <select class="form-control limit" id="limit">
                                                <option value="12">12</option>
                                                <option value="24">24</option>
@@ -55,6 +55,8 @@
                                                <option value="100">100</option>
                                             </select>
                                          </div>
+
+                                        
 
                                         <div class="col-sm-2">
                                             <div class="">
@@ -66,7 +68,15 @@
                                                 <input type="date" class="form-control" id="to-date" value="">
                                             </div>
                                         </div>
-
+                                        <div class="col-md-2">
+                                            <select class="form-control" id="search_by">
+                                               <option value="">Search By</option>
+                                               <option value="1">Name</option>
+                                               <option value="2">Email</option>
+                                               <option value="3">Phone</option>
+                                               <option value="4">ID. No.</option>
+                                            </select>
+                                        </div> 
                                          <div class="col-md-4">
                                             <div class="navbar-item navbar-form">
                                                   <div class="form-group">
@@ -74,8 +84,8 @@
                                                   </div>
                                             </div>
                                          </div>
-                                         <div class="col-md-2">
-                                            <button href="{{$data['back_btn']}}" class="btn btn-dark search w-100"><i class="ri-search-line align-bottom me-1"></i> Search</button>
+                                         <div class="col-md-1">
+                                            <button href="{{$data['back_btn']}}" class="btn btn-dark search w-100"><i class="ri-search-line align-bottom me-1"></i> </button>
                                          </div>
                                     </div>
                                 </div>
@@ -118,7 +128,8 @@
        var from_date = $("#from-date").val();
        var to_date = $("#to-date").val();
        var filter_search_value = $(".search-input").val();
-       data = `status=${status}&from_date=${from_date}&to_date=${to_date}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
+       var search_by = $("#search_by").val();
+       data = `search_by=${search_by}&status=${status}&from_date=${from_date}&to_date=${to_date}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
    }
     get_url_data();
    url = main_url+'?'+data;

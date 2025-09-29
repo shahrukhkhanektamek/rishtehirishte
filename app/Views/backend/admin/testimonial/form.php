@@ -38,14 +38,14 @@
                         <div class="live-preview">
                             <div class="row g-3">
                                 
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label class="form-label">Title <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="name" placeholder="" value="<?=@$row->name?>" required>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Designation <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="designation" placeholder="" value="<?=@$row->designation?>" required>
+                                    <label class="form-label">Location <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="designation" placeholder="" value="<?=@$row->designation?>" >
                                 </div>
 
 
