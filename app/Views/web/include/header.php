@@ -15,15 +15,15 @@
     <meta property="og:description" content="Rishte Hi Rishte is the fastest growing matrimonial portal in India. We offer a superior matchmaking experience for prospective brides and grooms to meet and communicate with each other by expanding the opportunities available to meet potential life partners and build fulfilling relationships. Rishte Hi Rishte is one of the pioneers of online matrimony service." />
 
     <!--== FAV ICON(BROWSER TAB ICON) ==-->
-    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="icon" href="<?=base_url()?>images/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url()?>images/favicon.png" />
 
     <!--== CSS FILES ==-->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css"/>
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/animate.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/style.css">
 
     
     <meta name="_token" content="<?= csrf_hash() ?>">
@@ -37,7 +37,59 @@
     <script src="<?=base_url('public')?>/upload-multiple/script.js"></script>
     <link rel="stylesheet" href="<?=base_url('public/')?>/assetsadmin/select2/css/select2.min.css">
 
+<style>
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+      background-color: #71519d;
+      border: 1px solid #71519d;
+    }
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+      color: white;
+    }
+    .select2-container .select2-selection--single
+    {
+      height: calc(2.70rem + 2px);
+    }
+    .select2-container--default .select2-selection--single {
+        padding: 5px 5px;
+        padding-top: 6px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow b {
+      top: 70%;
+    }
+    .select2-container--default .select2-selection--single {
+      border: 1px solid #ced4da;
+    }
+    .select2-container {
+        width: 100% !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #444;
+        line-height: 33px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 33px;
+    }
 
+    .pagination {
+    display: flex;
+    justify-content: space-between;
+}
+.pagination li.active a {
+    background: lightgray;
+    border-color: lightgray;
+}
+
+.pagination li a {
+    padding: 3px 10px !important;
+    display: inline-block;
+    border: 1px solid;
+    margin: 0 5px 0 0;
+    border-radius: 3px;
+}
+.review-listing > ul li .comment .comment-body {
+    width: 100%;
+}
+</style>
 
 </head>
 

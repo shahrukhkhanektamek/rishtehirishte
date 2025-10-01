@@ -1,6 +1,6 @@
 <?php include"include/header.php"; ?>
-
-
+<div class="hom-top">
+<?php include"include/header-nav.php"; ?>
 
          <!-- Breadcrumb -->
          <div class="breadcrumb-bar">

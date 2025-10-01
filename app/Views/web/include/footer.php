@@ -195,18 +195,223 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="js/jquery.min.js"></script> -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/select-opt.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/wizard.js"></script>
+    <!-- <script src="<?=base_url()?>js/jquery.min.js"></script> -->
+    <script src="<?=base_url()?>js/popper.min.js"></script>
+    <script src="<?=base_url()?>js/bootstrap.min.js"></script>
+    <script src="<?=base_url()?>js/select-opt.js"></script>
+    <script src="<?=base_url()?>js/slick.js"></script>
+    <script src="<?=base_url()?>js/custom.js"></script>
+    <script src="<?=base_url()?>js/wizard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
 
     <script src="<?=base_url('public/')?>/toast/saber-toast.js"></script>
     <script src="<?=base_url('public/')?>/toast/script.js"></script>
     <script src="<?=base_url('public/')?>/assetsadmin/select2/js/select2.full.min.js"></script>
+
+
+<script>
+    $(".ui-sortable").sortable();
+
+    $("select").select2();
+    $('.tags').select2({
+      tags: true,
+      tokenSeparators: ['||', '\n']
+    });
+
+    $(document).on('click',".logout",function (e) {
+      event.preventDefault();
+      loader('show');
+      $.ajax({
+          url:"<?=base_url(route_to('auth.logout'))?>",
+          type:"GET",
+          dataType:"json",
+          success:function(d)
+          {
+            admin_response_data_check(d)  
+          },
+          error: function(e) 
+        {
+          admin_response_data_check(e)
+        } 
+      });
+    });
+
+    $(".upload-single-image").on('change', function(){
+      var files = [];
+      var j=1;
+      var upload_div = $(this).data("target");
+      var name = $(this).data('name');
+                console.log(upload_div);
+      $( "."+upload_div ).empty();
+        for (var i = 0; i < this.files.length; i++)
+        {
+            if (this.files && this.files[i]) 
+            {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                $('.'+upload_div).attr("src",e.target.result);
+                j++;
+            }
+            reader.readAsDataURL(this.files[i]);
+        }
+      }      
+    });
+
+
+
+    $('.country').select2({
+      ajax: {
+        url: "<?=base_url(route_to('search-country'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.state').select2({
+      ajax: {
+        url: "<?=base_url(route_to('search-state'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public',
+            id:$("#country").val()
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.religion').select2({
+      ajax: {
+        url: "<?=base_url(route_to('religion'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.caste').select2({
+      ajax: {
+        url: "<?=base_url(route_to('caste'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.languages').select2({
+      ajax: {
+        url: "<?=base_url(route_to('languages'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.occupation').select2({
+      ajax: {
+        url: "<?=base_url(route_to('occupation'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.education').select2({
+      ajax: {
+        url: "<?=base_url(route_to('search-education'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('.education-category').select2({
+      ajax: {
+        url: "<?=base_url(route_to('education-category'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+
+
+
+
+</script>
+
+
+
 
 <script type="text/javascript">
     //COMMON SLIDER
