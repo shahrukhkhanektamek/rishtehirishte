@@ -13,6 +13,24 @@ $routes->group('user', ['namespace' => 'App\Controllers\User', 'filter'=>'UserAu
         $routes->post('update-profile-image', 'UserProfileController::update_profile_image', ['as' => 'user.profile.update-profile-image']);
     });
 
+    $routes->group('member', function($routes) {
+        $routes->get('/', 'UserMemberController::index', ['as' => 'user.member.index']);
+        $routes->get('advance_data', 'UserMemberController::advance_data', ['as' => 'user.member.advance_data']);
+        $routes->get('quick_data', 'UserMemberController::quick_data', ['as' => 'user.member.quick_data']);
+        $routes->get('profile/(:any)', 'UserMemberController::profile/$1', ['as' => 'user.member.profile']);
+
+        $routes->post('send_interest', 'UserMemberController::send_interest', ['as' => 'user.member.send_interest']);
+        $routes->post('view_contact', 'UserMemberController::view_contact', ['as' => 'user.member.view_contact']);
+    });
+    $routes->group('my-matches', function($routes) {
+        $routes->get('/', 'UserMyMatchesController::index', ['as' => 'user.my-matches.index']);
+        $routes->get('load_data', 'UserMyMatchesController::load_data', ['as' => 'user.my-matches.load_data']);
+    });
+    $routes->group('inbox', function($routes) {
+        $routes->get('/', 'UserInboxController::index', ['as' => 'user.inbox.index']);
+        $routes->get('load_data', 'UserInboxController::load_data', ['as' => 'user.inbox.load_data']);
+    });
+
     $routes->group('password', function($routes) {
         $routes->get('/', 'UserPasswordController::index', ['as' => 'user.password.index']);
         $routes->post('update', 'UserPasswordController::update', ['as' => 'user.password.update']);

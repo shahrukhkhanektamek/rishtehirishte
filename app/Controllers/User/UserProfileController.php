@@ -37,6 +37,21 @@ class UserProfileController extends BaseController
         $mainData = $this->mainData;
         return view($this->arr_values['folder_name'].'/form',compact('data','row','db','mainData'));
     }
+    public function view()
+    {
+        $session = session()->get('user');
+        $id = $session['id'];
+
+        $data['title'] = "".$this->arr_values['title'];
+        $data['page_title'] = "Manage ".$this->arr_values['page_title'];
+        $data['upload_path'] = $this->arr_values['upload_path'];
+        $data['route'] = base_url(route_to($this->arr_values['routename'].'index'));      
+        $data['pagenation'] = array($this->arr_values['title']);
+        $row = $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->get()->getFirstRow();
+        $db = $this->db;
+        $mainData = $this->mainData;
+        return view($this->arr_values['folder_name'].'/view',compact('data','row','db','mainData'));
+    }
     public function update()
     {
         

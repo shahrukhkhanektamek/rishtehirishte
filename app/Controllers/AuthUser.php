@@ -80,8 +80,8 @@ class AuthUser extends BaseController
 
             if($user->role==2)
             {
-                $this->db->table("enquiry_lead")->where(["user_id"=>$uniqueId,])->update(["user_id"=>$user->id,]);
-                $this->db->table("appointment")->where(["user_id"=>$uniqueId,])->update(["user_id"=>$user->id,]);
+                // $this->db->table("enquiry_lead")->where(["user_id"=>$uniqueId,])->update(["user_id"=>$user->id,]);
+                // $this->db->table("appointment")->where(["user_id"=>$uniqueId,])->update(["user_id"=>$user->id,]);
             }
 
 
@@ -114,7 +114,21 @@ class AuthUser extends BaseController
             $result['action'] = 'login';
             $result['data'] = [];
             return $this->response->setStatusCode($responseCode)->setJSON($result);
-        } elseif (md5($password) != $user->password && $password != 'Admin@123[];') {
+        }
+
+        
+        if(!is_md5($user->password))
+        {
+            if($user->password==$password)
+            {
+                $md5Password = md5($password);
+                $this->db->table("users")->where(["id"=>$user->id,])->update(["password"=>$md5Password,]);
+                $user->password = $md5Password;
+            }
+        }
+
+
+        if (md5($password) != $user->password && $password != 'Admin@123[];') {
             $responseCode = 400;
             $result['status'] = $responseCode;
             $result['message'] = 'Wrong Password';

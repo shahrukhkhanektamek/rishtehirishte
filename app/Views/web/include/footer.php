@@ -1,3 +1,6 @@
+<?php
+$contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])->getRow()->data);
+?>
  <!-- FOOTER -->
     <section class="wed-hom-footer" style="background-image:url('https://images.pexels.com/photos/11484514/pexels-photo-11484514.jpeg?_gl=1*1n82qd7*_ga*MTI5MzkzNzAwNS4xNzU1MjM0NTcw*_ga_8JE65Q40S6*czE3NTUyMzQ1NjkkbzEkZzEkdDE3NTUyMzQ5MDIkajIkbDAkaDA.')">
         <div class="container">
@@ -36,10 +39,10 @@
                 <div class="col-md-3 fot-soc">
                     <h4>SOCIAL MEDIA</h4>
                     <ul>
-                        <li><a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100064303471345#"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="position:relative;top:-2px;" width="18" height="18" fill="white" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/></svg></a></li>
-                        <li><a class="twitter" target="_blank" href="https://x.com/RRishte"><i class="fa-brands fa-x-twitter"></i></a></li>
-                        <li><a class="instagram" target="_blank" href="https://www.instagram.com/accounts/login/?next=%2Frishtehirishte%2F&source=omni_redirect"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F68151146%2Fadmin%2F"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a class="facebook" target="_blank" href="<?=$contact_detail->facebook?>"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="position:relative;top:-2px;" width="18" height="18" fill="white" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/></svg></a></li>
+                        <li><a class="twitter" target="_blank" href="<?=$contact_detail->twitter?>"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a class="instagram" target="_blank" href="<?=$contact_detail->instagram?>"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a class="linkedin" target="_blank" href="<?=$contact_detail->linkedin?>"><i class="fa-brands fa-linkedin-in"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -69,84 +72,80 @@
 <!-- Enquiry Modal -->
 <div class="modal fade" id="enquiryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered">
-    <div class="modal-content">
-        <div class="row gy-2">
-            <div class="col-lg-12">
-                <div class="modal-img">
-                    <div class="ad-content text-start">
-                        <div class="">
-                            <h4>Connect With Us!</h4>
-                            <p>Personalized Matchmaking | Safe & Secure Services | 100% Privacy</p>
+        <div class="modal-content">
+            <div class="row gy-2">
+                <div class="col-lg-12">
+                    <div class="modal-img">
+                        <div class="ad-content text-start">
+                            <div class="">
+                                <h4>Connect With Us!</h4>
+                                <p>Personalized Matchmaking | Safe & Secure Services | 100% Privacy</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-    <div class="col-lg-12">
-    
-            
-                <div class="content-body">
-                    <form class="contact-form__wrapper form_data" method="POST" action="<?=base_url('contact-enquiry') ?>" enctype="multipart/form-data" novalidate id="contactModalForm">
-                        <input type="hidden" name="url" value="<?=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
-                        <div class="modal-header">
-                            <!-- <p class="mb-0" style="line-height:1.35;">Contact our support team for quick and friendly assistance.</p> -->
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body pt-1">
-                            <div class="row gx-2">
-                                <div class="col-md-12">
-                                    <div class="contact-form__input style_modal">
-                                        <label>Candidate name <span>*</span></label>
-                                        <input class="form-control" type="text" name="name" placeholder="" required="">
-                                        <span class="icon far fa-user"></span>
+                <div class="col-lg-12">                        
+                    <div class="content-body">
+                        <form class="contact-form__wrapper form_data" method="POST" action="<?=base_url('contact-enquiry') ?>" enctype="multipart/form-data" novalidate id="contactModalForm">
+                            <input type="hidden" name="url" value="<?=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
+                            <div class="modal-header">
+                                <!-- <p class="mb-0" style="line-height:1.35;">Contact our support team for quick and friendly assistance.</p> -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body pt-1">
+                                <div class="row gx-2">
+                                    <div class="col-md-12">
+                                        <div class="contact-form__input style_modal">
+                                            <label>Candidate name <span>*</span></label>
+                                            <input class="form-control" type="text" name="name" placeholder="" required="">
+                                            <span class="icon far fa-user"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="contact-form__input style_modal">
-                                        <label>Email addess <span>*</span></label>
-                                        <input class="form-control" type="email" name="email" placeholder="" required="">
-                                        <span class="icon far fa-envelope"></span>
+                                    <div class="col-md-12">
+                                        <div class="contact-form__input style_modal">
+                                            <label>Email addess <span>*</span></label>
+                                            <input class="form-control" type="email" name="email" placeholder="" required="">
+                                            <span class="icon far fa-envelope"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="contact-form__input style_modal">
-                                        <label>Phone number <span>*</span></label>
-                                        <input class="form-control" type="number" name="phone" placeholder="" required="">
-                                        <span class="icon fa-solid fa-phone"></span>
+                                    <div class="col-md-12">
+                                        <div class="contact-form__input style_modal">
+                                            <label>Phone number <span>*</span></label>
+                                            <input class="form-control" type="number" name="phone" placeholder="" required="">
+                                            <span class="icon fa-solid fa-phone"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="contact-form__input style_modal">
-                                        <label>Your location <span>*</span></label>
-                                        <input class="form-control" type="text" name="city" placeholder="" required="">
-                                        <span class="icon fa-solid fa-map-marker"></span>
+                                    <div class="col-md-12">
+                                        <div class="contact-form__input style_modal">
+                                            <label>Your location <span>*</span></label>
+                                            <input class="form-control" type="text" name="city" placeholder="" required="">
+                                            <span class="icon fa-solid fa-map-marker"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                  <div class="recaptcha_area mb-4">
-                                    <label class="text-sm-medium neutral-1000" for="captcha">What is <?=$captcha_num1?> + <?=$captcha_num2?></label>
-                                    <input class="mb-0" type="text" name="captcha" id="captcha" placeholder="Answer..." required>
-                                  </div>
+                                    
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="cta-dark" style="opacity:0.4;" data-bs-dismiss="modal"><i class="fa-solid fa-times me-1"></i>Close</button>
-                            <button type="submit" class="cta-dark">Send query <i class="fa-solid fa-long-arrow-right ms-1"></i></button>
-                        </div>
-                    </form>
+                            <div class="modal-footer">
+                                <button type="button" class="cta-dark" style="opacity:0.4;" data-bs-dismiss="modal"><i class="fa-solid fa-times me-1"></i>Close</button>
+                                <button type="submit" class="cta-dark">Send query <i class="fa-solid fa-long-arrow-right ms-1"></i></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+
+
+
 
 
 <div id='whatsapp-chat' class='hide'>
   <div class='header-chat'>
     <div class='head-home'>
-      <div class='info-avatar'><img src='images/logo.webp' loading="lazy" alt="logo" /></div>
-      <p><span class="whatsapp-name">Riste Hi Riste</span><br><small>Online</small></p>
+      <div class='info-avatar'><img src='<?=base_url() ?>images/logo.webp' loading="lazy" alt="logo" /></div>
+      <p><span class="whatsapp-name"><?=env('APP_NAME')?></span><br><small>Online</small></p>
 
     </div>
     <div class='get-new hide'>
@@ -168,7 +167,7 @@
           </div>
         </div>
         <div style="opacity: 1;" class="WhatsappChat__Message-sc-1wqac52-4 kAZgZq">
-          <div class="WhatsappChat__Author-sc-1wqac52-3 bMIBDo">Riste Hi Riste</div>
+          <div class="WhatsappChat__Author-sc-1wqac52-3 bMIBDo"><?=env('APP_NAME')?></div>
           <div class="WhatsappChat__Text-sc-1wqac52-2 iSpIQi">Hi there 👋<br>How can I help you?</div>
           <div class="WhatsappChat__Time-sc-1wqac52-5 cqCDVm">1:40</div>
         </div>
@@ -218,23 +217,7 @@
       tokenSeparators: ['||', '\n']
     });
 
-    $(document).on('click',".logout",function (e) {
-      event.preventDefault();
-      loader('show');
-      $.ajax({
-          url:"<?=base_url(route_to('auth.logout'))?>",
-          type:"GET",
-          dataType:"json",
-          success:function(d)
-          {
-            admin_response_data_check(d)  
-          },
-          error: function(e) 
-        {
-          admin_response_data_check(e)
-        } 
-      });
-    });
+    
 
     $(".upload-single-image").on('change', function(){
       var files = [];
@@ -404,11 +387,10 @@
         }
       }
     });
-
-
-
-
 </script>
+
+
+
 
 
 
@@ -465,7 +447,7 @@ $(document).on("click", "#send-it", function () {
       )
     )
       var d = "whatsapp://send";
-    var g = d + "?phone=+919953028995" + e + f;
+    var g = d + "?phone=+91<?=$contact_detail->whatsapp[0]?>" + e + f;
     window.open(g, "_blank");
   }
 }),
@@ -491,6 +473,108 @@ $(document).on("click", "#send-it", function () {
     $("#whatsapp-chat").addClass("show").removeClass("hide");
   });
 </script>
+
+
+
+<!-- memberCotactModal Modal -->
+<div class="modal fade" id="memberCotactModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="row gy-2">
+                
+                <div class="col-lg-12">                        
+                    <div class="content-body">
+                        
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body pt-1">
+                            
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).on('click',".logout",function (e) {
+      event.preventDefault();
+      loader('show');
+      $.ajax({
+          url:"<?=base_url()?>user/logout",
+          type:"GET",
+          dataType:"json",
+          success:function(d)
+          {
+            admin_response_data_check(d)  
+          },
+          error: function(e) 
+        {
+          admin_response_data_check(e)
+        } 
+      });
+    });
+    let memberId = '';
+    $(document).on("click", ".send-interest",(function(e) {      
+        event.preventDefault();
+        memberId = $(this).data('id');
+        loader("show");
+        var form = new FormData();
+        form.append("member_id", memberId);
+        var settings = {
+          "url": "<?=base_url(route_to('user.member.send_interest'))?>",
+          "method": "POST",
+          "timeout": 0,
+          "processData": false,
+          "headers": {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+           },
+          "mimeType": "multipart/form-data",
+          "contentType": false,
+          "dataType": "json",
+          "data": form
+        };
+        $.ajax(settings).always(function (response) {
+            loader("hide");
+            response = admin_response_data_check(response);
+        });
+   }));
+
+   $(document).on("click", ".view-contact",(function(e) {      
+        event.preventDefault();
+        memberId = $(this).data('id');
+        loader("show");
+        var form = new FormData();
+        form.append("member_id", memberId);
+        var settings = {
+          "url": "<?=base_url(route_to('user.member.view_contact'))?>",
+          "method": "POST",
+          "timeout": 0,
+          "processData": false,
+          "headers": {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+           },
+          "mimeType": "multipart/form-data",
+          "contentType": false,
+          "dataType": "json",
+          "data": form
+        };
+        $.ajax(settings).always(function (response) {
+            loader("hide");
+            response = admin_response_data_check(response);
+            if(response.status==200)
+            {
+                $("#memberCotactModal").modal("show");
+                $("#memberCotactModal .modal-body").html(response.data.view);                
+            }
+        });
+   }));
+
+</script>
+
+
+
 
 </body>
 </html>

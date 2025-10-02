@@ -26,14 +26,14 @@
                         <div class="rhs col-md-4">
                             <div>
                                 <div class="form-login">
-                                    <form>
+                                    <form class="form_data" method="post" action="<?=base_url(route_to('auth.user.login-action'))?>" id="LoginForm" novalidate>
                                         <div class="form-group">
                                             <label class="lb">Email address <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="username">
                                         </div>
                                         <div class="form-group">
                                             <label class="lb">Password <span class="text-danger">*</span></label>
-                                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
                                         </div>
                                         <div class="row align-items-center justify-content-between mb-2">
                                             <div class="col-6">
@@ -42,7 +42,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <a class="fw-bold text-primary text-end d-block" style="text-decoration:underline;" href="forgot.php">Forgot Password!</a>
+                                                <a class="fw-bold text-primary text-end d-block" style="text-decoration:underline;" href="forgot">Forgot Password!</a>
                                             </div>
                                         </div>
                                         <button type="submit" class="cta-dark w-100">Login Here</button>
@@ -50,7 +50,7 @@
                                 </div>
                                 <p class="mt-2 mb-0" style="font-size:13px;color: rgb(133, 136, 144);"><small>By clicking on 'Register Free', you confirm that you accept the <a style="font-size:13px;font-weight:300;color:white;" href="#!">Terms of use</a> and <a style="font-size:13px;font-weight:300;color:white;" href="#!">Privacy Policy.</a></small></p>
                                 <div class="form-tit">
-                                    <p class="text-white fw-bold mb-0">Not a member? <a class="fw-bold" href="register.php">Sign Up Here</a></p>
+                                    <p class="text-white fw-bold mb-0">Not a member? <a class="fw-bold" href="register">Sign Up Here</a></p>
                                 </div>
                             </div>
                         </div>

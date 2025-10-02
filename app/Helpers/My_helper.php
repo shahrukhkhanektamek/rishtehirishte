@@ -237,6 +237,9 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
     $data = $db->table("role")->orderBy("name","asc")->where(["id"=>$role_id,])->get()->getRow();
     return $data;
   }
+  function is_md5($str) {
+    return preg_match('/^[a-f0-9]{32}$/i', $str) === 1;
+  }
  
 
   function create_importent_columns($table_name)

@@ -1,3 +1,4 @@
+<?php $user = get_user(); ?>
 <div class="container-fluid">
             <!-- <div class="row align-items-center"> -->
                 <div class="hom-nav row align-items-center justify-content-between">
@@ -6,7 +7,7 @@
                         <!-- <span class="menu desk-menu">
                             <i></i><i></i><i></i>
                         </span> -->
-                        <a href="index.php" class="logo-brand"><img src="images/main-logo.png" alt="rishtehirishte" loading="lazy" class="ic-logo img-fluid"></a>
+                        <a href="index" class="logo-brand"><img src="<?=base_url()?>images/main-logo.png" alt="rishtehirishte" loading="lazy" class="ic-logo img-fluid"></a>
                     </div>
 
                     <!-- EXPLORE MENU -->
@@ -20,7 +21,7 @@
                                     </div>
                                 </div>
                             </li> -->
-                            <li><a href="about.php">About Us</a></li>
+                            <li><a href="about">About Us</a></li>
                             <li class="smenu-pare">
                                 <span class="smenu">Services</span>
                                 <div class="smenu-open smenu-multi smenu-box">
@@ -126,28 +127,31 @@
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="clients.php">Our Clients</a></li>
-                            <li><a href="packages.php">Packages</a></li>
+                            <li><a href="clients">Our Clients</a></li>
+                            <li><a href="packages">Packages</a></li>
                             <li><a href="!#" target="_blank">Pay Now</a></li>
                             <!-- <li><a href="!#">Register</a></li> -->
-                            <li><a href="contact.php">Contact Us</a></li>
+                            <li><a href="contact">Contact Us</a></li>
                         </ul>
                     </div>
 
                     <!-- USER PROFILE -->
                     <div class="col-md-3">
                         <div class="al">
-                        <a href="login.php" class="login_button text-white fw-semibold me-3" type="submit"><i class="fas fa-sign-out me-1"></i>Logout</a>
-                        <div class="head-pro">  
-                            <img src="https://ik.imagekit.io/9sqym9p8y/@inabilansari/profile-square.svg" loading="lazy" alt="user_profile" loading="lazy">
-                            <b class="text-light">Advisor</b><br>
-                            <h4 class="text-white">Ashley emyy</h4>
-                            <span class="fclick"></span>
-                        </div>
-                        </div>
-                        <div class="d-flex align-items-center float-md-end">
-                            <a style="display:none;" href="login.php" class="login_button text-white fw-semibold me-3" type="submit"><i class="far fa-user me-2"></i>Login</a>
-                            <a style="display:none;" href="register.php" class="cta-dark" type="submit">Register Here</a>
+                            <?php if(empty($user)){ ?>
+                                <div class="d-flex align-items-center float-md-end">
+                                    <a style="display:block;" href="login" class="login_button text-white fw-semibold me-3" type="submit"><i class="far fa-user me-2"></i>Login</a>
+                                    <a style="display:block;" href="register" class="cta-dark" type="submit">Register Here</a>
+                                </div>                                
+                            <?php }else{?>
+                                <a class="logout login_button text-white fw-semibold me-3" type="submit"><i class="fas fa-sign-out me-1"></i>Logout</a>
+                                <div class="head-pro">  
+                                    <img src="<?=image_check($user->image,'user.png')?>" loading="lazy" alt="user_profile" loading="lazy">
+                                    <b class="text-light">Member</b><br>
+                                    <h4 class="text-white"><?=$user->name?></h4>
+                                    <span class="fclick"></span>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
 
@@ -155,13 +159,13 @@
                     <div class="mob-menu">
                         <div class="mob-me-ic">
                             <span class="ser-open mobile-ser">
-                                <img src="images/icon/search.svg" alt="">
+                                <img src="<?=base_url()?>images/icon/search.svg" alt="">
                             </span>
                             <span class="mobile-exprt" data-mob="dashbord">
-                                <img src="images/icon/users.svg" alt="">
+                                <img src="<?=base_url()?>images/icon/users.svg" alt="">
                             </span>
                             <span class="mobile-menu" data-mob="mobile">
-                                <img src="images/icon/menu.svg" alt="">
+                                <img src="<?=base_url()?>images/icon/menu.svg" alt="">
                             </span>
                         </div>
                     </div>
@@ -174,7 +178,7 @@
 
     <!-- EXPLORE MENU POPUP -->
     <!-- <div class="mob-me-all mobile_menu">
-        <div class="mob-me-clo"><img src="images/icon/close.svg" alt=""></div>
+        <div class="mob-me-clo"><img src="<?=base_url()?>images/icon/close.svg" alt=""></div>
         <div class="mv-bus">
             <h4><i class="fa fa-globe" aria-hidden="true"></i> EXPLORE CATEGORY</h4>
             <ul>
@@ -208,7 +212,7 @@
             <div class="menu-pop-help">
                 <h4>Support Team</h4>
                 <div class="user-pro">
-                    <img src="images/profiles/1.jpg" alt="" loading="lazy">
+                    <img src="<?=base_url()?>images/profiles/1.jpg" alt="" loading="lazy">
                 </div>
                 <div class="user-bio">
                     <h5>Ashley emyy</h5>
@@ -231,7 +235,7 @@
                 <ul>
                     <li>
                         <div class="rel-pro-img">
-                            <img src="images/couples/1.jpg" alt="" loading="lazy">
+                            <img src="<?=base_url()?>images/couples/1.jpg" alt="" loading="lazy">
                         </div>
                         <div class="rel-pro-con">
                             <h5>Long established fact that a reader distracted</h5>
@@ -241,7 +245,7 @@
                     </li>
                     <li>
                         <div class="rel-pro-img">
-                            <img src="images/couples/3.jpg" alt="" loading="lazy">
+                            <img src="<?=base_url()?>images/couples/3.jpg" alt="" loading="lazy">
                         </div>
                         <div class="rel-pro-con">
                             <h5>Long established fact that a reader distracted</h5>
@@ -251,7 +255,7 @@
                     </li>
                     <li>
                         <div class="rel-pro-img">
-                            <img src="images/couples/4.jpg" alt="" loading="lazy">
+                            <img src="<?=base_url()?>images/couples/4.jpg" alt="" loading="lazy">
                         </div>
                         <div class="rel-pro-con">
                             <h5>Long established fact that a reader distracted</h5>
@@ -274,10 +278,10 @@
 
     <!-- MOBILE USER PROFILE MENU POPUP -->
     <!-- <div class="mob-me-all dashbord_menu">
-        <div class="mob-me-clo"><img src="images/icon/close.svg" alt=""></div>
+        <div class="mob-me-clo"><img src="<?=base_url()?>images/icon/close.svg" alt=""></div>
         <div class="mv-bus">
             <div class="head-pro">
-                <img src="images/profiles/1.jpg" alt="" loading="lazy">
+                <img src="<?=base_url()?>images/profiles/1.jpg" alt="" loading="lazy">
                 <b>user profile</b><br>
                 <h4>Ashley emyy</h4>
             </div>
