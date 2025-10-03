@@ -361,7 +361,6 @@ class AdminUserController extends BaseController
             "phone"=>$this->request->getPost('phone'),
             "alt_phone"=>$this->request->getPost('alt_phone'),
             "gender"=>$this->request->getPost('gender'),
-            "gender"=>$this->request->getPost('gender'),
             "dob"=>$this->request->getPost('year').'-'.$this->request->getPost('month').'-'.$this->request->getPost('day'),
             "place_of_birth"=>$this->request->getPost('place_of_birth'),
             "time_of_birth"=>$this->request->getPost('time_of_birth'),

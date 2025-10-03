@@ -10,6 +10,13 @@ $routes->group('user', ['namespace' => 'App\Controllers\User', 'filter'=>'UserAu
     $routes->group('profile', function($routes) {
         $routes->get('/', 'UserProfileController::index', ['as' => 'user.profile.index']);
         $routes->post('update', 'UserProfileController::update', ['as' => 'user.profile.update']);
+
+        $routes->post('step1', 'UserProfileController::step1', ['as' => 'user.profile.step1']);
+        $routes->post('step2', 'UserProfileController::step2', ['as' => 'user.profile.step2']);
+        $routes->post('step3', 'UserProfileController::step3', ['as' => 'user.profile.step3']);
+        $routes->post('step4', 'UserProfileController::step4', ['as' => 'user.profile.step4']);
+        $routes->post('step5', 'UserProfileController::step5', ['as' => 'user.profile.step5']);
+
         $routes->post('update-profile-image', 'UserProfileController::update_profile_image', ['as' => 'user.profile.update-profile-image']);
     });
 

@@ -8,8 +8,11 @@
                         <div class="db-nav">
                             <div class="db-nav-pro">
                                 <div class="head-pro d-flex align-items-center">
-                                    <img src="<?=image_check($user->image)?>" loading="lazy" alt="user_profile" loading="lazy">
-                                    <h4 class="overflow-visible"><?=$user->name?></h4>
+                                    <img src="<?=image_check($user->image,'user.png')?>" loading="lazy" alt="user_profile" loading="lazy">
+                                    <div>
+                                        <h4 class="overflow-visible"><?=$user->name?></h4>
+                                        <b><?=env('APP_SORT').'-'.$user->user_id?></b>
+                                    </div>
                                 </div>
                             </div>
                             <div class="db-nav-list">

@@ -144,12 +144,14 @@
                                     <a style="display:block;" href="register" class="cta-dark" type="submit">Register Here</a>
                                 </div>                                
                             <?php }else{?>
-                                <a class="logout login_button text-white fw-semibold me-3" type="submit"><i class="fas fa-sign-out me-1"></i>Logout</a>
-                                <div class="head-pro">  
-                                    <img src="<?=image_check($user->image,'user.png')?>" loading="lazy" alt="user_profile" loading="lazy">
-                                    <b class="text-light">Member</b><br>
-                                    <h4 class="text-white"><?=$user->name?></h4>
-                                    <span class="fclick"></span>
+                                <a class="logout login_button text-white fw-semibold me-3" ><i class="fas fa-sign-out me-1"></i>Logout</a>
+                                <div class="head-pro">
+                                    <a href="<?=base_url('user/dashboard')?>" >
+                                        <img src="<?=image_check($user->image,'user.png')?>" loading="lazy" alt="user_profile" loading="lazy">
+                                        <b class="text-light"><?=env('APP_SORT').'-'.$user->user_id?></b><br>
+                                        <h4 class="text-white"><?=$user->name?></h4>
+                                        <span class="fclick"></span>
+                                    </a>
                                 </div>
                             <?php } ?>
                         </div>

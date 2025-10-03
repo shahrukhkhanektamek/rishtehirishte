@@ -240,6 +240,67 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
       }      
     });
 
+      let currentStep = 1;
+      const totalSteps = 5;
+      function showStep(step) {
+          // hide all steps
+          document.querySelectorAll(".setup-content").forEach(el => el.classList.add("d-none"));
+          // show current step
+          document.getElementById("step-" + step).classList.remove("d-none");
+
+          // update step indicator
+          document.querySelectorAll(".stepwizard-step a").forEach((btn, index) => {
+              if (index + 1 < step) {
+                  btn.classList.remove("btn-default");
+                  btn.classList.add("btn-step");
+              } else if (index + 1 === step) {
+                  btn.classList.remove("btn-default");
+                  btn.classList.add("active-step");
+              } else {
+                  btn.classList.remove("btn-step", "active-step");
+                  btn.classList.add("btn-default");
+              }
+          });
+      }
+
+      // Next Button
+      document.querySelectorAll(".nextBtn").forEach(btn => {
+          btn.addEventListener("click", () => {
+              if (currentStep < totalSteps) {
+                  currentStep++;
+                  showStep(currentStep);
+              }
+          });
+      });
+
+      // Previous Button
+      document.querySelectorAll(".prevBtn").forEach(btn => {
+          btn.addEventListener("click", () => {
+              if (currentStep > 1) {
+                  currentStep--;
+                  showStep(currentStep);
+              }
+          });
+      });
+
+      // Step click (circle buttons)
+      document.querySelectorAll(".stepwizard-step a").forEach((btn, index) => {
+          btn.addEventListener("click", () => {
+              currentStep = index + 1;
+              showStep(currentStep);
+          });
+      });
+
+      // Finish Button
+      const finishBtn = document.querySelector(".finishBtn");
+      if (finishBtn) {
+          finishBtn.addEventListener("click", () => {
+              alert("All steps completed!");
+          });
+      }
+
+      // show first step on load
+      // showStep(currentStep);
 
 
     $('.country').select2({

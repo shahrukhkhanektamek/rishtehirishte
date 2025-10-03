@@ -3,6 +3,7 @@ namespace App\Controllers\User;
 use App\Controllers\BaseController;
 use CodeIgniter\Database\Database;
 use CodeIgniter\Config\Services;
+use App\Models\ImageModel;
  
 class UserProfileController extends BaseController
 {
@@ -98,6 +99,310 @@ class UserProfileController extends BaseController
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }
     }
+
+
+
+    public function step1()
+    {
+        
+        $session = session()->get('user');
+        $add_by = $session['id'];
+        $id = $add_by;
+
+        $data = [
+            "name"=>$this->request->getPost('name'),
+            "email"=>$this->request->getPost('email'),
+            "phone"=>$this->request->getPost('phone'),
+            "alt_phone"=>$this->request->getPost('alt_phone'),
+            "gender"=>$this->request->getPost('gender'),
+            "dob"=>$this->request->getPost('dob'),
+            "place_of_birth"=>$this->request->getPost('place_of_birth'),
+            "time_of_birth"=>$this->request->getPost('time_of_birth'),
+            "profilefor"=>$this->request->getPost('profilefor'),
+            "update_date_time"=>date("Y-m-d H:i:s"),
+        ];
+
+        $entryStatus = false;
+        
+        if($this->db->table($this->arr_values['table_name'])->where('id', $id)->update($data)) $entryStatus = true;
+        else $entryStatus = false;        
+
+
+        if($entryStatus)
+        {
+            $action = 'step';
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Success';
+            $result['position'] = 'next';
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);            
+        }
+        else
+        {
+            $action = 'add';
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = $this->db->error()['message'];
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+    }
+    public function step2()
+    {
+        
+        $session = session()->get('user');
+        $add_by = $session['id'];
+        $id = $add_by;
+
+        $data = [
+            
+            "mothertongue"=>$this->request->getPost('mothertongue'),
+            "challenged"=>$this->request->getPost('challenged'),
+            "maritalstatus"=>$this->request->getPost('maritalstatus'),
+            "havechildren"=>$this->request->getPost('havechildren'),
+            "religion"=>$this->request->getPost('religion'),
+            "caste"=>$this->request->getPost('caste'),
+            "manglik"=>$this->request->getPost('manglik'),
+            "height"=>$this->request->getPost('height'),
+            "complexion"=>$this->request->getPost('complexion'),
+            "body_type"=>$this->request->getPost('body_type'),
+            "country"=>$this->request->getPost('country'),
+            "state"=>$this->request->getPost('state'),
+            "city"=>$this->request->getPost('city'),
+            "pincode"=>$this->request->getPost('pincode'),
+            "address"=>$this->request->getPost('address'),            
+            "update_date_time"=>date("Y-m-d H:i:s"),
+        ];
+        
+
+        $entryStatus = false;
+        
+        if($this->db->table($this->arr_values['table_name'])->where('id', $id)->update($data)) $entryStatus = true;
+        else $entryStatus = false;        
+
+
+        if($entryStatus)
+        {
+
+            $ImageModel = new ImageModel();
+
+            $all_image_column_names = ['images'];
+            $return_image_array = $ImageModel->upload_multiple_image($all_image_column_names,$this->arr_values['table_name'],$id,$this->request);
+            if(!empty($return_image_array))
+            {
+                foreach ($return_image_array as $key => $value)
+                {
+                    if(!empty($value)) $update_data[$key] = $value;
+                }
+            }
+            else
+            {
+                foreach ($all_image_column_names as $key => $value)
+                {
+                    $update_data[$value] = json_encode([]);
+                }
+            }
+
+            if(!empty($update_data))
+            {
+                $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->update($update_data);
+            } 
+
+            $action = 'step';
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Success';
+            $result['position'] = 'next';
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);            
+        }
+        else
+        {
+            $action = 'add';
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = $this->db->error()['message'];
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+    }
+    public function step3()
+    {
+        
+        $session = session()->get('user');
+        $add_by = $session['id'];
+        $id = $add_by;
+
+        $data = [
+            "highestdegree"=>$this->request->getPost('highestdegree'),
+            "collegename"=>$this->request->getPost('collegename'),
+            "occupation"=>$this->request->getPost('occupation'),
+            "annualincome"=>$this->request->getPost('annualincome'),
+            "annualincomeindoller"=>$this->request->getPost('annualincomeindoller'),
+            "diet"=>$this->request->getPost('diet'),
+            "expressyou"=>$this->request->getPost('expressyou'),
+            "update_date_time"=>date("Y-m-d H:i:s"),
+        ];
+
+
+        $entryStatus = false;
+        
+        if($this->db->table($this->arr_values['table_name'])->where('id', $id)->update($data)) $entryStatus = true;
+        else $entryStatus = false;        
+
+
+        if($entryStatus)
+        {
+            $action = 'step';
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Success';
+            $result['position'] = 'next';
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);            
+        }
+        else
+        {
+            $action = 'add';
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = $this->db->error()['message'];
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+    }
+    public function step4()
+    {        
+        $session = session()->get('user');
+        $add_by = $session['id'];
+        $id = $add_by;
+
+        $data = [
+            "family_type"=>$this->request->getPost('family_type'),
+            "family_living"=>$this->request->getPost('family_living'),
+            "father_name"=>$this->request->getPost('father_name'),
+            "father_occupation"=>$this->request->getPost('father_occupation'),
+            "father_annualincome"=>$this->request->getPost('father_annualincome'),
+            "mother_name"=>$this->request->getPost('mother_name'),
+            "mother_annualincome"=>$this->request->getPost('mother_annualincome'),
+            "brother_married"=>$this->request->getPost('brother_married'),
+            "brother_unmarried"=>$this->request->getPost('brother_unmarried'),
+            "sister_married"=>$this->request->getPost('sister_married'),
+            "sister_unmarried"=>$this->request->getPost('sister_unmarried'),
+            "aboutfamily"=>$this->request->getPost('aboutfamily'),
+            "update_date_time"=>date("Y-m-d H:i:s"),
+        ];
+        
+
+        $entryStatus = false;
+        
+        if($this->db->table($this->arr_values['table_name'])->where('id', $id)->update($data)) $entryStatus = true;
+        else $entryStatus = false;        
+
+
+        if($entryStatus)
+        {
+            $action = 'step';
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Success';
+            $result['position'] = 'next';
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);            
+        }
+        else
+        {
+            $action = 'add';
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = $this->db->error()['message'];
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+    }
+    public function step5()
+    {
+        
+        $session = session()->get('user');
+        $add_by = $session['id'];
+        $id = $add_by;
+
+        $requirmentData = [
+            "agestart"=>$this->request->getPost("agestartR"),
+            "ageend"=>$this->request->getPost("ageendR"),
+            "heightstart"=>$this->request->getPost("heightstartR"),
+            "heightend"=>$this->request->getPost("heightendR"),
+            "children"=>$this->request->getPost("childrenR"),
+            "income"=>$this->request->getPost("incomeR"),
+            "incomeend"=>$this->request->getPost("incomeendR"),
+            "incomedollar"=>$this->request->getPost("incomedollarR"),
+            "incomeenddollar"=>$this->request->getPost("incomeenddollarR"),
+
+            "religion"=>json_encode($this->request->getPost("religionR")),
+            "caste"=>json_encode($this->request->getPost("casteR")),
+            "maritalstatus"=>json_encode($this->request->getPost("maritalstatusR")),
+            "manglik"=>json_encode($this->request->getPost("manglikR")),
+            "education"=>json_encode($this->request->getPost("educationR")),
+            "occupation"=>json_encode($this->request->getPost("occupationR")),
+            "country"=>json_encode($this->request->getPost("countryR")),
+            "state"=>json_encode($this->request->getPost("stateR")),
+            "challenged"=>json_encode($this->request->getPost("challengedR")),
+            "otherrequirements"=>$this->request->getPost("otherrequirementsR"),
+        ];
+
+        $this->db->table($this->arr_values['table_name'])->where('id', $id)->update(["update_date_time"=>date("Y-m-d H:i:s")]);
+        
+
+        $entryStatus = false;
+        
+
+        $check = $this->db->table("requirement_form")->where(["user_id"=>$id,])->get()->getFirstRow();
+        if(empty($check))
+        {
+            if($this->db->table('requirement_form')->insert($requirmentData))
+                $entryStatus = true;
+        }
+        else
+        {
+            if($this->db->table('requirement_form')->where(["user_id"=>$id,])->update($requirmentData))
+                $entryStatus = true;
+        }
+
+
+        if($entryStatus)
+        {
+            $action = 'step';
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Success';
+            $result['position'] = 'done';
+            $result['url'] = base_url(route_to('user.dashboard'));
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);            
+        }
+        else
+        {
+            $action = 'add';
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = $this->db->error()['message'];
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+    }
+
+
     public function update_profile_image()
     {
         $session = session()->get('user');
