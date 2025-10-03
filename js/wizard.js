@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
+    var navListItems = $('div.setup-panelold div a'),
+            allWells = $('.setup-contentold'),
+            allNextBtn = $('.nextBtnOld');
 
-    allWells.hide();
+    // allWells.hide();
 
     navListItems.click(function (e) {
         e.preventDefault();

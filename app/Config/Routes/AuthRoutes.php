@@ -31,6 +31,7 @@ $routes->group('user', ['namespace' => 'App\Controllers'] ,function ($routes) {
     $routes->post('send_password', 'AuthUser::send_password', ['as' => 'auth.user.send_password']);
 
     $routes->post('signup-action', 'AuthUser::register_action', ['as' => 'auth.user.signup-action']);
+    $routes->get('complete-profile', 'AuthUser::complete_profile', ['as' => 'auth.user.complete-profile']);
 
 });
 

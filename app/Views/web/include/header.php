@@ -36,11 +36,12 @@
     <link rel="stylesheet" href="<?=base_url('public')?>/upload-multiple/style.css">
     <script src="<?=base_url('public')?>/upload-multiple/script.js"></script>
     <link rel="stylesheet" href="<?=base_url('public/')?>/assetsadmin/select2/css/select2.min.css">
+    <!-- <script src="https://cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script> -->
 
 <style>
     .select2-container--default .select2-selection--multiple .select2-selection__choice {
       background-color: #71519d;
-      border: 1px solid #71519d;
+      border: 1px solid #f3eedc;
     }
     .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
       color: white;
@@ -57,7 +58,7 @@
       top: 70%;
     }
     .select2-container--default .select2-selection--single {
-      border: 1px solid #ced4da;
+      border: 1px solid #f3eedc;
     }
     .select2-container {
         width: 100% !important;
@@ -69,6 +70,23 @@
     .select2-container--default .select2-selection--single .select2-selection__arrow {
         height: 33px;
     }
+
+
+    .form-group .select2-container .select2-selection--single {
+        height: calc(2.3rem + 2px);
+    }
+    .form-group .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #444;
+        line-height: 24px;
+    }
+    .form-group .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 26px;
+    }
+    .form-control{
+        border-color: #f3eedc;
+    }
+
+
 
     .pagination {
     display: flex;
@@ -88,6 +106,10 @@
 }
 .review-listing > ul li .comment .comment-body {
     width: 100%;
+}
+.active-step {
+    background-color: #007bff !important;
+    color: white !important;
 }
 </style>
 

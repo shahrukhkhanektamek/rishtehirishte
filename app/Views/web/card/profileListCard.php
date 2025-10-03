@@ -1,6 +1,6 @@
  <li>
     <div class="db-int-pro-1"> 
-        <img class="img-fluid " src="<?=image_check($value->image)?>" loading="lazy" alt="image"> 
+        <img class="img-fluid " src="<?=image_check($value->image, 'user.png')?>" loading="lazy" alt="image"> 
         <?php if(!empty($value->package_name)){ ?>
             <span class="badge bg-primary user-pla-pat"><?=$value->package_name ?> user</span>
         <?php } ?>

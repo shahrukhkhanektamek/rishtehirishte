@@ -191,6 +191,8 @@ if (!uniqueId) {
 
 
 
+
+
 function print_toast(message,type)
 {
   const bottomRightContainer = document.createElement('div')
@@ -320,6 +322,22 @@ var form = '';
             // $('#'+fid+' .images-ul').empty();
             if($("select")) $("select").select2();
             // $("select").select2();
+          }        
+          else if(result.action=="step")
+          { 
+            success_message(result.message);
+            loader('hide');
+            if(result.position=='next')
+            {
+              if (currentStep < totalSteps) {
+                  currentStep++;
+                  showStep(currentStep);
+              }
+            }
+            else
+            {
+              window.location.href=result.url;
+            }
           }
           else if(result.action=="login")
           { 

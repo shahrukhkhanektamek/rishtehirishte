@@ -12872,7 +12872,7 @@ h2.db-tit{
 .dashboard_bg {
     background-image: linear-gradient(135deg, #fdfcfb 0%, rgb(255 251 238) 100%);
 }
-.sett-rhs-pro .form-login .form-group label.lb {
+.sett-rhs-pro .form-login .form-group label.lb, label.lb {
     font-size: 12px;
     font-weight: 400;
     color: #818990;

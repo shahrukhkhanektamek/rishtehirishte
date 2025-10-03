@@ -19,6 +19,11 @@ class AuthUser extends BaseController
     {
         return view('web/login');
     }
+    public function complete_profile()
+    {
+        $db = $this->db;
+        return view('user/complete-profile', compact('db'));
+    }
 
     public function token_session($user)
     {
@@ -266,10 +271,10 @@ class AuthUser extends BaseController
         $age = '';
 
         
-        $role = $this->request->getPost('role');
+        $role = 2;
         $name = $first_name;
 
-        if (!in_array($role, [2,3,4,5])) {
+        if (!in_array($role, [2])) {
             $responseCode = 400;
             $result['message'] = 'Select Role!';
             $result['action'] = 'register';
@@ -304,25 +309,26 @@ class AuthUser extends BaseController
 
             $userData = [
                 'remember_token' => '',
+
+                "name"=>$this->request->getPost('name'),
+                "email"=>$this->request->getPost('email'),
+                "phone"=>$this->request->getPost('phone'),
+                "alt_phone"=>$this->request->getPost('alt_phone'),
+                "gender"=>$this->request->getPost('gender'),
+                "dob"=>$this->request->getPost('dob'),
+                "place_of_birth"=>$this->request->getPost('place_of_birth'),
+                "time_of_birth"=>$this->request->getPost('time_of_birth'),
+                "profilefor"=>$this->request->getPost('profilefor'),
+                'password'       => md5($password),
+                'user_id'        => $user_id,
+                'role'           => $role,
+
                 'kyc_step'       => 0,
                 'is_delete'      => 0,
                 'kyc_message'    => '',
-                'name'           => $name,
-                'email'          => $email,
-                'password'       => md5($password), // Consider using password_hash()
-                'gender'         => $gender,
                 'status'         => 1,
-                'role'           => $role,
                 'is_paid'        => 0,
                 'image'          => 'user.png',
-                'phone'          => $mobile,
-                'dob'            => $dob,
-                'country'        => $country,
-                'state'          => $state,
-                'city'           => $city,
-                'pincode'        => $pincode,
-                'address'        => $address,
-                'user_id'        => $user_id,
                 'add_by'         => 0
             ];
 
@@ -335,7 +341,7 @@ class AuthUser extends BaseController
                 ->get()
                 ->getRow();
             
-            $url = site_url($roledata->route . '/dashboard'); // equivalent to url(route())
+            $url = site_url($roledata->route . '/complete-profile'); // equivalent to url(route())
 
             // Here you might want to create a session for the user
             $this->token_session($user);
