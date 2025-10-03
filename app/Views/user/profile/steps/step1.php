@@ -12,13 +12,13 @@
             <div class="col-md-5 col-12">
                 <div class="form-group">
                     <label class="lb">Age <span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" name="age" placeholder="" value="<?=@$row->age?>">
+                    <input type="number" class="form-control" name="age" placeholder="" readonly value="<?=@$row->age?>">
                 </div>
             </div>
             <div class="col-md-7 col-12">
                 <div class="form-group">
                     <label class="lb">Email address <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="" value="<?=@$row->email?>">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="" readonly value="<?=@$row->email?>">
                 </div>
             </div>
             <div class="col-md-5 col-12">
@@ -62,7 +62,7 @@
             <div class="col-md-4 col-12">
                 <div class="form-group">
                     <label class="lb">Date of birth <span class="text-danger">*</span></label>
-                    <input type="date" class="form-control" id="dob" name="dob" value="<?=@$row->dob?>">
+                    <input type="date" class="form-control" id="dob" name="dob" readonly value="<?=@$row->dob?>">
                 </div>
             </div>
             <div class="col-md-4 col-12">

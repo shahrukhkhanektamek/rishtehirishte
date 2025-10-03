@@ -17,6 +17,8 @@ $routes->group('user', ['namespace' => 'App\Controllers\User', 'filter'=>'UserAu
         $routes->post('step4', 'UserProfileController::step4', ['as' => 'user.profile.step4']);
         $routes->post('step5', 'UserProfileController::step5', ['as' => 'user.profile.step5']);
 
+        $routes->get('complete-profile', 'UserProfileController::complete_profile', ['as' => 'user.profile.complete-profile']);
+
         $routes->post('update-profile-image', 'UserProfileController::update_profile_image', ['as' => 'user.profile.update-profile-image']);
     });
 

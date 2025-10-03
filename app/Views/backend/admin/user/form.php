@@ -665,10 +665,10 @@
                                         if(!empty($row))
                                         {
                                             if(!empty(json_decode(@$rowR->religion)))
-                                            $religions = $db->table("religion")->whereIn("id", json_decode(@$rowR->religion))->get()->getResult();
-                                            if(!empty($religions))
+                                            $religions2 = $db->table("religion")->whereIn("id", json_decode(@$rowR->religion))->get()->getResult();
+                                            if(!empty($religions2))
                                             {
-                                                foreach ($religions as $key => $value) {
+                                                foreach ($religions2 as $key => $value) {
                                         ?>
                                                 <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
                                         <?php }}} ?>
@@ -682,10 +682,10 @@
                                         if(!empty($row))
                                         {
                                             if(!empty(json_decode(@$rowR->caste)))
-                                            $castes = $db->table("caste")->whereIn("id", json_decode(@$rowR->caste))->get()->getResult();
-                                            if(!empty($castes))
+                                            $castes2 = $db->table("caste")->whereIn("id", json_decode(@$rowR->caste))->get()->getResult();
+                                            if(!empty($castes2))
                                             {
-                                                foreach ($castes as $key => $value) {
+                                                foreach ($castes2 as $key => $value) {
                                         ?>
                                                 <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
                                         <?php }}} ?>
@@ -733,10 +733,10 @@
                                         if(!empty($row))
                                         {
                                             if(!empty(json_decode(@$rowR->education)))
-                                            $educations = $db->table("education")->whereIn("id", json_decode(@$rowR->education))->get()->getResult();
-                                            if(!empty($educations))
+                                            $educations2 = $db->table("education")->whereIn("id", json_decode(@$rowR->education))->get()->getResult();
+                                            if(!empty($educations2))
                                             {
-                                                foreach ($educations as $key => $value) {
+                                                foreach ($educations2 as $key => $value) {
                                         ?>
                                                 <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
                                         <?php }}} ?>
@@ -750,10 +750,10 @@
                                         if(!empty($row))
                                         {
                                             if(!empty(json_decode(@$rowR->occupation)))
-                                            $occupations = $db->table("occupation")->whereIn("id", json_decode(@$rowR->occupation))->get()->getResult();
-                                            if(!empty($occupations))
+                                            $occupations2 = $db->table("occupation")->whereIn("id", json_decode(@$rowR->occupation))->get()->getResult();
+                                            if(!empty($occupations2))
                                             {
-                                                foreach ($occupations as $key => $value) {
+                                                foreach ($occupations2 as $key => $value) {
                                         ?>
                                                 <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
                                         <?php }}} ?>
@@ -767,10 +767,10 @@
                                         if(!empty($row))
                                         {
                                             if(!empty(json_decode(@$rowR->country)))
-                                            $countries = $db->table("countries")->whereIn("id", json_decode(@$rowR->country))->get()->getResult();
-                                            if(!empty($countries))
+                                            $countries2 = $db->table("countries")->whereIn("id", json_decode(@$rowR->country))->get()->getResult();
+                                            if(!empty($countries2))
                                             {
-                                                foreach ($countries as $key => $value) {
+                                                foreach ($countries2 as $key => $value) {
                                         ?>
                                                 <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
                                         <?php }}} ?>
@@ -784,10 +784,10 @@
                                         if(!empty($row))
                                         {
                                             if(!empty(json_decode(@$rowR->state)))
-                                            $states = $db->table("states")->whereIn("id", json_decode(@$rowR->state))->get()->getResult();
-                                            if(!empty($states))
+                                            $states2 = $db->table("states")->whereIn("id", json_decode(@$rowR->state))->get()->getResult();
+                                            if(!empty($states2))
                                             {
-                                                foreach ($states as $key => $value) {
+                                                foreach ($states2 as $key => $value) {
                                         ?>
                                                 <option value="<?=$value->id ?>" selected><?=$value->name ?></option>
                                         <?php }}} ?>

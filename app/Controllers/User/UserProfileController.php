@@ -26,18 +26,126 @@ class UserProfileController extends BaseController
     public function index()
     {
         $session = session()->get('user');
-        $id = $session['id'];
+        $user_id = $id = $session['id'];
 
         $data['title'] = "".$this->arr_values['title'];
         $data['page_title'] = "Manage ".$this->arr_values['page_title'];
         $data['upload_path'] = $this->arr_values['upload_path'];
         $data['route'] = base_url(route_to($this->arr_values['routename'].'index'));      
         $data['pagenation'] = array($this->arr_values['title']);
-        $row = $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->get()->getFirstRow();
+
+        $table_name = $this->arr_values['table_name'];
+        // ✅ Active package subquery (हर user का latest active package)
+        $activePackageSubQuery = "
+            SELECT up1.*
+            FROM user_package up1
+            INNER JOIN (
+                SELECT user_id, MAX(plan_end_date_time) AS latest_end
+                FROM user_package
+                WHERE is_delete=0
+                GROUP BY user_id
+            ) up2
+            ON up1.user_id = up2.user_id
+            AND up1.plan_end_date_time = up2.latest_end
+        ";
+        $row = $this->db->table('users')->where(["users.id"=>$user_id])
+        ->join("education as education","education.id={$table_name}.highestdegree","left")
+        ->join("occupation as occupation","occupation.id={$table_name}.occupation","left")
+        ->join("religion as religion","religion.id={$table_name}.religion","left")
+        ->join("caste as caste","caste.id={$table_name}.caste","left")
+        ->join("languages as languages","languages.id={$table_name}.mothertongue","left")
+        ->join("countries as countries","countries.id={$table_name}.country","left")
+        ->join("states as states","states.id={$table_name}.state","left")
+        ->join("($activePackageSubQuery) as user_package",
+               "user_package.user_id = {$table_name}.id",
+               "left")
+        ->select([
+                "{$table_name}.*",
+                "education.name as education_name",
+                "occupation.name as occupation_name",
+                "religion.name as religion_name",
+                "caste.name as caste_name",
+                "languages.name as mothertongue_name",
+                "states.name as state_name",
+                "countries.name as country_name",
+                "user_package.id as user_package_id",
+                "user_package.package_name as package_name",
+                "user_package.plan_start_date_time as plan_start_date_time",
+                "user_package.plan_end_date_time as plan_end_date_time",
+                "user_package.contact_limit as contact_limit",
+                "user_package.view_contact as view_contact",
+                "TIMESTAMPDIFF(YEAR, {$table_name}.dob, CURDATE()) as age",
+            ])
+        ->get()->getFirstRow();
+        $rowR = $this->db->table("requirement_form")->where(["user_id"=>$id,])->get()->getFirstRow();
         $db = $this->db;
         $mainData = $this->mainData;
-        return view($this->arr_values['folder_name'].'/form',compact('data','row','db','mainData'));
+        return view($this->arr_values['folder_name'].'/form',compact('data','row','rowR','db','mainData'));
     }
+    public function complete_profile()
+    {
+        $session = session()->get('user');
+        $user_id = $id = $session['id'];
+
+        $data['title'] = "".$this->arr_values['title'];
+        $data['page_title'] = "Manage ".$this->arr_values['page_title'];
+        $data['upload_path'] = $this->arr_values['upload_path'];
+        $data['route'] = base_url(route_to($this->arr_values['routename'].'index'));      
+        $data['pagenation'] = array($this->arr_values['title']);
+        // $row = $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->get()->getFirstRow();
+
+
+        $table_name = $this->arr_values['table_name'];
+        // ✅ Active package subquery (हर user का latest active package)
+        $activePackageSubQuery = "
+            SELECT up1.*
+            FROM user_package up1
+            INNER JOIN (
+                SELECT user_id, MAX(plan_end_date_time) AS latest_end
+                FROM user_package
+                WHERE is_delete=0
+                GROUP BY user_id
+            ) up2
+            ON up1.user_id = up2.user_id
+            AND up1.plan_end_date_time = up2.latest_end
+        ";
+        $row = $this->db->table('users')->where(["users.id"=>$user_id])
+        ->join("education as education","education.id={$table_name}.highestdegree","left")
+        ->join("occupation as occupation","occupation.id={$table_name}.occupation","left")
+        ->join("religion as religion","religion.id={$table_name}.religion","left")
+        ->join("caste as caste","caste.id={$table_name}.caste","left")
+        ->join("languages as languages","languages.id={$table_name}.mothertongue","left")
+        ->join("countries as countries","countries.id={$table_name}.country","left")
+        ->join("states as states","states.id={$table_name}.state","left")
+        ->join("($activePackageSubQuery) as user_package",
+               "user_package.user_id = {$table_name}.id",
+               "left")
+        ->select([
+                "{$table_name}.*",
+                "education.name as education_name",
+                "occupation.name as occupation_name",
+                "religion.name as religion_name",
+                "caste.name as caste_name",
+                "languages.name as mothertongue_name",
+                "states.name as state_name",
+                "countries.name as country_name",
+                "user_package.id as user_package_id",
+                "user_package.package_name as package_name",
+                "user_package.plan_start_date_time as plan_start_date_time",
+                "user_package.plan_end_date_time as plan_end_date_time",
+                "user_package.contact_limit as contact_limit",
+                "user_package.view_contact as view_contact",
+                "TIMESTAMPDIFF(YEAR, {$table_name}.dob, CURDATE()) as age",
+            ])
+        ->get()->getFirstRow();
+
+
+        $rowR = $this->db->table("requirement_form")->where(["user_id"=>$id,])->get()->getFirstRow();
+        $db = $this->db;
+        $mainData = $this->mainData;
+        return view('user/complete-profile',compact('data','row','rowR','db','mainData'));
+    }
+
     public function view()
     {
         $session = session()->get('user');
@@ -111,11 +219,11 @@ class UserProfileController extends BaseController
 
         $data = [
             "name"=>$this->request->getPost('name'),
-            "email"=>$this->request->getPost('email'),
+            // "email"=>$this->request->getPost('email'),
             "phone"=>$this->request->getPost('phone'),
             "alt_phone"=>$this->request->getPost('alt_phone'),
             "gender"=>$this->request->getPost('gender'),
-            "dob"=>$this->request->getPost('dob'),
+            // "dob"=>$this->request->getPost('dob'),
             "place_of_birth"=>$this->request->getPost('place_of_birth'),
             "time_of_birth"=>$this->request->getPost('time_of_birth'),
             "profilefor"=>$this->request->getPost('profilefor'),

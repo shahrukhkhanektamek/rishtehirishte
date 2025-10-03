@@ -6,7 +6,7 @@
                     
                     <!-- Left: Profile Image -->
                     <div class="me-3" style="width:120px; flex-shrink:0;">
-                        <img src="<?=image_check($value->images) ?>"
+                        <img src="<?=image_check($value->image) ?>"
                              alt="<?=$value->name?>"
                              class="img-fluid rounded"
                              style="width:120px; height:120px; object-fit:cover;">

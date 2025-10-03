@@ -726,22 +726,22 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
   
 
 
-    function my_plans($vendor_id)
+    function my_plans($user_id)
     {
         $db = \Config\Database::connect();
-        return $db->table('vendor_package')
-                  ->where('vendor_id', $vendor_id)
+        return $db->table('user_package')
+                  ->where('user_id', $user_id)
                   ->orderBy('id', 'DESC')
                   ->get()
                   ->getResult();
     }
-    function plan_status($vendor_id, $plans_id)
+    function plan_status($user_id, $plans_id)
     {
         $db = \Config\Database::connect();
         $today = date("Y-m-d H:i:s");
 
-        $plan = $db->table('vendor_package')
-                   ->where(['vendor_id' => $vendor_id, 'id' => $plans_id])
+        $plan = $db->table('user_package')
+                   ->where(['user_id' => $user_id, 'id' => $plans_id])
                    ->get()
                    ->getRow();
 
@@ -765,7 +765,7 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
             "is_unlimited" => $is_unlimited,
         ];
     }
-    function check_any_active_plan($vendor_id)
+    function check_any_active_plan($user_id)
     {
         $db = \Config\Database::connect();
         $today = date("Y-m-d H:i:s");
@@ -777,8 +777,8 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
         $is_unlimited = false;
 
         // First: check non-unlimited active plan with available classes
-        $builder = $db->table('vendor_package');
-        $plan = $builder->where('vendor_id', $vendor_id)
+        $builder = $db->table('user_package');
+        $plan = $builder->where('user_id', $user_id)
                         ->where('available_class >', 0)
                         ->where('plan_end_date_time >=', $today)
                         ->get()
@@ -786,7 +786,7 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
 
         if (empty($plan)) {
             // Second: check unlimited plans
-            $plan = $builder->where('vendor_id', $vendor_id)
+            $plan = $builder->where('user_id', $user_id)
                             ->where('is_unlimited', 1)
                             ->where('plan_end_date_time >=', $today)
                             ->get()

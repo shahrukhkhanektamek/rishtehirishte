@@ -39,11 +39,11 @@ class UserMemberController extends BaseController
     }
     public function profile($user_id)
     {
-
         $session = session()->get('user');
         $id = $session['id'];
         // echo $user_id;
         $user_id = @explode(strtolower(env('APP_SORT').'-'), $user_id)[1];
+        
 
         $data['title'] = "".$this->arr_values['title'];
         $data['page_title'] = "Manage ".$this->arr_values['page_title'];
@@ -72,7 +72,7 @@ class UserMemberController extends BaseController
             ON up1.user_id = up2.user_id
             AND up1.plan_end_date_time = up2.latest_end
         ";
-        $row = $this->db->table('users')->where(["users.id"=>$user_id])
+        $row = $this->db->table('users')->where(["users.user_id"=>$user_id])
         ->join("education as education","education.id={$table_name}.highestdegree","left")
         ->join("occupation as occupation","occupation.id={$table_name}.occupation","left")
         ->join("religion as religion","religion.id={$table_name}.religion","left")
@@ -85,6 +85,13 @@ class UserMemberController extends BaseController
                "left")
         ->select([
                 "{$table_name}.*",
+                "
+                CASE
+                    WHEN {$table_name}.gender = 1 THEN 'Male'
+                    WHEN {$table_name}.gender = 2 THEN 'Fmale'
+                    ELSE 'other'
+                END AS gender_name
+                ",
                 "education.name as education_name",
                 "occupation.name as occupation_name",
                 "religion.name as religion_name",
@@ -102,10 +109,10 @@ class UserMemberController extends BaseController
             ])
         ->get()->getFirstRow();
 
+        $rowR = $this->db->table("requirement_form")->where(["user_id"=>$id,])->get()->getFirstRow();
 
 
-
-        return view($this->arr_values['folder_name'].'/view',compact('data','row','db','mainData'));
+        return view($this->arr_values['folder_name'].'/view',compact('data','row','rowR','db','mainData'));
     }
 
 

@@ -19,12 +19,7 @@ class AuthUser extends BaseController
     {
         return view('web/login');
     }
-    public function complete_profile()
-    {
-        $db = $this->db;
-        return view('user/complete-profile', compact('db'));
-    }
-
+    
     public function token_session($user)
     {
         // Initialize variables
@@ -106,7 +101,7 @@ class AuthUser extends BaseController
         // Query the user from the database
         $user = $this->db->table('users')
             ->where(['email' => $username])
-            ->whereIn('role', [2,3,4,5])
+            ->whereIn('role', [2])
             ->get()
             ->getRow();
 
@@ -341,7 +336,7 @@ class AuthUser extends BaseController
                 ->get()
                 ->getRow();
             
-            $url = site_url($roledata->route . '/complete-profile'); // equivalent to url(route())
+            $url = site_url($roledata->route . '/user/profile/complete-profile'); // equivalent to url(route())
 
             // Here you might want to create a session for the user
             $this->token_session($user);

@@ -56,7 +56,7 @@ class DataSet extends BaseController
                 "status"=>1,
                 "name"=>$value->name,
                 "email"=>$value->email,
-                "password"=>$value->password,
+                "password"=>md5($value->password),
                 "phone"=>$value->mobile,
                 "dob"=>$dob,
                 "profilefor"=>$value->profilefor,

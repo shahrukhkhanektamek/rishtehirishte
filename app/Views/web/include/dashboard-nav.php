@@ -55,8 +55,7 @@
                                             <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                                         </button>
                                         <ul class="dropdown-menu">
-                                          <li><a class="dropdown-item" href="#">Edid profile</a></li>
-                                          <li><a class="dropdown-item" href="#">View profile</a></li>
+                                          <li><a class="dropdown-item" href="<?=base_url('user/member/profile/'.strtolower(env('APP_SORT')).'-'.$user->user_id)?>">View profile</a></li>
                                           <li><a class="dropdown-item" href="#">Plan change</a></li>
                                           <li><a class="dropdown-item" href="#">Download invoice now</a></li>
                                         </ul>
@@ -64,18 +63,20 @@
                                     </div>
                                     <div class="d-flex align-items-start justify-content-between mt-3">
                                         <div class="db-plan-card">
-                                        <img class="img-fluid" src="images/icon/plan.png" width="40" loading="lazy" alt="icon">
-                                    </div>
-                                    <div class="db-plan-detil">
-                                        <ul>
-                                            <li>Plan name: <strong>Standard</strong></li>
-                                            <li>Validity: <strong>6 Months</strong></li>
-                                            <li>Valid till <strong>24 June 2024</strong></li>
-                                            <li><a href="packages.php" class="cta-3">Upgrade Now</a></li>
-                                        </ul>
-                                    </div>
+                                            <img class="img-fluid" src="<?=base_url() ?>images/icon/plan.png" width="40" loading="lazy" alt="icon">
+                                        </div>
+                                        <div class="db-plan-detil">
+                                            <ul>
+                                                <li>Plan name: <strong>Standard</strong></li>
+                                                <li>Validity: <strong>6 Months</strong></li>
+                                                <li>Valid till <strong>24 June 2024</strong></li>
+                                                <li><a href="packages.php" class="cta-3">Upgrade Now</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             
                         </div>
+
+                        
