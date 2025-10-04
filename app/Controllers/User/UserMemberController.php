@@ -109,6 +109,12 @@ class UserMemberController extends BaseController
             ])
         ->get()->getFirstRow();
 
+        $check = $this->db->table("user_view_profile")->where(["member_id"=>$user_id,"user_id"=>$id,])->get()->getFirstRow();
+        if(empty($check))
+        {
+            $this->db->table('user_view_profile')->insert(["user_id"=>$id,"member_id"=>$user_id,"date_time"=>date("Y-m-d H:i:s"),]);
+        }
+
         $rowR = $this->db->table("requirement_form")->where(["user_id"=>$id,])->get()->getFirstRow();
 
 
@@ -553,6 +559,7 @@ class UserMemberController extends BaseController
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }
     }
+
     public function view_contact()
     {
         $session = session()->get('user');
@@ -590,5 +597,4 @@ class UserMemberController extends BaseController
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }
     }
-
 }

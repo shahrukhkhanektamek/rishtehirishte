@@ -706,8 +706,8 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
   }
   function ages($value = '')
   {
-      $startAge = 1; 
-      $endAge = 100;
+      $startAge = 18; 
+      $endAge = 60;
       $arr = range($startAge, $endAge);
       if (empty($value)) {
           return $arr;

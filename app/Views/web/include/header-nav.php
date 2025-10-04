@@ -138,7 +138,7 @@
                     <!-- USER PROFILE -->
                     <div class="col-md-3">
                         <div class="al">
-                            <?php if(empty($user)){ ?>
+                            <?php if(@$user->role!=2){ ?>
                                 <div class="d-flex align-items-center float-md-end">
                                     <a style="display:block;" href="login" class="login_button text-white fw-semibold me-3" type="submit"><i class="far fa-user me-2"></i>Login</a>
                                     <a style="display:block;" href="register" class="cta-dark" type="submit">Register Here</a>

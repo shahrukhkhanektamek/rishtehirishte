@@ -57,7 +57,8 @@ $logo_setting = $setting['logo'];
     <script src="<?=base_url('public')?>/upload-multiple/script.js"></script>
     <link rel="stylesheet" href="<?=base_url('public/')?>/assetsadmin/select2/css/select2.min.css">
 
-
+    <link rel="stylesheet" href="<?=base_url('public/')?>/timepicker/mdtimepicker.css">
+    <script src="<?=base_url('public/')?>/timepicker/mdtimepicker.js"></script>
 
 
     <script src="https://cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>

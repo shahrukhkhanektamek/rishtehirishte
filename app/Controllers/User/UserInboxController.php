@@ -94,7 +94,7 @@ class UserInboxController extends BaseController
         else if($type==4)
         {
             $data_list->join("users as users","users.id=request.receiverID","left");
-            $data_list->where(["senderID"=>$user_id,]);              
+            $data_list->where(["senderID"=>$user_id,]);
         }
 
         if(!empty($status)) $data_list->where(['request.status' => $status]);

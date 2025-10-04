@@ -68,7 +68,7 @@
             <div class="col-md-4 col-12">
                 <div class="form-group">
                     <label class="lb">Time of birth</label>
-                    <input type="time" class="form-control" id="dobtime" name="time_of_birth" placeholder="" value="<?=@$row->time_of_birth?>">
+                    <input type="text" class="form-control" name="time_of_birth" placeholder="" value="<?=@$row->time_of_birth?>" id="timepicker" readonly>
                 </div>
             </div>
             <div class="col-md-4 col-12">
@@ -94,3 +94,14 @@
         </form>
     </div>
 </div>
+<script>    
+    $('#timepicker').mdtimepicker({
+        timeFormat: 'hh:mm:ss.000', // format of the time value (data-time attribute)
+        format: 'h:mm tt',    // format of the input value
+        readOnly: false,       // determines if input is readonly
+        hourPadding: false,
+        theme: 'purple',
+        okLabel: 'Ok',
+        cancelLabel: 'Cancel'
+    });
+</script>

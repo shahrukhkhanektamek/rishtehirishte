@@ -404,6 +404,10 @@ class AdminUserController extends BaseController
             "status"=>$this->request->getPost('status'),
             "is_delete"=>0,
         ];
+        if(empty($id))
+        {
+            $data['password'] = md5($this->request->getPost('password'));
+        }
 
 
         $email = $this->request->getPost('email');

@@ -38,6 +38,11 @@
     <link rel="stylesheet" href="<?=base_url('public/')?>/assetsadmin/select2/css/select2.min.css">
     <!-- <script src="https://cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script> -->
 
+
+    <link rel="stylesheet" href="<?=base_url('public/')?>/timepicker/mdtimepicker.css">
+    <script src="<?=base_url('public/')?>/timepicker/mdtimepicker.js"></script>
+
+
 <style>
     .select2-container--default .select2-selection--multiple .select2-selection__choice {
       background-color: #71519d;
@@ -49,7 +54,7 @@
     .select2-container .select2-selection--single
     {
       height: calc(2.70rem + 2px);
-    }
+    }    
     .select2-container--default .select2-selection--single {
         padding: 5px 5px;
         padding-top: 6px;
@@ -86,6 +91,38 @@
         border-color: #f3eedc;
     }
 
+
+    .banner-form .select2-container--default .select2-selection--multiple .select2-selection__choice {
+      background-color: #71519d;
+      border: 1px solid #f3eedc;
+    }
+    .banner-form .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+      color: white;
+    }
+    .banner-form .select2-container .select2-selection--single
+    {
+      height: calc(2.70rem + 2px);
+    }    
+    .banner-form .select2-container--default .select2-selection--single {
+        padding: 5px 5px;
+        padding-top: 6px;
+    }
+    .banner-form .select2-container--default .select2-selection--single .select2-selection__arrow b {
+      top: 70%;
+    }
+    .banner-form .select2-container--default .select2-selection--single {
+      border: 1px solid #f3eedc;
+    }
+    .banner-form .select2-container {
+        width: 100% !important;
+    }
+    .banner-form .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #444;
+        line-height: 33px;
+    }
+    .banner-form .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 33px;
+    }
 
 
     .pagination {

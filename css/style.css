@@ -1426,8 +1426,15 @@ i.fa-whatsapp {
     float: left;
     margin-right: 10px;
     transition: all 0.5s ease 0s;
-    animation: 5s ease 0s infinite normal both running roatepro;
+    /*animation: 5s ease 0s infinite normal both running roatepro;*/
 }
+.head-pro-side img {
+    width: 80px;
+    height: 80px;
+}
+
+
+
 
 @keyframes roatepro {
     0% {
@@ -1499,7 +1506,15 @@ i.fa-whatsapp {
     white-space: pre;
     overflow: hidden;
 }
-
+.head-pro-side h4 {
+    font-size: 23px;
+    font-weight: 900;
+    margin: 0 0 7px 0;
+    text-transform: capitalize;
+}
+.head-pro-side b {
+    font-size: 13px;
+}
 .ban-tit {
     text-align: center;
     width: 100%;
@@ -1560,9 +1575,20 @@ i.fa-whatsapp {
 }
 
 .ban-search ul li {
-    float: left;
+    /*float: left;
     width: 20%;
-    padding: 0px 5px;
+    padding: 0px 5px;*/
+}
+.banner-form li {
+    padding: 0 3px;
+}
+.ban-search ul .sr-btn
+{
+    margin: 5px auto 0 0;
+}
+.ban-search ul .sr-country
+{
+    margin: 5px 0 0 auto;
 }
 
 .ban-search ul li .chosen-select {

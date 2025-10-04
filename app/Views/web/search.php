@@ -23,7 +23,8 @@ $offset = ($page - 1) * $limit;
 
 
 $lookingFor = $request->getVar('lookingFor');
-$age = $request->getVar('age');
+$agestart = $request->getVar('agestart');
+$ageend = $request->getVar('ageend');
 $religion = $request->getVar('religion');
 $country = $request->getVar('country');
 
@@ -36,12 +37,6 @@ $data['route'] = base_url('search');
 
 
 $gender = $lookingFor=='Groom'?1:2;
-
-if(!empty($age))
-{
-    $agestart = @explode("-", $age)[0];
-    $ageend = @explode("-", $age)[1];    
-}
 $fromheight = $request->getVar('fromheight');
 $toheight = $request->getVar('toheight');
 
@@ -170,7 +165,7 @@ $data['data_list'] = $data_list;
                             
                             <div class="db-nav-list">
                                 <form action="<?=base_url('search')?>">
-                                    <ul id="NavMenu">
+                                    <ul id="NavMenu" class="banner-form">
                                         
                                         <li>
                                             <div class="form-group">
@@ -184,17 +179,23 @@ $data['data_list'] = $data_list;
                                         </li>
                                         <li>
                                             <div class="form-group">
-                                                <label>Age</label>
-                                                <select class="select" name="age">
-                                                    <option value="">Age</option>
-                                                    <option value="18-30" <?php if($age=='18-30')echo'selected'; ?> >18 to 30</option>
-                                                    <option value="31-40" <?php if($age=='31-40')echo'selected'; ?> >31 to 40</option>
-                                                    <option value="41-50" <?php if($age=='41-50')echo'selected'; ?> >41 to 50</option>
-                                                    <option value="51-60" <?php if($age=='51-60')echo'selected'; ?> >51 to 60</option>
-                                                    <option value="61-70" <?php if($age=='61-70')echo'selected'; ?> >61 to 70</option>
-                                                    <option value="71-80" <?php if($age=='71-80')echo'selected'; ?> >71 to 80</option>
-                                                    <option value="81-90" <?php if($age=='81-90')echo'selected'; ?> >81 to 90</option>
-                                                    <option value="91-100" <?php if($age=='91-100')echo'selected'; ?> >91 to 100</option>
+                                                <label>Start Age</label>
+                                                <select class="select" name="agestart">
+                                                    <option value="">Start Age</option>
+                                                    <?php foreach (ages() as $key => $value) {?>
+                                                        <option value="<?=$value ?>" <?php if($agestart==$value)echo'selected'; ?> ><?=$value ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group">
+                                                <label>End Age</label>
+                                                <select class="select" name="ageend">
+                                                    <option value="">End Age</option>
+                                                    <?php foreach (ages() as $key => $value) {?>
+                                                        <option value="<?=$value ?>" <?php if($ageend==$value)echo'selected'; ?> ><?=$value ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </li>
@@ -212,6 +213,34 @@ $data['data_list'] = $data_list;
                                                     ?>
                                                     <option value="<?=$religions->id ?>" selected><?=$religions->name ?></option>
                                                     <?php }} ?>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group">
+                                                <label>Caste</label>
+                                                <select class="caste" name="caste">
+                                                    <option value="">Caste</option>
+                                                    <?php
+                                                    if(!empty($caste))
+                                                    {
+                                                        $castes = $db->table("caste")->where(["id"=>$caste,])->get()->getFirstRow();
+                                                        if(!empty($castes))
+                                                        {
+                                                    ?>
+                                                    <option value="<?=$castes->id ?>" selected><?=$castes->name ?></option>
+                                                    <?php }} ?>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group">
+                                                <label>Marital Status</label>
+                                                <select class="select" name="maritalstatus">
+                                                    <option value="">Marital Status</option>
+                                                    <?php foreach (marital_status() as $key => $value) {?>
+                                                        <option value="<?=$value ?>" <?php if($maritalstatus==$value)echo'selected'; ?> ><?=$value ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </li>

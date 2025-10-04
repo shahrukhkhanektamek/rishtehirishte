@@ -35,6 +35,10 @@ $routes->group('user', ['namespace' => 'App\Controllers\User', 'filter'=>'UserAu
         $routes->get('/', 'UserMyMatchesController::index', ['as' => 'user.my-matches.index']);
         $routes->get('load_data', 'UserMyMatchesController::load_data', ['as' => 'user.my-matches.load_data']);
     });
+    $routes->group('viewed-profiles', function($routes) {
+        $routes->get('/', 'UserViewedProfilesController::index', ['as' => 'user.viewed-profiles.index']);
+        $routes->get('load_data', 'UserViewedProfilesController::load_data', ['as' => 'user.viewed-profiles.load_data']);
+    });
     $routes->group('inbox', function($routes) {
         $routes->get('/', 'UserInboxController::index', ['as' => 'user.inbox.index']);
         $routes->get('load_data', 'UserInboxController::load_data', ['as' => 'user.inbox.load_data']);

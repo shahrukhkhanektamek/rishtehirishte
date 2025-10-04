@@ -1,3 +1,4 @@
+<?php $user = get_user(); ?>
 <!--  Start Header Area -->
 <?php echo view("web/include/header.php"); ?>
 <!-- End Header Area -->
@@ -36,8 +37,11 @@
                                                 <label class="form-label">Gender</label>
                                                 <select class="select" id="gender1" >
                                                     <option value="">Select Gender</option>
-                                                    <option value="1" >Male</option>
-                                                    <option value="2">Female</option>
+                                                    <?php if(@$user->gender==2){ ?>
+                                                        <option value="1" >Male</option>
+                                                    <?php }else if(@$user->gender==1){ ?>
+                                                        <option value="2">Female</option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
 
@@ -114,9 +118,11 @@
                                                 <label class="form-label">Gender</label>
                                                 <select class="select" id="gender" >
                                                     <option value="">Select Gender</option>
-                                                    <option value="1" >Male</option>
-                                                    <option value="2">Female</option>
-                                                    <option value="3">Transgender</option>
+                                                    <?php if(@$user->gender==2){ ?>
+                                                        <option value="1" >Male</option>
+                                                    <?php }else if(@$user->gender==1){ ?>
+                                                        <option value="2">Female</option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
 

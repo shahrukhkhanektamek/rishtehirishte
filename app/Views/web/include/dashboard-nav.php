@@ -7,7 +7,7 @@
                     <div class="col-md-4 col-lg-3">
                         <div class="db-nav">
                             <div class="db-nav-pro">
-                                <div class="head-pro d-flex align-items-center">
+                                <div class="head-pro head-pro-side d-flex align-items-center">
                                     <img src="<?=image_check($user->image,'user.png')?>" loading="lazy" alt="user_profile" loading="lazy">
                                     <div>
                                         <h4 class="overflow-visible"><?=$user->name?></h4>
@@ -33,9 +33,17 @@
                                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/><path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
                                         View Profiles</a>
                                     </li>
+                                    <li><a href="<?=base_url()?>user/viewed-profiles">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/><path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+                                        Viewed Profiles</a>
+                                    </li>
                                     <li><a href="<?=base_url()?>user/profile">
                                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
                                         Profile</a>
+                                    </li>
+                                    <li><a href="<?=base_url('user/member/profile/'.strtolower(env('APP_SORT')).'-'.$user->user_id)?>">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+                                        My Profile</a>
                                     </li>
                                     <li><a class="logout">
                                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/></svg>
@@ -50,16 +58,7 @@
                                 <div class="db-pro-stat">
                                     <div class="d-flex align-items-center justify-content-between">
                                     <h6 class="tit-top-curv mb-0">Standard plan</h6>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="dropdown">
-                                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                          <li><a class="dropdown-item" href="<?=base_url('user/member/profile/'.strtolower(env('APP_SORT')).'-'.$user->user_id)?>">View profile</a></li>
-                                          <li><a class="dropdown-item" href="#">Plan change</a></li>
-                                          <li><a class="dropdown-item" href="#">Download invoice now</a></li>
-                                        </ul>
-                                    </div>
+                                    
                                     </div>
                                     <div class="d-flex align-items-start justify-content-between mt-3">
                                         <div class="db-plan-card">

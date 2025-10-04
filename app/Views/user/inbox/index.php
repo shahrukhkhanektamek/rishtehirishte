@@ -20,16 +20,16 @@
                                 <div class="db-pro-stat mb-2">
                                     <div class="row">
                                         <div class="col-6">
-                                            <button class="btn btn-success btn-sm w-100 select-type active" data-type="1">Receive Interest</button>
+                                            <button class="btn btn-secondary btn-sm w-100 select-type active" data-type="1">Receive Interest</button>
                                         </div>
                                         <div class="col-6">
-                                            <button class="btn btn-success btn-sm w-100 select-type" data-type="2">Sent Interest</button>
+                                            <button class="btn btn-secondary btn-sm w-100 select-type" data-type="2">Sent Interest</button>
                                         </div>
                                         <ul class="d-flex justify-content-start mt-1">
-                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-success btn-sm select-status active" data-status="">All Interest</button></li>
-                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-success btn-sm select-status" data-status="accept">Accept Interest</button></li>
-                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-success btn-sm select-status" data-status="pending">Pending Interest</button></li>
-                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-success btn-sm select-status" data-status="decline">Decline Interest</button></li>
+                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status active" data-status="">All Interest</button></li>
+                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status" data-status="accept">Accept Interest</button></li>
+                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status" data-status="pending">Pending Interest</button></li>
+                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status" data-status="decline">Decline Interest</button></li>
                                         </ul>                                    
                                     </div>
                                 </div>
