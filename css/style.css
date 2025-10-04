@@ -5514,6 +5514,7 @@ span.mail::before {
     margin-bottom: 5px;
     font-weight: 600;
     color: #FFF;
+    text-transform: capitalize;
 }
 
 .style_home.ban-inn h2,
@@ -5701,6 +5702,7 @@ span.mail::before {
     padding-bottom: 0px;
     line-height: 38px;
     font-family: "Playfair Display", serif;
+    text-transform: capitalize;
 }
 
 .ab-wel-tit h2 em {

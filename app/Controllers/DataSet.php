@@ -551,5 +551,34 @@ class DataSet extends BaseController
             print_r($educationData);
         }
     }
+    public function set_service()
+    {
+        $educationData = [];
+        $oldedu = $this->db->table("service")
+        // ->limit(5)
+        ->offset(0)
+        ->getWhere()->getResultObject();
+        foreach ($oldedu as $key => $value) {
+
+            
+            $name = $value->name;
+            $slug = slug($name);
+            $p_id = $value->id;
+            $table_name = "service";
+            $new_slug = insert_slug($slug,$p_id,$table_name,"service-details.php");
+            // insert_meta_tag($new_slug,$name);
+
+
+            
+            // $educationData = [
+            //     "status"=>1,
+            //     "user_id"=>$value->id,
+            //     "add_date_time"=>date("Y-m-d H:i:s"),
+                
+            // ];
+            // $this->db->table("service")->insert($educationData);
+            print_r($educationData);
+        }
+    }
     
 }

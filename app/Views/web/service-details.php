@@ -1,5 +1,10 @@
 <!--  Start Header Area -->
-<?php include"include/header.php"; ?>
+<?php include"include/header.php";
+
+$states = $db->table('states')->getWhere(["status"=>1,])->getResultObject();
+$cities = $db->table('city')->getWhere(["status"=>1,])->getResultObject();
+
+?>
 <!-- End Header Area -->
 
     <div class="hom-top inner_style">
@@ -14,8 +19,8 @@
                     <div class="row">
                         <div class="hom-ban">
                             <div class="ban-tit">
-                                <h1>Best Matrimonial Services in Canada</h1>
-                                <h4 class="fw-light text-white mb-0">Rishte Hi Rishte Matrimonial</h4>
+                                <h1><?=$row->name?></h1>
+                                <h4 class="fw-light text-white mb-0"><?=$row->name ?></h4>
                                 <!-- <p>We're Your Extended Family. Service Towards Success.</p> -->
                             </div>
                         </div>
@@ -34,7 +39,7 @@
                     <div class="col-lg-6 pe-md-5">
                         <div class="ab-wel-lhs">
                             <!-- <span class="ab-wel-3"></span> -->
-                            <img src="https://www.rishtehirishte.co.in/images/service/3.png" alt="image" loading="lazy" class="img-fluid w-100 ab-wel-1">
+                            <img src="<?=image_check($row->image)?>" alt="image" loading="lazy" class="img-fluid w-100 ab-wel-1">
                             <!-- <img src="images/couples/20.jpg" alt="" loading="lazy" class="ab-wel-2">
                             <span class="ab-wel-4"></span> -->
                         </div>
@@ -42,15 +47,12 @@
                     <div class="col-lg-6">
                         <div class="ab-wel-rhs">
                             <div class="ab-wel-tit home-tit text-start">
-                                <h2 class="mb-3" style="line-height:58px;">Best Matrimonial Services in Canada</h2>
+                                <h2 class="mb-3" style="line-height:58px;"><?=$row->name?></h2>
                                 <span class="leaf1 mx-0"></span>
                             </div>
                             <div class="ab-wel-tit-1 mb-0">
-                                <p class="mb-3"><b>Rishte Hi Rishte</b> is one of the most trusted name in the field of matrimonial Services. We offer a superior matchmaking experience for prospective brides and grooms to meet and communicate with each other by expanding the opportunities available to meet potential life partners and build fulfilling relationships.</p>
-                                <p><b>Rishte Hi Rishte</b> is one of the pioneers Matrimonial Services. Millions of happy marriages happened and continue to happen through Rishte Hi Rishte We are the only Bureau to offer verified profiles, reinforcing the trust that members have on us. We have also the highly personalized matchmaking services.
-                                Looking to find that special someone is never an easy task. It becomes even more difficult when you are a High Net Worth Individual who doesn’t have time for casual dating or going to the usual places where you may meet potential partners. Then, there is the risk of allowing people into your heart and life who might not be there for the right reasons.
+                                <p class="mb-3"><?=$row->full_description?>
                                 </p>
-                                <!-- <a href="about.php" class="cta-dark mt-3"><span>Know more <i class="fa-solid fa-arrow-right ms-2"></i></span></a> -->
                             </div>
                         </div>
                     </div>
@@ -59,6 +61,157 @@
         </div>
     </section>
     <!-- END -->
+
+
+                <style>
+.show-more-height,
+.show-more-height2 {
+    height: 270px;
+    overflow: hidden
+}
+.show-more,
+.show-more2 {
+    position: relative;
+    font-weight: 800;
+    text-align: center;
+    color: var(--bs-primary);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+    z-index: 2;
+}
+.tp-service-5-title {
+    font-size: 30px;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 800;
+}
+/*.show-more-height:after,
+.show-more-height2:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(0deg, rgba(246, 247, 249, 1) 0%, rgba(246, 247, 249, 0) 100%);
+    z-index: 1;
+}*/
+</style>
+
+         <section class="bd-course-breadcrumb-area section-space">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-12 ">
+                     <div class="bd-course-breadcrumb-wrapper cardwhite">
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                              <h2 class="bd-course-breadcrumb-title"><?=$row->name?> in States</h2>
+                            </div>
+                            <div class="col-lg-9">
+
+                                 <div class="servicecontent">
+                                    <div class="tp-service-5-right">
+                                        <span class="tp-service-5-title"><?=$row->name?> in States</span>
+                                        <div class="tp-service-5-list text show-more-height p-relative">
+                                            <ul class="row">
+                                                <?php foreach ($states as $key => $value) { ?>
+                                                   <li class="col-xl-3 col-lg-3 col-md-4 col-6"><a href="<?=base_url($row->slug.'-in-'.slug($value->name)) ?>"><?=$row->name?> In <?=$value->name ?></a></li>
+                                                <?php } ?>
+                                            </ul>
+                                        </div>
+                                        <div class="show-more"><span>Click to view more</span><i class="fa fa-angle-double-down ms-2"></i></div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-50">
+                            <div class="col-lg-3">
+                              <h2 class="bd-course-breadcrumb-title"><?=$row->name?> in Cities</h2>
+                            </div>
+                            <div class="col-lg-9">
+
+                                 <div class="servicecontent">
+                                    <div class="tp-service-5-right" style="position: relative;">
+                                        <span class="tp-service-5-title"><?=$row->name?> in City</span>
+                                        <div class="tp-service-5-list text2 show-more-height2 p-relative">
+                                            <ul class="row">
+                                                <?php foreach ($cities as $key => $value) { ?>
+                                                   <li class="col-xl-3 col-lg-3 col-md-4 col-6"><a href="<?=base_url($row->slug.'-in-'.slug($value->name)) ?>"><?=$row->name?> In <?=$value->name ?></a></li>
+                                                <?php } ?>
+                                            </ul>
+                                        </div>
+                                        <div class="show-more2"><span>Click to view more</span><i class="fa fa-angle-double-down ms-2"></i></div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+
+
+
+
+                     </div>
+                     
+                  </div>
+
+                  
+               </div>
+            </div>
+         </section>
+
+<script  type="text/javascript">
+$(".show-more").click(function () {
+  if ($(".text").hasClass("show-more-height")) {
+    $(".show-more span").text("Click to view less");
+    $(".show-more i").addClass("fa-angle-double-up");
+    $(".show-more i").removeClass("fa-angle-double-down");
+  } else {
+    $(".show-more span").text("Click to view more");
+    $(".show-more i").addClass("fa-angle-double-down");
+    $(".show-more i").removeClass("fa-angle-double-up");
+  }
+  $(".text").toggleClass("show-more-height");
+});
+$(".show-more2").click(function () {
+  if ($(".text2").hasClass("show-more-height2")) {
+    $(".show-more2 span").text("Click to view less");
+    $(".show-more2 i").addClass("fa-angle-double-up");
+    $(".show-more2 i").removeClass("fa-angle-double-down");
+  } else {
+    $(".show-more2 span").text("Click to view more");
+    $(".show-more2 i").addClass("fa-angle-double-down");
+    $(".show-more2 i").removeClass("fa-angle-double-up");
+  }
+  $(".text2").toggleClass("show-more-height2");
+});
+
+// select_variant
+$("#select_variant").change(function () {
+    var value = $(this).val();
+    $(".basicPlanFeatures, .standardPlanFeatures, .proPlanFeatures").hide();
+    if (value==1)
+    {
+        $(".basicPlanFeatures").show();
+    }
+    else if (value==2)
+    {
+        $(".standardPlanFeatures").show();
+    }
+    else if (value==3)
+    {
+        $(".proPlanFeatures").show();
+    }
+    $("#planType").val(value);
+});
+
+
+</script>
+
+
 
 <!--  Start Footer Area -->
 <?php include"include/footer.php"; ?>

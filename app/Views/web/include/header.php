@@ -7,16 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <title>Rishte Hi Rishte | Matrimonial Services In Delhi | Punjabi Matrimonial Services In Janakpuri | Matrimonial Services Near Me |</title>
-    <meta name="keywords" content="Best Marriage Bureau in Delhi, Best Matrimonial Agency in Delhi, MatchMaking Services in Delhi, Delhi Matrimonial Services, Best Matrimonial Services, Best Indian Marriage Services, Best Matrimonial Rishte in Delhi ncr, Bride & Groom, Looking for Bride, Looking for Groom " />
-    <meta name="author" content="Rishte hi Rishte" />
-    <meta name="description" content="Rishte Hi Rishte is the fastest growing matrimonial portal in India. We offer a superior matchmaking experience for prospective brides and grooms to meet and communicate with each other by expanding the opportunities available to meet potential life partners and build fulfilling relationships. Rishte Hi Rishte is one of the pioneers of online matrimony service." />
-    <meta property="og:title" content="Rishte hi Rishte" />
-    <meta property="og:description" content="Rishte Hi Rishte is the fastest growing matrimonial portal in India. We offer a superior matchmaking experience for prospective brides and grooms to meet and communicate with each other by expanding the opportunities available to meet potential life partners and build fulfilling relationships. Rishte Hi Rishte is one of the pioneers of online matrimony service." />
-
-    <!--== FAV ICON(BROWSER TAB ICON) ==-->
-    <link rel="icon" href="<?=base_url()?>images/favicon.png" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url()?>images/favicon.png" />
+    <?php include"meta.php"; ?>
 
     <!--== CSS FILES ==-->
     <link rel="stylesheet" href="<?=base_url()?>css/bootstrap.css">

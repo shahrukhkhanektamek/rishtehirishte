@@ -27,87 +27,41 @@
                                 <div class="smenu-open smenu-multi smenu-box">
                                     <div class="container">
 
-                                        <div class="row">
-                                            <h4 class="tit">Explore category</h4>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="menu-box menu-box-2">
-                                                        <h5>Brahmin Rishte <span>1200+ Verified profiles</span></h5>
-                                                        <span class="explor-cta">Explore profile <i class="fa-solid fa-arrow-right-long ms-1"></i></span>
-                                                        <a href="#!" class="fclick"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="menu-box menu-box-1">
-                                                        <h5>Hindu Rishte <span>Make reservation</span></h5>
-                                                        <span class="explor-cta">Explore profile <i class="fa-solid fa-arrow-right-long ms-1"></i></span>
-                                                        <a href="#!" class="fclick"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="menu-box menu-box-3">
-                                                        <h5>Jain Rishte<span>Lorem ipsum dummy</span></h5>
-                                                        <span class="explor-cta">Explore profile <i class="fa-solid fa-arrow-right-long ms-1"></i></span>
-                                                        <a href="#!" class="fclick"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="menu-box menu-box-4">
-                                                        <h5>NRI Rishte <span>Lorem ipsum dummy</span></h5>
-                                                        <span class="explor-cta">Explore profile <i class="fa-solid fa-arrow-right-long ms-1"></i></span>
-                                                        <a href="#!" class="fclick"></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
 
                                         <div class="row">
-                                            <div class="multi-col">
-                                                <div class="inn">
-                                                    <h4>Page sets 1</h4>
-                                                    <ul>
-                                                        <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/delhi-mumbai" class="contact-us">Best Matrimonial Services in Australia</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/canada" class="contact-us">BEST Matrimonial Services in Canada</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/gurgaon" class="contact-us">Best Matrimonial Services in Gurgaon</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/delhincr" class="contact-us">Best Matrimonial Services in NCR</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/newzealand" class="contact-us">Best Matrimonial Services in Newzealand</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/uk" class="contact-us">Best Matrimonial Services in UK</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/usa" class="contact-us">Best Matrimonial Services in USA</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/westdelhi" class="contact-us">Best Matrimonial Services in West Delhi</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="multi-col">
-                                                <div class="inn">
-                                                    <h4>Page sets 2</h4>
-                                                    <ul>
-                                                        <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/brahmin" class="contact-us">Brahmin Rishte</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/hindu" class="contact-us">Hindu Rishte</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/jain" class="contact-us">Jain Rishte</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/late-marriage" class="contact-us">Late Marriages Rishte</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/delhi" class="contact-us">Matrimonial Services in Delhi</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/nri-rishte" class="contact-us">NRI Rishte</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/punjabi" class="contact-us">Punjabi Rishte</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="multi-col">
-                                                <div class="inn">
-                                                    <h4>Page sets 3</h4>
-                                                    <ul>
-                                                        <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/divorced" class="contact-us">Divorced Rishte</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="multi-col">
-                                                <div class="inn">
-                                                    <h4>Page sets 4</h4>
-                                                    <ul>
-                                                        <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/re-marriage" class="contact-us">Re-Marriage Rishte</a></li>
-    <li class="has-mega-menu"><a href="https://www.rishtehirishte.co.in/service/second-marriage" class="contact-us">Second Marriage Rishte</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                            
+                                           <?php
+                                            $services = $db->table("service")
+                                            ->limit(30)
+                                                           ->where(["status" => 1])
+                                                           ->get()
+                                                           ->getResult();
+
+                                            if (!empty($services)) {
+                                                foreach ($services as $key => $service) {
+                                                     
+                                            ?>
+                                                    <div class="multi-col">
+                                                        <div class="inn">
+                                                            <ul>
+                                                                <li class="has-mega-menu">
+                                                                    <a href="<?= base_url($service->slug) ?>" class="contact-us">
+                                                                        <?= $service->name ?>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                            <?php
+                                                    }
+                                                }
+                                            ?>
+                                            
+                                            
+                                            
+                                            
+                                            
                                             <!-- <div class="multi-col full">
                                                 <div class="inn">
                                                     <h4>User dashboard pages</h4>

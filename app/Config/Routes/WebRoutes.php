@@ -11,6 +11,7 @@ $routes->get('educations', 'DataSet::educations');
 $routes->get('set_language', 'DataSet::set_language');
 $routes->get('set_user_packages', 'DataSet::set_user_packages');
 $routes->get('set_featured_profile', 'DataSet::set_featured_profile');
+$routes->get('set_service', 'DataSet::set_service');
 
 
 $routes->post('bike-modal', 'Home::bike_modal');

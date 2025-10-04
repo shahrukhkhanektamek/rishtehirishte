@@ -38,7 +38,7 @@
                         <div class="live-preview">
                             <div class="row g-3">
                                 
-                                <div class="col-md-6">
+                                <div class="col-md-6 d-none">
                                     <label class="form-label">Select Service Type <span class="text-danger">*</span></label>
                                     <select class="form-control" name="service_type" >
                                         <option value="">Select</option>
@@ -48,7 +48,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 d-none">
                                     <label class="form-label">Select Category <span class="text-danger">*</span></label>
                                     <select class="form-control" name="category" id="main-menu">
                                         <option value="">Select</option>
@@ -76,9 +76,9 @@
                                 </div>
 
                                 
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 hide">
                                     <label class="form-label">Sort Description <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" name="sort_description" rows="4" required><?=@$row->sort_description?></textarea>
+                                    <textarea class="form-control" name="sort_description" rows="4"><?=@$row->sort_description?></textarea>
                                 </div>
 
 
@@ -92,13 +92,13 @@
 
 
 
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 hide">
                                     <label class="form-label">Documents Are Required* <span class="text-danger">*</span></label>
                                     <textarea class="form-control" name="document_area" rows="4" required><?=@$row->document_area?></textarea>
                                     <script>CKEDITOR.replace( 'document_area' );</script>
                                 </div>
 
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 hide">
                                     <label class="form-label">Extra Description<span class="text-danger">(Optional)</span></label>
                                     <textarea class="form-control" name="extra" rows="4" required><?=@$row->extra?></textarea>
                                     <script>CKEDITOR.replace( 'extra' );</script>
