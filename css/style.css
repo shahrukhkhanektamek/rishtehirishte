@@ -7912,6 +7912,10 @@ span.mail::before {
     margin-bottom: 20px;
     transition: .3s ease-in;
 }
+.blog-box-image {
+    height: 280px;
+    overflow: hidden;
+}
 .blog-box:hover img {
     transform: scale(0.95);
 }
@@ -7926,7 +7930,7 @@ span.mail::before {
 .blog-box h4 {
     font-size: 18px;
     font-weight: 600;
-    margin: 0 0 15px 0;
+    margin: 10px 0 15px 0;
     overflow: hidden;
    display: -webkit-box;
    -webkit-line-clamp: 2; /* number of lines to show */
