@@ -37,7 +37,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                             <div class="ban-tit">
                                 <!-- <span><i class="no1">#1</i> Matrimony</span> -->
                                 <h1>Find your Right Match here</h1>
-                                <p>Most Trusted & Oldest Matrimonial Services.</p>
+                                <p>Most Trusted & Oldest Matrimonial Services</p>
                             </div>
                             <div class="ban-search chosenini">
                                 <form action="<?=base_url('search')?>">
