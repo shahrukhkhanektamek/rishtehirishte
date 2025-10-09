@@ -31,18 +31,18 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
     <section>
         <div class="str">
             <div class="hom-head">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="hom-ban">
                             <div class="ban-tit">
                                 <!-- <span><i class="no1">#1</i> Matrimony</span> -->
                                 <h1>Find your Right Match here</h1>
-                                <p>Most trusted Matrimony Brand in the World.</p>
+                                <p>Most Trusted & Oldest Matrimonial Services.</p>
                             </div>
                             <div class="ban-search chosenini">
                                 <form action="<?=base_url('search')?>">
                                     <ul class="banner-form row">
-                                        <li class="col-md-2 sr-look">
+                                        <li class="col sr-look">
                                             <div class="form-group">
                                                 <label>I'm looking for</label>
                                                 <select class="select" name="lookingFor">
@@ -52,7 +52,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                                                 </select>
                                             </div>
                                         </li>
-                                        <li class="col-md-2 sr-age">
+                                        <li class="col sr-age">
                                             <div class="form-group">
                                                 <label>Start Age</label>
                                                 <select class="select" name="agestart">
@@ -63,7 +63,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                                                 </select>
                                             </div>
                                         </li>
-                                        <li class="col-md-2 sr-age">
+                                        <li class="col sr-age">
                                             <div class="form-group">
                                                 <label>End Age</label>
                                                 <select class="select" name="ageend">
@@ -74,7 +74,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                                                 </select>
                                             </div>
                                         </li>
-                                        <li class="col-md-2 sr-reli">
+                                        <li class="col sr-reli">
                                             <div class="form-group">
                                                 <label>Religion</label>
                                                 <select class="religion" name="religion">
@@ -82,7 +82,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                                                 </select>
                                             </div>
                                         </li>
-                                        <li class="col-md-2 sr-reli">
+                                        <li class="col sr-reli">
                                             <div class="form-group">
                                                 <label>Caste</label>
                                                 <select class="caste" name="caste">
@@ -90,7 +90,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                                                 </select>
                                             </div>
                                         </li>
-                                        <li class="col-md-2 sr-reli">
+                                        <li class="col sr-reli">
                                             <div class="form-group">
                                                 <label>Marital Status</label>
                                                 <select class="select" name="maritalstatus">
@@ -101,7 +101,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                                                 </select>
                                             </div>
                                         </li>
-                                        <li class="col-md-2 sr-cit sr-country">
+                                        <li class="col sr-reli">
                                             <div class="form-group">
                                                 <label>Country</label>
                                                 <select class="country" name="country">
@@ -109,7 +109,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                                                 </select>
                                             </div>
                                         </li>
-                                        <li class="col-md-2 sr-btn" >
+                                        <li class="col sr-reli" >
                                             <button class="cta-dark w-100" type="submit">Let's Beign</button>
                                         </li>
                                     </ul>
@@ -398,9 +398,9 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                             ?>
                                 <li>
                                     <div class="cus-revi-box">
-                                        <div class="revi-im">
+                                        <!-- <div class="revi-im">
                                             <img class="img-fluid" src="<?=image_check($value->image) ?>" alt="image" loading="lazy">
-                                        </div>
+                                        </div> -->
                                         <p><?=$value->message ?></p>
                                         <h5><?=$value->name?></h5>
                                         <span><?=$value->designation ?></span>

@@ -162,9 +162,9 @@
     </a>
     <div class="collapse menu-dropdown" id="blog">
         <ul class="nav nav-sm flex-column">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="<?=base_url(route_to('blog-category.list'))?>" class="nav-link" data-key="t-analytics"> Category </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a href="<?=base_url(route_to('blog.list'))?>" class="nav-link" data-key="t-analytics"> Blog/News </a>
             </li>

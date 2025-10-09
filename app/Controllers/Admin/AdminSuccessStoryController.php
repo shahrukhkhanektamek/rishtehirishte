@@ -10,7 +10,7 @@ class AdminSuccessStoryController extends BaseController
      protected $arr_values = array(
         'routename'=>'success-story.', 
         'title'=>'Success Story', 
-        'table_name'=>'blog',
+        'table_name'=>'success_story',
         'page_title'=>'Success Story',
         "folder_name"=>'backend/admin/success-story',
         "upload_path"=>'upload/',

@@ -56,7 +56,7 @@
 
 
 
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 hide">
                                     <label class="form-label">Image <span class="text-danger">*</span> <small>If you want to covert .webp file <a href="https://cloudconvert.com/jpg-to-webp" target="_blank">Click to open link</a></small></label>
                                     <div class="col-lg-12">
                                         <input class="form-control upload-single-image" type="file" name="image" data-target="image" accept="image/*" @if(empty($row))  @endif>

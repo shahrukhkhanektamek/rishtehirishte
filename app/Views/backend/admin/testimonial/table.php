@@ -1,7 +1,7 @@
 <table id="buttons-datatables1" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
     <thead>
         <tr>
-            <th data-ordering="false">Image</th>   
+            <!-- <th data-ordering="false">Image</th>    -->
             <th data-ordering="false">Name</th>
             <th data-ordering="false">Designation</th>
             <th data-ordering="false">Message</th>
@@ -14,7 +14,7 @@
 
         <?php foreach($data_list as $key=> $value) { ?>
             <tr>
-                <td><img class="img-thumbnail" src="<?=image_check($value->image)?>" style="width: auto;height: 45px;"></td>
+                <!-- <td><img class="img-thumbnail" src="<?=image_check($value->image)?>" style="width: auto;height: 45px;"></td> -->
                 <td><?=$value->name?></td>
                 <td><?=$value->designation?></td>
                 <td><?=$value->message?></td>

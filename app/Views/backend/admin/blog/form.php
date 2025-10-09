@@ -48,7 +48,7 @@
                                     <input type="text" class="form-control" name="slug" placeholder="" value="<?=@$row->slug?>" >
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 hide">
                                     <label class="form-label">Select Category <span class="text-danger">*</span></label>
                                     <select class="form-control" name="category">
                                         <option value="">Select</option>
