@@ -44,12 +44,24 @@
                             <div class="ab-wel-tit-1 mb-0">
                                 <p class="mb-3">
                                     <?=$row->sort_description?>
-                                    <?=$row->full_description?>
                                 </p>
-                                <!-- <a href="about.php" class="cta-dark mt-3"><span>Know more <i class="fa-solid fa-arrow-right ms-2"></i></span></a> -->
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-12">
+                        <div class="ab-wel-rhs">
+                            <div class="ab-wel-tit home-tit text-start">
+                                <h2 class="mb-3" style="line-height:58px;"><?=$row->name?></h2>
+                            </div>
+                            <div class="ab-wel-tit-1 mb-0">
+                                <p class="mb-3">
+                                    <?=$row->full_description?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

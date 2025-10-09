@@ -66,7 +66,8 @@ class ImageModel extends Model
                     if (file_put_contents($file_path, $image_content)) {
 
                         $webp_path = FCPATH . $uploadPath . pathinfo($image_time, PATHINFO_FILENAME) . '.webp';
-                        $converted = $this->convertToWebP($file_path, $webp_path);
+                        // $converted = $this->convertToWebP($file_path, $webp_path);
+                        $converted = false;
                         if ($converted) {
                             unlink($file_path); // Delete original
                             $final_image_path = basename($webp_path); // Just the filename for DB
