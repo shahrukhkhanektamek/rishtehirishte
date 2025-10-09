@@ -114,6 +114,8 @@ class ImageModel extends Model
                 
                 // Move the image to the 'public/uploads' directory
                 $image->move(FCPATH . 'upload', $newName);
+
+                return $newName;
                 
                 // Get the file path
                 $filePath = FCPATH . $uploadPath . $newName;
@@ -138,7 +140,7 @@ class ImageModel extends Model
     }
 
     public function convertToWebP($source, $destination = null, $quality = 80) {
-        return $source;
+       
         
         if (!file_exists($source)) {
             return false;
