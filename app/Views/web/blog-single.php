@@ -31,12 +31,12 @@
         <div class="ab-wel">
             <div class="container">
                 <div class="row align-items-start">
-                    <div class="col-lg-12 pe-md-5">
+                    <div class="col-lg-4 pe-md-5">
                         <div class="ab-wel-lhs">
                             <img src="<?=image_check($row->image) ?>" alt="image" loading="lazy" class="img-fluid w-100 ab-wel-1">
                         </div>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-8">
                         <div class="ab-wel-rhs">
                             <div class="ab-wel-tit home-tit text-start">
                                 <h2 class="mb-3" style="line-height:58px;"><?=$row->name?></h2>

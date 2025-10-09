@@ -40,7 +40,7 @@
                                 
                                 <div class="col-md-12">
                                     <label class="form-label">Title <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="name" placeholder="" value="<?=@$row->name?>" required>
+                                    <input type="text" class="form-control" name="name" placeholder="" value="<?=@$row->name?>" >
                                 </div>
 
                                 <div class="col-md-6 hide">
