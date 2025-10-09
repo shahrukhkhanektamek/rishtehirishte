@@ -138,7 +138,7 @@ class ImageModel extends Model
     }
 
     public function convertToWebP($source, $destination = null, $quality = 80) {
-        return $destination;
+        return $source;
         
         if (!file_exists($source)) {
             return false;
