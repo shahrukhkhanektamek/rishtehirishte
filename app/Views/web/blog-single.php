@@ -51,9 +51,6 @@
 
                     <div class="col-lg-12">
                         <div class="ab-wel-rhs">
-                            <div class="ab-wel-tit home-tit text-start">
-                                <h2 class="mb-3" style="line-height:58px;"><?=$row->name?></h2>
-                            </div>
                             <div class="ab-wel-tit-1 mb-0">
                                 <p class="mb-3">
                                     <?=$row->full_description?>
