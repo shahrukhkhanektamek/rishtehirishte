@@ -343,7 +343,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                                             <img class="img-fluid" src="<?=image_check($value->image) ?>" loading="lazy" alt="image">
                                         </div>
                                         <h4><?=$value->name ?></h4>
-                                        <p><?=$value->sort_description ?></p>
+                                        <!-- <p><?php // $value->sort_description ?></p> -->
                                         <a href="<?=base_url().$value->slug ?>" class="cta-dark"><span>Read more <i class="fa-solid fa-arrow-right ms-2"></i></span></a>
                                     </div>
                                 </div>

@@ -85,6 +85,7 @@
                                 <div class="col-lg-12">
                                     <label class="form-label">Sort Description <span class="text-danger">*</span></label>
                                     <textarea class="form-control" name="sort_description" rows="4" required><?=@$row->sort_description?></textarea>
+                                    <script>CKEDITOR.replace( 'sort_description' );</script>
                                 </div>
 
 

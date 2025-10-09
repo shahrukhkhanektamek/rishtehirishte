@@ -6631,6 +6631,7 @@ span.mail::before {
     border-width: 1px;
     border-style: solid;
     border-color: rgb(243, 238, 220);
+    min-height: 500px;
 }
 
 .hom-coup-box::before {
