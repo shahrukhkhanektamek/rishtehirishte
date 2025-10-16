@@ -6,11 +6,17 @@
 
     <?php include"include/header-nav.php"; ?>
 
-    <style>
-        iframe{
-            width: 100% !important;
-        }
-    </style>
+<style>
+    iframe{
+        width: 100% !important;
+    }
+    .form-group label {
+        color: #818990 !important;
+    }
+    .form-control {
+        border-color: #f3eedc !important;
+    }
+</style>
 
     <!-- BANNER -->
     <section>
@@ -38,7 +44,38 @@
             <div class="container">
                 <div class="row">
                     <ul>
+
+
                         <li>
+                            <div class="conatct-page-icon">
+                                <span><i class="fas fa-phone" aria-hidden="true"></i> 
+                                    <?php foreach (json_decode($contact_detail->mobile)?json_decode($contact_detail->mobile):[] as $key => $value) { ?>
+                                        <?php if($key>0)echo ", "; ?><a style="color:#212529" href="tel:<?=$value?>"><?=$value ?></a>
+                                    <?php } ?>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="we-cont conatct-page-icon">
+                                <span><i class="far fa-envelope" aria-hidden="true"></i> 
+                                    <?php 
+                                    foreach (($contact_detail->email)?($contact_detail->email):[] as $key => $value) { ?>
+                                        <?php if($key>0)echo ", "; ?><a style="color:#212529" href="mailto:<?=$value?>"><?=$value ?></a>
+                                    <?php } ?>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="we-cont conatct-page-icon">
+                                <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <?=$contact_detail->address?></span>
+                            </div>
+                        </li>
+
+
+
+
+
+                        <!-- <li>
                             <div class="we-here">
                                 <h3>Our office</h3>
                                 <p>Most Trusted and premium Matrimonial Service in the World.</p>
@@ -71,7 +108,7 @@
                                 <p>Most Trusted and premium Matrimonial Service in the World.</p>
                                 <a href="#!" class="cta-rou-line">Talk to sales</a>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -84,29 +121,30 @@
         <div class="container">
             <div class="row justify-content-between">
                 
-                <div class="col-md-9 ps-md-5" style="margin:0 auto;">
+                <div class="col-md-9 ps-md-5 mb-5" style="margin:0 auto;">
                     <div class="login py-0 mt-0">
-                    <div class="inn row">
-                        <div class="lhs col-md-5">
+                    <div class="inn row" style="background: linear-gradient(45deg, rgb(242, 209, 132), rgb(255, 238, 178) 80%);">
+                        <div class="lhs col-md-5" style="    background: transparent;">
                             <div class="tit">
-                                <h2>Now <b>Find your life partner</b> Easy and fast.</h2>
+                                <h2><b>Send us your Query?</b> One of our Representative will Connect with you!</h2>
                             </div>
                             <div class="im">
                                 <img src="images/login-couple.png" alt="">
                             </div>
                             <div class="log-bg">&nbsp;</div>
                         </div>
-                        <div class="rhs col-md-7">
+                        <div class="rhs col-md-7" style="background: white;">
                             <div>
                                 <div class="form-tit">
                                     <h1 class="m-0">Enquiry Form</h1>
                                 </div>
                                 <div class="form-login">
-                                    <form>
+                                    <form class="contact-form__wrapper form_data" method="POST" action="<?=base_url('contact-enquiry') ?>" enctype="multipart/form-data" novalidate id="contactPageForm">
+                                        <input type="hidden" name="url" value="<?=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
                                         <div class="form-group">
                                             <label class="lb">Name</label>
                                             <input type="text" class="form-control" placeholder="Enter your full name"
-                                                name="name">
+                                                name="name" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="lb">Email</label>
@@ -116,11 +154,20 @@
                                         <div class="form-group">
                                             <label class="lb">Phone</label>
                                             <input type="number" class="form-control" id="phone"
-                                                placeholder="Enter phone number" name="phone">
+                                                placeholder="Enter phone number" name="phone" required>
                                         </div>
                                         <div class="form-group">
-                                            <label class="lb">Message</label>
-                                            <textarea class="form-control" id="pwd" placeholder="Write your message here..." name="pswd"></textarea>
+                                            <label class="lb">Location</label>
+                                            <input type="text" class="form-control" id="city"
+                                                placeholder="Enter city" name="city" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="lb">I'm looking for</label>
+                                            <select class="select" name="lookingFor" required>
+                                                <option value="">Select</option>
+                                                <option value="Groom">Groom</option>
+                                                <option value="Bride">Bride</option>
+                                            </select>
                                         </div>
                                         <!-- <div class="form-group form-check">
                                             <label class="form-check-label">

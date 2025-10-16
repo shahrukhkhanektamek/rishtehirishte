@@ -38,10 +38,12 @@
                                             <h2 class="text-center"><?=$value->name ?></h2>
                                         </div>
                                         <div class="col-12">
-                                            <span class="pri-cou text-end"><b><?=price_formate($value->price)?></b>/<?=$value->validity?>mo</span>
+                                            <span class="pri-cou text-end"><b><?=price_formate($value->price)?></b>
+                                                <span style="font-size: 15px;color: white;">/<?=$value->validity?> Month </span>
+                                            </span>
                                         </div>
                                     </div>
-                                    <a href="sign-up.html" class="cta">Get Started</a>
+                                    <a href="register" class="cta">Get Started</a>
                                     <div class="plans-description">
                                         <?=$value->full_description ?>
                                     </div>

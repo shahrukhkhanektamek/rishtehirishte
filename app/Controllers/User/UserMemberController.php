@@ -88,7 +88,7 @@ class UserMemberController extends BaseController
                 "
                 CASE
                     WHEN {$table_name}.gender = 1 THEN 'Male'
-                    WHEN {$table_name}.gender = 2 THEN 'Fmale'
+                    WHEN {$table_name}.gender = 2 THEN 'Female'
                     ELSE 'other'
                 END AS gender_name
                 ",
@@ -116,9 +116,16 @@ class UserMemberController extends BaseController
         }
 
         $rowR = $this->db->table("requirement_form")->where(["user_id"=>$id,])->get()->getFirstRow();
+        if(!empty($row))
+        {
+            return view($this->arr_values['folder_name'].'/view',compact('data','row','rowR','db','mainData'));
+        }
+        else
+        {
+            return view('web/404',compact('data','db','mainData'));            
+        }
 
 
-        return view($this->arr_values['folder_name'].'/view',compact('data','row','rowR','db','mainData'));
     }
 
 
@@ -545,7 +552,7 @@ class UserMemberController extends BaseController
             $responseCode = 200;
             $result['status'] = $responseCode;
             $result['message'] = 'Send Successfully';
-            $result['action'] = 'view';
+            $result['action'] = 'return';
             $result['data'] = [];
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }
@@ -554,7 +561,7 @@ class UserMemberController extends BaseController
             $responseCode = 400;
             $result['status'] = $responseCode;
             $result['message'] = 'Allready Sent!';
-            $result['action'] = 'view';
+            $result['action'] = 'return';
             $result['data'] = [];
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }

@@ -336,7 +336,7 @@ class AuthUser extends BaseController
                 ->get()
                 ->getRow();
             
-            $url = site_url($roledata->route . '/user/profile/complete-profile'); // equivalent to url(route())
+            $url = site_url($roledata->route . '/profile/complete-profile'); // equivalent to url(route())
 
             // Here you might want to create a session for the user
             $this->token_session($user);

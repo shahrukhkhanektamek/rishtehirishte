@@ -148,6 +148,18 @@
                                                         <td style="font-size:13px;color:#111111;padding:6px 0;">:
                                                           <?= date("d-M Y", strtotime($row->dob)) ?></td>
                                                       </tr>
+
+                                                      <tr>
+                                                        <td style="width:48%;font-size:13px;color:#666666;padding:6px 0;">Time of Birth</td>
+                                                        <td style="font-size:13px;color:#111111;padding:6px 0;">:
+                                                          <?= date("h:i A", strtotime($row->time_of_birth)) ?></td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td style="width:48%;font-size:13px;color:#666666;padding:6px 0;">Place of Birth</td>
+                                                        <td style="font-size:13px;color:#111111;padding:6px 0;">:
+                                                          <?= $row->place_of_birth ?></td>
+                                                      </tr>
+
                                                       <tr>
                                                         <td style="font-size:13px;color:#666666;padding:6px 0;">Height</td>
                                                         <td style="font-size:13px;color:#111111;padding:6px 0;">: <?= esc($row->height) ?></td>
@@ -244,11 +256,15 @@
 
                                       </td>
                                     </tr>
+                                    <tr style="padding: 10px;display: block;">
+                                      <th><b>Note: This Content may be confidential or privileged Also, the details provided in the profile are sent by the said party & our company is not responsible for any misinterpretation regarding the same, "Please do not print this unless it is absolutely necessary, as an initiative towards Environmental Awareness"</b></th>
+                                    </tr>
                                   </table>
                                   <!-- end container -->
 
                                 </td>
                               </tr>
+                              
                             </table>
 
                             
@@ -256,11 +272,7 @@
                             <div class="row mt-2">
                               <div class="col-md-6" style="margin: 0 auto;">
                                   
-                                  <h1 class="h3 bg-light text-center text-body-secondary p-2">Share Profile</h1>
-                                  <select class="" id="select-all-user">
-                                    <option value="">Select User</option>
-                                  </select>
-                                
+                                  <h1 class="h3 bg-light text-center text-body-secondary p-2">Share Profile</h1>                                
 
                                 <div class="row mt-2 text-center w-100 justify-content-center">
                                     <a class="btn btn-success w-auto me-4 create-pdf" data-type="1" style="background-color: #25D366;border: 0;">
@@ -330,40 +342,92 @@ function createPdf()
     });
 }
 
-async function shareOnWhatsapp(data)
-{
-  let pdfUrl = data.pdf;
+
+
+async function shareOnWhatsapp(data) {
+    let pdfUrl = data.pdf;
 
     try {
         const response = await fetch(pdfUrl);
         const blob = await response.blob();
         const file = new File([blob], data.fileName, { type: 'application/pdf' });
 
+        // Check if browser supports sharing files (mobile only)
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
             await navigator.share({
                 title: 'Profile PDF',
                 text: 'Here is the Profile PDF.',
                 files: [file]
             });
-        } else if (window.ReactNativeWebView) {
-            // Send message to React Native app
-            const message = {
-                type: 'share',
-                payload: {
-                    title: 'Profile PDF',
-                    message: 'Here is the Profile PDF.',
-                    url: pdfUrl
-                }
+        } 
+        // React Native WebView: send PDF to app for native sharing
+        else if (window.ReactNativeWebView) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const base64Data = reader.result.split(',')[1]; // get Base64 string
+                const message = {
+                    type: 'shareFile',
+                    payload: {
+                        fileName: data.fileName,
+                        fileType: 'application/pdf',
+                        base64: base64Data,
+                        message: 'Here is the Profile PDF.'
+                    }
+                };
+                window.ReactNativeWebView.postMessage(JSON.stringify(message));
             };
-            window.ReactNativeWebView.postMessage(JSON.stringify(message));
-        } else {
-            alert('Sharing is not supported on this device/browser.');
+            reader.readAsDataURL(file);
+        } 
+        // Fallback: just share URL via WhatsApp Web
+        else {
+            const encodedText = encodeURIComponent('Here is the Profile PDF: ' + pdfUrl);
+            const whatsappUrl = `https://wa.me/?text=${encodedText}`;
+            window.open(whatsappUrl, "_blank");
         }
     } catch (error) {
         console.error('Error sharing file:', error);
         alert('Sharing failed.');
     }
 }
+
+
+
+
+
+// async function shareOnWhatsapp(data)
+// {
+//   let pdfUrl = data.pdf;
+
+//     try {
+//         const response = await fetch(pdfUrl);
+//         const blob = await response.blob();
+//         const file = new File([blob], data.fileName, { type: 'application/pdf' });
+
+//         if (navigator.canShare && navigator.canShare({ files: [file] })) {
+//             await navigator.share({
+//                 title: 'Profile PDF',
+//                 text: 'Here is the Profile PDF.',
+//                 files: [file]
+//             });
+//         } else if (window.ReactNativeWebView) {
+//             // Send message to React Native app
+//             const message = {
+//                 type: 'share',
+//                 payload: {
+//                     title: 'Profile PDF',
+//                     message: 'Here is the Profile PDF.',
+//                     url: pdfUrl
+//                 }
+//             };
+//             window.ReactNativeWebView.postMessage(JSON.stringify(message));
+//         } else {
+//             alert('Sharing is not supported on this device/browser.');
+//         }
+//     } catch (error) {
+//         console.error('Error sharing file:', error);
+//         alert('Sharing failed.');
+//     }
+// }
 
 
 // document.getElementById('pdf-share-btn').addEventListener('click', async function() {

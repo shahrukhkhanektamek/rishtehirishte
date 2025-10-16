@@ -2,7 +2,7 @@
 <?php include"include/header.php"; ?>
 <!-- End Header Area -->
 
-    <div class="hom-top inner_style">
+    <div class="hom-top login_style">
 
     <?php include"include/header-nav.php"; ?>
 
@@ -16,57 +16,83 @@
                             <h1 class="mb-0">Frequently asked questions</h1>
                         </div>
                 <div class="row">
-                    <div class="col-md-9 inn ab-faq-lhs">
+                    <div class="col-md-8 inn ab-faq-lhs">
                         
                         
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
+                      <div class="accordion" id="accordionExample">
+                        
+                        <?php
+                            $faqs = $db->table("faq")->where(["status"=>1,])->get()->getResult();
+                            foreach ($faqs as $key => $value) {
+                        ?>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button <?=$key==0?'':'collapsed'?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne<?=$key?>" aria-expanded="true" aria-controls="collapseOne<?=$key?>">
+                                <?=$value->name?>
+                              </button>
+                            </h2>
+                            <div id="collapseOne<?=$key?>" class="accordion-collapse <?=$key==0?'show':''?> collapse " data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <p><?=$value->message?></p>
+                              </div>
+                            </div>
+                          </div>
+                        <?php } ?>
 
+
+
+                      </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                       <div class="prof-rhs-help" style="background-image:url('https://thoduneeda.com/images/slide1.jpg');">
-                <div class="inn">
-                    <h3>Tell us your Needs</h3>
-                    <p>Tell us what kind of service you are looking for.</p>
-                    <a href="register.php">Register for free</a>
-                </div>
-            </div>
+                        <div class="inn">
+                            <h3>Connect with Us!</h3>
+                            
+                            <div class="form-login">
+                              <form class="contact-form__wrapper text-start form_data" method="POST" action="<?=base_url('contact-enquiry') ?>" enctype="multipart/form-data" novalidate id="contactPageForm">
+                                  <input type="hidden" name="url" value="<?=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
+                                  <div class="form-group">
+                                      <label class="lb">Name</label>
+                                      <input type="text" class="form-control" placeholder="Enter your full name"
+                                          name="name" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="lb">Email</label>
+                                      <input type="email" class="form-control" id="email"
+                                          placeholder="Enter email" name="email">
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="lb">Phone</label>
+                                      <input type="number" class="form-control" id="phone"
+                                          placeholder="Enter phone number" name="phone" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="lb">Location</label>
+                                      <input type="text" class="form-control" id="city"
+                                          placeholder="Enter city" name="city" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="lb">I'm looking for</label>
+                                      <select class="select" name="lookingFor" required>
+                                          <option value="">Select</option>
+                                          <option value="Groom">Groom</option>
+                                          <option value="Bride">Bride</option>
+                                      </select>
+                                  </div>
+                                  <!-- <div class="form-group form-check">
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" name="agree"> Creating
+                                          an account means you’re okay with our <a href="#!">Terms of Service</a>,
+                                          Privacy Policy, and our default Notification Settings.
+                                      </label>
+                                  </div> -->
+                                  <button type="submit" class="cta-dark w-100">Send Message</button>
+                              </form>
+                          </div>
+
+
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>

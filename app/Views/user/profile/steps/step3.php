@@ -21,8 +21,8 @@
             </div>
 
             <div class="col-md-12 form-group mb-0">
-                <label class="lb">Collage Name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="collegename" placeholder="" value="<?=@$row->collegename?>" required>
+                <label class="lb">Collage Name </label>
+                <input type="text" class="form-control" name="collegename" placeholder="" value="<?=@$row->collegename?>" >
             </div>
 
             <div class="col-md-12 form-group mb-0">
@@ -41,8 +41,8 @@
                 </select>
             </div>
             <div class="col-md-12 form-group mb-0">
-                <label class="lb">Annual Income <span class="text-danger">*</span></label>
-                <select class="select"  name="annualincome" required>
+                <label class="lb">Annual Income </label>
+                <select class="select"  name="annualincome">
                     <option value="">Select</option>
                     <?php foreach (incomes_inr() as $key => $value) {?>
                         <option value="<?=$value ?>" <?php if(@$row->annualincome==$value)echo'selected'; ?>><?=$value ?></option>
@@ -50,8 +50,8 @@
                 </select>
             </div>
             <div class="col-md-12 form-group mb-0">
-                <label class="lb">Annual Incom ( In $) <span class="text-danger">*</span></label>
-                <select class="select"  name="annualincomeindoller" required>
+                <label class="lb">Annual Incom ( In $) </label>
+                <select class="select"  name="annualincomeindoller">
                     <option value="">Select</option>
                     <?php foreach (incomes_doller() as $key => $value) {?>
                         <option value="<?=$value ?>" <?php if(@$row->annualincomeindoller==$value)echo'selected'; ?>><?=$value ?></option>
@@ -60,8 +60,8 @@
             </div>
 
             <div class="col-md-12 form-group mb-0">
-                <label class="lb">Diet <span class="text-danger">*</span></label>
-                <select class="select"  name="diet" required>
+                <label class="lb">Diet </label>
+                <select class="select"  name="diet">
                     <option value="">Select</option>
                     <?php foreach (diets() as $key => $value) {?>
                         <option value="<?=$value ?>" <?php if(@$row->diet==$value)echo'selected'; ?>><?=$value ?></option>
@@ -70,8 +70,8 @@
             </div>
 
             <div class="col-lg-12 form-group mb-0">
-                <label class="lb">Express Yourself <span class="text-danger">*</span></label>
-                <textarea class="form-control" name="expressyou" rows="4" required><?=@$row->expressyou?></textarea>
+                <label class="lb">Express Yourself </label>
+                <textarea class="form-control" name="expressyou" rows="4" ><?=@$row->expressyou?></textarea>
                 <script>CKEDITOR.replace( 'expressyou' );</script>
             </div>
             <div class="row justify-content-between">

@@ -48,7 +48,7 @@
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <label class="lb">Sex <span class="text-danger">*</span></label>
+                                                    <label class="lb">Gender <span class="text-danger">*</span></label>
                                                     <div class="InputGroup style_radio">
                                                         <input type="radio" name="gender" id="male" value="1" checked />
                                                         <label for="male">

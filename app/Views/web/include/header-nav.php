@@ -7,7 +7,7 @@
                         <!-- <span class="menu desk-menu">
                             <i></i><i></i><i></i>
                         </span> -->
-                        <a href="index" class="logo-brand"><img src="<?=base_url()?>images/main-logo.png" alt="rishtehirishte" loading="lazy" class="ic-logo img-fluid"></a>
+                        <a href="<?=base_url()?>" class="logo-brand"><img src="<?=base_url()?>images/main-logo.png" alt="rishtehirishte" loading="lazy" class="ic-logo img-fluid"></a>
                     </div>
 
                     <!-- EXPLORE MENU -->
@@ -21,16 +21,13 @@
                                     </div>
                                 </div>
                             </li> -->
-                            <li><a href="about">About Us</a></li>
+                            <li><a href="<?=base_url()?>about">About Us</a></li>
                             <li class="smenu-pare">
                                 <span class="smenu">Services</span>
                                 <div class="smenu-open smenu-multi smenu-box">
-                                    <div class="container">
+                                    <div class="container">                                        
 
-                                        
-
-                                        <div class="row">
-                                            
+                                        <div class="row">                                            
                                            <?php
                                             $services = $db->table("service")
                                             ->limit(30)
@@ -40,7 +37,6 @@
 
                                             if (!empty($services)) {
                                                 foreach ($services as $key => $service) {
-                                                     
                                             ?>
                                                     <div class="multi-col">
                                                         <div class="inn">
@@ -57,35 +53,14 @@
                                                     }
                                                 }
                                             ?>
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            <!-- <div class="multi-col full">
-                                                <div class="inn">
-                                                    <h4>User dashboard pages</h4>
-                                        <ul>
-                                            <li><a href="user-dashboard.html">Dashboard</a></li>
-                                            <li><a href="user-profile.html">My profile</a></li>
-                                            <li><a href="user-interests.html">Interests</a></li>
-                                            <li><a href="user-chat.html">Chat lists</a></li>
-                                            <li><a href="user-plan.html">My plan details</a></li>
-                                            <li><a href="user-setting.html">Profile settings</a></li>
-                                            <li><a href="user-profile-edit.html">Edit full profile</a></li>
-                                            <li><a href="login.html">Sign in</a></li>
-                                        </ul>
-                                                </div>
-                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="clients">Our Clients</a></li>
-                            <li><a href="packages">Packages</a></li>
+                            <li><a href="<?=base_url()?>clients">Our Clients</a></li>
+                            <li><a href="<?=base_url()?>packages">Packages</a></li>
                             <li><a href="!#" target="_blank">Pay Now</a></li>
-                            <!-- <li><a href="!#">Register</a></li> -->
-                            <li><a href="contact">Contact Us</a></li>
+                            <li><a href="<?=base_url()?>contact">Contact Us</a></li>
                         </ul>
                     </div>
 

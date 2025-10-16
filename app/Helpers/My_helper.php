@@ -707,7 +707,7 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
   function ages($value = '')
   {
       $startAge = 18; 
-      $endAge = 60;
+      $endAge = 75;
       $arr = range($startAge, $endAge);
       if (empty($value)) {
           return $arr;
@@ -716,7 +716,7 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
   }
   function diets($value='')
   {
-      $arr = array('Non Vegetarian','Vegetarian','Non Vegetarian','Eggitarien');
+      $arr = array('Non Vegetarian','Vegetarian','Eggitarien');
       if(empty($value))
         return $arr;
       return $arr[$value];

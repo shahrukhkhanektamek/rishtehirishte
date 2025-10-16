@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="hom-ban">
                             <div class="ban-tit">
-                                <h1>Profile Complete</h1>
+                                <h1>Complete Your Profile</h1>
                             </div>
                         </div>
                     </div>

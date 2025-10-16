@@ -617,15 +617,6 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="form-label">Have Children ? </label>
-                                    <select class="select" name="childrenR" >
-                                        <option value="">Select</option>
-                                        <?php foreach (have_children() as $key => $value) {?>
-                                            <option value="<?=$value ?>" <?php if(@$rowR->children==$value)echo'selected'; ?>><?=$value ?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
                                     <label class="form-label">Income From </label>
                                     <select class="select" name="incomeR" >
                                         <option value="">Select</option>
@@ -665,12 +656,12 @@
 
                                 <div class="col-md-4">
                                     <label class="form-label">Religion </label>
-                                    <select class="religion" name="religionR[]" multiple >
+                                    <select class="" id="religionR" name="religionR[]" multiple >
                                         <option value="">Select</option>
                                         <?php
                                         if(!empty($row))
                                         {
-                                            if(!empty(json_decode(@$rowR->religion)))
+                                            if(is_array(json_decode(@$rowR->religion)) || is_object(json_decode(@$rowR->religion)))
                                             $religions2 = $db->table("religion")->whereIn("id", json_decode(@$rowR->religion))->get()->getResult();
                                             if(!empty($religions2))
                                             {
@@ -682,12 +673,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Caste </label>
-                                    <select class="caste"  name="casteR[]" multiple >
+                                    <select class="" id="casteR" name="casteR[]" multiple >
                                         <option value="">Select</option>
                                         <?php
                                         if(!empty($row))
                                         {
-                                            if(!empty(json_decode(@$rowR->caste)))
+                                            if(is_array(json_decode(@$rowR->caste)) || is_object(json_decode(@$rowR->caste)))
                                             $castes2 = $db->table("caste")->whereIn("id", json_decode(@$rowR->caste))->get()->getResult();
                                             if(!empty($castes2))
                                             {
@@ -715,6 +706,15 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4">
+                                    <label class="form-label">Have Children ? </label>
+                                    <select class="select" name="childrenR" >
+                                        <option value="">Select</option>
+                                        <?php foreach (have_children() as $key => $value) {?>
+                                            <option value="<?=$value ?>" <?php if(@$rowR->children==$value)echo'selected'; ?>><?=$value ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
                                     <label class="form-label">Manglik  </label>
                                     <select class="select"  name="manglikR[]" multiple >
                                         <option value="">Select</option>
@@ -738,7 +738,7 @@
                                         <?php
                                         if(!empty($row))
                                         {
-                                            if(!empty(json_decode(@$rowR->education)))
+                                            if(is_array(json_decode(@$rowR->education)) || is_object(json_decode(@$rowR->education)))
                                             $educations2 = $db->table("education")->whereIn("id", json_decode(@$rowR->education))->get()->getResult();
                                             if(!empty($educations2))
                                             {
@@ -748,6 +748,7 @@
                                         <?php }}} ?>
                                     </select>
                                 </div>
+
                                 <div class="col-md-4">
                                     <label class="form-label">Occupation </label>
                                     <select class="occupation"  name="occupationR[]" multiple >
@@ -755,7 +756,7 @@
                                         <?php
                                         if(!empty($row))
                                         {
-                                            if(!empty(json_decode(@$rowR->occupation)))
+                                            if(is_array(json_decode(@$rowR->occupation)) || is_object(json_decode(@$rowR->occupation)))
                                             $occupations2 = $db->table("occupation")->whereIn("id", json_decode(@$rowR->occupation))->get()->getResult();
                                             if(!empty($occupations2))
                                             {
@@ -767,12 +768,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Country </label>
-                                    <select class="country"  name="countryR[]" multiple >
+                                    <select class="" id="countryR" name="countryR[]" multiple >
                                         <option value="">Select</option>
                                         <?php
                                         if(!empty($row))
                                         {
-                                            if(!empty(json_decode(@$rowR->country)))
+                                            if(is_array(json_decode(@$rowR->country)) || is_object(json_decode(@$rowR->country)))
                                             $countries2 = $db->table("countries")->whereIn("id", json_decode(@$rowR->country))->get()->getResult();
                                             if(!empty($countries2))
                                             {
@@ -784,12 +785,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">State </label>
-                                    <select class="state"  name="stateR[]" multiple >
+                                    <select class="" id="stateR" name="stateR[]" multiple >
                                         <option value="">Select</option>
                                         <?php
                                         if(!empty($row))
                                         {
-                                            if(!empty(json_decode(@$rowR->state)))
+                                            if(is_array(json_decode(@$rowR->state)) || is_object(json_decode(@$rowR->state)))
                                             $states2 = $db->table("states")->whereIn("id", json_decode(@$rowR->state))->get()->getResult();
                                             if(!empty($states2))
                                             {
@@ -857,6 +858,48 @@
         okLabel: 'Ok',
         cancelLabel: 'Cancel'
     });
+</script>
+
+<script>
+    var maritalstatus = $('select[name="maritalstatus"]');
+    var havechildren = $('select[name="havechildren"]');
+
+    $(document).on("change", maritalstatus ,(function(e) {
+        setHideShowFlieds();
+    }));
+
+    function setHideShowFlieds() {
+        if($(maritalstatus).val()=='Never Married')
+        {
+            $(havechildren).parent().hide();
+        }
+        else
+        {
+            $(havechildren).parent().show();            
+        }
+    }
+    setHideShowFlieds();
+</script>
+
+<script>
+    var maritalstatusR = $('select[name="maritalstatusR[]"]');
+    var havechildrenR = $('select[name="childrenR"]');
+
+    $(document).on("change", maritalstatusR ,(function(e) {
+        setHideShowFliedsR();
+    }));
+
+    function setHideShowFliedsR() {
+        if($(maritalstatusR).val().includes('Never Married'))
+        {
+            $(havechildrenR).parent().hide();
+        }
+        else
+        {
+            $(havechildrenR).parent().show();            
+        }
+    }
+    setHideShowFliedsR();
 </script>
 
 

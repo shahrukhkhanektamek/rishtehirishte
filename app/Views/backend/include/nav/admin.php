@@ -57,9 +57,9 @@
     </a>
     <div class="collapse menu-dropdown" id="services">
         <ul class="nav nav-sm flex-column">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="<?=base_url(route_to('service-category.list'))?>" class="nav-link" data-key="t-analytics">Category </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a href="<?=base_url(route_to('service.list'))?>" class="nav-link" data-key="t-analytics"> Service </a>
             </li>
@@ -151,6 +151,11 @@
 <li class="nav-item">
     <a class="nav-link menu-link" href="<?=base_url(route_to('testimonial.list'))?>">
         <i class="ri-image-line"></i> <span data-key="t-transaction">Testimonial</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link menu-link" href="<?=base_url(route_to('faq.list'))?>">
+        <i class="ri-image-line"></i> <span data-key="t-transaction">Faq's</span>
     </a>
 </li>
 

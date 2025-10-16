@@ -239,10 +239,16 @@ $(window).scroll(function () {
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-  autoplaySpeed: 0,
-  speed: 15000,
-  pauseOnHover: false,
-  cssEase: 'linear',
+        // autoplaySpeed: 0,
+        // speed: 15000,
+
+        autoplaySpeed: 1000,
+        speed: 500,
+
+        pauseOnHover: false,
+        cssEase: 'linear',
+        prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
         responsive: [{
                 breakpoint: 769,
                 settings: {
@@ -273,6 +279,8 @@ $(window).scroll(function () {
         centerMode: false,
         pauseOnHover: false,
         // cssEase: 'linear',
+        prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
         responsive: [{
                 breakpoint: 769,
                 settings: {
@@ -307,6 +315,8 @@ $(window).scroll(function () {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
+        prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
         responsive: [{
             breakpoint: 992,
             settings: {

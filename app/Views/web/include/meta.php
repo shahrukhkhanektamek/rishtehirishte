@@ -1,9 +1,11 @@
 <?php
+$logo = json_decode($db->table('setting')->getWhere(["name"=>'logo',])->getRow()->data);
 $meta_image = base_url('upload/favicon.png');
 if(!empty(@$row->image))
 {
    $meta_image = base_url('upload/'.$row->image);
 }
+$stateCity= '';
 ?>
 
 <!-- Meta Tagging -->
@@ -62,6 +64,11 @@ if(!empty(@$row->image))
 <!-- Twitter Meta Tags -->
 <meta name="twitter:image" content="<?=$meta_image ?>">
 <meta name="twitter:image:src" content="<?=$meta_image ?>">
+
+
+
+<title><?=@$meta_data->meta_title==env("APP_NAME")?@$meta_data->meta_title.$stateCity: env("APP_NAME").' || '.@$meta_data->meta_title.@$stateCity ?></title>
+<?php if(!empty($meta_data)){ ?>
 <meta name="twitter:title" content="<?=$meta_data->meta_author.$stateCity ?>">
 <meta name="twitter:description" content="<?=$meta_data->meta_description ?>">
 <!-- Open Graph (OG) meta tags -->
@@ -71,7 +78,7 @@ if(!empty(@$row->image))
 <meta property="og:description" content="<?=$meta_data->meta_description ?>" />
 <!-- Meta Tagging -->
 
-<title><?=$meta_data->meta_title==env("APP_NAME")?$meta_data->meta_title.$stateCity: env("APP_NAME").' || '.$meta_data->meta_title.$stateCity ?></title>
 <meta name="author" content="<?=$meta_data->meta_author.$stateCity ?>">
 <meta name="keywords" content="<?=$meta_data->meta_keywords ?>">
 <meta name="description" content="<?=$meta_data->meta_description ?>"> 
+<?php } ?>

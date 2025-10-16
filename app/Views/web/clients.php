@@ -7,19 +7,14 @@
     <?php include"include/header-nav.php"; ?>
 
     <!-- BANNER -->
+
+    <!-- PRICING PLANS -->
     <section>
-        <div class="str">
-            <div class="ban-inn ab-ban pg-cont" style="background: linear-gradient(to right, #2a262691, #2a2c3c);">
-                <div class="container">
-                    <div class="row">
-                        <div class="hom-ban">
-                            <div class="ban-tit">
-                                <span>Our Clients</span>
-                                <h1>Clients Rishte Hi Rishte</h1>
-                                <!-- <p>Rishte Hi Rishte is the fastest growing matrimonial portal in India</p> -->
-                            </div>
-                        </div>
-                    </div>
+        <div class="plans-ban">
+            <div class="container">
+                <div class="row">
+                    <span>Our Clients</span>
+                    <h1>Clients Rishte Hi Rishte</h1>
                 </div>
             </div>
         </div>

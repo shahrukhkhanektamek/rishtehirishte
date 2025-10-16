@@ -110,7 +110,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                                             </div>
                                         </li>
                                         <li class="col sr-reli" >
-                                            <button class="cta-dark w-100" type="submit">Let's Beign</button>
+                                            <button class="cta-dark w-100" type="submit">Let's Begin</button>
                                         </li>
                                     </ul>
                                 </form>
@@ -191,7 +191,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                         <div class="col-md-11">
                         <div class="hom-ban">
                             <div class="ban-tit">
-                                <span><i class="no1">#1</i> Wedding Website</span>
+                                <span><i class="no1">#1</i> Matrimonial Services</span>
                                 <h2>Did you Know Why Families choose Us First?</h2>
                                 <p class="mt-3">At Rishte Hi Rishte Matrimonial, We don't just match profiles-- we also match values, attitudes, and family prestige. With our understanding and wide range of experience in this field over the decade, we have been able to solemnize matches efficiently. Keeping members' information 100% discrete and confidential, we provide matches that suit your class & complement your status. With a team of well-trained & seasoned professionals, we excel in finding the perfect partner, making us the Top/Best matrimonial Company.</p>
                             </div>
@@ -209,26 +209,32 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
         <div class="ab-sec2">
             <div class="container">
                 <div class="row">
-                    <ul>
+                    <ul class="home-3-cards">
                         <li>
                             <div class="success-image-div">
-                                <img src="images/icon/prize.png" alt="">
-                                <h4>Genuine profiles</h4>
-                                <p>The most trusted wedding Matrimonial brand</p>
+                                <span>
+                                    <img src="images/icon/prize.png" alt="">
+                                    <h4>Genuine profiles</h4>
+                                    <!-- <p>The most trusted wedding Matrimonial brand</p> -->
+                                </span>
                             </div>
                         </li>
                         <li>
                             <div class="success-image-div">
-                                <img src="images/icon/trust.png" alt="">
-                                <h4>Most trusted</h4>
-                                <p>The most trusted wedding Matrimonial brand</p>
+                                <span>
+                                    <img src="images/icon/trust.png" alt="">
+                                    <h4>Most trusted</h4>
+                                    <!-- <p>The most trusted wedding Matrimonial brand</p> -->
+                                </span>
                             </div>
                         </li>
                         <li>
                             <div class="success-image-div">
-                                <img src="images/icon/rings.png" alt="">
-                                <h4>Personalized Matchmaking | 100% Privacy</h4>
-                                <p>The most trusted wedding Matrimonial brand</p>
+                                <span>
+                                    <img src="images/icon/rings.png" alt="">
+                                    <h4>Personalized Matchmaking | 100% Privacy</h4>
+                                    <!-- <p>The most trusted wedding Matrimonial brand</p> -->
+                                </span>
                             </div>
                         </li>
                     </ul>
@@ -335,20 +341,9 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
 
                             <?php
                                 $blogs = $db->table("blog")->where(["status"=>1,])->limit(10)->orderBy('id','desc')->get()->getResult();
-                                foreach ($blogs as $key => $value) {
-                            ?>
-                                <div class="col-lg-3 col-md-4">
-                                    <div class="blog-box">
-                                        <div class="blog-box-image">
-                                            <img class="img-fluid" src="<?=image_check($value->image) ?>" loading="lazy" alt="image">
-                                        </div>
-                                        <h4><?=$value->name ?></h4>
-                                        <!-- <p><?php // $value->sort_description ?></p> -->
-                                        <a href="<?=base_url().$value->slug ?>" class="cta-dark"><span>Read more <i class="fa-solid fa-arrow-right ms-2"></i></span></a>
-                                    </div>
-                                </div>
-                            <?php } ?>
-
+                                foreach ($blogs as $key => $value) {                                         
+                                        echo view("web/card/blog-grid",["col"=>"col-md-6 col-lg-3","value"=>$value,]);
+                                } ?>
                             </div>
                         </div>
                     </div>
@@ -368,7 +363,7 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
                         <div class="lhs">
                             <h2>Find your perfect Match now</h2>
                             <p>Offers trusted matrimonial services. Register today! To Help You Find The Right Match Of Your Choice.</p>
-                            <a href="#!" class="cta-3">Register Now</a>
+                            <a href="register" class="cta-3">Register Now</a>
                             <a href="#enquiryNow" data-bs-toggle="modal" data-bs-target="#enquiryModal" class="cta-4">Enquire Now</a>
                         </div>
                     </div>

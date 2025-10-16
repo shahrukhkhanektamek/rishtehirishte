@@ -27,13 +27,14 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
                 <div class="col-md-4">
                     <h4>HELP &amp; SUPPORT</h4>
                     <ul>
-                        <li><a href="about.php">About company</a></li>
-                        <li><a href="contact.php">Contact us</a></li>
-                        <li><a href="clients.php">Our Clients</a></li>
-                        <li><a href="#!">Services</a></li>
-                        <li><a href="packages.php">Packages</a></li>
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="register.php">Register</a></li>
+                        <li><a href="<?=base_url()?>about.php">About company</a></li>
+                        <li><a href="<?=base_url()?>contact.php">Contact us</a></li>
+                        <li><a href="<?=base_url()?>clients.php">Our Clients</a></li>
+                        <li><a href="<?=base_url()?>blog">Blog</a></li>
+                        <li><a href="<?=base_url()?>service">Services</a></li>
+                        <li><a href="<?=base_url()?>packages.php">Packages</a></li>
+                        <li><a href="<?=base_url()?>login.php">Login</a></li>
+                        <li><a href="<?=base_url()?>register.php">Register</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 fot-soc">
@@ -104,7 +105,7 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
                                     <div class="col-md-12">
                                         <div class="contact-form__input style_modal">
                                             <label>Email addess <span>*</span></label>
-                                            <input class="form-control" type="email" name="email" placeholder="" required="">
+                                            <input class="form-control" type="email" name="email" placeholder="" >
                                             <span class="icon far fa-envelope"></span>
                                         </div>
                                     </div>
@@ -122,6 +123,17 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
                                             <span class="icon fa-solid fa-map-marker"></span>
                                         </div>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="contact-form__input style_modal">
+                                            <label>I'm looking for <span>*</span></label>
+                                            <select class="select" name="lookingFor" required>
+                                                <option value="">Select</option>
+                                                <option value="Groom">Groom</option>
+                                                <option value="Bride">Bride</option>
+                                            </select>
+                                            <span class="icon fa-solid fa-female"></span>
+                                        </div>
+                                    </div>
                                     
                                 </div>
                             </div>
@@ -136,6 +148,93 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
         </div>
     </div>
 </div>
+
+<!-- Enquiry Success Modal -->
+<div class="modal fade" id="enquirySuccessModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="successLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md modal-dialog-centered">
+    <div class="modal-content text-center border-0 shadow-lg" style="overflow:hidden; border-radius:14px;">
+      
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body py-4">
+        
+        <!-- Success Animation -->
+        <div class="success-wrap mx-auto mb-3">
+          <svg class="check" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="28"/>
+            <path d="M19 33 L28.5 42.5 L46 24"/>
+          </svg>
+        </div>
+
+        <h4 class="fw-semibold mb-2 text-success">Enquiry Sent Successfully!</h4>
+        <p class="text-muted mb-0">
+          Thank you for connecting with us. <br> Our team will get back to you shortly.
+        </p>
+
+      </div>
+
+      <div class="modal-footer border-0 justify-content-center pb-4">
+        <button type="button" class="btn btn-success px-4" data-bs-dismiss="modal">
+          <i class="fa-solid fa-check me-1"></i> OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .modal .success-wrap {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ecfdf5, #ffffff);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 25px rgba(16,185,129,0.15);
+    position: relative;
+    animation: popIn 0.6s ease;
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0.4); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+
+  .modal svg.check {
+    width: 70px;
+    height: 70px;
+  }
+  .modal svg circle {
+    fill: none;
+    stroke: #10b981;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+    animation: drawCircle 0.7s ease forwards;
+  }
+  .modal svg path {
+    fill: none;
+    stroke: #064e3b;
+    stroke-width: 4.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: drawTick 0.4s ease 0.5s forwards;
+  }
+
+  @keyframes drawCircle {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes drawTick {
+    to { stroke-dashoffset: 0; }
+  }
+</style>
+
 
 
 
@@ -332,7 +431,7 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
           var query = {
             search: params.term,
             type: 'public',
-            id:$("#country").val()
+            id:$(".country").val()
           }
 
           // Query parameters will be ?search=[term]&type=public
@@ -368,7 +467,82 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
         data: function (params) {
           var query = {
             search: params.term,
+            type: 'public',
+            id:$(".religion").val()
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('#countryR').select2({
+      ajax: {
+        url: "<?=base_url(route_to('search-country'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
             type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('#stateR').select2({
+      ajax: {
+        url: "<?=base_url(route_to('search-state'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public',
+            id:$(".country").val()
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('#religionR').select2({
+      ajax: {
+        url: "<?=base_url(route_to('religion'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+
+          // Query parameters will be ?search=[term]&type=public
+          return query;
+        }
+      }
+    });
+    $('#casteR').select2({
+      ajax: {
+        url: "<?=base_url(route_to('caste'))?>",
+        method:"post",
+        "headers": {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+       },
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public',
+            id:$("#religionR").val()
           }
 
           // Query parameters will be ?search=[term]&type=public

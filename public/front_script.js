@@ -413,6 +413,14 @@ var form = '';
             success_message(result.message);
             loader('hide');
           }
+          else if(result.action=="modalsubmitaddshow")
+          { 
+            $("#"+result.modalhideid).modal("hide");
+            $("#"+result.modalshowid).modal("show");
+            $(form)[0].reset();
+            // success_message(result.message);
+            loader('hide');
+          }
           else if(result.action=="modalsubmitedit")
           {
             $("#"+result.modalid).modal("hide");

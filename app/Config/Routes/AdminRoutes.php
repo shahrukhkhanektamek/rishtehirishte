@@ -141,6 +141,16 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->post('delete/(:any)', 'AdminSuccessStoryController::delete/$1', ['as' => 'success-story.delete']);
         $routes->post('block_unblock/(:any)', 'AdminSuccessStoryController::block_unblock/$1', ['as' => 'success-story.block_unblock']);
     });
+    $routes->group('faq', function($routes) {
+        $routes->get('/', 'AdminFaqController::index', ['as' => 'faq.list']);
+        $routes->get('load_data', 'AdminFaqController::load_data', ['as' => 'faq.load_data']);
+        $routes->get('add', 'AdminFaqController::add', ['as' => 'faq.add']);
+        $routes->get('edit/(:any)?', 'AdminFaqController::edit/$1', ['as' => 'faq.edit']);
+        $routes->get('view/(:any)', 'AdminFaqController::view/$1', ['as' => 'faq.view']);
+        $routes->post('update', 'AdminFaqController::update', ['as' => 'faq.update']);
+        $routes->post('delete/(:any)', 'AdminFaqController::delete/$1', ['as' => 'faq.delete']);
+        $routes->post('block_unblock/(:any)', 'AdminFaqController::block_unblock/$1', ['as' => 'faq.block_unblock']);
+    });
     
  
 

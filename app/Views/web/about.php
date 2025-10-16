@@ -33,24 +33,30 @@
                 <div class="row">
                     <ul>
                         <li>
-                            <div>
-                                <img src="images/icon/prize.png" alt="">
-                                <h4>Genuine profiles</h4>
-                                <p>The most trusted wedding Matrimonial brand</p>
+                            <div class="success-image-div">
+                                <span>
+                                    <img src="images/icon/prize.png" alt="">
+                                    <h4>Genuine profiles</h4>
+                                    <!-- <p>The most trusted wedding Matrimonial brand</p> -->
+                                </span>
                             </div>
                         </li>
                         <li>
-                            <div>
-                                <img src="images/icon/trust.png" alt="">
-                                <h4>Most trusted</h4>
-                                <p>The most trusted wedding Matrimonial brand</p>
+                            <div class="success-image-div">
+                                <span>
+                                    <img src="images/icon/trust.png" alt="">
+                                    <h4>Most trusted</h4>
+                                    <!-- <p>The most trusted wedding Matrimonial brand</p> -->
+                                </span>
                             </div>
                         </li>
                         <li>
-                            <div>
-                                <img src="images/icon/rings.png" alt="">
-                                <h4>Personalized Matchmaking | 100% Privacy</h4>
-                                <p>The most trusted wedding Matrimonial brand</p>
+                            <div class="success-image-div">
+                                <span>
+                                    <img src="images/icon/rings.png" alt="">
+                                    <h4>Personalized Matchmaking | 100% Privacy</h4>
+                                    <!-- <p>The most trusted wedding Matrimonial brand</p> -->
+                                </span>
                             </div>
                         </li>
                     </ul>

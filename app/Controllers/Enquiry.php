@@ -20,6 +20,7 @@ class Enquiry extends BaseController
         $data['email'] = $this->request->getPost('email');
         $data['phone'] = $this->request->getPost('phone');
         $data['city'] = $this->request->getPost('city');
+        $data['lookingFor'] = $this->request->getPost('lookingFor');
         // $data['subject'] = $this->request->getPost('subject');
         // $data['coment'] = $this->request->getPost('message');
         
@@ -52,11 +53,13 @@ class Enquiry extends BaseController
 
         if($entryStatus)
         {
-            $action = 'modalsubmitadd';
+            $action = 'modalsubmitaddshow';
             $responseCode = 200;
             $result['status'] = $responseCode;
             $result['message'] = 'Success';
             $result['modalid'] = 'enquiryModal';
+            $result['modalhideid'] = 'enquiryModal';
+            $result['modalshowid'] = 'enquirySuccessModal';
             $result['action'] = $action;
             $result['data'] = [];
             return $this->response->setStatusCode($responseCode)->setJSON($result);

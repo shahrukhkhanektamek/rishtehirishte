@@ -308,7 +308,7 @@ class Home extends BaseController
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.name", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.name", 'asc')->limit(50, 0)->get()->getResult();
         $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
@@ -325,8 +325,17 @@ class Home extends BaseController
         $id = $this->request->getVar('id');
         $table_name = 'states';
         $builder = $this->db->table($table_name)
-        // ->where("{$table_name}.country_id",$id)
         ->where("{$table_name}.status", 1);
+
+        
+
+        $id = $this->request->getVar('id');
+        if(!empty($id))
+        {
+            // if(is_array($id)) $builder->whereIn("country_id", $id);
+            // else $builder->where(["country_id"=>$id,]);
+        }
+
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
@@ -349,7 +358,7 @@ class Home extends BaseController
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.name", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.name", 'asc')->limit(50, 0)->get()->getResult();
         $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
@@ -368,7 +377,7 @@ class Home extends BaseController
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.id", 'asc')->limit(50, 0)->get()->getResult();
         $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
@@ -395,7 +404,7 @@ class Home extends BaseController
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
 
-        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.id", 'asc')->limit(50, 0)->get()->getResult();
 
         $groups = [];
         $groups[] = ["id"=>"","text"=>"All",];
@@ -428,7 +437,7 @@ class Home extends BaseController
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.name", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.name", 'asc')->limit(50, 0)->get()->getResult();
         $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
@@ -444,10 +453,18 @@ class Home extends BaseController
         $search = $this->request->getVar('search');
         $table_name = 'caste';
         $builder = $this->db->table($table_name)->where("{$table_name}.status", 1);
+
+        $id = $this->request->getVar('id');
+        if(!empty($id))
+        {
+            if(is_array($id)) $builder->whereIn("religion", $id);
+            else $builder->where(["religion"=>$id,]);
+        }
+
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.id", 'asc')->limit(50, 0)->get()->getResult();
         $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
@@ -466,7 +483,7 @@ class Home extends BaseController
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.id", 'asc')->limit(50, 0)->get()->getResult();
         $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [
@@ -485,7 +502,7 @@ class Home extends BaseController
         if (!empty($search)) {
             $builder->groupStart()->like("{$table_name}.name", $search)->groupEnd();
         }
-        $data_list = $builder->orderBy("{$table_name}.id", 'desc')->limit(50, 0)->get()->getResult();
+        $data_list = $builder->orderBy("{$table_name}.id", 'asc')->limit(50, 0)->get()->getResult();
         $return_data[] = ["id"=>"","text"=>"All",];
         foreach ($data_list as $key => $value) {
             $return_data[] = [

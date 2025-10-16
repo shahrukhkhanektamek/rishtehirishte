@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-4 form-group mb-0">
                 <label class="lb">Challenged </label>
-                <select class="select"  name="challenged">
+                <select class="select"  name="challenged" >
                     <option value="">Select</option>
                     <?php foreach (challenged() as $key => $value) {?>
                         <option value="<?=$value ?>" <?php if(@$row->challenged==$value)echo'selected'; ?>><?=$value ?></option>
@@ -38,8 +38,8 @@
                 </select>
             </div>
             <div class="col-md-4 form-group mb-0">
-                <label class="lb">Have Children ? <span class="text-danger">*</span></label>
-                <select class="select"  name="havechildren" required>
+                <label class="lb">Have Children ? </label>
+                <select class="select"  name="havechildren" >
                     <option value="">Select</option>
                     <?php foreach (have_children() as $key => $value) {?>
                         <option value="<?=$value ?>" <?php if(@$row->havechildren==$value)echo'selected'; ?>><?=$value ?></option>
@@ -47,8 +47,8 @@
                 </select>
             </div>
             <div class="col-md-4 form-group mb-0">
-                <label class="lb">Religion </label>
-                <select class="religion"  name="religion" >
+                <label class="lb">Religion <span class="text-danger">*</span></label>
+                <select class="religion"  name="religion" required>
                     <option value="">Select</option>
                     <?php
                     if(!empty($row))
@@ -77,7 +77,7 @@
                 </select>
             </div>
             <div class="col-md-4 form-group mb-0">
-                <label class="lb">Are you manglik ? <span class="text-danger">*</span></label>
+                <label class="lb">Are you manglik ? </label>
                 <select class="select"  name="manglik" >
                     <option value="">Select</option>
                     <?php foreach (manglik() as $key => $value) {?>
@@ -95,8 +95,8 @@
                 </select>
             </div>
             <div class="col-md-4 form-group">
-                <label class="lb">Complexion <span class="text-danger">*</span></label>
-                <select class="select"  name="complexion" required>
+                <label class="lb">Complexion </label>
+                <select class="select"  name="complexion" >
                     <option value="">Select</option>
                     <?php foreach (complexion() as $key => $value) {?>
                         <option value="<?=$value ?>" <?php if(@$row->complexion==$value)echo'selected'; ?>><?=$value ?></option>
@@ -104,8 +104,8 @@
                 </select>
             </div>
             <div class="col-md-4 form-group">
-                <label class="lb">Body Type <span class="text-danger">*</span></label>
-                <select class="select"  name="body_type" required>
+                <label class="lb">Body Type </label>
+                <select class="select"  name="body_type" >
                     <option value="">Select</option>
                     <?php foreach (body_type() as $key => $value) {?>
                         <option value="<?=$value ?>" <?php if(@$row->body_type==$value)echo'selected'; ?>><?=$value ?></option>
@@ -145,16 +145,16 @@
                 </select>
             </div>
             <div class="col-md-4 form-group mb-0">
-                <label class="lb">City <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="city" placeholder="" value="<?=@$row->city?>" required>
+                <label class="lb">City </label>
+                <input type="text" class="form-control" name="city" placeholder="" value="<?=@$row->city?>" >
             </div>
             <div class="col-md-4 form-group mb-0">
                 <label class="lb">Pincode <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="pincode" placeholder="" value="<?=@$row->pincode?>" required>
+                <input type="text" class="form-control" name="pincode" placeholder="" value="<?=@$row->pincode?>" >
             </div>
             <div class="col-md-12 form-group mb-0">
                 <label class="lb">Address <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="address" placeholder="" value="<?=@$row->address?>" required>
+                <input type="text" class="form-control" name="address" placeholder="" value="<?=@$row->address?>" >
             </div>
 
             <div class="col-lg-12 col-12 form-group form-group mb-0">
@@ -185,3 +185,25 @@
         
     </div>
 </div>
+
+
+<script>
+    var maritalstatus = $('select[name="maritalstatus"]');
+    var havechildren = $('select[name="havechildren"]');
+
+    $(document).on("change", maritalstatus ,(function(e) {
+        setHideShowFlieds();
+    }));
+
+    function setHideShowFlieds() {
+        if($(maritalstatus).val()=='Never Married')
+        {
+            $(havechildren).parent().hide();
+        }
+        else
+        {
+            $(havechildren).parent().show();            
+        }
+    }
+    setHideShowFlieds();
+</script>

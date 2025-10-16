@@ -4,7 +4,7 @@
         
         <form method="post" action="<?=base_url('user/profile/step5')?>" id="step5FormData" class="row form_data" novalidate>
 
-            <div class="col-md-4 form-group mb-0">
+            <div class="col-md-6 form-group mb-0">
                 <label class="lb">From Age <span class="text-danger">*</span></label>
                 <select class="select" name="agestartR" required >
                     <option value="">Select</option>
@@ -13,7 +13,7 @@
                     <?php } ?>
                 </select>
             </div>
-            <div class="col-md-4 form-group mb-0">
+            <div class="col-md-6 form-group mb-0">
                 <label class="lb">To Age <span class="text-danger">*</span></label>
                 <select class="select" name="ageendR" >
                     <option value="">Select</option>
@@ -22,7 +22,7 @@
                     <?php } ?>
                 </select>
             </div>
-            <div class="col-md-4 form-group mb-0">
+            <div class="col-md-6 form-group mb-0">
                 <label class="lb">From Height <span class="text-danger">*</span></label>
                 <select class="select" name="heightstartR" >
                     <option value="">Select</option>
@@ -31,7 +31,7 @@
                     <?php } ?>
                 </select>
             </div>
-            <div class="col-md-4 form-group mb-0">
+            <div class="col-md-6 form-group mb-0">
                 <label class="lb">To Height <span class="text-danger">*</span></label>
                 <select class="select" name="heightendR" >
                     <option value="">Select</option>
@@ -40,17 +40,9 @@
                     <?php } ?>
                 </select>
             </div>
+            
             <div class="col-md-4 form-group mb-0">
-                <label class="lb">Have Children ? <span class="text-danger">*</span></label>
-                <select class="select" name="childrenR" >
-                    <option value="">Select</option>
-                    <?php foreach (have_children() as $key => $value) {?>
-                        <option value="<?=$value ?>" <?php if(@$rowR->children==$value)echo'selected'; ?>><?=$value ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="col-md-4 form-group mb-0">
-                <label class="lb">Income From <span class="text-danger">*</span></label>
+                <label class="lb">Annual Income From </label>
                 <select class="select" name="incomeR" >
                     <option value="">Select</option>
                     <?php foreach (incomes_inr() as $key => $value) {?>
@@ -59,7 +51,7 @@
                 </select>
             </div>
             <div class="col-md-4 form-group mb-0">
-                <label class="lb">Income To <span class="text-danger">*</span></label>
+                <label class="lb">Annual Income To </label>
                 <select class="select" name="incomeendR" >
                     <option value="">Select</option>
                     <?php foreach (incomes_inr() as $key => $value) {?>
@@ -68,7 +60,7 @@
                 </select>
             </div>
             <div class="col-md-4 form-group mb-0">
-                <label class="lb">Annual Incom ( In $) <span class="text-danger">*</span></label>
+                <label class="lb">Annual Income From ( In $) </label>
                 <select class="select" name="incomedollarR" >
                     <option value="">Select</option>
                     <?php foreach (incomes_doller() as $key => $value) {?>
@@ -77,7 +69,7 @@
                 </select>
             </div>
             <div class="col-md-4 form-group mb-0">
-                <label class="lb">Annual Upto ( In $) <span class="text-danger">*</span></label>
+                <label class="lb">Annual Income To Upto ( In $) </label>
                 <select class="select" name="incomeenddollarR" >
                     <option value="">Select</option>
                     <?php foreach (incomes_doller() as $key => $value) {?>
@@ -89,12 +81,12 @@
 
             <div class="col-md-12 form-group mb-0">
                 <label class="lb">Religion <span class="text-danger">*</span></label>
-                <select class="religion" name="religionR[]" multiple >
+                <select class="" name="religionR[]" multiple required id="religionR" >
                     <option value="">Select</option>
                     <?php
                     if(!empty($row))
                     {
-                        if(!empty(json_decode(@$rowR->religion)))
+                        if(is_array(json_decode(@$rowR->religion)) || is_object(json_decode(@$rowR->religion)))
                         $religions = $db->table("religion")->whereIn("id", json_decode(@$rowR->religion))->get()->getResult();
                         if(!empty($religions))
                         {
@@ -106,12 +98,12 @@
             </div>
             <div class="col-md-12 form-group mb-0">
                 <label class="lb">Caste <span class="text-danger">*</span></label>
-                <select class="caste"  name="casteR[]" multiple >
+                <select class=""  name="casteR[]" multiple required id="casteR" >
                     <option value="">Select</option>
                     <?php
                     if(!empty($row))
                     {
-                        if(!empty(json_decode(@$rowR->caste)))
+                        if(is_array(json_decode(@$rowR->caste)) || is_object(json_decode(@$rowR->caste)))
                         $castes = $db->table("caste")->whereIn("id", json_decode(@$rowR->caste))->get()->getResult();
                         if(!empty($castes))
                         {
@@ -123,7 +115,7 @@
             </div>
             <div class="col-md-12 form-group mb-0">
                 <label class="lb">Marital Status <span class="text-danger">*</span></label>
-                <select class="select"  name="maritalstatusR[]" multiple >
+                <select class="select"  name="maritalstatusR[]" multiple required >
                     <option value="">Select</option>
                     <?php foreach (marital_status() as $key => $value) {
                         $selected = '';
@@ -135,6 +127,15 @@
                         }
                         ?>
                         <option value="<?=$value ?>" <?=$selected?>><?=$value ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="col-md-12 form-group mb-0">
+                <label class="lb">Have Children ? </label>
+                <select class="select" name="childrenR" >
+                    <option value="">Select</option>
+                    <?php foreach (have_children() as $key => $value) {?>
+                        <option value="<?=$value ?>" <?php if(@$rowR->children==$value)echo'selected'; ?>><?=$value ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -156,13 +157,13 @@
                 </select>
             </div>
             <div class="col-md-12 form-group mb-0">
-                <label class="lb">Education <span class="text-danger">*</span></label>
+                <label class="lb">Education </label>
                 <select class="education" name="educationR[]" multiple >
                     <option value="">Select</option>
                     <?php
                     if(!empty($row))
                     {
-                        if(!empty(json_decode(@$rowR->education)))
+                        if(is_array(json_decode(@$rowR->education)) || is_object(json_decode(@$rowR->education)))
                         $educations = $db->table("education")->whereIn("id", json_decode(@$rowR->education))->get()->getResult();
                         if(!empty($educations))
                         {
@@ -173,13 +174,13 @@
                 </select>
             </div>
             <div class="col-md-12 form-group mb-0">
-                <label class="lb">Occupation <span class="text-danger">*</span></label>
+                <label class="lb">Occupation </label>
                 <select class="occupation"  name="occupationR[]" multiple >
                     <option value="">Select</option>
                     <?php
                     if(!empty($row))
                     {
-                        if(!empty(json_decode(@$rowR->occupation)))
+                        if(is_array(json_decode(@$rowR->occupation)) || is_object(json_decode(@$rowR->occupation)))
                         $occupations = $db->table("occupation")->whereIn("id", json_decode(@$rowR->occupation))->get()->getResult();
                         if(!empty($occupations))
                         {
@@ -196,7 +197,7 @@
                     <?php
                     if(!empty($row))
                     {
-                        if(!empty(json_decode(@$rowR->country)))
+                        if(is_array(json_decode(@$rowR->country)) || is_object(json_decode(@$rowR->country)))
                         $countries = $db->table("countries")->whereIn("id", json_decode(@$rowR->country))->get()->getResult();
                         if(!empty($countries))
                         {
@@ -207,13 +208,13 @@
                 </select>
             </div>
             <div class="col-md-12 form-group mb-0">
-                <label class="lb">State <span class="text-danger">*</span></label>
+                <label class="lb">State </label>
                 <select class="state"  name="stateR[]" multiple >
                     <option value="">Select</option>
                     <?php
                     if(!empty($row))
                     {
-                        if(!empty(json_decode(@$rowR->state)))
+                        if(is_array(json_decode(@$rowR->state)) || is_object(json_decode(@$rowR->state)))
                         $states = $db->table("states")->whereIn("id", json_decode(@$rowR->state))->get()->getResult();
                         if(!empty($states))
                         {
@@ -224,7 +225,7 @@
                 </select>
             </div>
             <div class="col-md-12 form-group mb-0">
-                <label class="lb">Challenged <span class="text-danger">*</span></label>
+                <label class="lb">Challenged </label>
                 <select class="select"  name="challengedR[]" multiple >
                     <option value="">Select</option>
                     <?php foreach (challenged() as $key => $value) {$selected = '';
@@ -241,7 +242,7 @@
             </div>
 
             <div class="col-lg-12 form-group mb-02">
-                <label class="lb">Other Requirements <span class="text-danger">*</span></label>
+                <label class="lb">Other Requirements </label>
                 <textarea class="form-control" name="otherrequirementsR" rows="4" ><?=@$rowR->otherrequirements?></textarea>
             </div>
 
@@ -254,3 +255,27 @@
 
     </div>
 </div>
+
+
+<script>
+    var maritalstatus = $('select[name="maritalstatusR[]"]');
+    var havechildren = $('select[name="childrenR"]');
+
+    $(document).on("change", maritalstatus ,(function(e) {
+        setHideShowFlieds();
+    }));
+
+    function setHideShowFlieds() {
+        if($(maritalstatus).val().includes('Never Married'))
+        {
+            $(havechildren).parent().hide();
+        }
+        else
+        {
+            $(havechildren).parent().show();            
+        }
+    }
+    setHideShowFlieds();
+</script>
+
+
