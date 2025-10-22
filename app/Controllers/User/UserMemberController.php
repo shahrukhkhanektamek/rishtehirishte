@@ -557,7 +557,7 @@ class UserMemberController extends BaseController
 
             $responseCode = 200;
             $result['status'] = $responseCode;
-            $result['message'] = 'Send Successfully';
+            $result['message'] = 'Sent Successfully';
             $result['action'] = 'return';
             $result['data'] = [];
             return $this->response->setStatusCode($responseCode)->setJSON($result);
@@ -566,7 +566,7 @@ class UserMemberController extends BaseController
         {
             $responseCode = 400;
             $result['status'] = $responseCode;
-            $result['message'] = 'Allready Sent!';
+            $result['message'] = 'Already Sent!';
             $result['action'] = 'return';
             $result['data'] = [];
             return $this->response->setStatusCode($responseCode)->setJSON($result);

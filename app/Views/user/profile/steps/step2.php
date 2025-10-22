@@ -46,7 +46,7 @@
                     <?php } ?>
                 </select>
             </div>
-            <div class="col-md-12 form-group mb-0">
+            <div class="col-md-4 form-group mb-0">
                 <label class="lb">Diet </label>
                 <select class="select"  name="diet1">
                     <option value="">Select</option>
@@ -56,9 +56,9 @@
                 </select>
             </div>
 
-            <div class="col-md-6 form-group mb-0">
-                <label class="lb">Drinking <span class="text-danger">*</span></label>
-                <select class="select"  name="drinking" required>
+            <div class="col-md-4 form-group mb-0">
+                <label class="lb">Drinking </label>
+                <select class="select"  name="drinking" >
                     <option value="">Select</option>
                     <?php foreach (drinking() as $key => $value) {?>
                         <option value="<?=$value ?>" <?php if(@$row->drinking==$value)echo'selected'; ?>><?=$value ?></option>
@@ -66,9 +66,9 @@
                 </select>
             </div>
 
-            <div class="col-md-6 form-group mb-0">
-                <label class="lb">Smoking <span class="text-danger">*</span></label>
-                <select class="select"  name="smoking" required>
+            <div class="col-md-4 form-group mb-0">
+                <label class="lb">Smoking </label>
+                <select class="select"  name="smoking" >
                     <option value="">Select</option>
                     <?php foreach (smoking() as $key => $value) {?>
                         <option value="<?=$value ?>" <?php if(@$row->smoking==$value)echo'selected'; ?>><?=$value ?></option>

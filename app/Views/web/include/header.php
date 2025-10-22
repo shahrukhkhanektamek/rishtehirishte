@@ -3,9 +3,9 @@ $user = get_user();
 
 $my_plans = my_plans(@$user->id);
 $wallet = wallet(@$user->id);
-// print_r($wallet);
+print_r($wallet);
 
-// die;
+die;
 
 ?>
 
@@ -79,8 +79,13 @@ $wallet = wallet(@$user->id);
     .select2-container--default .select2-selection--single .select2-selection__arrow {
         height: 33px;
     }
-    .select2-results__options {
+    /*.select2-results__options {
       max-height: 550px !important;
+    }*/
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: #71519d;
+        color: white;
+        border-color: #71519d;
     }
 
 

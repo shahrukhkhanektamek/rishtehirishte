@@ -43,12 +43,7 @@
                                     <input type="text" class="form-control" name="slug" placeholder="" value="<?=@$row->slug?>" >
                                 </div>
 
-                                <div class="col-md-3">
-                                    <label class="form-label">Name </label>
-                                    <input type="text" class="form-control" name="name" placeholder="" value="<?=@$row->name?>" >
-                                </div>
-
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <label class="form-label">Email </label>
                                     <input type="text" class="form-control" name="email" placeholder="" value="<?=@$row->email?>" >
                                 </div>
@@ -60,27 +55,23 @@
                                     </div>
                                 <?php } ?>
 
+                                <div class="col-md-<?php if(empty($row))echo'3';else echo'6'; ?>">
+                                    <label class="form-label">Name </label>
+                                    <input type="text" class="form-control" name="name" placeholder="" value="<?=@$row->name?>" >
+                                </div>
+
                                 <div class="col-md-3">
                                     <label class="form-label">Mobile </label>
                                     <input type="text" class="form-control" name="phone" placeholder="" value="<?=@$row->phone?>" >
                                 </div>
+
                                 <div class="col-md-3">
                                     <label class="form-label">Alt. Mobile </label>
                                     <input type="text" class="form-control" name="alt_phone" placeholder="" value="<?=@$row->alt_phone?>" >
-                                </div>
-
+                                </div> 
                                 
 
-                                <div class="col-md-2">
-                                    <label class="form-label">Gender </label>
-                                    <select class="select"  name="gender" >
-                                        <option value="">Select Gender</option>
-                                        <option value="1" <?php if(@$row->gender==1)echo'selected'; ?> >Male</option>
-                                        <option value="2" <?php if(@$row->gender==2)echo'selected'; ?> >Female</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <label class="form-label">Date of birth </label>
                                     <?php 
                                     $day = '';
@@ -115,15 +106,18 @@
                                     </div>
                                 </div>
 
+
+
                                 <div class="col-md-3">
-                                    <label class="form-label">Place Of Birth </label>
-                                    <input type="text" class="form-control" name="place_of_birth" placeholder="" value="<?=@$row->place_of_birth?>" >
+                                    <label class="form-label">Gender </label>
+                                    <select class="select"  name="gender" >
+                                        <option value="">Select Gender</option>
+                                        <option value="1" <?php if(@$row->gender==1)echo'selected'; ?> >Male</option>
+                                        <option value="2" <?php if(@$row->gender==2)echo'selected'; ?> >Female</option>
+                                    </select>
                                 </div>
-                                <div class="col-md-2">
-                                    <label class="form-label">Time Of Birth </label>
-                                    <input type="text" class="form-control" id="timepicker" name="time_of_birth" value="<?php if(!empty($row->time_of_birth))echo date("h:i A", strtotime($row->time_of_birth)) ?>" >
-                                </div>
-                                <div class="col-md-2">
+
+                                <div class="col-md-3">
                                     <label class="form-label">Create Profile For </label>
                                     <select class="select"  name="profilefor" >
                                         <option value="">Select</option>
@@ -132,6 +126,16 @@
                                         <?php } ?>
                                     </select>
                                 </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Place Of Birth </label>
+                                    <input type="text" class="form-control" name="place_of_birth" placeholder="" value="<?=@$row->place_of_birth?>" >
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Time Of Birth </label>
+                                    <input type="text" class="form-control" id="timepicker" name="time_of_birth" value="<?php if(!empty($row->time_of_birth))echo date("h:i A", strtotime($row->time_of_birth)) ?>" >
+                                </div>
+                                
 
                                
 

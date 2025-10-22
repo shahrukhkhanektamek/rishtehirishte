@@ -98,7 +98,7 @@
                                                 <div class="form-group">
                                                 <label class="lb">Profile For <span class="text-danger">*</span></label>
                                                 <select class="chosen-select" name="profilefor" required>
-                                                    <option disabled="" selected="" value="">Select one</option>
+                                                    <option selected value="">Select one</option>
                                                     <option>Self</option>
                                                     <option>Son</option>
                                                     <option>Daughter</option>

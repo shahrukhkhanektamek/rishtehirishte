@@ -88,4 +88,46 @@
 
 <!--  Start Footer Area -->
 <?php echo view("web/include/footer.php"); ?>
+
+<script>
+   var maritalstatusstep2 = $('select[name="maritalstatus"]');
+var havechildrenstep2 = $('select[name="havechildren"]');
+
+$(document).on("change", maritalstatusstep2, function(e) {
+    setHideShowFliedsstep2();
+});
+
+function setHideShowFliedsstep2() {
+    if (maritalstatusstep2.val() === 'Never Married') {
+        havechildrenstep2.parent().hide();
+    } else {
+        havechildrenstep2.parent().show();            
+    }
+}
+setHideShowFliedsstep2();
+</script>
+
+
+
+<script>
+    var maritalstatusR = $('select[name="maritalstatusR[]"]');
+    var havechildrenR = $('select[name="childrenR"]');
+
+    $(document).on("change", maritalstatusR ,(function(e) {
+        setHideShowFliedsR();
+    }));
+
+    function setHideShowFliedsR() {
+        if($(maritalstatusR).val().includes('Never Married'))
+        {
+            $(havechildrenR).parent().hide();
+        }
+        else
+        {
+            $(havechildrenR).parent().show();            
+        }
+    }
+    setHideShowFliedsR();
+</script>
+
 <!-- End Footer Area --> 

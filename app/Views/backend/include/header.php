@@ -123,9 +123,14 @@ $logo_setting = $setting['logo'];
     .select2-container {
         /*z-index: 1102;*/
     }
-    .select2-results__options {
-      max-height: 550px !important;
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: #71519d;
+        color: white;
+        border-color: #71519d;
     }
+    /*.select2-results__options {
+      max-height: 550px !important;
+    }*/
 
     .ui-sortable-handle {
         cursor: move;

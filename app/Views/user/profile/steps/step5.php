@@ -140,7 +140,7 @@
                 </select>
             </div>
             <div class="col-md-12 form-group mb-0">
-                <label class="lb">Manglik  <span class="text-danger">*</span></label>
+                <label class="lb">Manglik  </label>
                 <select class="select"  name="manglikR[]" multiple >
                     <option value="">Select</option>
                     <?php foreach (manglik() as $key => $value) {
