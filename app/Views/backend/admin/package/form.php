@@ -52,19 +52,17 @@
                                     <label class="form-label">Price <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control" name="price" placeholder="" value="<?=@$row->price?>" id="price" required>
                                 </div>
+
                                 <div class="col-md-3">
                                     <label class="form-label">Contact View <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control" name="contact_view" placeholder="" value="<?=@$row->contact_view?>" id="price" required>
                                 </div>
 
-
                                 <div class="col-lg-12">
-                                    <label class="form-label">Features * <span class="text-danger">*</span></label>
+                                    <label class="form-label">Features <span class="text-danger">*</span></label>
                                     <textarea class="form-control" name="full_description" rows="4" required><?=@$row->full_description?></textarea>
                                     <script>CKEDITOR.replace( 'full_description' );</script>
-                                </div>
-
-                                                           
+                                </div>                                                          
 
 
                                 <?php //view('backend/meta') ?>

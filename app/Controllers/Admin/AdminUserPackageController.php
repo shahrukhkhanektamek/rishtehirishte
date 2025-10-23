@@ -48,7 +48,11 @@ class AdminUserPackageController extends BaseController
 
         $where = [];
         $data_list = $this->db->table($this->arr_values['table_name'])
-        ->select("users.email as user_email, {$this->arr_values['table_name']}.*")
+        ->select("{$this->arr_values['table_name']}.*,
+         users.name as user_name,
+         users.email as user_email,
+         users.phone as user_phone
+         ")
         ->join('users', 'users.id = ' . $this->arr_values['table_name'] . '.user_id', 'left')
 
         ->where([$this->arr_values['table_name'] . '.status' => $status])

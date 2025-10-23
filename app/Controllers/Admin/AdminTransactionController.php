@@ -46,50 +46,54 @@ class AdminTransactionController extends BaseController
         $data['upload_path'] = $this->arr_values['upload_path'];
         $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));   
 
-        $where = [];
-        $data_list = $this->db->table($this->arr_values['table_name'])
-
-        ->select("users.email as user_email, {$this->arr_values['table_name']}.*")
-        ->join('users', 'users.id = ' . $this->arr_values['table_name'] . '.user_id', 'left')
-
-        ->where([$this->arr_values['table_name'] . '.status' => $status,"transaction_type"=>2])
-        ->orderBy($this->arr_values['table_name'] . '.id', $order_by)
-        ->limit($limit, $offset);
-
-
-        
-
-
         $from_date = $this->request->getVar('from_date');
-        $to_date = $this->request->getVar('to_date');
-        if(!empty($from_date))
-        {
-            $from_date = date('Y-m-d 00:00:00', strtotime($from_date));
-            $where["add_date_time >="] = $from_date;
+        $to_date   = $this->request->getVar('to_date');
+        $filter_search_value = $this->request->getVar('filter_search_value');
+
+        // ✅ Main Query Builder
+        $builder = $this->db->table($this->arr_values['table_name'])
+            ->select("
+                {$this->arr_values['table_name']}.*,
+                users.name as user_name,
+                users.email as user_email,
+                users.phone as user_phone
+            ")
+            ->join('users', 'users.id = ' . $this->arr_values['table_name'] . '.user_id', 'left')
+            ->where("{$this->arr_values['table_name']}.status", $status)
+            ->where("transaction_type", 1);
+
+        // ✅ Date Filter (no array, directly chain)
+        if (!empty($from_date)) {
+            $builder->where("add_date_time >=", date('Y-m-d 00:00:00', strtotime($from_date)));
         }
-        if(!empty($to_date))
-        {
-            $to_date = date('Y-m-d 23:59:59', strtotime($to_date));
-            $where["add_date_time <="] = $to_date;
+        if (!empty($to_date)) {
+            $builder->where("add_date_time <=", date('Y-m-d 23:59:59', strtotime($to_date)));
         }
 
+        // ✅ Search Filter
         if (!empty($filter_search_value)) {
-            $data_list->groupStart()
+            $builder->groupStart()
                 ->like('users.email', $filter_search_value)
                 ->groupEnd();
         }
 
-        if(!empty($where)) $data_list->where($where);
-        $data_list = $data_list->get()->getResult();
+        // ✅ Clone builder for total count (before limit/offset)
+        $totalBuilder = clone $builder;
+        $total = $totalBuilder->countAllResults();
 
+        // ✅ Fetch paginated data
+        $data_list = $builder
+            ->orderBy("{$this->arr_values['table_name']}.id", $order_by)
+            ->limit($limit, $offset)
+            ->get()
+            ->getResult();
 
-        $total = $this->db->table($this->arr_values['table_name']);
-        if(!empty($where)) $total->where($where);
-        $total = $total->countAllResults();
+        // ✅ Pagination info
         $data['pager'] = $this->pager->makeLinks($page, $limit, $total);
         $data['totalData'] = $total;
-        $data['startData'] = ($total > 0) ? $offset+1 : 0;
+        $data['startData'] = ($total > 0) ? $offset + 1 : 0;
         $data['endData'] = ($offset + $limit > $total) ? $total : ($offset + $limit);
+        $data['data_list'] = $data_list;
         
 
         

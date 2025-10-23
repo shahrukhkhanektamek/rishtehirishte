@@ -183,6 +183,43 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
     </div>
   </div>
 </div>
+
+
+<!-- Package Modal -->
+<div class="modal fade" id="packageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="successLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content text-center border-0 shadow-lg" style="overflow:hidden; border-radius:14px;">
+      
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body py-4">
+        
+        <!-- Title -->
+        <h2 class="fw-bold mb-3" style="color:#2d3436;">
+          Choose the Perfect Package for You
+        </h2>
+        <p class="text-muted mb-4" style="max-width:700px; margin:auto; font-size:1.05rem;">
+          Unlock premium features and take your experience to the next level. 
+          Select from our affordable packages designed to fit your needs. 
+          Enjoy unlimited access, exclusive tools, and priority support.
+        </p>
+
+        <div class="row"></div>
+
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <style>
   .modal .success-wrap {
     width: 100px;
@@ -846,11 +883,25 @@ $(document).on("click", "#send-it", function () {
             response = admin_response_data_check(response);
             if(response.status==200)
             {
-                $("#memberCotactModal").modal("show");
-                $("#memberCotactModal .modal-body").html(response.data.view);                
+                if(response.type==1)
+                {
+                    $("#memberCotactModal").modal("show");
+                    $("#memberCotactModal .modal-body").html(response.data.view);
+                }
+                else if(response.type==2)
+                {
+                    $("#packageModal").modal("show");
+                    $("#packageModal .modal-body .row").html(response.data.view);
+                }
+                else if(response.type==3)
+                {
+                    $("#packageModal").modal("show");
+                    $("#packageModal .modal-body .row").html(response.data.view);
+                }
             }
         });
    }));
+
 
 </script>
 

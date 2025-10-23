@@ -31,6 +31,7 @@ $routes->post('religion', 'Home::search_religion');
 $routes->post('caste', 'Home::search_caste');
 $routes->post('languages', 'Home::search_languages');
 $routes->post('occupation', 'Home::search_occupation');
+$routes->post('package_detail', 'Home::package_detail');
 
 
 $routes->post('contact-enquiry', 'Enquiry::contact_enquiry');

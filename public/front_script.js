@@ -426,6 +426,11 @@ var form = '';
             success_message(result.message);
             loader('hide');
           }
+          else if(result.action=="modalshow")
+          {
+            $("#"+result.modalid).modal("hide");
+            loader('hide');
+          }
           else
           {
             success_message(result.message);

@@ -48,42 +48,59 @@ class AdminContactEnquiryController extends BaseController
         $data['upload_path'] = $this->arr_values['upload_path'];
         $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));   
 
-        $where = [];
-        $data_list = $this->db->table($this->arr_values['table_name'])
-        ->where([$this->arr_values['table_name'] . '.status' => $status])
-        ->orderBy($this->arr_values['table_name'] . '.id', $order_by)
-        ->limit($limit, $offset);
+        // Base Query
+        $builder = $this->db->table($this->arr_values['table_name']);
+        $builder->where($this->arr_values['table_name'] . '.status', $status);
 
-
+        // Date Filters - directly apply on builder (no $where array)
         $from_date = $this->request->getVar('from_date');
-        $to_date = $this->request->getVar('to_date');
-        if(!empty($from_date))
-        {
+        $to_date   = $this->request->getVar('to_date');
+
+        if (!empty($from_date)) {
             $from_date = date('Y-m-d 00:00:00', strtotime($from_date));
-            $where["add_date_time >="] = $from_date;
+            $builder->where('add_date_time >=', $from_date);
         }
-        if(!empty($to_date))
-        {
+
+        if (!empty($to_date)) {
             $to_date = date('Y-m-d 23:59:59', strtotime($to_date));
-            $where["add_date_time <="] = $to_date;
+            $builder->where('add_date_time <=', $to_date);
         }
 
+        // Search Filter
         if (!empty($filter_search_value)) {
-            if($search_by==1) $data_list->like($this->arr_values['table_name'].'.name', $filter_search_value);
-            if($search_by==2) $data_list->like($this->arr_values['table_name'].'.email', $filter_search_value);
-            if($search_by==3) $data_list->like($this->arr_values['table_name'].'.phone', $filter_search_value);
-            if($search_by==4) $data_list->like($this->arr_values['table_name'].'.user_id', $filter_search_value);
+            switch ($search_by) {
+                case 1:
+                    $builder->like($this->arr_values['table_name'] . '.name', $filter_search_value);
+                    break;
+                case 2:
+                    $builder->like($this->arr_values['table_name'] . '.email', $filter_search_value);
+                    break;
+                case 3:
+                    $builder->like($this->arr_values['table_name'] . '.phone', $filter_search_value);
+                    break;
+                case 4:
+                    $builder->like($this->arr_values['table_name'] . '.user_id', $filter_search_value);
+                    break;
+            }
         }
 
-        $total = $data_list->countAllResults(false);
-        if(!empty($where)) $data_list->where($where);
-        $data_list = $data_list->orderBy($this->arr_values['table_name'].'.id',$order_by)
-            ->limit($limit, $offset)->get()->getResult();
-        
+        // Clone for count (so original builder remains for fetch)
+        $countBuilder = clone $builder;
+        $total = $countBuilder->countAllResults();
+
+        // Fetch results with ordering and limit
+        $data_list = $builder
+            ->orderBy($this->arr_values['table_name'] . '.id', $order_by)
+            ->limit($limit, $offset)
+            ->get()
+            ->getResult();
+
+        // Pagination data
         $data['pager'] = $this->pager->makeLinks($page, $limit, $total);
         $data['totalData'] = $total;
-        $data['startData'] = ($total > 0) ? $offset+1 : 0;
-        $data['endData'] = ($offset + $limit > $total) ? $total : ($offset + $limit);
+        $data['startData'] = ($total > 0) ? $offset + 1 : 0;
+        $data['endData']   = ($offset + $limit > $total) ? $total : ($offset + $limit);
+
 
         
 

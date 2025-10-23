@@ -3,6 +3,15 @@
 <?php echo view("web/include/header.php"); ?>
 <!-- End Header Area -->
 
+<style>
+    .plans-main ul li, .plans-main .container
+    {
+        padding: 0;
+    }
+    .plans-main {
+        padding-bottom: 25px;
+    }
+</style>
     <div class="hom-top login_style">
 
     <?php echo view("web/include/header-nav.php"); ?>
@@ -112,132 +121,141 @@
                                     </h2>
                                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                       <div class="accordion-body">
-                                        <div class="row">
-                                                                          
-                                            <div class="col-md-2">
-                                                <label class="form-label">Gender</label>
-                                                <select class="select" id="gender" >
-                                                    <option value="">Select Gender</option>
-                                                    <?php if(@$user->gender==2){ ?>
-                                                        <option value="1" >Male</option>
-                                                    <?php }else if(@$user->gender==1){ ?>
-                                                        <option value="2">Female</option>
-                                                    <?php } ?>
-                                                </select>
+                                        <?php
+                                        $check_any_active_plan = check_any_active_plan($user->id);
+                                        if(!empty($check_any_active_plan['status']))
+                                        {
+                                        ?>
+                                            <div class="row">
+                                                                              
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Gender</label>
+                                                    <select class="select" id="gender" >
+                                                        <option value="">Select Gender</option>
+                                                        <?php if(@$user->gender==2){ ?>
+                                                            <option value="1" >Male</option>
+                                                        <?php }else if(@$user->gender==1){ ?>
+                                                            <option value="2">Female</option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <label class="form-label">From Age</label>
+                                                    <select class="select" id="agestart"  >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (ages() as $key => $value) {?>
+                                                            <option value="<?=$value ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <label class="form-label">To Age</label>
+                                                    <select class="select" id="ageend" >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (ages() as $key => $value) {?>
+                                                            <option value="<?=$value ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <label class="form-label">From Height</label>
+                                                    <select class="select"  id="fromheight" >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (heights() as $key => $value) {?>
+                                                            <option value="<?=$key ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <label class="form-label">To Height</label>
+                                                    <select class="select"  id="toheight" >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (heights() as $key => $value) {?>
+                                                            <option value="<?=$key ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Religion </label>
+                                                    <select class="religion"  id="religion" >
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Caste</label>
+                                                    <select class="caste"  id="caste" >
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Marital Status</label>
+                                                    <select class="select"  id="maritalstatus">
+                                                        <option value="">Select</option>
+                                                        <?php foreach (marital_status() as $key => $value) {?>
+                                                            <option value="<?=$value ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <label class="form-label">Country</label>
+                                                    <select class="form-control country"  id="country">
+                                                        <option value="">Select Country</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <label class="form-label">State</label>
+                                                    <select class="state"  id="state">
+                                                        <option value="">Select State</option>
+                                                    </select>
+                                                </div>
+
+                                                
+
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Manglik ?</label>
+                                                    <select class="select"  id="manglik" >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (manglik() as $key => $value) {?>
+                                                            <option value="<?=$value ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-5">
+                                                    <label class="form-label">Highest Degree</label>
+                                                    <select class="education"  id="highestdegree" >
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <label class="form-label">Occupation</label>
+                                                    <select class="occupation"  id="occupation" >
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
+
+
+
+
+                                                 
+                                                 <div class="col-md-5 mt-2" style="margin: 0 auto;">
+                                                    <button class="cta-dark w-100" id="advance-search"><i class="ri-search-line align-bottom me-1"></i> Search</button>
+                                                </div>
                                             </div>
+                                        <?php }else{
+                                            echo view('web/card/package-card',compact('db'));
+                                        } ?>
 
-                                            <div class="col-md-2">
-                                                <label class="form-label">From Age</label>
-                                                <select class="select" id="agestart"  >
-                                                    <option value="">Select</option>
-                                                    <?php foreach (ages() as $key => $value) {?>
-                                                        <option value="<?=$value ?>"><?=$value ?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-2">
-                                                <label class="form-label">To Age</label>
-                                                <select class="select" id="ageend" >
-                                                    <option value="">Select</option>
-                                                    <?php foreach (ages() as $key => $value) {?>
-                                                        <option value="<?=$value ?>"><?=$value ?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-2">
-                                                <label class="form-label">From Height</label>
-                                                <select class="select"  id="fromheight" >
-                                                    <option value="">Select</option>
-                                                    <?php foreach (heights() as $key => $value) {?>
-                                                        <option value="<?=$key ?>"><?=$value ?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-2">
-                                                <label class="form-label">To Height</label>
-                                                <select class="select"  id="toheight" >
-                                                    <option value="">Select</option>
-                                                    <?php foreach (heights() as $key => $value) {?>
-                                                        <option value="<?=$key ?>"><?=$value ?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-2">
-                                                <label class="form-label">Religion </label>
-                                                <select class="religion"  id="religion" >
-                                                    <option value="">Select</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-2">
-                                                <label class="form-label">Caste</label>
-                                                <select class="caste"  id="caste" >
-                                                    <option value="">Select</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-3">
-                                                <label class="form-label">Marital Status</label>
-                                                <select class="select"  id="maritalstatus">
-                                                    <option value="">Select</option>
-                                                    <?php foreach (marital_status() as $key => $value) {?>
-                                                        <option value="<?=$value ?>"><?=$value ?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <label class="form-label">Country</label>
-                                                <select class="form-control country"  id="country">
-                                                    <option value="">Select Country</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-3">
-                                                <label class="form-label">State</label>
-                                                <select class="state"  id="state">
-                                                    <option value="">Select State</option>
-                                                </select>
-                                            </div>
-
-                                            
-
-                                            <div class="col-md-3">
-                                                <label class="form-label">Manglik ?</label>
-                                                <select class="select"  id="manglik" >
-                                                    <option value="">Select</option>
-                                                    <?php foreach (manglik() as $key => $value) {?>
-                                                        <option value="<?=$value ?>"><?=$value ?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-5">
-                                                <label class="form-label">Highest Degree</label>
-                                                <select class="education"  id="highestdegree" >
-                                                    <option value="">Select</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <label class="form-label">Occupation</label>
-                                                <select class="occupation"  id="occupation" >
-                                                    <option value="">Select</option>
-                                                </select>
-                                            </div>
-
-
-
-
-                                             
-                                             <div class="col-md-5 mt-2" style="margin: 0 auto;">
-                                                <button class="cta-dark w-100" id="advance-search"><i class="ri-search-line align-bottom me-1"></i> Search</button>
-                                            </div>
-                                        </div>
                                       </div>
                                     </div>
                                   </div>

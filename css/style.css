@@ -5327,7 +5327,7 @@ span.mail::before {
     float: left;
     width: 100%;
     /* padding: 0px 0px 110px; */
-    margin: -50px 0px 0px;
+    margin: 0px 0px 0px;
     position: relative;
 }
 
@@ -12819,7 +12819,7 @@ h2.db-tit{
   color: var(--cta-heading);
   height: 44px;
   background-color: transparent;
-  border: 1px solid #7E868D45;
+  border: 1px solid #7E868D45 !important;
 }
 .contact-form__input.style_modal .form-control::placeholder {
     font-weight: 400;

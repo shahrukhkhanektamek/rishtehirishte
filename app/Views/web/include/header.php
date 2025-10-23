@@ -1,11 +1,11 @@
 <?php  
 $user = get_user();
 
-$my_plans = my_plans(@$user->id);
-$wallet = wallet(@$user->id);
-print_r($wallet);
 
-die;
+// $check_any_active_plan = check_any_active_plan(@$user->id);
+// print_r($check_any_active_plan);
+
+// die;
 
 ?>
 

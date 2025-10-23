@@ -26,7 +26,7 @@
 
         <div class="row">
 
-            <form class="row g-3 form_data" action="<?=$data['route'].'/change-password-action'?>" method="post" enctype="multipart/form-data" id="form_data_submit" novalidate>
+            <form class="row g-3 form_data" action="<?=$data['route'].'/assign-package-action'?>" method="post" enctype="multipart/form-data" id="form_data_submit" novalidate>
 
                  <?= csrf_field() ?>
                 <input type="hidden" name="id" value="<?=encript(@$row->id)?>">
@@ -43,17 +43,33 @@
                                 <div class="row g-3">
                                     
                                     
-
-                                    <div class="col-md-4">
-                                        <label class="form-label">Password <span class="text-danger">*</span></label>
-                                        <input type="password" class="form-control" name="password" placeholder="" value="" required>
+                                    <div class="col-md-12">
+                                        <label class="form-label">Select Plan <span class="text-danger">*</span> </label>
+                                        <select class="select" name="pakcage" required id="package">
+                                            <option value="">Select</option>
+                                            <?php 
+                                            $packages = $db->table("package")->where(["status"=>1,])->get()->getResult();
+                                            foreach ($packages as $key => $value) {?>
+                                                <option value="<?=$value->id ?>"><?=$value->name ?></option>
+                                            <?php } ?>
+                                        </select>
                                     </div>
 
                                     <div class="col-md-4">
-                                        <label class="form-label">ConfirmPassword <span class="text-danger">*</span></label>
-                                        <input type="password" class="form-control" name="cpassword" placeholder="" value="" required>
-                                    </div>                                
+                                        <label class="form-label">Validity (Month)</label>
+                                        <input type="number" class="form-control" name="validity" placeholder="" id="validity" readonly>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label class="form-label">Price</label>
+                                        <input type="number" class="form-control" name="price" placeholder="" id="price" readonly >
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Contact View</label>
+                                        <input type="number" class="form-control" name="contact_view" placeholder=""  id="contact_view" readonly >
+                                    </div>
 
+                                    
                                    
                                     <div class="col-12">
                                         <div class="text-start">
@@ -73,11 +89,42 @@
     </div>
     <!-- container-fluid -->
 </div><!-- End Page-content -->
-
-
-
-
-
-
-
 <?=view('backend/include/footer') ?>
+
+<script>
+    $(document).on("change", "#package",(function(e) {      
+        event.preventDefault();
+        loader("show");
+        var form = new FormData();
+        form.append("id", $(this).val());
+        var settings = {
+          "url": "<?=base_url(route_to('package_detail'))?>",
+          "method": "POST",
+          "timeout": 0,
+          "processData": false,
+          "headers": {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+           },
+          "mimeType": "multipart/form-data",
+          "contentType": false,
+          "dataType": "json",
+          "data": form
+        };
+        $.ajax(settings).always(function (response) {
+            loader("hide");
+            response = admin_response_data_check(response);
+            if(response.status==200)
+            {
+                $("#validity").val(response.data.validity);
+                $("#price").val(response.data.price);
+                $("#contact_view").val(response.data.contact_view);
+            }
+
+        });
+   }));
+
+   function load_table()
+   {
+        
+   }
+</script>

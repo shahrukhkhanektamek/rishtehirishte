@@ -17,20 +17,20 @@
 
         <?php foreach($data_list as $key=> $value) {
             $user = $db->table("users")->where(["id"=>$value->user_id,])->get()->getFirstRow();
-            $p_id = json_decode($value->detail)[0]->p_id;
-            $product = $db->table("product")->where(["id"=>$p_id,])->get()->getFirstRow();
+            $detail = @json_decode($value->detail)[0];
+            $p_id = $detail->p_id;
+            $name = $detail->name;
          ?>       
             <tr>
                 <td>
                     <?=date("d M, Y", strtotime($value->add_date_time))?><br>
                     <small><?=date("h:i A", strtotime($value->add_date_time))?></small>
                 </td>
-                <td><?=@$user->name?></td>
-                <td><?=@$user->email?></td>
-                <td><?=@$user->phone?></td>
+                <td><?=@$value->user_name?></td>
+                <td><?=@$value->user_email?></td>
+                <td><?=@$value->user_phone?></td>
                 <td>
-                    <small>Bike id: <?=@$product->id ?></small><br>
-                    <b><?=@$product->name?></b>
+                    <b><?=@$name?></b>
                 </td>
                 <td><?=price_formate(@$value->final_amount)?></td>
                 <td><?=@$value->transaction_id?></td>

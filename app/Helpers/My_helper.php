@@ -801,49 +801,37 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
         $db = \Config\Database::connect();
         $today = date("Y-m-d H:i:s");
 
-        $plan_id = 0;
-        $available_class = 0;
-        $plan_table_id = 0;
+        $limit = 0;
+        $contact_view = 0;
+        $remaining = 0;
         $status = 0;
-        $is_unlimited = false;
 
         // First: check non-unlimited active plan with available classes
         $builder = $db->table('user_package');
         $plan = $builder->where('user_id', $user_id)
-                        ->where('available_class >', 0)
                         ->where('plan_end_date_time >=', $today)
+                        ->orderBy('id','desc')
                         ->get()
                         ->getRow();
 
-        if (empty($plan)) {
-            // Second: check unlimited plans
-            $plan = $builder->where('user_id', $user_id)
-                            ->where('is_unlimited', 1)
-                            ->where('plan_end_date_time >=', $today)
-                            ->get()
-                            ->getRow();
-
-            if (!empty($plan)) {
-                $is_unlimited = true;
-            }
-        }
-
         if (!empty($plan)) {
-            $plan_id = $plan->id;
-            $plan_table_id = $plan->plan_id;
-            $available_class = $plan->available_class;
-
-            if ($today <= $plan->plan_end_date_time || $plan->is_unlimited == 1) {
-                $status = 1;
-            }
+            $status = 1;
+            $wallet = $db->table('wallet')->where(["user_id"=>$user_id,])->get()->getFirstRow();
+            $limit = $wallet->contact_limit;
+            $contact_view = $wallet->contact_view;
+            $remaining = $wallet->contact_limit-$wallet->contact_view;
         }
 
+        // $status = 0;
+        // $remaining = 0;
         return [
             "status" => $status,
-            "plan_id" => $plan_id,
-            "plan_table_id" => $plan_table_id,
-            "available_class" => $available_class,
-            "is_unlimited" => $is_unlimited,
+            "name" => @$plan->package_name,
+            "plan_start_date_time" => @$plan->plan_start_date_time,
+            "plan_end_date_time" => @$plan->plan_end_date_time,
+            "limit"=>$limit,
+            "contact_view"=>$contact_view,
+            "remaining"=>$remaining,
         ];
     }
 

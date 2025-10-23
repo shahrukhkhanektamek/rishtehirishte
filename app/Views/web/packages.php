@@ -5,7 +5,11 @@
     <div class="hom-top inner_style">
 
     <?php include"include/header-nav.php"; ?>
-    
+<style>
+.plans-main {
+    margin: -50px 0px 0px;
+}
+</style>
     <!-- PRICING PLANS -->
     <section>
         <div class="plans-ban">
@@ -23,42 +27,15 @@
 
     <!-- PRICING PLANS -->
     <section>
-        <div class="plans-main pb-70">
-            <div class="container">
-                <div class="row">
-                    <ul>
-                       <?php
-                            $packages = $db->table("package")->where(["status"=>1,])->orderBy('id','desc')->get()->getResult();
-                            foreach ($packages as $key => $value) {
-                        ?>
-                            <li>
-                                <div class="pri-box">
-                                    <div class="row align-items-end">
-                                        <div class="col-12">
-                                            <h2 class="text-center"><?=$value->name ?></h2>
-                                        </div>
-                                        <div class="col-12">
-                                            <span class="pri-cou text-end"><b><?=price_formate($value->price)?></b>
-                                                <span style="font-size: 15px;color: white;">/<?=$value->validity?> Month </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <a href="register" class="cta">Get Started</a>
-                                    <div class="plans-description">
-                                        <?=$value->full_description ?>
-                                    </div>
-                                </div>
-                            </li>
-                        <?php } ?>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
+        
+                <?php echo view("web/card/package-card") ?>
+            
     </section>
     <!-- END -->
 
 
 <!--  Start Footer Area -->
 <?php include"include/footer.php"; ?>
+
+
 <!-- End Footer Area --> 

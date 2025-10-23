@@ -4,6 +4,7 @@ use App\Controllers\BaseController;
 use CodeIgniter\Database\Database;
 use CodeIgniter\Config\Services;
 use App\Models\ImageModel;
+use App\Models\Custom;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
@@ -117,7 +118,7 @@ class AdminUserController extends BaseController
                 "user_package.view_contact as view_contact",
                 "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age",
             ])
-            ->where($this->arr_values['table_name'].'.role =', $type);
+            ->where($this->arr_values['table_name'].'.role =', 2);
 
         if (!empty($filter_search_value)) {
             if($search_by==1) $data_list->like($this->arr_values['table_name'].'.name', $filter_search_value);
@@ -661,57 +662,24 @@ class AdminUserController extends BaseController
 
     public function assign_package_action()
     {
-        $id = decript($this->request->getPost('id'));
-
+        $id = decript($this->request->getPost('id')); 
+        $pakcageId = $this->request->getPost('pakcage'); 
         $session = session()->get('user');
         $add_by = $session['id'];
 
-        $data = [
-            "password"=>md5($this->request->getPost('password')),
-        ];
+        $package = $this->db->table("package")->where(["id"=>$pakcageId,])->get()->getFirstRow();
 
+        $CustomModel = new Custom();
+        $CustomModel->insert_user_package($id,$package);
 
-        if($this->request->getPost('password')!=$this->request->getPost('cpassword'))
-        {
-            $action = 'add';
-            if(empty($insertId)) $action = 'edit';
-            $responseCode = 400;
-            $result['status'] = $responseCode;
-            $result['message'] = 'Confirm Password Not Match!';
-            $result['action'] = $action;
-            $result['data'] = [];
-            return $this->response->setStatusCode($responseCode)->setJSON($result);               
-        }
-
-
-        $entryStatus = false;
-        
-        if($this->db->table($this->arr_values['table_name'])->where('id', $id)->update($data)) $entryStatus = true;
-        else $entryStatus = false;
-        
-
-
-        if($entryStatus)
-        {
-            $action = 'add';
-            // if(empty($insertId)) $action = 'edit';
-            $responseCode = 200;
-            $result['status'] = $responseCode;
-            $result['message'] = 'Success';
-            $result['action'] = $action;
-            $result['data'] = [];
-            return $this->response->setStatusCode($responseCode)->setJSON($result);            
-        }
-        else
-        {
-            $action = 'add';
-            $responseCode = 400;
-            $result['status'] = $responseCode;
-            $result['message'] = $this->db->error()['message'];
-            $result['action'] = $action;
-            $result['data'] = [];
-            return $this->response->setStatusCode($responseCode)->setJSON($result);
-        }
+        $action = 'redirect';
+        $responseCode = 200;
+        $result['status'] = $responseCode;
+        $result['message'] = 'Success';
+        $result['action'] = $action;
+        $result['url'] = base_url(route_to('admin-user.list'));
+        $result['data'] = [];
+        return $this->response->setStatusCode($responseCode)->setJSON($result);
     }
 
 

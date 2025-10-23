@@ -418,9 +418,10 @@ class UserMemberController extends BaseController
 
         
 
-        
-        
         $gender = $this->request->getVar('gender');
+        if(@$user->gender==2) $gender = 1;
+        else $gender = 2;
+        
         $agestart = $this->request->getVar('agestart');
         $ageend = $this->request->getVar('ageend');
 
@@ -431,7 +432,11 @@ class UserMemberController extends BaseController
         $state = $this->request->getVar('state');
         $manglik = $this->request->getVar('manglik');
 
+        // echo $user->id; 4345
 
+
+
+        
 
 
         $date_time = date("Y-m-d H:i:s");
@@ -449,6 +454,7 @@ class UserMemberController extends BaseController
             AND up1.plan_end_date_time = up2.latest_end
         ";
 
+        $login_id = $user->id;
         $data_list = $this->db->table($this->arr_values['table_name'])
             ->where([$this->arr_values['table_name'].'.status' => $status])
             ->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
@@ -462,7 +468,13 @@ class UserMemberController extends BaseController
             ->join("($activePackageSubQuery) as user_package",
                    "user_package.user_id = {$this->arr_values['table_name']}.id",
                    "left")
-            ->join("request as req", "(req.senderID = {$this->arr_values['table_name']}.id OR req.receiverID = {$this->arr_values['table_name']}.id)", "left")
+            ->join(
+                    "request as req",
+                    "( (req.senderID = {$this->arr_values['table_name']}.id AND req.receiverID = $login_id)
+                       OR (req.receiverID = {$this->arr_values['table_name']}.id AND req.senderID = $login_id)
+                    )",
+                    "left"
+                )
             ->select([
                 "{$this->arr_values['table_name']}.*",
                 "education.name as education_name",
@@ -543,8 +555,29 @@ class UserMemberController extends BaseController
         $session = session()->get('user');
         $user_id = $session['id'];
 
-        $receiverID = decript($this->request->getPost('member_id'));
 
+        // $check_any_active_plan = check_any_active_plan($user_id);
+        // if(empty($check_any_active_plan['status']))
+        // {
+        //     $responseCode = 400;
+        //     $result['status'] = $responseCode;
+        //     $result['message'] = 'You have no active plan!';
+        //     $result['action'] = 'return';
+        //     $result['data'] = [];
+        //     return $this->response->setStatusCode($responseCode)->setJSON($result);
+        // }
+        // else if($check_any_active_plan['remaining']<1)
+        // {
+        //     $responseCode = 400;
+        //     $result['status'] = $responseCode;
+        //     $result['message'] = 'You have used all limit!';
+        //     $result['action'] = 'return';
+        //     $result['data'] = [];
+        //     return $this->response->setStatusCode($responseCode)->setJSON($result);
+        // }
+
+
+        $receiverID = decript($this->request->getPost('member_id'));
         $checkrequest = $this->db->table("request")->where(["senderID"=>$user_id,"receiverID"=>$receiverID,])->get()->getFirstRow();
         if(empty($checkrequest))
         {
@@ -640,6 +673,36 @@ class UserMemberController extends BaseController
         $session = session()->get('user');
         $user_id = $session['id'];
 
+        $db = $this->db;
+
+        $check_any_active_plan = check_any_active_plan($user_id);
+        if(empty($check_any_active_plan['status']))
+        {
+            $type = 2;
+            $view = view('web/card/package-card',compact('db','type'),[],true);
+
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'You have no active plan!';
+            $result['action'] = 'view';
+            $result['type'] = 2;
+            $result['data'] = ["view"=>$view,];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+        else if($check_any_active_plan['remaining']<1)
+        {
+            $type = 3;
+            $view = view('web/card/package-card',compact('db','type'),[],true);
+
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'You have used all limit!';
+            $result['action'] = 'view';
+            $result['type'] = 3;
+            $result['data'] = ["view"=>$view,];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+
         $member_id = decript($this->request->getPost('member_id'));
         $member = $this->db->table("users")->where(["id"=>$member_id,])->get()->getFirstRow();
         if(!empty($member))
@@ -652,13 +715,24 @@ class UserMemberController extends BaseController
                     "member_id"=>$member_id,
                     "date_time"=>date("Y-m-d H:i:s"),
                 ]);
+
+                $wallet = $this->db->table('wallet')->where(["user_id"=>$user_id,])->get()->getFirstRow();
+                if(!empty($wallet))
+                {
+                    $this->db->table("wallet")
+                    ->where("id", $wallet->id)
+                    ->set("contact_view", "contact_view + " . 1, false)
+                    ->update();
+                }
+
             }
 
             $view = view('user/card/ViewContactCard',compact('member'),[],true);
             $responseCode = 200;
             $result['status'] = $responseCode;
-            $result['message'] = 'Send Successfully';
+            $result['message'] = 'View Successfully';
             $result['action'] = 'view';
+            $result['type'] = 1;
             $result['data'] = ["view"=>$view,];
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }

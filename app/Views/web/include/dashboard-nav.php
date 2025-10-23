@@ -1,5 +1,8 @@
 <!-- LOGIN -->
-<?php $user = get_user(); ?>
+<?php
+$user = get_user();
+$check_any_active_plan = check_any_active_plan(@$user->id);
+?>
     <section class="dashboard_bg">
         <div class="pt-40 pb-40">
             <div class="container">
@@ -66,10 +69,17 @@
                                         </div>
                                         <div class="db-plan-detil">
                                             <ul>
-                                                <li>Plan name: <strong>Standard</strong></li>
-                                                <li>Validity: <strong>6 Months</strong></li>
-                                                <li>Valid till <strong>24 June 2024</strong></li>
-                                                <li><a href="packages.php" class="cta-3">Upgrade Now</a></li>
+                                                <?php if($check_any_active_plan['status']==1){ ?>
+                                                    <li>Plan Name: <strong><?=$check_any_active_plan['name']?></strong></li>
+                                                    <li>Valid till <strong><?=date("d M Y", strtotime($check_any_active_plan['plan_end_date_time']))?></strong></li>
+                                                    <li>Contact Limit: <strong><?=$check_any_active_plan['limit']?></strong></li>
+                                                    <li>Contact Viewed: <strong><?=$check_any_active_plan['contact_view']?></strong></li>
+                                                    <li>Contact Remain: <strong><?=$check_any_active_plan['remaining']?></strong></li>
+                                                    <li><a href="<?=base_url('/')?>packages" class="cta-3">Upgrade Now</a></li>
+                                                <?php }else{?>
+                                                    <li><a href="<?=base_url('/')?>packages" class="cta-3">Purchase Now</a></li>
+                                                <?php } ?>
+
                                             </ul>
                                         </div>
                                     </div>

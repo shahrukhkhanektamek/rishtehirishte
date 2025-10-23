@@ -111,6 +111,34 @@ class Home extends BaseController
             return $this->response->setStatusCode(200)->setJSON($result); 
         }
     }
+    public function package_detail()
+    {
+        $return_data = [];
+        $id = $this->request->getPost('id');
+
+        $table_name = 'package';
+        $row = $this->db->table("package")
+        ->where([$table_name.".id"=>$id,])->get()->getFirstRow();
+
+        if(!empty($row))
+        {
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Fetch Successfuly';
+            $result['action'] = 'search';
+            $result['data'] = $row;
+            return $this->response->setStatusCode(200)->setJSON($result);
+        }
+        else
+        {
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Fetch Successfuly';
+            $result['action'] = 'search';
+            $result['data'] = [];
+            return $this->response->setStatusCode(200)->setJSON($result); 
+        }
+    }
 
     public function search_vendor($value='')
     {        

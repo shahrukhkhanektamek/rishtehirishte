@@ -285,6 +285,45 @@ class Custom extends Model
         return $inID;
     }
 
+    public static function insert_user_package($user_id, $package)
+    {
+        $db = Database::connect();
+        $date_time = date("Y-m-d H:i:s");
+        $educationData = [
+            "status"=>1,
+            "package_name"=>$package->name,
+            "plan_start_date_time"=>$date_time,
+            "plan_end_date_time"=>date("Y-m-d H:i:s", strtotime("+$package->validity month ".$date_time)),
+            "contact_limit"=>$package->contact_view,
+            "user_id"=>$user_id,
+            "amount"=>$package->price,
+            "gst"=>0,
+            "final_amount"=>$package->price,
+            "add_date_time"=>date("Y-m-d H:i:s"),
+            
+        ];
+        // print_r($educationData);
+        $db->table("user_package")->insert($educationData);
+        $checkWallet = $db->table('wallet')->where(["user_id"=>$user_id,])->get()->getFirstRow();
+        if(empty($checkWallet))
+        {
+            $db->table("wallet")->insert([
+                "user_id"=>$user_id,
+                "contact_limit"=>(int) $package->contact_view,
+                "contact_view"=>0,
+            ]);
+        }
+        else
+        {
+            $db->table("wallet")
+            ->where("id", $checkWallet->id)
+            ->set("contact_limit", "contact_limit + " . ($package->contact_view), false)
+            // ->set("contact_view", "contact_view + " . $package->pack_totview_contact, false)
+            ->update();
+        }
+
+    }
+
 
     
 }

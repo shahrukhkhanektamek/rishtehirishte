@@ -19,7 +19,7 @@
                <p class="text-white text-opacity-75 m-0">Country: <?=@$row->country_name?></p>
                <p class="text-white text-opacity-75 m-0">State: <?=@$row->state_name?></p>
                <p class="text-white text-opacity-75 m-0">City: <?=@$row->city?></p>
-               <p class="text-white text-opacity-75 m-0">Partner Type: <?=@$row->role_name?></p>
+               <!-- <p class="text-white text-opacity-75 m-0">Partner Type: <?=@$row->role_name?></p> -->
                
             </div>
          </div>

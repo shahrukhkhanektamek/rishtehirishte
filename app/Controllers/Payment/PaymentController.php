@@ -5,6 +5,7 @@ use App\Controllers\BaseController;
 use CodeIgniter\Database\Database;
 use CodeIgniter\Config\Services;
 use App\Models\PaymentModel;
+use App\Models\Custom;
 
 class PaymentController extends BaseController
 {
@@ -15,11 +16,12 @@ class PaymentController extends BaseController
     }
 
     public function create_transaction()
-    {
-        $transaction_type = $this->request->getGet('type'); // 1=plan, 2=product
-        $user_id = decript($this->request->getGet('user_id'));
-        $p_id = decript($this->request->getGet('p_id'));
-        $insertId = ($this->request->getGet('insertId'));
+    {   
+        $session = session()->get('user');
+        $user_id = @$session['id'];
+
+        $transaction_type = $this->request->getGet('type'); // 1=plan, 2=pay now
+        $p_id = decript($this->request->getGet('p_id'));        
 
         if($transaction_type==1)
         {
@@ -29,12 +31,12 @@ class PaymentController extends BaseController
                     "p_id"=>$row->id,
                     "name"=>$row->name,
                     "qty"=>1,
-                    "amount"=>$row->final_price,
+                    "amount"=>$row->price,
                 ]
             ]);
-            $amount = $row->final_price;
+            $amount = $row->price;
             $gst = 0;
-            $final_amount = $row->final_price;
+            $final_amount = $row->price;
         }
         else
         {
@@ -64,7 +66,7 @@ class PaymentController extends BaseController
             $data['amount'] = $amount;
             $data['gst'] = $gst;
             $data['final_amount'] = $final_amount;
-            $data['p_id'] = $insertId;
+            $data['p_id'] = $p_id;
             
             if($this->db->table("transaction")->insert($data))
             {
@@ -215,38 +217,14 @@ class PaymentController extends BaseController
                 if($orders->transaction_type==1)
                 {
                     $id = json_decode($orders->detail)[0]->p_id;
-                    $vendor_id = $orders->user_id;
+                    $user_id = $orders->user_id;
 
-                    $date_time = date("Y-m-d H:i:s");
                     $package = $this->db->table("package")->where(["id"=>$id,])->get()->getFirstRow();
-                    $data = [
-                        "vendor_id"=>$vendor_id,
-                        "package_id"=>$package->id,
-                        "package_name"=>$package->name,
-                        "validity"=>$package->validation,
-                        "amount"=>$package->price,
-                        "gst"=>0,
-                        "final_amount"=>$package->final_price,
 
-                        "transaction_id"=>$orders->transaction_id,
-                        "status"=>0,
-                        "is_delete"=>0,
-                    ];
+                    $CustomModel = new Custom();
+                    $CustomModel->insert_user_package($user_id,$package);
 
-                    $data['add_by'] = $vendor_id;
-                    $data['add_date_time'] = date("Y-m-d H:i:s");
-                    $data['update_date_time'] = date("Y-m-d H:i:s");
-                    $entryStatus = false;
-
-
-                    $data['payment_date_time'] = $date_time;
-                    $data['plan_start_date_time'] = $date_time;
-                    $data['plan_end_date_time'] = date("Y-m-d H:i:s", strtotime($date_time."+$package->validation month"));
-                    $data['status'] = 1;
-
-                    if($this->db->table("vendor_package")->insert($data)) $entryStatus = true;
-
-                    return redirect()->to(base_url('vendor/dashboard'));
+                    return redirect()->to(base_url('user/dashboard'));
 
                 }
                 else

@@ -5,8 +5,8 @@
             <th data-ordering="false">&nbsp;Name</th>
             <th data-ordering="false"> Email</th>
             <th data-ordering="false"> Contact</th>
+            <th data-ordering="false"> Price</th>
             <th data-ordering="false">Package&nbsp;Details</th>
-            <th data-ordering="false">Transaction Id</th>
             <th data-ordering="false">Payment Status</th>
             <th data-ordering="false">Action</th>
         </tr>
@@ -22,16 +22,15 @@
                     <?=date("d M, Y", strtotime($value->add_date_time))?><br>
                     <small><?=date("h:i A", strtotime($value->add_date_time))?></small>
                 </td>
-                <td><?=@$user->name?></td>
-                <td><?=@$user->email?></td>
-                <td><?=@$user->phone?></td>
+                <td><?=@$value->user_name?></td>
+                <td><?=@$value->user_email?></td>
+                <td><?=@$value->user_phone?></td>
+                <td><?=price_formate(@$value->final_amount)?></td>
                 <td>
-                    <small>Price: <?=price_formate(@$value->final_amount)?></small><br>
                     <b><?=@$value->package_name?></b><br>
                     <b>Pur. Date:</b> <?=date("d M, Y", strtotime($value->plan_start_date_time)) ?><br>
                     <b>Exp. Date:</b> <?=date("d M, Y", strtotime($value->plan_end_date_time)) ?>
                 </td>
-                <td><?=@$value->transaction_id?></td>
                 <td>
                     <?php if($value->status==1){ ?>
                         <span class="badge btn btn-success">PAID</span>

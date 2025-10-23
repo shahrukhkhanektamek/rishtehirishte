@@ -5,7 +5,7 @@
             <th data-ordering="false">Name</th>
             <th data-ordering="false">Email</th>
             <th data-ordering="false">Mobile Number</th>
-            <!-- <th data-ordering="false">Subject</th> -->
+            <th data-ordering="false">Looking For</th>
             <th data-ordering="false">City</th>
             <th data-ordering="false">Action</th>
         </tr>
@@ -21,7 +21,7 @@
                 <td><?=$value->name?></td>
                 <td><?=$value->email?></td>
                 <td><?=$value->phone?></td>
-                <!-- <td><?=$value->subject?></td> -->
+                <td><?=$value->lookingFor?></td>
                 <td><?=$value->city?></td>
                 <td>
                     <!-- <a href="<?=$data['route'].'/view/'.encript($value->id)?>" class="btn btn-sm btn-outline-primary btn-icon waves-effect" data-bs-toggle="tooltip" data-bs-placement="top" title="View"><i class="ri-eye-line"></i></a> -->
