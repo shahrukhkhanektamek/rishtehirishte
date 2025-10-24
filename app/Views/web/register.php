@@ -8,7 +8,7 @@
 
 
     <!-- LOGIN -->
-    <section class="login_page" style="background-image:url('https://static.jeevansathi.com/images/jspc/commonimg/cover_img_free_chat.png');">
+    <section class="login_page" style="background-image:url('<?=base_url('images/login.webp')?>');">
         <div class="login py-0 mt-0">
             <div class="container">
                 <div class="row">

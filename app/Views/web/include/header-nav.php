@@ -59,7 +59,7 @@
                             </li>
                             <li><a href="<?=base_url()?>clients">Our Clients</a></li>
                             <li><a href="<?=base_url()?>packages">Packages</a></li>
-                            <li><a href="!#" target="_blank">Pay Now</a></li>
+                            <li><a href="<?=base_url()?>memories">Memories</a></li>
                             <li><a href="<?=base_url()?>contact">Contact Us</a></li>
                         </ul>
                     </div>

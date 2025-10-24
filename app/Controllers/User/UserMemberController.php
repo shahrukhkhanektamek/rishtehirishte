@@ -676,10 +676,11 @@ class UserMemberController extends BaseController
         $db = $this->db;
 
         $check_any_active_plan = check_any_active_plan($user_id);
+        $check_any_active_plan['status'] = 0;
         if(empty($check_any_active_plan['status']))
         {
             $type = 2;
-            $view = view('web/card/package-card',compact('db','type'),[],true);
+            $view = view('web/card/become-paid-member',compact('db','type'),[],true);
 
             $responseCode = 200;
             $result['status'] = $responseCode;
@@ -692,7 +693,7 @@ class UserMemberController extends BaseController
         else if($check_any_active_plan['remaining']<1)
         {
             $type = 3;
-            $view = view('web/card/package-card',compact('db','type'),[],true);
+            $view = view('web/card/become-paid-member',compact('db','type'),[],true);
 
             $responseCode = 200;
             $result['status'] = $responseCode;

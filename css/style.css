@@ -12855,6 +12855,16 @@ h2.db-tit{
     background-position: center;
     background-size: cover;
 }
+.login_page:before {
+    content: '0';
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* z-index: 1; */
+    background: rgb(0 0 0 / 56%);
+    width: 100%;
+    height: 100%;
+}
 
 .accordion {
     border: 0px;

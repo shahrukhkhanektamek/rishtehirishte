@@ -253,7 +253,7 @@
                                                 </div>
                                             </div>
                                         <?php }else{
-                                            echo view('web/card/package-card',compact('db'));
+                                            echo view('web/card/become-paid-member',compact('db'));
                                         } ?>
 
                                       </div>

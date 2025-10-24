@@ -1,6 +1,6 @@
 <?php
 $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])->getRow()->data);
-?>
+ $user = get_user(); ?>
  <!-- FOOTER -->
     <section class="wed-hom-footer" style="background-image:url('https://images.pexels.com/photos/11484514/pexels-photo-11484514.jpeg?_gl=1*1n82qd7*_ga*MTI5MzkzNzAwNS4xNzU1MjM0NTcw*_ga_8JE65Q40S6*czE3NTUyMzQ1NjkkbzEkZzEkdDE3NTUyMzQ5MDIkajIkbDAkaDA.')">
         <div class="container">
@@ -33,8 +33,10 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
                         <li><a href="<?=base_url()?>blog">Blog</a></li>
                         <li><a href="<?=base_url()?>service">Services</a></li>
                         <li><a href="<?=base_url()?>packages.php">Packages</a></li>
-                        <li><a href="<?=base_url()?>login.php">Login</a></li>
-                        <li><a href="<?=base_url()?>register.php">Register</a></li>
+                        <?php if(@$user->role!=2){ ?>
+                            <li><a href="<?=base_url()?>login.php">Login</a></li>
+                            <li><a href="<?=base_url()?>register.php">Register</a></li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="col-md-3 fot-soc">
@@ -63,12 +65,16 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
         </div>
     </section>
     <!-- END -->
-
+<?php
+if(@$user->role!=2)
+{
+?>
     <div class="floating_btn">
         <a class="blink" href="#enquiryNow" data-bs-toggle="modal" data-bs-target="#enquiryModal">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 10.5h.01m-4.01 0h.01M8 10.5h.01M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-6.6a1 1 0 0 0-.69.275l-2.866 2.723A.5.5 0 0 1 8 18.635V17a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg> Get Enquire
         </a>
     </div>
+<?php } ?>
 
 <!-- Enquiry Modal -->
 <div class="modal fade" id="enquiryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -196,16 +202,6 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
 
       <div class="modal-body py-4">
         
-        <!-- Title -->
-        <h2 class="fw-bold mb-3" style="color:#2d3436;">
-          Choose the Perfect Package for You
-        </h2>
-        <p class="text-muted mb-4" style="max-width:700px; margin:auto; font-size:1.05rem;">
-          Unlock premium features and take your experience to the next level. 
-          Select from our affordable packages designed to fit your needs. 
-          Enjoy unlimited access, exclusive tools, and priority support.
-        </p>
-
         <div class="row"></div>
 
       </div>
@@ -320,6 +316,10 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
   </div>
   <div id='get-number'></div><a class='close-chat' href='javascript:void' aria-label="close">×</a>
 </div>
+<?php
+if(@$user->role!=2)
+{
+?>
 <a class='blantershow-chat' href='javascript:void' title='Show Chat'><svg width="38" viewBox="0 0 24 24">
     <defs />
     <path fill="#FFFFFF" d="M20.5 3.4A12.1 12.1 0 0012 0 12 12 0 001.7 17.8L0 24l6.3-1.7c2.8 1.5 5 1.4 5.8 1.5a12 12 0 008.4-20.3z" />
@@ -327,6 +327,10 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
     <path fill="#FFFFFF" d="M17.5 14.3c-.3 0-1.8-.8-2-.9-.7-.2-.5 0-1.7 1.3-.1.2-.3.2-.6.1s-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.3-.6.4-.6 1-1.7l-.1-.5-1-2.2c-.2-.6-.4-.5-.6-.5-.6 0-1 0-1.4.3-1.6 1.8-1.2 3.6.2 5.6 2.7 3.5 4.2 4.2 6.8 5 .7.3 1.4.3 1.9.2.6 0 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z" />
   </svg>
  </a>
+<?php } ?>
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

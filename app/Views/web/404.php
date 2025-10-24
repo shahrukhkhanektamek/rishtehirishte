@@ -1,32 +1,35 @@
+<!--  Start Header Area -->
 <?php include"include/header.php"; ?>
-<div class="hom-top">
-<?php include"include/header-nav.php"; ?>
+<!-- End Header Area -->
 
-         <!-- Breadcrumb -->
-         <div class="breadcrumb-bar">
-            <div class="container-fluid">
-               <div class="row align-items-center">
-                  <div class="col-md-12 col-12">
-                     <nav aria-label="breadcrumb" class="page-breadcrumb">
-                        <ol class="breadcrumb">
-                           <li class="breadcrumb-item"><a href="<?=base_url() ?>">Home</a></li>
-                           <li class="breadcrumb-item active" aria-current="page">404</li>
-                        </ol>
-                     </nav>
-                     <h2 class="breadcrumb-title">404</h2>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- /Breadcrumb -->
-         
-         <!-- Page Content -->
-         <div class="content">
+    <div class="hom-top login_style">
+
+    <?php include"include/header-nav.php"; ?>
+
+    
+
+
+
+    <!-- ABOUT START -->
+    <section class="pt-80 pb-80">
+        <div class="ab-wel">
             <div class="container">
-
-               <h1 style="font-size: 150px;text-align: center;font-weight: 900;">404</h1>
+                <div class="row align-items-start">
+                    <div class="col-lg-12">
+                        <div class="ab-wel-rhs">
+                            <div class="ab-wel-tit home-tit text-start">
+                                <h2 class="mb-0" style="line-height: 0.9;font-size: 100px;text-align: center;">404</h2>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
+        </div>
+    </section>
+    <!-- END -->
 
-         </div>      
-         <!-- /Page Content -->
- <?php include"include/footer.php"; ?>
+<!--  Start Footer Area -->
+<?php include"include/footer.php"; ?>
+<!-- End Footer Area --> 

@@ -8,7 +8,13 @@
 
     <?php echo view("web/include/dashboard-nav.php"); ?>
 
-                           
+<style>
+/*#212529*/
+.btn-secondary.active{
+    background-color: #132855 !important;
+}
+</style>
+  
                         </div>
                         
                     </div>

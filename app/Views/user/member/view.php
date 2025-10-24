@@ -135,7 +135,7 @@
                                     $occupations = $db->table("occupation")->where(["id"=>$row->occupation,])->get()->getFirstRow();
                                     ?>
                                     <li><b>Highest Degree</b> : <?=@$educations->name?></li>
-                                    <li><b>Collage Name</b> : <?=$row->collegename?></li>
+                                    <li><b>College Name</b> : <?=$row->collegename?></li>
                                     <li><b>Occupation</b> : <?=@$occupations->name?></li>
                                     <li><b>Annual Income</b> : <?=@$row->annualincome?></li>
                                     <li><b>Annual Incom ( In $)</b> : <?=$row->annualincomeindoller?></li>
@@ -162,6 +162,8 @@
                                     <li><b>Mother Annual Income</b> : <?=$row->mother_annualincome?></li>
                                     <li><b>Brothers Married / Brothers Unmarried</b> : <?=$row->brother_married?>/<?=$row->brother_unmarried?></li>
                                     <li><b>Sister Married / Sister Unmarried</b> : <?=$row->sister_married?>/<?=$row->sister_unmarried?></li>
+                                    <li><b>Drinking</b> : <?=$row->drinking?></li>
+                                    <li><b>Smoking</b> : <?=$row->smoking?></li>
                                 </ul>
                             </div>
                             <div class="pr-bio-c pr-bio-hob">

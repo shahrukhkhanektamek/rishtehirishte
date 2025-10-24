@@ -421,3 +421,9 @@ $featured_list = $featured_list->orderBy($table_name.'.id','desc')->limit(10)->g
 <!--  Start Footer Area -->
 <?php include"include/footer.php"; ?>
 <!-- End Footer Area -->  
+
+<script>
+    setTimeout(function() {
+  $("#enquiryModal").modal("show");
+}, 5000);
+</script>

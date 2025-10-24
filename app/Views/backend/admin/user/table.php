@@ -1,5 +1,7 @@
 <div class="row">
-    <?php foreach($data_list as $key => $value) { ?>
+    <?php foreach($data_list as $key => $value) { 
+        $check_any_active_plan = check_any_active_plan(@$value->id);
+        ?>
         <div class="col-12 mb-0">
             <div class="card shadow-sm border rounded-3 w-100 mb-2">
                 <div class="card-body d-flex align-items-center">
@@ -48,14 +50,14 @@
                                 <p class="mt-2"><b>Requirement:</b> Not Fill</p>
                             </div>
                             <div class="col-md-4">
-                                <?php if(!empty($value->user_package_id)){ ?>
+                                <?php if(!empty($value->user_package_id)){ ?>                                    
                                     <?php if($value->plan_end_date_time>date("Y-m-d H:i:s")){ ?>
-                                        <p class="mb-1"><b>Package Name:</b> <?=$value->package_name ?></p>
-                                        <p class="mb-1"><b>Pur. Date:</b> <?=date("d M, Y", strtotime(@$value->plan_start_date_time)) ?></p>
-                                        <p class="mb-1"><b>Exp Date:</b> <?=date("d M, Y", strtotime(@$value->plan_end_date_time)) ?></p>
-                                        <p class="mb-1"><b>Contect Limit:</b> <?=$value->contact_limit ?></p>
-                                        <p class="mb-1"><b>Contect Viewed:</b> <?=$value->view_contact ?></p>
-                                        <p class="mb-1"><b>Contect Remain:</b> <?=$value->contact_limit-$value->view_contact ?></p>
+                                        <p class="mb-1"><b>Package Name:</b> <?=@$check_any_active_plan['name'] ?></p>
+                                        <p class="mb-1"><b>Pur. Date:</b> <?=date("d M, Y", strtotime(@$check_any_active_plan['plan_start_date_time'])) ?></p>
+                                        <p class="mb-1"><b>Exp Date:</b> <?=date("d M, Y", strtotime(@$check_any_active_plan['plan_end_date_time'])) ?></p>
+                                        <p class="mb-1"><b>Contact Limit:</b> <?=$check_any_active_plan['limit'] ?></p>
+                                        <p class="mb-1"><b>Contact Viewed:</b> <?=$check_any_active_plan['contact_view'] ?></p>
+                                        <p class="mb-1"><b>Contact Remain:</b> <?=$check_any_active_plan['remaining'] ?></p>
                                     <?php }else{?>
                                         <span class="btn btn-success bg-danger">Expired</span>
                                     <?php } ?>
