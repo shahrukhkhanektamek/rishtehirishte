@@ -146,6 +146,11 @@
     </a>
 </li>
 <li class="nav-item">
+    <a class="nav-link menu-link" href="<?=base_url(route_to('memories.list'))?>">
+        <i class="ri-image-line"></i> <span data-key="t-transaction">Memories</span>
+    </a>
+</li>
+<li class="nav-item">
     <a class="nav-link menu-link" href="<?=base_url(route_to('client-logo.list'))?>">
         <i class="ri-markup-line"></i> <span data-key="t-transaction">Client Logo</span>
     </a>

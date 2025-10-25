@@ -222,6 +222,17 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->post('block_unblock/(:any)', 'AdminBannerController::block_unblock/$1', ['as' => 'banner.block_unblock']);
     });
 
+    $routes->group('memories', function($routes) {
+        $routes->get('/', 'AdminMemoriesController::index', ['as' => 'memories.list']);
+        $routes->get('load_data', 'AdminMemoriesController::load_data', ['as' => 'memories.load_data']);
+        $routes->get('add', 'AdminMemoriesController::add', ['as' => 'memories.add']);
+        $routes->get('edit/(:any)?', 'AdminMemoriesController::edit/$1', ['as' => 'memories.edit']);
+        $routes->get('view/(:any)', 'AdminMemoriesController::view/$1', ['as' => 'memories.view']);
+        $routes->post('update', 'AdminMemoriesController::update', ['as' => 'memories.update']);
+        $routes->post('delete/(:any)', 'AdminMemoriesController::delete/$1', ['as' => 'memories.delete']);
+        $routes->post('block_unblock/(:any)', 'AdminMemoriesController::block_unblock/$1', ['as' => 'memories.block_unblock']);
+    });
+
     $routes->group('package', function($routes) {
         $routes->get('/', 'AdminPackageController::index', ['as' => 'package.list']);
         $routes->get('load_data', 'AdminPackageController::load_data', ['as' => 'package.load_data']);

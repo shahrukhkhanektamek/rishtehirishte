@@ -99,6 +99,8 @@ class ImageModel extends Model
         if(empty($uploadSource)) $uploadPath = 'upload/';
         else $uploadPath = $uploadSource;
 
+       
+
         // Check if a file has been uploaded
         if ($getPost->getFile($name)) {
             // Get the uploaded file
@@ -114,7 +116,7 @@ class ImageModel extends Model
                 $newName = $image->getRandomName();
                 
                 // Move the image to the 'public/uploads' directory
-                $image->move(FCPATH . 'upload', $newName);
+                $image->move(FCPATH . $uploadPath, $newName);
 
                 return $newName;
                 
