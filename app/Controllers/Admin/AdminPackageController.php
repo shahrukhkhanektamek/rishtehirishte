@@ -120,6 +120,7 @@ class AdminPackageController extends BaseController
         $price = $this->request->getPost('price');
 
         $data = [
+            "type"=>$this->request->getPost('type'),
             "name"=>$this->request->getPost('name'),
             "validity"=>$this->request->getPost('validity'),
             "price"=>$this->request->getPost('price'),

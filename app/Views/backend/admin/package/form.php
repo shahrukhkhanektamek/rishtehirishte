@@ -37,6 +37,14 @@
                     <div class="card-body">
                         <div class="live-preview">
                             <div class="row g-3">
+
+                                <div class="col-md-12">
+                                    <label class="form-label">Package Type <span class="text-danger">*</span></label>
+                                    <select class="js-example-basic-single" name="type" required>
+                                        <option value="1" <?php if(!empty(@$row) && @$row->type==1) echo'selected' ?> >Normal</option>
+                                        <option value="2" <?php if(!empty(@$row) && @$row->type==2) echo'selected' ?> >Advance</option>
+                                    </select>
+                                </div>
                                 
                                 <div class="col-md-3">
                                     <label class="form-label">Title <span class="text-danger">*</span></label>

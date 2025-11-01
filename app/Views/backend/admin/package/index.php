@@ -39,8 +39,8 @@
                                          </div>
                                          <div class="col-md-2">
                                             <select class="form-control order_by" id="order_by">
-                                               <option value="desc">DESC</option>
                                                <option value="asc">ASC</option>
+                                               <option value="desc">DESC</option>
                                             </select>
                                          </div>
                                          <div class="col-md-2">

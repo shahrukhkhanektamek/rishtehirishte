@@ -374,7 +374,19 @@ class AuthUser extends BaseController
            return $this->response->setStatusCode($responseCode)->setJSON($result);
         }
 
-        $password = randomPassword(6, 3, "lower_case,upper_case,numbers")[0];
+        // $password = randomPassword(6, 3, "lower_case,upper_case,numbers")[0];
+
+        $email = $check_email->email;
+        $name = $check_email->name;
+        $phone = $check_email->phone;
+
+        $name_clean = str_replace(' ', '', strtolower($name));
+        $name_prefix = strtolower(substr($name_clean, 0, 3));
+        $phone_suffix = substr($phone, -3);
+        $rand = rand(99,999);
+        $password = $name_prefix.$rand;
+
+
         $details = [
             'to'=>$email,
             'subject'=>'This is your new password',

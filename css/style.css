@@ -5239,7 +5239,7 @@ span.mail::before {
     color: rgb(255, 255, 255);
     background: linear-gradient(to right, rgb(137, 33, 107), rgb(218, 68, 83));
     overflow: hidden;
-    float: left;
+    /*float: left;*/
     width: 100%;
     position: relative;
 }
@@ -5324,7 +5324,7 @@ span.mail::before {
 }
 
 .plans-main {
-    float: left;
+    /*float: left;*/
     width: 100%;
     /* padding: 0px 0px 110px; */
     margin: 0px 0px 0px;
@@ -5332,10 +5332,10 @@ span.mail::before {
 }
 
 .plans-main ul li {
-    float: left;
+    /*float: left;*/
     width: 33.3333%;
     padding: 0px 20px;
-    height: 100%;
+    /*height: 100%;*/
 }
 .plncanl-pop{}
 .plncanl-pop h5{
@@ -13071,7 +13071,9 @@ h2.db-tit{
     margin-top: 0;
     border-radius: 5px;
 }
-.plans-description ul li, .plans-description ul li p {
+.plans-description ul li,
+.plans-description ul li p,
+.plans-description p {
     display: block;
     width: 100%;
     margin: 0 !important;
@@ -13080,6 +13082,10 @@ h2.db-tit{
     text-align: center;
     font-size: 17px;
     color: white;
+}
+.plans-main-li {
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 

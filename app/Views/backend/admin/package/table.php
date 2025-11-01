@@ -1,6 +1,7 @@
 <table id="buttons-datatables1" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
     <thead>
         <tr>
+            <th data-ordering="false">Type</th>
             <th data-ordering="false">Name</th>
             <th data-ordering="false">Price</th>
             <th data-ordering="false">Validity</th>
@@ -14,6 +15,7 @@
 
         <?php foreach($data_list as $key=> $value) { ?>
             <tr>
+                <td><?=$value->type==1?'Normal':'Advance'?></td>
                 <td><?=$value->name?></td>
                 <td><?=price_formate($value->price)?></td>
                 <td><?=$value->validity?> Month<?php if($value->validity>1)echo's'; ?></td>
