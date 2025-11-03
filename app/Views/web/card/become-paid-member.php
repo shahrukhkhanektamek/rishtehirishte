@@ -109,7 +109,7 @@
       <div class="col-lg-8">
         <span class="kicker">Premium Membership</span>
         <h1 class="mt-3">Become a paid member</h1>
-        <p class="lead">RM ASSISTANCE PLAN -- <strong>Premium | Personalised | Confidential Matrimonial services</strong></p>
+        <!-- <p class="lead">RM ASSISTANCE PLAN -- <strong>Premium | Personalised | Confidential Matrimonial services</strong></p> -->
 
         <div class="row gy-3 mt-4">
           <div class="col-sm-6">
@@ -126,8 +126,8 @@
             <div class="feature-card d-flex gap-3 align-items-start">
               <div class="flex-shrink-0 text-warning">🌟</div>
               <div>
-                <h5 class="mb-1">Top Listing</h5>
-                <div class="text-muted small">Your profile appears on top of search results.</div>
+                <h5 class="mb-1">Featured profile </h5>
+                <div class="text-muted small">Get your Profile Featured on our Website.</div>
               </div>
             </div>
           </div>
@@ -162,7 +162,7 @@
       <div class="col-lg-4">
         <div class="cta-card">
           <h4>Start Your Premium Journey</h4>
-          <p class="text-muted small">No commitment · Cancel anytime</p>
+          <!-- <p class="text-muted small">No commitment · Cancel anytime</p> -->
 
           <div class="my-3">
             <div class="display-6 fw-bold" style="color:var(--gold);">Find Your Perfect Match</div>
@@ -170,7 +170,7 @@
           </div>
 
           <div class="d-grid gap-2">
-            <a href="<?=base_url()?>packages" class="btn btn-lg btn-primary-grad">Choose a Plan</a>
+            <!-- <a href="<?=base_url()?>packages" class="btn btn-lg btn-primary-grad">Choose a Plan</a> -->
             <a href="<?=base_url()?>contact" class="btn btn-light btn-sm">Contact Us</a>
           </div>
 

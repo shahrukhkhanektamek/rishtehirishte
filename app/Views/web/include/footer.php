@@ -814,6 +814,24 @@ $(document).on("click", "#send-it", function () {
         $.ajax(settings).always(function (response) {
             loader("hide");
             response = admin_response_data_check(response);
+            if(response?.status==200)
+            {
+                if(response.type==1)
+                {
+                    $("#memberCotactModal").modal("show");
+                    $("#memberCotactModal .modal-body").html(response.data.view);
+                }
+                else if(response.type==2)
+                {
+                    $("#packageModal").modal("show");
+                    $("#packageModal .modal-body .row").html(response.data.view);
+                }
+                else if(response.type==3)
+                {
+                    $("#packageModal").modal("show");
+                    $("#packageModal .modal-body .row").html(response.data.view);
+                }
+            }
         });
    }));
     $(document).on("click", ".accept-interest",(function(e) {      
@@ -885,7 +903,7 @@ $(document).on("click", "#send-it", function () {
         $.ajax(settings).always(function (response) {
             loader("hide");
             response = admin_response_data_check(response);
-            if(response.status==200)
+            if(response?.status==200)
             {
                 if(response.type==1)
                 {

@@ -202,6 +202,7 @@ class UserMemberController extends BaseController
                 "TIMESTAMPDIFF(YEAR, {$table_name}.dob, CURDATE()) as age",
             ])
         ->get()->getFirstRow();
+        $data['user'] = $user;
 
         $table_name = "users";
         $date_time = date("Y-m-d H:i:s");
@@ -555,26 +556,36 @@ class UserMemberController extends BaseController
         $session = session()->get('user');
         $user_id = $session['id'];
 
+        $db = $this->db;
+        
+        $check_any_active_plan = check_any_active_plan($user_id);
+        // $check_any_active_plan['status'] = 0;
+        if(empty($check_any_active_plan['status']))
+        {
+            $type = 2;
+            $view = view('web/card/become-paid-member',compact('db','type'),[],true);
 
-        // $check_any_active_plan = check_any_active_plan($user_id);
-        // if(empty($check_any_active_plan['status']))
-        // {
-        //     $responseCode = 400;
-        //     $result['status'] = $responseCode;
-        //     $result['message'] = 'You have no active plan!';
-        //     $result['action'] = 'return';
-        //     $result['data'] = [];
-        //     return $this->response->setStatusCode($responseCode)->setJSON($result);
-        // }
-        // else if($check_any_active_plan['remaining']<1)
-        // {
-        //     $responseCode = 400;
-        //     $result['status'] = $responseCode;
-        //     $result['message'] = 'You have used all limit!';
-        //     $result['action'] = 'return';
-        //     $result['data'] = [];
-        //     return $this->response->setStatusCode($responseCode)->setJSON($result);
-        // }
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'You have no active plan!';
+            $result['action'] = 'view';
+            $result['type'] = 2;
+            $result['data'] = ["view"=>$view,];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+        else if($check_any_active_plan['remaining']<1)
+        {
+            $type = 3;
+            $view = view('web/card/become-paid-member',compact('db','type'),[],true);
+
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'You have used all limit!';
+            $result['action'] = 'view';
+            $result['type'] = 3;
+            $result['data'] = ["view"=>$view,];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
 
 
         $receiverID = decript($this->request->getPost('member_id'));

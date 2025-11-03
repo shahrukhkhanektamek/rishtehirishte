@@ -60,7 +60,6 @@ $check_any_active_plan = check_any_active_plan(@$user->id);
                                 <!-- <h2 class="db-tit">Plan details</h2> -->
                                 <div class="db-pro-stat">
                                     <div class="d-flex align-items-center justify-content-between">
-                                    <h6 class="tit-top-curv mb-0">Standard plan</h6>
                                     
                                     </div>
                                     <div class="d-flex align-items-start justify-content-between mt-3">
@@ -77,7 +76,7 @@ $check_any_active_plan = check_any_active_plan(@$user->id);
                                                     <li>Contact Remain: <strong><?=$check_any_active_plan['remaining']?></strong></li>
                                                     <li><a href="<?=base_url('/')?>packages" class="cta-3">Upgrade Now</a></li>
                                                 <?php }else{?>
-                                                    <li><a href="<?=base_url('/')?>packages" class="cta-3">Purchase Now</a></li>
+                                                    <li><a href="<?=base_url('/')?>packages" class="cta-3">Purchase Plan Now</a></li>
                                                 <?php } ?>
 
                                             </ul>

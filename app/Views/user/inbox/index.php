@@ -1,3 +1,4 @@
+<?php $user = get_user(); ?>
 <!--  Start Header Area -->
 <?php echo view("web/include/header.php"); ?>
 <!-- End Header Area -->
@@ -23,29 +24,46 @@
                         <div class="row">
                             <div class="col-md-12 db-sec-com">
                                 <h2 class="db-tit">Inbox</h2>
-                                <div class="db-pro-stat mb-2">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <button class="btn btn-secondary btn-sm w-100 select-type active" data-type="1">Receive Interest</button>
-                                        </div>
-                                        <div class="col-6">
-                                            <button class="btn btn-secondary btn-sm w-100 select-type" data-type="2">Sent Interest</button>
-                                        </div>
-                                        <ul class="d-flex justify-content-start mt-1">
-                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status active" data-status="">All Interest</button></li>
-                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status" data-status="accept">Accept Interest</button></li>
-                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status" data-status="pending">Pending Interest</button></li>
-                                            <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status" data-status="decline">Decline Interest</button></li>
-                                        </ul>                                    
-                                    </div>
-                                </div>
 
-                                <div class="db-pro-stat">
-                                    <div class="db-inte-prof-list">
-                                        <ul id="data-list">
-                                        </ul>
+
+                                <?php
+                                $check_any_active_plan = check_any_active_plan($user->id);
+                                if(!empty($check_any_active_plan['status']))
+                                {
+                                ?>
+                                    <div class="db-pro-stat mb-2">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button class="btn btn-secondary btn-sm w-100 select-type active" data-type="1">Receive Interest</button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button class="btn btn-secondary btn-sm w-100 select-type" data-type="2">Sent Interest</button>
+                                            </div>
+                                            <ul class="d-flex justify-content-start mt-1">
+                                                <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status active" data-status="">All Interest</button></li>
+                                                <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status" data-status="accept">Accept Interest</button></li>
+                                                <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status" data-status="pending">Pending Interest</button></li>
+                                                <li class="m-1 mb-2 mt-0"><button class="btn btn-secondary btn-sm select-status" data-status="decline">Decline Interest</button></li>
+                                            </ul>                                    
+                                        </div>
                                     </div>
-                                </div>
+
+                                    <div class="db-pro-stat">
+                                        <div class="db-inte-prof-list">
+                                            <ul id="data-list">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                <?php }else{ ?>
+                                    <div class="db-pro-stat">
+                                        <div class="db-inte-prof-list">
+                                            <?php echo view('web/card/become-paid-member',compact('db')); ?>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+
+
+                                
                                     
                                 </div>
                             </div>
