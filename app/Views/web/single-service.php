@@ -30,7 +30,12 @@ $cities = $db->table('city')->getWhere(["status"=>1,])->getResultObject();
         </div>
     </section>
     <!-- END -->
-
+<?php
+$description = strip_tags($row->full_description); // HTML remove for word count
+$words = explode(' ', $description);
+$firstPart = implode(' ', array_slice($words, 0, 100)); // pehle 40 words
+$secondPart = implode(' ', array_slice($words, 100));   // baaki sab
+?>
     <!-- ABOUT START -->
     <section class="pt-60 pb-60">
         <div class="ab-wel">
@@ -51,11 +56,25 @@ $cities = $db->table('city')->getWhere(["status"=>1,])->getResultObject();
                                 <span class="leaf1 mx-0"></span>
                             </div>
                             <div class="ab-wel-tit-1 mb-0">
-                                <p class="mb-3"><?=$row->full_description?>
+                                <p class="mb-3"><?=$firstPart?>
                                 </p>
                             </div>
                         </div>
                     </div>
+                    <?php if (!empty($secondPart)) : ?>
+                    <div class="col-12 mt-3">
+                        <div class="ab-wel-extra">
+                            <p><?=$secondPart?></p>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+
+                    <div class="col-lg-12">
+                        <a class="btn btn-primary m-auto fs-4 mt-3 d-block" style="width:fit-content;" href="#enquiryNow" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 10.5h.01m-4.01 0h.01M8 10.5h.01M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-6.6a1 1 0 0 0-.69.275l-2.866 2.723A.5.5 0 0 1 8 18.635V17a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"></path></svg> Enquiry for <?=$row->name ?>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -100,7 +119,7 @@ $cities = $db->table('city')->getWhere(["status"=>1,])->getResultObject();
 }*/
 </style>
 
-         <section class="bd-course-breadcrumb-area section-space">
+         <section class="bd-course-breadcrumb-area section-space d-none">
             <div class="container">
                <div class="row">
                   <div class="col-lg-12 ">

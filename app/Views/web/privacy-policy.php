@@ -40,7 +40,27 @@
                             </div>
                             <div class="ab-wel-tit-1 mb-0">
                                 <p class="mb-3">
-                                    <?=$policy->privacy_policy ?>
+
+                                <div class="accordion" id="accordionExample">
+                                    <?php
+                                        $policy = json_decode($policy->privacy_policy);
+                                        foreach ($policy as $key => $value) {
+                                    ?>
+                                      <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                          <button class="accordion-button <?=$key==0?'':'collapsed'?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne<?=$key?>" aria-expanded="true" aria-controls="collapseOne<?=$key?>">
+                                            <?=$value->title?>
+                                          </button>
+                                        </h2>
+                                        <div id="collapseOne<?=$key?>" class="accordion-collapse <?=$key==0?'show':''?> collapse " data-bs-parent="#accordionExample">
+                                          <div class="accordion-body">
+                                            <p><?=$value->value?></p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    <?php } ?>
+                                </div>
+
                                 </p>
                             </div>
                         </div>

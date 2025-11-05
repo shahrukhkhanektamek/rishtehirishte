@@ -133,6 +133,7 @@ class UserViewedProfilesController extends BaseController
 
         // ✅ base query
         $query = $this->db->table("user_view_profile")
+            ->where(['user_view_profile.user_id' => $user_id])
             ->where([$table_name.'.status' => 1])
             ->join("users as users","users.id=user_view_profile.member_id","left")
             ->join("education as education","education.id={$table_name}.highestdegree","left")

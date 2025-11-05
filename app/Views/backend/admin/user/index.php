@@ -34,222 +34,218 @@
 
 
 
-<div class="accordion accordion-flush" id="accordionFlushExample">
-  
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Basic Search
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-        <div class="row">
-            <div class="col-md-1">
-                <select class="form-control status" id="statuschange">
-                   <option value="1">Active</option>
-                   <option value="0">Inactive</option>
-                </select>
-             </div>
-             <div class="col-md-2 hide">
-                <select class="form-control order_by" id="order_by">
-                   <option value="desc">DESC</option>
-                   <option value="asc">ASC</option>
-                </select>
-             </div>
-             <div class="col-md-1">
-                <select class="form-control limit" id="limit">
-                   <option value="12">12</option>
-                   <option value="24">24</option>
-                   <option value="36">36</option>
-                   <option value="100">100</option>
-                </select>
-             </div>   
-             <div class="col-md-2">
-                <select class="form-control" id="register_by">
-                   <option value="">Register By</option>
-                   <option value="admin">Admin</option>
-                   <option value="website">Website</option>
-                </select>
-             </div>    
-             <div class="col-md-2">
-                <select class="form-control" id="search_by">
-                   <option value="">Search By</option>
-                   <option value="1">Name</option>
-                   <option value="2">Email</option>
-                   <option value="3">Phone</option>
-                   <option value="4">ID. No.</option>
-                </select>
-             </div>                                             
-             <div class="col-md-3">
-                <div class="navbar-item navbar-form">
-                      <div class="form-group">
-                         <input type="text" class="form-control search-input" placeholder="Enter keyword">
-                      </div>
-                </div>
-             </div>
-             <div class="col-md-3">
-                <button href="<?=$data['route']?>" class="btn btn-dark search w-100"><i class="ri-search-line align-bottom me-1"></i> Search</button>
-             </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                                      
+                                      <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                            Basic Search
+                                          </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                          <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-md-1">
+                                                    <select class="form-control status" id="statuschange">
+                                                       <option value="1">Active</option>
+                                                       <option value="0">Inactive</option>
+                                                    </select>
+                                                 </div>
+                                                 <div class="col-md-2 hide">
+                                                    <select class="form-control order_by" id="order_by">
+                                                       <option value="desc">DESC</option>
+                                                       <option value="asc">ASC</option>
+                                                    </select>
+                                                 </div>
+                                                 <div class="col-md-1">
+                                                    <select class="form-control limit" id="limit">
+                                                       <option value="12">12</option>
+                                                       <option value="24">24</option>
+                                                       <option value="36">36</option>
+                                                       <option value="100">100</option>
+                                                    </select>
+                                                 </div>   
+                                                 <div class="col-md-2">
+                                                    <select class="form-control" id="register_by">
+                                                       <option value="">Register By</option>
+                                                       <option value="admin">Admin</option>
+                                                       <option value="website">Website</option>
+                                                    </select>
+                                                 </div>    
+                                                 <div class="col-md-2">
+                                                    <select class="form-control" id="search_by">
+                                                       <option value="">Search By</option>
+                                                       <option value="1">Name</option>
+                                                       <option value="2">Email</option>
+                                                       <option value="3">Phone</option>
+                                                       <option value="4">ID. No.</option>
+                                                    </select>
+                                                 </div>                                             
+                                                 <div class="col-md-3">
+                                                    <div class="navbar-item navbar-form">
+                                                          <div class="form-group">
+                                                             <input type="text" class="form-control search-input" placeholder="Enter keyword">
+                                                          </div>
+                                                    </div>
+                                                 </div>
+                                                 <div class="col-md-3">
+                                                    <button href="<?=$data['route']?>" class="btn btn-dark search w-100"><i class="ri-search-line align-bottom me-1"></i> Search</button>
+                                                 </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
 
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        Advance Search
-      </button>
-    </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-        <div class="row">
-                                          
-            <div class="col-md-2">
-                <label class="form-label">Gender</label>
-                <select class="select" id="gender" >
-                    <option value="">Select Gender</option>
-                    <option value="1" >Male</option>
-                    <option value="2">Female</option>
-                    <option value="3">Transgender</option>
-                </select>
-            </div>
+                                      <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTwo">
+                                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                            Advance Search
+                                          </button>
+                                        </h2>
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                          <div class="accordion-body">
+                                            <div class="row">
+                                                                              
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Gender</label>
+                                                    <select class="select" id="gender" >
+                                                        <option value="">Select Gender</option>
+                                                        <option value="1" >Male</option>
+                                                        <option value="2">Female</option>
+                                                        <option value="3">Transgender</option>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-2">
-                <label class="form-label">From Age</label>
-                <select class="select" id="agestart"  >
-                    <option value="">Select</option>
-                    <?php foreach (ages() as $key => $value) {?>
-                        <option value="<?=$value ?>"><?=$value ?></option>
-                    <?php } ?>
-                </select>
-            </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">From Age</label>
+                                                    <select class="select" id="agestart"  >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (ages() as $key => $value) {?>
+                                                            <option value="<?=$value ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-2">
-                <label class="form-label">To Age</label>
-                <select class="select" id="ageend" >
-                    <option value="">Select</option>
-                    <?php foreach (ages() as $key => $value) {?>
-                        <option value="<?=$value ?>"><?=$value ?></option>
-                    <?php } ?>
-                </select>
-            </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">To Age</label>
+                                                    <select class="select" id="ageend" >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (ages() as $key => $value) {?>
+                                                            <option value="<?=$value ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-2">
-                <label class="form-label">From Height</label>
-                <select class="select"  id="fromheight" >
-                    <option value="">Select</option>
-                    <?php foreach (heights() as $key => $value) {?>
-                        <option value="<?=$key ?>"><?=$value ?></option>
-                    <?php } ?>
-                </select>
-            </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">From Height</label>
+                                                    <select class="select"  id="fromheight" >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (heights() as $key => $value) {?>
+                                                            <option value="<?=$key ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-2">
-                <label class="form-label">To Height</label>
-                <select class="select"  id="toheight" >
-                    <option value="">Select</option>
-                    <?php foreach (heights() as $key => $value) {?>
-                        <option value="<?=$key ?>"><?=$value ?></option>
-                    <?php } ?>
-                </select>
-            </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">To Height</label>
+                                                    <select class="select"  id="toheight" >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (heights() as $key => $value) {?>
+                                                            <option value="<?=$key ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-2">
-                <label class="form-label">Religion </label>
-                <select class="religion"  id="religion" >
-                    <option value="">Select</option>
-                </select>
-            </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Religion </label>
+                                                    <select class="religion"  id="religion" >
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-2">
-                <label class="form-label">Caste</label>
-                <select class="caste"  id="caste" >
-                    <option value="">Select</option>
-                </select>
-            </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Caste</label>
+                                                    <select class="caste"  id="caste" >
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-3">
-                <label class="form-label">Marital Status</label>
-                <select class="select"  id="maritalstatus">
-                    <option value="">Select</option>
-                    <?php foreach (marital_status() as $key => $value) {?>
-                        <option value="<?=$value ?>"><?=$value ?></option>
-                    <?php } ?>
-                </select>
-            </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Marital Status</label>
+                                                    <select class="select"  id="maritalstatus">
+                                                        <option value="">Select</option>
+                                                        <?php foreach (marital_status() as $key => $value) {?>
+                                                            <option value="<?=$value ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-4">
-                <label class="form-label">Country</label>
-                <select class="form-control country"  id="country">
-                    <option value="">Select Country</option>
-                </select>
-            </div>
+                                                <div class="col-md-4">
+                                                    <label class="form-label">Country</label>
+                                                    <select class="form-control country"  id="country">
+                                                        <option value="">Select Country</option>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-3">
-                <label class="form-label">State</label>
-                <select class="state"  id="state">
-                    <option value="">Select State</option>
-                </select>
-            </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">State</label>
+                                                    <select class="state"  id="state">
+                                                        <option value="">Select State</option>
+                                                    </select>
+                                                </div>
 
-            
+                                                
 
-            <div class="col-md-3">
-                <label class="form-label">Manglik ?</label>
-                <select class="select"  id="manglik" >
-                    <option value="">Select</option>
-                    <?php foreach (manglik() as $key => $value) {?>
-                        <option value="<?=$value ?>"><?=$value ?></option>
-                    <?php } ?>
-                </select>
-            </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Manglik ?</label>
+                                                    <select class="select"  id="manglik" >
+                                                        <option value="">Select</option>
+                                                        <?php foreach (manglik() as $key => $value) {?>
+                                                            <option value="<?=$value ?>"><?=$value ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-5">
-                <label class="form-label">Highest Degree</label>
-                <select class="education"  id="highestdegree" >
-                    <option value="">Select</option>
-                </select>
-            </div>
+                                                <div class="col-md-5">
+                                                    <label class="form-label">Highest Degree</label>
+                                                    <select class="education"  id="highestdegree" >
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
 
-            <div class="col-md-4">
-                <label class="form-label">Occupation</label>
-                <select class="occupation"  id="occupation" >
-                    <option value="">Select</option>
-                </select>
-            </div>
-
-
-
-
-             
-             <div class="col-md-4 mt-2" style="margin: 0 auto;">
-                <button href="<?=$data['route']?>" class="btn btn-dark search w-100"><i class="ri-search-line align-bottom me-1"></i> Search</button>
-             </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</div>
+                                                <div class="col-md-4">
+                                                    <label class="form-label">Occupation</label>
+                                                    <select class="occupation"  id="occupation" >
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
 
 
 
 
+                                                 
+                                                 <div class="col-md-4 mt-2" style="margin: 0 auto;">
+                                                    <button href="<?=$data['route']?>" class="btn btn-dark search w-100"><i class="ri-search-line align-bottom me-1"></i> Search</button>
+                                                 </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      
+                                    </div>
 
 
 
 
-                                    
-                                </div>
-                                <div class="card-body" id="data-list">
 
 
 
 
                                     
                                 </div>
+                                <div class="card-body" id="data-list">                                    
+                                </div>
+                                
                             </div>
                         </div><!--end col-->
                     </div><!--end row-->

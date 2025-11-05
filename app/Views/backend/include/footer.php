@@ -254,8 +254,8 @@ $(document).ready(function () {
         html= `
             <li>
                 <div class="input-group mt-2">                    
-                    <input type="text" class="form-control image_alt" name="title${cname}[]" placeholder="Feature Title" value="">
-                    <input type="text" class="form-control image_alt" name="value${cname}[]" placeholder="Feature Output" value="">                 
+                    <input type="text" class="form-control image_alt" name="title${cname}[]" placeholder="Title" value="">
+                    <input type="text" class="form-control image_alt" name="value${cname}[]" placeholder="Description" value="">                 
                     <button class="btn btn-danger material-shadow-none remove-btn" type="button" ><i class="ri-subtract-line"></i></button>
                 </div>
             </li>

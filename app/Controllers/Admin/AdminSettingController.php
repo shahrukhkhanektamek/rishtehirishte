@@ -148,9 +148,28 @@ class AdminSettingController extends BaseController
         $session = session()->get('user');
         $id = decript($this->request->getPost('id'));
 
+
+        
+
+
+        $privacy = 'privacy';
+        $privacy_policy = [];
+        $multititle = $this->request->getPost('title'.$privacy);
+        $multivalue = $this->request->getPost('value'.$privacy);
+        foreach ($multititle as $key2 => $value2) {
+            $stitle = $multititle[$key2];
+            $svalue = $multivalue[$key2];
+            if(!empty($stitle))
+            {
+                $privacy_policy[] = ["title"=>$stitle,"value"=>$svalue,];
+            }
+        }
+
+        
+
         $data['data'] = json_encode([
             "terms_policy"=>$this->request->getPost('terms_policy'),      
-            "privacy_policy"=>$this->request->getPost('privacy_policy'),      
+            "privacy_policy"=>json_encode($privacy_policy),      
             "refund_policy"=>$this->request->getPost('refund_policy'),      
             "disclaimer"=>$this->request->getPost('disclaimer'),      
         ]);

@@ -79,20 +79,20 @@ abstract class BaseController extends Controller
         $base = base_url();
         $slug = $url = $request->getUri()->getSegment(1); // Get the path from URL
         $stateCity = '';
-        if(!empty($url))
-        {
-            $checkStateCity = explode('-in-',$url);
-            if(count($checkStateCity)>1)
-            {
-                $stateCity = decodeSlug($checkStateCity[1]);
-                $emptyCehck1 = $this->db->table('states')->where("name", $stateCity)->get()->getRow();
-                $emptyCehck2 = $this->db->table('city')->where("name", $stateCity)->get()->getRow();
-                if(!empty($emptyCehck1) || !empty($emptyCehck2))
-                {
-                    $url = $checkStateCity[0];
-                }
-            }
-        }
+        // if(!empty($url))
+        // {
+        //     $checkStateCity = explode('-in-',$url);
+        //     if(count($checkStateCity)>1)
+        //     {
+        //         $stateCity = decodeSlug($checkStateCity[1]);
+        //         $emptyCehck1 = $this->db->table('states')->where("name", $stateCity)->get()->getRow();
+        //         $emptyCehck2 = $this->db->table('city')->where("name", $stateCity)->get()->getRow();
+        //         if(!empty($emptyCehck1) || !empty($emptyCehck2))
+        //         {
+        //             $url = $checkStateCity[0];
+        //         }
+        //     }
+        // }
 
         
         if(empty($page))
@@ -120,6 +120,7 @@ abstract class BaseController extends Controller
                 $page = $count[0] . '.' . $count[1];
             }
         }
+
 
         $role = 0;  
         $user_id = 0;   

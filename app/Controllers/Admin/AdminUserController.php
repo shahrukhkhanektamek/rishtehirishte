@@ -49,6 +49,7 @@ class AdminUserController extends BaseController
 
 
 
+        
         $register_by = $this->request->getVar('register_by');
         $search_by = $this->request->getVar('search_by');
         
@@ -257,6 +258,370 @@ class AdminUserController extends BaseController
             return view('backend/404',compact('data'));            
         }
     }
+    public function dashboard($id=null)
+    {   
+        $id = decript($id);
+        $data['title'] = "".$this->arr_values['title'];
+        $data['page_title'] = "View ".$this->arr_values['page_title'];
+        $data['table_name'] = $this->arr_values['table_name'];
+        $data['upload_path'] = $this->arr_values['upload_path'];
+        $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));           
+        $data['pagenation'] = array($this->arr_values['title']);
+
+        $data_list = $this->db->table($this->arr_values['table_name'])
+        ->where([$this->arr_values['table_name'] .".id"=>$id,])
+        ->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
+        ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
+        ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
+        ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
+        ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
+        ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
+        ->select([
+            "{$this->arr_values['table_name']}.*",
+            "education.name as education_name",
+            "occupation.name as occupation_name",
+            "religion.name as religion_name",
+            "caste.name as caste_name",
+            "languages.name as mothertongue_name",
+            "states.name as state_name",
+            "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age", // 👈 Age calculation
+        ])
+        ->where($this->arr_values['table_name'].'.role =', 2);        
+        $row = $data_list->get()->getFirstRow();
+
+        if(!empty($row))
+        {
+            $rowR = $this->db->table("requirement_form")->where(["user_id"=>$row->id,])->get()->getFirstRow();
+            $db=$this->db;
+            return view($this->arr_values['folder_name'].'/dashboard',compact('data','row','db','rowR'));
+        }
+        else
+        {
+            return view('backend/404',compact('data'));            
+        }
+    }
+    public function inbox($id=null)
+    {   
+        $id = decript($id);
+        $data['title'] = "".$this->arr_values['title'];
+        $data['page_title'] = "View ".$this->arr_values['page_title'];
+        $data['table_name'] = $this->arr_values['table_name'];
+        $data['upload_path'] = $this->arr_values['upload_path'];
+        $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));           
+        $data['pagenation'] = array($this->arr_values['title']);
+
+        $data_list = $this->db->table($this->arr_values['table_name'])
+        ->where([$this->arr_values['table_name'] .".id"=>$id,])
+        ->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
+        ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
+        ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
+        ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
+        ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
+        ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
+        ->select([
+            "{$this->arr_values['table_name']}.*",
+            "education.name as education_name",
+            "occupation.name as occupation_name",
+            "religion.name as religion_name",
+            "caste.name as caste_name",
+            "languages.name as mothertongue_name",
+            "states.name as state_name",
+            "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age", // 👈 Age calculation
+        ])
+        ->where($this->arr_values['table_name'].'.role =', 2);        
+        $row = $data_list->get()->getFirstRow();
+
+        if(!empty($row))
+        {
+            $rowR = $this->db->table("requirement_form")->where(["user_id"=>$row->id,])->get()->getFirstRow();
+            $db=$this->db;
+            return view($this->arr_values['folder_name'].'/inbox',compact('data','row','db','rowR'));
+        }
+        else
+        {
+            return view('backend/404',compact('data'));            
+        }
+    }
+    public function load_inbox_data()
+    { 
+        $limit = $this->request->getVar('limit');
+        $status = $this->request->getVar('status');
+        $type = $this->request->getVar('type');
+        $order_by = $this->request->getVar('order_by');
+        $filter_search_value = $this->request->getVar('filter_search_value');
+        $page = $this->request->getVar('page') ?: 1; 
+        $offset = ($page - 1) * $limit;
+
+
+
+        
+        $user_id = $this->request->getVar('user_id');
+        $search_by = $this->request->getVar('search_by');
+
+
+        $data['table_name'] = $this->arr_values['table_name'];
+        $data['upload_path'] = $this->arr_values['upload_path'];
+        $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));   
+
+
+        $date_time = date("Y-m-d H:i:s");
+        // ✅ Active package subquery (हर user का latest active package)
+        $activePackageSubQuery = "
+            SELECT up1.*
+            FROM user_package up1
+            INNER JOIN (
+                SELECT user_id, MAX(plan_end_date_time) AS latest_end
+                FROM user_package
+                WHERE is_delete=0
+                GROUP BY user_id order by 'desc'
+            ) up2
+            ON up1.user_id = up2.user_id
+            AND up1.plan_end_date_time = up2.latest_end
+        ";
+
+        $data_list = $this->db->table("request");
+
+        if($type==1)
+        {
+            $data_list->join("users as users","users.id=request.senderID","left");
+            $data_list->where(["receiverID"=>$user_id,]);
+        }
+        else if($type==2)
+        {
+            $data_list->join("users as users","users.id=request.receiverID","left");
+            $data_list->where(["senderID"=>$user_id,]);            
+        }
+        else if($type==3)
+        {
+            $data_list->join("users as users","users.id=request.senderID","left");
+            $data_list->where(["receiverID"=>$user_id,]);          
+        }
+        else if($type==4)
+        {
+            $data_list->join("users as users","users.id=request.receiverID","left");
+            $data_list->where(["senderID"=>$user_id,]);
+        }
+        if(!empty($status)) $data_list->where(['request.status' => $status]);
+        $data_list->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
+            ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
+            ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
+            ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
+            ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
+            ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
+            // ✅ Active Package join
+            ->join("($activePackageSubQuery) as user_package",
+                   "user_package.user_id = {$this->arr_values['table_name']}.id",
+                   "left")
+            ->select([
+                "{$this->arr_values['table_name']}.*",
+                "education.name as education_name",
+                "occupation.name as occupation_name",
+                "religion.name as religion_name",
+                "caste.name as caste_name",
+                "languages.name as mothertongue_name",
+                "states.name as state_name",
+                "user_package.id as user_package_id",           // 👉 Active package id (null = no package)
+                "user_package.package_name as package_name",
+                "user_package.plan_start_date_time as plan_start_date_time",
+                "user_package.plan_end_date_time as plan_end_date_time",
+                "user_package.contact_limit as contact_limit",
+                "user_package.view_contact as view_contact",
+                "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age",
+
+                "request.id as request_id",
+                "request.status as request_status",
+                "request.senderID as request_senderID",
+                "request.receiverID as request_receiverID",
+                "request.reqdatetime as request_datetime"
+            ])
+            ->where($this->arr_values['table_name'].'.role =', 2);
+
+        if (!empty($filter_search_value)) {
+            if($search_by==1) $data_list->like($this->arr_values['table_name'].'.name', $filter_search_value);
+            if($search_by==2) $data_list->like($this->arr_values['table_name'].'.email', $filter_search_value);
+            if($search_by==3) $data_list->like($this->arr_values['table_name'].'.phone', $filter_search_value);
+            if($search_by==4) $data_list->like($this->arr_values['table_name'].'.user_id', $filter_search_value);
+        }
+
+
+
+        $total = $data_list->countAllResults(false);
+
+        $data_list = $data_list->orderBy('request.id',$order_by)
+            ->limit($limit, $offset)
+            ->get()
+            ->getResult();
+      
+
+
+        $data['pager'] = $this->pager->makeLinks($page, $limit, $total);
+        $data['totalData'] = $total;
+        $data['startData'] = $offset+1;
+        $data['endData'] = ($offset + $limit > $total) ? $total : ($offset + $limit);
+
+
+        $view = view($this->arr_values['folder_name'].'/table',compact('data_list','data'),[],true);
+        $responseCode = 200;
+        $result['status'] = $responseCode;
+        $result['message'] = 'Success';
+        $result['action'] = 'view';
+        $result['data'] = ["list"=>$view,];
+        return $this->response->setStatusCode($responseCode)->setJSON($result);
+    }
+
+
+
+
+
+
+
+    public function viewed_profile($id=null)
+    {   
+        $id = decript($id);
+        $data['title'] = "".$this->arr_values['title'];
+        $data['page_title'] = "View ".$this->arr_values['page_title'];
+        $data['table_name'] = $this->arr_values['table_name'];
+        $data['upload_path'] = $this->arr_values['upload_path'];
+        $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));           
+        $data['pagenation'] = array($this->arr_values['title']);
+
+        $data_list = $this->db->table($this->arr_values['table_name'])
+        ->where([$this->arr_values['table_name'] .".id"=>$id,])
+        ->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
+        ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
+        ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
+        ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
+        ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
+        ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
+        ->select([
+            "{$this->arr_values['table_name']}.*",
+            "education.name as education_name",
+            "occupation.name as occupation_name",
+            "religion.name as religion_name",
+            "caste.name as caste_name",
+            "languages.name as mothertongue_name",
+            "states.name as state_name",
+            "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age", // 👈 Age calculation
+        ])
+        ->where($this->arr_values['table_name'].'.role =', 2);        
+        $row = $data_list->get()->getFirstRow();
+
+        if(!empty($row))
+        {
+            $rowR = $this->db->table("requirement_form")->where(["user_id"=>$row->id,])->get()->getFirstRow();
+            $db=$this->db;
+            return view($this->arr_values['folder_name'].'/viewed-profile',compact('data','row','db','rowR'));
+        }
+        else
+        {
+            return view('backend/404',compact('data'));            
+        }
+    }
+    public function load_viewed_profile_data()
+    { 
+        $limit = $this->request->getVar('limit');
+        $status = $this->request->getVar('status');
+        $type = $this->request->getVar('type');
+        $order_by = $this->request->getVar('order_by');
+        $filter_search_value = $this->request->getVar('filter_search_value');
+        $page = $this->request->getVar('page') ?: 1; 
+        $offset = ($page - 1) * $limit;
+
+
+
+        
+        $user_id = $this->request->getVar('user_id');
+        $search_by = $this->request->getVar('search_by');
+
+
+        $data['table_name'] = $this->arr_values['table_name'];
+        $data['upload_path'] = $this->arr_values['upload_path'];
+        $data['route'] = base_url(route_to($this->arr_values['routename'].'list'));   
+
+
+        $date_time = date("Y-m-d H:i:s");
+        // ✅ Active package subquery (हर user का latest active package)
+        $activePackageSubQuery = "
+            SELECT up1.*
+            FROM user_package up1
+            INNER JOIN (
+                SELECT user_id, MAX(plan_end_date_time) AS latest_end
+                FROM user_package
+                WHERE is_delete=0
+                GROUP BY user_id order by 'desc'
+            ) up2
+            ON up1.user_id = up2.user_id
+            AND up1.plan_end_date_time = up2.latest_end
+        ";
+
+        $data_list = $this->db->table("user_view_profile");
+
+        
+        $data_list->where(['user_view_profile.user_id' => $user_id]);
+        $data_list->join("users as users","users.id=user_view_profile.member_id","left");
+        $data_list->join("education as education","education.id={$this->arr_values['table_name']}.highestdegree","left")
+            ->join("occupation as occupation","occupation.id={$this->arr_values['table_name']}.occupation","left")
+            ->join("religion as religion","religion.id={$this->arr_values['table_name']}.religion","left")
+            ->join("caste as caste","caste.id={$this->arr_values['table_name']}.caste","left")
+            ->join("languages as languages","languages.id={$this->arr_values['table_name']}.mothertongue","left")
+            ->join("states as states","states.id={$this->arr_values['table_name']}.state","left")
+            // ✅ Active Package join
+            ->join("($activePackageSubQuery) as user_package",
+                   "user_package.user_id = {$this->arr_values['table_name']}.id",
+                   "left")
+            ->select([
+                "{$this->arr_values['table_name']}.*",
+                "education.name as education_name",
+                "occupation.name as occupation_name",
+                "religion.name as religion_name",
+                "caste.name as caste_name",
+                "languages.name as mothertongue_name",
+                "states.name as state_name",
+                "user_package.id as user_package_id",           // 👉 Active package id (null = no package)
+                "user_package.package_name as package_name",
+                "user_package.plan_start_date_time as plan_start_date_time",
+                "user_package.plan_end_date_time as plan_end_date_time",
+                "user_package.contact_limit as contact_limit",
+                "user_package.view_contact as view_contact",
+                "TIMESTAMPDIFF(YEAR, {$this->arr_values['table_name']}.dob, CURDATE()) as age",
+
+            ])
+            ->where($this->arr_values['table_name'].'.role =', 2);
+
+        if (!empty($filter_search_value)) {
+            if($search_by==1) $data_list->like($this->arr_values['table_name'].'.name', $filter_search_value);
+            if($search_by==2) $data_list->like($this->arr_values['table_name'].'.email', $filter_search_value);
+            if($search_by==3) $data_list->like($this->arr_values['table_name'].'.phone', $filter_search_value);
+            if($search_by==4) $data_list->like($this->arr_values['table_name'].'.user_id', $filter_search_value);
+        }
+
+
+
+        $total = $data_list->countAllResults(false);
+
+        $data_list = $data_list->orderBy('user_view_profile.id',$order_by)
+            ->limit($limit, $offset)
+            ->get()
+            ->getResult();
+      
+
+
+        $data['pager'] = $this->pager->makeLinks($page, $limit, $total);
+        $data['totalData'] = $total;
+        $data['startData'] = $offset+1;
+        $data['endData'] = ($offset + $limit > $total) ? $total : ($offset + $limit);
+
+
+        $view = view($this->arr_values['folder_name'].'/table',compact('data_list','data'),[],true);
+        $responseCode = 200;
+        $result['status'] = $responseCode;
+        $result['message'] = 'Success';
+        $result['action'] = 'view';
+        $result['data'] = ["list"=>$view,];
+        return $this->response->setStatusCode($responseCode)->setJSON($result);
+    }
+
+
     public function change_password($id=null)
     {   
         $id = decript($id);

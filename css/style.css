@@ -6785,6 +6785,8 @@ span.mail::before {
     border-radius: 10px;
     position: relative;
     margin: 0px 10px;
+    background: lightpink;
+    min-height: 225px;
 }
 
 .cus-revi-box .revi-im {
@@ -9877,7 +9879,7 @@ h2.db-tit{
 .foll-sett{
     margin: 0 auto;
     display: table;
-    float: initial;	
+    float: initial; 
 }
 .foll-set-tit{
     position: relative;
@@ -10053,7 +10055,7 @@ h2.db-tit{
 }
 .sett-rig label{
     margin-top: 14px;
-    float: right;	
+    float: right;   
 }
 .sett-select-drop{}
 .sett-select-drop select{
@@ -10065,7 +10067,7 @@ h2.db-tit{
     width: 100%;
 }
 .fol-set-lhs ul li a:before {
-	    content: "chevron_right";
+        content: "chevron_right";
     font-size: 18px;
     margin-top: 1px;
     margin-left: -26px;

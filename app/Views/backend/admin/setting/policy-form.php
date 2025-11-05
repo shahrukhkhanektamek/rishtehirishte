@@ -34,10 +34,23 @@
                                                 <textarea class="form-control" name="terms_policy" required><?=@$form_data->terms_policy?></textarea>
                                                 <script>CKEDITOR.replace( 'terms_policy' );</script>
                                             </div>
-                                            <div class="col-lg-12 mb-3">
+                                            <div class="col-lg-12 mb-3 hide">
                                                 <label class="form-label" for="product-title-input">Privacy Policy </label>
                                                 <textarea class="form-control" name="privacy_policy" required><?=@$form_data->privacy_policy?></textarea>
                                                 <script>CKEDITOR.replace( 'privacy_policy' );</script>
+                                            </div>
+                                            <div class="col-lg-12 mb-3">
+                                                <label class="form-label mb-3" for="product-title-input">Privacy Policy </label>
+                                                <?php
+                                                    $file_data = array(
+                                                         "position"=>3,
+                                                         "columna_name"=>"privacy",
+                                                         "multiple"=>true,
+                                                         "alt_text"=>true,
+                                                         "row"=>@$form_data->privacy_policy,
+                                                    );
+                                                    echo view('upload-multiple/privacy',compact('file_data'));
+                                                ?>
                                             </div>
                                             <div class="col-lg-12 mb-3">
                                                 <label class="form-label" for="product-title-input">Refund Policy </label>
@@ -49,6 +62,7 @@
                                                 <textarea class="form-control" name="disclaimer" required><?=@$form_data->disclaimer?></textarea>
                                                 <script>CKEDITOR.replace( 'disclaimer' );</script>
                                             </div>
+                                            
 
                                            
 

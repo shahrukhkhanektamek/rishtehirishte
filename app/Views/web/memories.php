@@ -85,7 +85,7 @@ $data['data_list'] = $data_list;
                                 <div class="col-md-12 db-sec-com">
                                     <div class="row">                            
                                         <?php foreach ($data_list as $key => $value) { ?>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <div class="blog-box">
                                                     <div class="blog-box-image" style="height: auto;">
                                                         

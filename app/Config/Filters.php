@@ -37,6 +37,7 @@ class Filters extends BaseFilters
         'AdminAuth'     => \App\Filters\AdminAuth::class,
         'UserAuth'     => \App\Filters\UserAuth::class,
         'PartnerAuth'     => \App\Filters\PartnerAuth::class,
+        'requestLogger' => \App\Filters\RequestLogger::class,
     ];
 
     /**
@@ -72,6 +73,7 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         'before' => [
+            'requestLogger',
             'csrf' => ['except' => ['api/*','payment/*']],
             // 'honeypot',
             // 'csrf',

@@ -164,6 +164,15 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->get('view/(:any)', 'AdminUserController::view/$1', ['as' => 'admin-user.view']);
         $routes->post('update', 'AdminUserController::update', ['as' => 'admin-user.update']);
 
+        $routes->get('dashboard/(:any)', 'AdminUserController::dashboard/$1', ['as' => 'admin-user.dashboard']);
+
+        $routes->get('inbox/(:any)', 'AdminUserController::inbox/$1', ['as' => 'admin-user.inbox']);
+        $routes->get('load_inbox_data', 'AdminUserController::load_inbox_data', ['as' => 'admin-user.load_inbox_data']);
+
+
+        $routes->get('viewed-profile/(:any)', 'AdminUserController::viewed_profile/$1', ['as' => 'admin-user.viewed-profile']);
+        $routes->get('load_viewed_profile_data', 'AdminUserController::load_viewed_profile_data', ['as' => 'admin-user.load_viewed_profile_data']);
+
         $routes->get('change-password/(:any)', 'AdminUserController::change_password/$1', ['as' => 'admin-user.change-password']);
         $routes->post('change-password-action', 'AdminUserController::change_password_action', ['as' => 'admin-user.change-password-action']);
 
@@ -209,6 +218,17 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->post('update', 'AdminUserPackageController::update', ['as' => 'user-package.update']);
         $routes->post('delete/(:any)', 'AdminUserPackageController::delete/$1', ['as' => 'user-package.delete']);
         $routes->post('block_unblock/(:any)', 'AdminUserPackageController::block_unblock/$1', ['as' => 'user-package.block_unblock']);
+    });
+
+    $routes->group('website-log', function($routes) {
+        $routes->get('/', 'AdminWebSiteLogController::index', ['as' => 'website-log.list']);
+        $routes->get('load_data', 'AdminWebSiteLogController::load_data', ['as' => 'website-log.load_data']);
+        $routes->get('add/(:any)?', 'AdminWebSiteLogController::add/$1', ['as' => 'website-log.add']);
+        $routes->get('edit/(:any)?', 'AdminWebSiteLogController::edit/$1', ['as' => 'website-log.edit']);
+        $routes->get('view/(:any)', 'AdminWebSiteLogController::view/$1', ['as' => 'website-log.view']);
+        $routes->post('update', 'AdminWebSiteLogController::update', ['as' => 'website-log.update']);
+        $routes->post('delete/(:any)', 'AdminWebSiteLogController::delete/$1', ['as' => 'website-log.delete']);
+        $routes->post('block_unblock/(:any)', 'AdminWebSiteLogController::block_unblock/$1', ['as' => 'website-log.block_unblock']);
     });
 
     $routes->group('banner', function($routes) {

@@ -69,6 +69,21 @@
                             <div class="col-md-12">
                                 <!-- Actions -->
                                 <div class="mt-3 d-flex justify-content-end">
+
+                                    <a href="<?=$data['route'].'/inbox/'.encript($value->id)?>" 
+                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                       <i class="ri-dashboard-2-line"></i> Inbox
+                                    </a>
+
+                                    <a href="<?=$data['route'].'/viewed-profile/'.encript($value->id)?>" 
+                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                       <i class="ri-dashboard-2-line"></i> Viewed Profiles
+                                    </a>
+
+                                    <a href="<?=base_url(route_to('website-log.list')).'?id='.encript($value->id)?>" 
+                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                       <i class="ri-dashboard-2-line"></i> Website Tranvels
+                                    </a>
                                     
                                     <a href="<?=$data['route'].'/edit/'.encript($value->id)?>" 
                                        class="mt-1 btn btn-sm btn-outline-primary me-2">
@@ -88,6 +103,11 @@
                                     <a href="<?=$data['route'].'/assign-package/'.encript($value->id)?>" 
                                        class="mt-1 btn btn-sm btn-outline-primary me-2">
                                        <i class="ri-inbox-line"></i> Assign Package
+                                    </a>
+
+                                    <a href="<?=base_url(route_to('user-package.list')).'?id='.encript($value->id)?>" 
+                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                       <i class="ri-inbox-line"></i> Package History
                                     </a>
 
                                     <a href="<?=$data['route'].'/block_unblock/'.encript($value->id)?>" 

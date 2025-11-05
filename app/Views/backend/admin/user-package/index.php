@@ -20,6 +20,8 @@
                     </div>
                     <!-- end page title -->
 
+                    <?php if(!empty($row))echo view('backend/admin/user/profile-card.php') ?>
+
                     <!-- <div class="alert alert-success" role="alert">
                         <i class="ri-checkbox-circle-line"></i> You <b>Successfully</b> created your teacher in our system!
                     </div>
@@ -118,7 +120,7 @@
        var from_date = $("#from-date").val();
        var to_date = $("#to-date").val();
        var filter_search_value = $(".search-input").val();
-       data = `status=${status}&from_date=${from_date}&to_date=${to_date}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
+       data = `user_id=<?=@$row->id?>&status=${status}&from_date=${from_date}&to_date=${to_date}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
    }
     get_url_data();
    url = main_url+'?'+data;
