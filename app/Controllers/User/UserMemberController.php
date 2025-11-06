@@ -109,10 +109,16 @@ class UserMemberController extends BaseController
             ])
         ->get()->getFirstRow();
 
-        $check = $this->db->table("user_view_profile")->where(["member_id"=>$user_id,"user_id"=>$id,])->get()->getFirstRow();
-        if(empty($check))
+
+        
+        $check_any_active_plan = check_any_active_plan($id);
+        if(!empty($check_any_active_plan['status']))
         {
-            $this->db->table('user_view_profile')->insert(["user_id"=>$id,"member_id"=>$user_id,"date_time"=>date("Y-m-d H:i:s"),]);
+            $check = $this->db->table("user_view_profile")->where(["member_id"=>$user_id,"user_id"=>$id,])->get()->getFirstRow();
+            if(empty($check))
+            {
+                $this->db->table('user_view_profile')->insert(["user_id"=>$id,"member_id"=>$user_id,"date_time"=>date("Y-m-d H:i:s"),]);
+            }
         }
 
         $rowR = $this->db->table("requirement_form")->where(["user_id"=>$id,])->get()->getFirstRow();

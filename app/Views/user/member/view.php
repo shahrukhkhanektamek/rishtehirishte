@@ -7,16 +7,32 @@
 
     <?php echo view("web/include/header-nav.php"); ?>
 
+<style>
+.panel {
+    padding: 15px 15px 15px 15px;
+    border: 1px solid #721f253b;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+</style>
+
 
     <!-- PROFILE -->
     <section>
         <div class="profi-pg profi-ban">
             <div class="container pt-50">
+                
+                <?php
+                $check_any_active_plan = check_any_active_plan($user->id);
+                if(!empty($check_any_active_plan['status']))
+                {
+                ?>
                 <div class="row">
                     <div class="col-md-4 profile img-thumbnail" style="height: fit-content;padding: 5px;">
                         <div class="pg-pro-big-im">
                             <div class="s1">
-                                <img src="<?=image_check($row->image!='user.png'?:$row->images, 'user.png')?>" loading="lazy" class="pro" alt="image">
+                                <img src="<?=image_check($row->image, 'user.png')?>" loading="lazy" class="pro" alt="image">
                             </div>
 
 
@@ -182,6 +198,12 @@
                        
                     </div>
                 </div>
+                <?php }else{
+                    echo view('web/card/become-paid-member',compact('db'));
+                } ?>
+
+
+
             </div>
         </div>
     </section>

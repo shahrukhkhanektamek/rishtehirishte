@@ -56,24 +56,96 @@ $secondPart = implode(' ', array_slice($words, 100));   // baaki sab
                                 <span class="leaf1 mx-0"></span>
                             </div>
                             <div class="ab-wel-tit-1 mb-0">
-                                <p class="mb-3"><?=$firstPart?>
+                                <p class="mb-3"><?=$firstPart.' '.$secondPart?>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <?php if (!empty($secondPart)) : ?>
-                    <div class="col-12 mt-3">
+                    <!-- <div class="col-12 mt-3">
                         <div class="ab-wel-extra">
                             <p><?=$secondPart?></p>
                         </div>
-                    </div>
+                    </div> -->
                     <?php endif; ?>
 
-                    <div class="col-lg-12">
-                        <a class="btn btn-primary m-auto fs-4 mt-3 d-block" style="width:fit-content;" href="#enquiryNow" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 10.5h.01m-4.01 0h.01M8 10.5h.01M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-6.6a1 1 0 0 0-.69.275l-2.866 2.723A.5.5 0 0 1 8 18.635V17a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"></path></svg> Enquiry for <?=$row->name ?>
-                        </a>
+
+                    <div class="col-md-6 m-auto">
+                        <div class="row gy-2">
+                            <div class="col-lg-12">
+                                <div class="modal-img" style="background-color: var(--cta-dark);padding: 10px 10px 1px 10px;border-radius: 6px;">
+                                    <div class="ad-content text-start">
+                                        <div class="">
+                                            <h4 class="text-white">Connect With Us!</h4>
+                                            <p class="text-white">Personalized Matchmaking | Safe & Secure Services | 100% Privacy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">                        
+                                <div class="content-body" style="padding: 0px 10px;">
+                                    <form class="contact-form__wrapper form_data" method="POST" action="<?=base_url('contact-enquiry') ?>" enctype="multipart/form-data" novalidate id="contactModalFormService">
+                                        <input type="hidden" name="url" value="<?=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
+                                        <div class="modal-header">
+                                            <!-- <p class="mb-0" style="line-height:1.35;">Contact our support team for quick and friendly assistance.</p> -->
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body pt-1">
+                                            <div class="row gx-2">
+                                                <div class="col-md-12">
+                                                    <div class="contact-form__input style_modal">
+                                                        <label>Candidate name <span>*</span></label>
+                                                        <input class="form-control" type="text" name="name" placeholder="" required="">
+                                                        <span class="icon far fa-user"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="contact-form__input style_modal">
+                                                        <label>Email addess <span>*</span></label>
+                                                        <input class="form-control" type="email" name="email" placeholder="" >
+                                                        <span class="icon far fa-envelope"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="contact-form__input style_modal">
+                                                        <label>Phone number <span>*</span></label>
+                                                        <input class="form-control" type="number" name="phone" placeholder="" required="">
+                                                        <span class="icon fa-solid fa-phone"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="contact-form__input style_modal">
+                                                        <label>Your location <span>*</span></label>
+                                                        <input class="form-control" type="text" name="city" placeholder="" required="">
+                                                        <span class="icon fa-solid fa-map-marker"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="contact-form__input style_modal">
+                                                        <label>I'm looking for <span>*</span></label>
+                                                        <select class="select" name="lookingFor" required>
+                                                            <option value="">Select</option>
+                                                            <option value="Groom">Groom</option>
+                                                            <option value="Bride">Bride</option>
+                                                        </select>
+                                                        <span class="icon fa-solid fa-female"></span>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="cta-dark">Send query <i class="fa-solid fa-long-arrow-right ms-1"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+
+
+                   
 
                 </div>
             </div>
