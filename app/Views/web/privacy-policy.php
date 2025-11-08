@@ -5,7 +5,11 @@
     <div class="hom-top inner_style">
 
     <?php include"include/header-nav.php"; ?>
-
+<style>
+    .accordion-button, .ab-wel-rhs p {
+    font-size: 20px;
+}
+</style>
     <!-- BANNER -->
     <section>
         <div class="str">

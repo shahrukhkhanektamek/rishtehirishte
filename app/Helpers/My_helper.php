@@ -405,7 +405,7 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
 
 
 
-  function image_check($path,$default='')
+  function image_check($path,$default='',$blur=false)
   {
       if(empty($default)) $image = base_url('upload/default.jpg');
       else $image = base_url('upload/'.$default);
@@ -423,6 +423,49 @@ require APPPATH. 'Libraries/phpmailer/SMTP.php';
         {
           $image = base_url('upload/'.$path);
         }
+      }
+
+
+
+      // ⚡ Optimized blur (no saving)
+      if ($blur === true) {
+          $filePath = FCPATH . 'upload/' . $path;
+          if (!file_exists($filePath)) return $image;
+
+          $info = getimagesize($filePath);
+          $mime = $info['mime'];
+
+          switch ($mime) {
+              case 'image/jpeg':
+                  $img = imagecreatefromjpeg($filePath);
+                  break;
+              case 'image/png':
+                  $img = imagecreatefrompng($filePath);
+                  break;
+              case 'image/gif':
+                  $img = imagecreatefromgif($filePath);
+                  break;
+              default:
+                  return $image;
+          }
+
+          // ✅ FAST BLUR TECHNIQUE:
+          // Resize down to small, blur lightly, then resize up (simulates strong blur)
+          $smallW = imagesx($img) * 0.1;
+          $smallH = imagesy($img) * 0.1;
+          $small = imagescale($img, max(1, $smallW), max(1, $smallH), IMG_BILINEAR_FIXED);
+          imagefilter($small, IMG_FILTER_GAUSSIAN_BLUR);
+          $blurred = imagescale($small, imagesx($img), imagesy($img), IMG_BILINEAR_FIXED);
+          imagedestroy($small);
+          imagedestroy($img);
+
+          // Output as base64
+          ob_start();
+          imagejpeg($blurred, null, 100);
+          $data = ob_get_clean();
+          imagedestroy($blurred);
+
+          return 'data:' . $mime . ';base64,' . base64_encode($data);
       }
 
 

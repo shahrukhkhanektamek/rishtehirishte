@@ -171,7 +171,7 @@ class UserMyMatchesController extends BaseController
         $sex1      = $user->gender==1?'Male':'Female';       // 1=Male, 2=Female
         $ms1       = $user->maritalstatus;
 
-        $sex1 = 'Male';
+        // $sex1 = 'Male';
 
 
         /// ✅ caste filter mapping

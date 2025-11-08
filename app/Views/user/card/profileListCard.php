@@ -1,9 +1,17 @@
 <?php 
 $user = @$data['user'];
-foreach ($data_list as $key => $value) { ?>
+$blur = true;
+$check_any_active_plan = check_any_active_plan(@$user->id);
+if(!empty($check_any_active_plan['status']))
+{
+    $blur = false;
+}
+foreach ($data_list as $key => $value) { 
+
+    ?>
  <li>
     <div class="db-int-pro-1"> 
-        <img class="img-fluid " src="<?=image_check($value->image, 'user.png')?>" loading="lazy" alt="image"> 
+        <img class="img-fluid " src="<?=image_check($value->image, 'user.png',$blur)?>" loading="lazy" alt="image"> 
         <?php if(!empty($value->package_name)){ ?>
             <span class="badge bg-primary user-pla-pat"><?=$value->package_name ?> user</span>
         <?php } ?>

@@ -47,9 +47,9 @@
                                                 <select class="select" id="gender1" >
                                                     <option value="">Select Gender</option>
                                                     <?php if(@$user->gender==2){ ?>
-                                                        <option value="1" >Male</option>
+                                                        <option value="1" selected>Male</option>
                                                     <?php }else if(@$user->gender==1){ ?>
-                                                        <option value="2">Female</option>
+                                                        <option value="2" selected>Female</option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -133,9 +133,9 @@
                                                     <select class="select" id="gender" >
                                                         <option value="">Select Gender</option>
                                                         <?php if(@$user->gender==2){ ?>
-                                                            <option value="1" >Male</option>
+                                                            <option value="1" selected>Male</option>
                                                         <?php }else if(@$user->gender==1){ ?>
-                                                            <option value="2">Female</option>
+                                                            <option value="2" selected>Female</option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
