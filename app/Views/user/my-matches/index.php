@@ -17,7 +17,7 @@
                         
                         <div class="row">
                             <div class="col-md-12 db-sec-com">
-                                <h2 class="db-tit">View Matches</h2>
+                                <h2 class="db-tit">My Matches</h2>
                                 <div class="db-pro-stat">
 
         <div class="db-inte-prof-list">

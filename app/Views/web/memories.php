@@ -85,14 +85,14 @@ $data['data_list'] = $data_list;
                                 <div class="col-md-12 db-sec-com">
                                     <div class="row">                            
                                         <?php foreach ($data_list as $key => $value) { ?>
-                                            <div class="col-md-6 mb-4">
+                                            <div class="col-md-4 mb-4">
                                                 <div class="blog-box">
                                                     <div class="blog-box-image" style="height: auto;">
                                                         
                                                         <video id="videoPreview<?=$key?>" 
                                                         style="width: 100%;    padding: 11px 10px 4px 10px;"
                                                         src="<?=base_url('upload/memories/').@$value->video?>"
-                                                        poster="<?=empty($value)?image_check('default.jpg'):base_url('upload/memories/').@$value->image?>"
+                                                        
                                                           controls ></video>
                                                     </div>
                                                 </div>                          

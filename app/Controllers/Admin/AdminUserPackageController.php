@@ -90,6 +90,7 @@ class AdminUserPackageController extends BaseController
         $user_id = $this->request->getVar('user_id');
         $limit = $this->request->getVar('limit');
         $status = $this->request->getVar('status');
+        $type = $this->request->getVar('type');
         $order_by = $this->request->getVar('order_by');
         $filter_search_value = $this->request->getVar('filter_search_value');
         $page = $this->request->getVar('page') ?: 1; 
@@ -135,6 +136,32 @@ class AdminUserPackageController extends BaseController
         }
 
         if(!empty($where)) $data_list->where($where);
+
+
+        $today = date('Y-m-d');
+        if(!empty($type))
+        {
+            if($type==1)
+            {
+                $next10Days = date('Y-m-d', strtotime('+10 days'));
+                $data_list->where("{$this->arr_values['table_name']}.plan_end_date_time >=", $today)
+                ->where("{$this->arr_values['table_name']}.plan_end_date_time <=", $next10Days);
+            }
+            else if($type==2)
+            {
+                $next10Days = date('Y-m-d', strtotime('+20 days'));
+                $data_list->where("{$this->arr_values['table_name']}.plan_end_date_time >=", $today)
+                ->where("{$this->arr_values['table_name']}.plan_end_date_time <=", $next10Days);
+            }
+            else if($type==3)
+            {
+                $next10Days = date('Y-m-d', strtotime('+30 days'));
+                $data_list->where("{$this->arr_values['table_name']}.plan_end_date_time >=", $today)
+                ->where("{$this->arr_values['table_name']}.plan_end_date_time <=", $next10Days);
+            }
+        }
+
+
 
         $total = $data_list->countAllResults(false);
         $data_list = $data_list->limit($limit, $offset)->get()->getResult();

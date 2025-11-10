@@ -9281,7 +9281,7 @@ span.mail::before {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
 
 .pro-gal-imag {
@@ -13191,10 +13191,27 @@ h2.db-tit{
 .plans-description2 ul li, 
 .plans-description2 ul li p, 
 .plans-description2 p, 
-.pri-box2 .pri-cou b
+.pri-box2 .pri-cou b, .pri-box2 .pri-cou
  {
-    color: #565656;
+    /*color: #565656;*/
+    color: #fff;
 }
+
+
+/* RM Assistance Plan specific */
+.pri-box2 {
+  background: linear-gradient(135deg, #8A1538, #D81B60);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(138, 21, 56, 0.3);
+}
+.pri-box2 .cta {
+  background: #fff;
+  color: #8A1538;
+}
+
+
+
 
 .plans-description ul li
 {

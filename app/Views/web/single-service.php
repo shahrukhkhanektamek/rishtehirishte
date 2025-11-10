@@ -20,7 +20,7 @@ $cities = $db->table('city')->getWhere(["status"=>1,])->getResultObject();
                         <div class="hom-ban">
                             <div class="ban-tit">
                                 <h1><?=$row->name.@$stateCity?></h1>
-                                <h4 class="fw-light text-white mb-0"><?=$row->name.@$stateCity ?></h4>
+                                <!-- <h4 class="fw-light text-white mb-0"><?=$row->name.@$stateCity ?></h4> -->
                                 <!-- <p>We're Your Extended Family. Service Towards Success.</p> -->
                             </div>
                         </div>
@@ -124,11 +124,11 @@ $secondPart = implode(' ', array_slice($words, 100));   // baaki sab
                     </div>
                     <div class="col-lg-6">
                         <div class="ab-wel-rhs">
-                            <div class="ab-wel-tit home-tit text-start">
+                            <div class="ab-wel-tit home-tit text-start d-none">
                                 <h2 class="mb-3" style="line-height:58px;"><?=$row->name.@$stateCity?></h2>
                                 <span class="leaf1 mx-0"></span>
                             </div>
-                            <div class="ab-wel-tit-1 mb-0">
+                            <div class="ab-wel-tit-1 mb-0 border-0 mt-0 pt-0">
                                 <p class="mb-3"><?=$firstPart.' '.$secondPart?>
                                 </p>
                             </div>

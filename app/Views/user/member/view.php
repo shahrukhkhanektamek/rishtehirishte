@@ -126,6 +126,14 @@
                             <div class="pr-bio-c pr-bio-gal" id="gallery">
                                 <h3>Photo gallery</h3>
                                 <div id="image-gallery">
+                                    <?php if(!empty(@$row->image)){ ?>
+                                        <div class="pro-gal-imag">
+                                            <div class="img-wrapper">
+                                                <a href="<?=image_check($row->image)?>" data-fancybox="gallery"><img src="<?=image_check($row->image)?>" class="img-responsive" alt=""></a>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+
                                     <?php 
                                     $images = [];
                                     if(!empty(json_decode(@$row->images)))

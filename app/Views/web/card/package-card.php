@@ -30,11 +30,11 @@
 
                 <?php $packages = $db->table("package")->where(["status"=>1,"type"=>2,])->orderBy('id','asc')->get()->getResult(); ?>
                 <?php if(!empty($packages)){ ?>
-                    <h2 class="text-center mt-5" style="color: deeppink;">RM ASSISTANCE PLAN</h2>
-                    <p class="text-center text-center mt-0 fs-4" style="color: deeppink;"><b>Premium | Personalised | Confidential Matrimonial services</b></p>
+                    <h2 class="text-center mt-60" style="color: deeppink;">RM ASSISTANCE PLAN</h2>
+                    <p class="text-center text-center mt-0 fs-4 mb-4" style="color: deeppink;"><b>Premium | Personalised | Confidential Matrimonial services</b></p>
                     <?php foreach ($packages as $key => $value) { ?>
                         <div class="col-6 plans-main-li">
-                            <div class="pri-box pri-box2" style="background: #FFD3AC;">
+                            <div class="pri-box pri-box2">
                                 <div class="row align-items-end">
                                     <div class="col-12">
                                         <h2 class="text-center"><?=$value->name ?></h2>
