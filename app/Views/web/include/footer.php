@@ -1,6 +1,6 @@
 <?php
 $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])->getRow()->data);
- $user = get_user(); ?>
+ $user = get_user();$check_any_active_plan = check_any_active_plan(@$user->id); ?>
  <!-- FOOTER -->
     <section class="wed-hom-footer" style="background-image:url('https://images.pexels.com/photos/11484514/pexels-photo-11484514.jpeg?_gl=1*1n82qd7*_ga*MTI5MzkzNzAwNS4xNzU1MjM0NTcw*_ga_8JE65Q40S6*czE3NTUyMzQ1NjkkbzEkZzEkdDE3NTUyMzQ5MDIkajIkbDAkaDA.')">
         <div class="container">
@@ -32,7 +32,9 @@ $contact_detail = json_decode($db->table('setting')->getWhere(["name"=>'main',])
                         <li><a href="<?=base_url()?>clients.php">Our Clients</a></li>
                         <li><a href="<?=base_url()?>blog">Blog</a></li>
                         <li><a href="<?=base_url()?>service">Services</a></li>
-                        <li><a href="<?=base_url()?>packages.php">Packages</a></li>
+                        <?php if(@$user->role==2){ if($check_any_active_plan['status']!=1){ ?>
+                            <li><a href="<?=base_url()?>packages.php">Packages</a></li>
+                        <?php }} ?>
                         <?php if(@$user->role!=2){ ?>
                             <li><a href="<?=base_url()?>login.php">Login</a></li>
                             <li><a href="<?=base_url()?>register.php">Register</a></li>

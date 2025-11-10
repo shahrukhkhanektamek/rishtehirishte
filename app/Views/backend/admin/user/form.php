@@ -133,7 +133,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label class="form-label">Time Of Birth </label>
-                                    <input type="text" class="form-control" id="timepicker" name="time_of_birth" value="<?php if(!empty($row->time_of_birth))echo date("h:i A", strtotime($row->time_of_birth)) ?>" >
+                                    <input type="text" class="form-control" id="timepicker1" name="time_of_birth" value="<?php if(!empty($row->time_of_birth))echo date("h:i A", strtotime($row->time_of_birth)) ?>" >
                                 </div>
                                 
 

@@ -693,7 +693,7 @@ class UserMemberController extends BaseController
         $db = $this->db;
 
         $check_any_active_plan = check_any_active_plan($user_id);
-        $check_any_active_plan['status'] = 0;
+        // $check_any_active_plan['status'] = 0;
         if(empty($check_any_active_plan['status']))
         {
             $type = 2;

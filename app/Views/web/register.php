@@ -85,7 +85,7 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label class="lb">Time of birth </label>
-                                                    <input type="text" class="form-control" id="timepicker" name="time_of_birth" placeholder="">
+                                                    <input type="time" class="form-control" id="timepicker1" name="time_of_birth" placeholder="">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">

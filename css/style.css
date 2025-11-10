@@ -800,7 +800,7 @@ img{
     position: fixed;
     width: 100%;
     left: 0;
-    top: 65px;
+    top: 50px;
     padding: 30px;
     z-index: 99;
 }
@@ -5632,7 +5632,7 @@ span.mail::before {
 .ab-wel-lhs{position: relative;}
 
 .ab-wel-lhs span {
-    position: absolute;
+    /*position: absolute;*/
 }
 .ab-wel-1 {
     position: relative;
@@ -13185,6 +13185,31 @@ h2.db-tit{
     color:#9ca3af;
     font-size:13px;
   }
+
+
+.pri-box2 h2, 
+.plans-description2 ul li, 
+.plans-description2 ul li p, 
+.plans-description2 p, 
+.pri-box2 .pri-cou b
+ {
+    color: #565656;
+}
+
+.plans-description ul li
+{
+    line-height: 1.3;
+    text-rendering: auto;
+    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+    font-weight: var(--fa-style, 900);
+    margin-bottom: 10px !important;
+}
+.plans-description ul li:before{
+    content: "\f00c";
+    margin-right: 5px;
+}
+
+
 
   /* responsive tweaks */
   @media (max-width:420px){
