@@ -13213,7 +13213,9 @@ h2.db-tit{
     background: rgb(19 40 85);
     box-shadow: rgb(19 40 85) 0px 10px 14px -9px;
 }
-
+.mb-60 {
+    margin-bottom: 30px;
+}
 
 
 .plans-description ul li

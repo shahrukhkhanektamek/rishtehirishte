@@ -358,6 +358,12 @@ if(@$user->role!=2)
       tags: true,
       tokenSeparators: ['||', '\n']
     });
+    $('select').on('select2:open', function () {
+      // Thoda delay dete hain taaki input DOM me render ho jaye
+      setTimeout(() => {
+        document.querySelector('.select2-container--open .select2-search__field').focus();
+      }, 0);
+    });
 
     
 
