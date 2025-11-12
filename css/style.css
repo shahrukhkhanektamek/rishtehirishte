@@ -13187,17 +13187,6 @@ h2.db-tit{
   }
 
 
-.modal .select2-container--default .select2-selection--single{
-    background: transparent !important;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--cta-heading);
-    height: 44px;
-    background-color: transparent;
-    border: 1px solid #7E868D45 !important;
-
-
 .pri-box2 h2, 
 .plans-description2 ul li, 
 .plans-description2 ul li p, 
@@ -13219,20 +13208,13 @@ h2.db-tit{
 .pri-box2 .cta {
   background: #fff;
   color: #8A1538;
-
+}
+.pri-box2:hover a.cta {
+    background: rgb(19 40 85);
+    box-shadow: rgb(19 40 85) 0px 10px 14px -9px;
 }
 
 
-
-
-
-/* responsive tweaks */
-@media (max-width:420px){
-#memberCotactModal .modal{ padding:28px 18px 22px; }
-#memberCotactModal .avatar { width:84px; height:84px; }
-#memberCotactModal .avatar-bg { right:-16px; top:10px; }
-#memberCotactModal .badge { right:-4px; bottom:2px; }
-}
 
 .plans-description ul li
 {
@@ -13247,6 +13229,16 @@ h2.db-tit{
     margin-right: 5px;
 }
 
+.modal .select2-container--default .select2-selection--single{
+    background: transparent !important;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cta-heading);
+    height: 44px;
+    background-color: transparent;
+    border: 1px solid #7E868D45 !important;
+}
 
 
   /* responsive tweaks */
@@ -13256,4 +13248,3 @@ h2.db-tit{
     #memberCotactModal .avatar-bg { right:-16px; top:10px; }
     #memberCotactModal .badge { right:-4px; bottom:2px; }
   }
-

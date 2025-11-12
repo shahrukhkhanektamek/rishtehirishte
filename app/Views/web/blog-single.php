@@ -15,7 +15,7 @@
                         <div class="hom-ban">
                             <div class="ban-tit">
                                 <h1><?=$row->name?></h1>
-                                <h4 class="fw-light text-white mb-0"><?=$row->name?></h4>
+                                <!-- <h4 class="fw-light text-white mb-0"><?=$row->name?></h4> -->
                                 <!-- <p>We're Your Extended Family. Service Towards Success.</p> -->
                             </div>
                         </div>
