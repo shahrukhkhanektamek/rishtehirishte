@@ -13186,10 +13186,24 @@ h2.db-tit{
     font-size:13px;
   }
 
-  /* responsive tweaks */
-  @media (max-width:420px){
-    #memberCotactModal .modal{ padding:28px 18px 22px; }
-    #memberCotactModal .avatar { width:84px; height:84px; }
-    #memberCotactModal .avatar-bg { right:-16px; top:10px; }
-    #memberCotactModal .badge { right:-4px; bottom:2px; }
-  }
+.modal .select2-container--default .select2-selection--single{
+    background: transparent !important;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cta-heading);
+    height: 44px;
+    background-color: transparent;
+    border: 1px solid #7E868D45 !important;
+}
+
+
+
+
+/* responsive tweaks */
+@media (max-width:420px){
+#memberCotactModal .modal{ padding:28px 18px 22px; }
+#memberCotactModal .avatar { width:84px; height:84px; }
+#memberCotactModal .avatar-bg { right:-16px; top:10px; }
+#memberCotactModal .badge { right:-4px; bottom:2px; }
+}
