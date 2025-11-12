@@ -70,7 +70,7 @@
             <div class="col-md-4 col-12">
                 <div class="form-group">
                     <label class="lb">Time of birth</label>
-                    <input type="text" class="form-control" name="time_of_birth" placeholder="" value="<?=@$row->time_of_birth?>" id="timepicker" readonly>
+                    <input type="text" class="form-control" name="time_of_birth" placeholder="" value="<?=@$row->time_of_birth?>" id="timepicker1" readonly>
                 </div>
             </div>
             <div class="col-md-4 col-12">

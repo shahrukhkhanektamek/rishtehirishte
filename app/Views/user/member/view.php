@@ -38,7 +38,7 @@
 
                             <?php if($user->id!=$row->id){ ?>
                                 <div class="s3">
-                                    <a class="cta fol cta-chat send-interest" style="background-color: #0b29cb;" data-id="<?=encript($row->id)?>"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4.248 19C3.22 15.77 5.275 8.232 12.466 8.232V6.079a1.025 1.025 0 0 1 1.644-.862l5.479 4.307a1.108 1.108 0 0 1 0 1.723l-5.48 4.307a1.026 1.026 0 0 1-1.643-.861v-2.154C5.275 13.616 4.248 19 4.248 19Z"/></svg>Send Intrest</a>
+                                    <a class="cta fol cta-chat send-interest" style="background-color: #0b29cb;" data-id="<?=encript($row->id)?>"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4.248 19C3.22 15.77 5.275 8.232 12.466 8.232V6.079a1.025 1.025 0 0 1 1.644-.862l5.479 4.307a1.108 1.108 0 0 1 0 1.723l-5.48 4.307a1.026 1.026 0 0 1-1.643-.861v-2.154C5.275 13.616 4.248 19 4.248 19Z"/></svg>Send Interest</a>
                                     
                                     <span class="cta cta-sendint view-contact" style="background-color: #0b29cb;" data-id="<?=encript($row->id)?>" data-toggle="modal" data-target="#sendInter"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="m17.0896 13.371 1.1431 1.1439c.1745.1461.3148.3287.4111.5349.0962.2063.1461.4312.1461.6588 0 .2276-.0499.4525-.1461.6587-.0963.2063-.4729.6251-.6473.7712-3.1173 3.1211-6.7739 1.706-9.90477-1.4254-3.13087-3.1313-4.54323-6.7896-1.41066-9.90139.62706-.61925 1.71351-1.14182 2.61843-.23626l1.1911 1.19193c1.1911 1.19194.3562 1.93533-.4926 2.80371-.92477.92481-.65643 1.72741 0 2.38391l1.8713 1.8725c.3159.3161.7443.4936 1.191.4936.4468 0 .8752-.1775 1.1911-.4936.8624-.8261 1.6952-1.6004 2.8382-.4565ZM14 8.98134l5.0225-4.98132m0 0L15.9926 4m3.0299.00002v2.98135"/></svg>View Contact</span>
                                 </div>
@@ -126,6 +126,14 @@
                             <div class="pr-bio-c pr-bio-gal" id="gallery">
                                 <h3>Photo gallery</h3>
                                 <div id="image-gallery">
+                                    <?php if(!empty(@$row->image)){ ?>
+                                        <div class="pro-gal-imag">
+                                            <div class="img-wrapper">
+                                                <a href="<?=image_check($row->image)?>" data-fancybox="gallery"><img src="<?=image_check($row->image)?>" class="img-responsive" alt=""></a>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+
                                     <?php 
                                     $images = [];
                                     if(!empty(json_decode(@$row->images)))

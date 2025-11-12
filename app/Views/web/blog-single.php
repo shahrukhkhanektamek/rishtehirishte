@@ -38,10 +38,10 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="ab-wel-rhs">
-                            <div class="ab-wel-tit home-tit text-start">
+                            <div class="ab-wel-tit home-tit text-start d-none">
                                 <h2 class="mb-3" style="line-height:58px;"><?=$row->name?></h2>
                             </div>
-                            <div class="ab-wel-tit-1 mb-0">
+                            <div class="ab-wel-tit-1 mb-0 border-0 mt-0 pt-0">
                                 <p class="mb-3">
                                     <?=$row->sort_description?>
                                 </p>

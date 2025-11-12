@@ -800,7 +800,7 @@ img{
     position: fixed;
     width: 100%;
     left: 0;
-    top: 65px;
+    top: 50px;
     padding: 30px;
     z-index: 99;
 }
@@ -5632,7 +5632,7 @@ span.mail::before {
 .ab-wel-lhs{position: relative;}
 
 .ab-wel-lhs span {
-    position: absolute;
+    /*position: absolute;*/
 }
 .ab-wel-1 {
     position: relative;
@@ -9281,7 +9281,7 @@ span.mail::before {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
 
 .pro-gal-imag {
@@ -13186,6 +13186,7 @@ h2.db-tit{
     font-size:13px;
   }
 
+<<<<<<< HEAD
 .modal .select2-container--default .select2-selection--single{
     background: transparent !important;
     border-radius: 5px;
@@ -13195,11 +13196,36 @@ h2.db-tit{
     height: 44px;
     background-color: transparent;
     border: 1px solid #7E868D45 !important;
+=======
+
+.pri-box2 h2, 
+.plans-description2 ul li, 
+.plans-description2 ul li p, 
+.plans-description2 p, 
+.pri-box2 .pri-cou b, .pri-box2 .pri-cou
+ {
+    /*color: #565656;*/
+    color: #fff;
+}
+
+
+/* RM Assistance Plan specific */
+.pri-box2 {
+  background: linear-gradient(135deg, #8A1538, #D81B60);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(138, 21, 56, 0.3);
+}
+.pri-box2 .cta {
+  background: #fff;
+  color: #8A1538;
+>>>>>>> 28f093754b8cb5800de422a4e46c8aedba7dae88
 }
 
 
 
 
+<<<<<<< HEAD
 /* responsive tweaks */
 @media (max-width:420px){
 #memberCotactModal .modal{ padding:28px 18px 22px; }
@@ -13207,3 +13233,27 @@ h2.db-tit{
 #memberCotactModal .avatar-bg { right:-16px; top:10px; }
 #memberCotactModal .badge { right:-4px; bottom:2px; }
 }
+=======
+.plans-description ul li
+{
+    line-height: 1.3;
+    text-rendering: auto;
+    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+    font-weight: var(--fa-style, 900);
+    margin-bottom: 10px !important;
+}
+.plans-description ul li:before{
+    content: "\f00c";
+    margin-right: 5px;
+}
+
+
+
+  /* responsive tweaks */
+  @media (max-width:420px){
+    #memberCotactModal .modal{ padding:28px 18px 22px; }
+    #memberCotactModal .avatar { width:84px; height:84px; }
+    #memberCotactModal .avatar-bg { right:-16px; top:10px; }
+    #memberCotactModal .badge { right:-4px; bottom:2px; }
+  }
+>>>>>>> 28f093754b8cb5800de422a4e46c8aedba7dae88

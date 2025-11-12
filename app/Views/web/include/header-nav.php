@@ -1,4 +1,4 @@
-<?php $user = get_user(); ?>
+<?php $user = get_user();$check_any_active_plan = check_any_active_plan(@$user->id); ?>
 <div class="container-fluid">
             <!-- <div class="row align-items-center"> -->
                 <div class="hom-nav row align-items-center justify-content-between">
@@ -58,7 +58,11 @@
                                 </div>
                             </li>
                             <li><a href="<?=base_url()?>clients">Our Clients</a></li>
-                            <li><a href="<?=base_url()?>packages">Packages</a></li>
+                            <?php if(@$user->role==2){ 
+                                if($check_any_active_plan['status']!=1){
+                                ?>
+                                <li><a href="<?=base_url()?>packages">Packages</a></li>
+                            <?php }} ?>
                             <li><a href="<?=base_url()?>memories">Memories</a></li>
                             <li><a href="<?=base_url()?>contact">Contact Us</a></li>
                         </ul>

@@ -37,10 +37,18 @@
                                 </div>
                                 <div class="card-header">
                                     <div class="row mt-2">
-                                        <div class="col-md-2 ">
+                                        <div class="col-md-2 hide">
                                             <select class="form-control status" id="statuschange">
                                                <option value="1">Paid</option>
                                                <option value="0">Unpaid</option>
+                                            </select>
+                                         </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control type" id="type">
+                                               <option value="">All</option>
+                                               <option value="1">Expire in 10 days</option>
+                                               <option value="2">Expire in 20 days</option>
+                                               <option value="3">Expire in 30 days</option>
                                             </select>
                                          </div>
                                          <div class="col-md-1 hide">
@@ -117,10 +125,11 @@
        var status = $("#statuschange").val();
        var order_by = $("#order_by").val();
        var limit = $("#limit").val();
+       var type = $("#type").val();
        var from_date = $("#from-date").val();
        var to_date = $("#to-date").val();
        var filter_search_value = $(".search-input").val();
-       data = `user_id=<?=@$row->id?>&status=${status}&from_date=${from_date}&to_date=${to_date}&order_by=${order_by}&limit=${limit}&filter_search_value=${filter_search_value}`;
+       data = `user_id=<?=@$row->id?>&status=${status}&from_date=${from_date}&to_date=${to_date}&order_by=${order_by}&limit=${limit}&type=${type}&filter_search_value=${filter_search_value}`;
    }
     get_url_data();
    url = main_url+'?'+data;
