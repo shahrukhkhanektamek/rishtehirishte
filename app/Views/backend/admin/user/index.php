@@ -320,4 +320,88 @@
 
         });
    }
+
+   let uidd = '';
+   $(document).on("click", ".show-hide-detail-item-btn",(function(e) {      
+        event.preventDefault();
+        uidd = $(this).data('id');
+
+        loader("show");
+        var form = new FormData();
+        var settings = {
+          "url": "<?=$data['route'].'/user_detail/'?>?id="+uidd,
+          "method": "POST",
+          "timeout": 0,
+          "processData": false,
+          "headers": {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+           },
+          "mimeType": "multipart/form-data",
+          "contentType": false,
+          "dataType": "json",
+          "data": form
+        };
+        $.ajax(settings).always(function (response) {
+            loader("hide");
+            response = admin_response_data_check(response);
+            if(response.status==200)
+            {
+                $("#showhidename").html(response.data.name);
+                $("#showhideimage").attr("src",response.data.image);
+
+                if(response.data.is_mobile_show==1) $("#showhidemobile").attr("checked",true);
+                else $("#showhidemobile").attr("checked",false);
+
+                if(response.data.is_email_show==1) $("#showhideemail").attr("checked",true);
+                else $("#showhideemail").attr("checked",false);
+
+                $("#showhidedetailmodal").modal('show');
+            }
+
+        });
+
+
+   }));
+
+
+   $(document).on("click", ".show-hide-detail-item-btn-confirm",(function(e) {      
+        event.preventDefault();
+        loader("show");
+
+        var data = '';
+
+        var form = new FormData();
+
+        if($("#showhidemobile:checked").val())
+            data = data+'&mobile='+$("#showhidemobile:checked").val();
+        if($("#showhideemail:checked").val())
+            data = data+'&email='+$("#showhideemail:checked").val();
+
+        var settings = {
+          "url": "<?=$data['route'].'/show_hide_detail/'?>?id="+uidd+data,
+          "method": "GET",
+          "timeout": 0,
+          "processData": false,
+          "headers": {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+           },
+          "mimeType": "multipart/form-data",
+          "contentType": false,
+          "dataType": "json",
+          "data": form
+        };
+        $.ajax(settings).always(function (response) {
+            loader("hide");
+            response = admin_response_data_check(response);
+            if(response.status==200)
+            {
+                $("#showhidedetailmodal").modal('hide');
+            }
+
+        });
+
+      
+   }));
+
+
 </script>

@@ -181,8 +181,12 @@ $adminEmployeeRoutes = function ($routes) {
 
         $routes->post('create-pdf', 'AdminUserController::profilePdfSave', ['as' => 'admin-user.create-pdf']);
 
+        $routes->get('user_detail', 'AdminUserController::user_detail', ['as' => 'admin-user.user_detail']);
+        $routes->get('show_hide_detail', 'AdminUserController::show_hide_detail', ['as' => 'admin-user.show_hide_detail']);
+
         $routes->post('delete/(:any)', 'AdminUserController::delete/$1', ['as' => 'admin-user.delete']);
         $routes->post('block_unblock/(:any)', 'AdminUserController::block_unblock/$1', ['as' => 'admin-user.block_unblock']);
+
     });
 
 

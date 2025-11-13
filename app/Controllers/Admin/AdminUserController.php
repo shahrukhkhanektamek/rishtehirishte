@@ -1049,6 +1049,81 @@ class AdminUserController extends BaseController
 
 
 
+    public function user_detail()
+    {
+        $id = decript($this->request->getVar('id'));
+        $user = $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->get()->getFirstRow();
+        $user->image = image_check($user->image,'user.png');
+
+        if(!empty($user))
+        {
+            $action = 'view';
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Successfuly';
+            $result['action'] = $action;
+            $result['data'] = $user;
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+        else
+        {
+            $action = 'view';
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = $this->db->error()['message'];
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+    }
+    public function show_hide_detail()
+    {
+        $id = decript($this->request->getVar('id'));
+        $is_mobile_show = $this->request->getVar('mobile');
+        $is_email_show = $this->request->getVar('email');
+
+        $user = $this->db->table($this->arr_values['table_name'])->where(["id"=>$id,])->get()->getFirstRow();
+
+        
+
+        $data['is_mobile_show'] = $is_mobile_show?1:0;
+        $data['is_email_show'] = $is_email_show?1:0;
+        
+
+
+        if(empty($data))
+        {
+            $action = 'view';
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = "Select Any One!";
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+
+        
+        if($this->db->table($this->arr_values['table_name'])->where('id', $id)->update($data))
+        {
+            $action = 'view';
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'Successfuly';
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+        else
+        {
+            $action = 'view';
+            $responseCode = 400;
+            $result['status'] = $responseCode;
+            $result['message'] = $this->db->error()['message'];
+            $result['action'] = $action;
+            $result['data'] = [];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
+    }
     public function block_unblock($id)
     {
         $id = decript($id);

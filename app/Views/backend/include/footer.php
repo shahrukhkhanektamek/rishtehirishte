@@ -86,6 +86,41 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+
+    <!-- Show Hide Detail Modal -->
+    <div class="modal fade zoomIn" id="showhidedetailmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-body text-center p-3 pb-4" id="accountBlockBodyDisable">
+                    
+                    <div class="mt-2">
+                        <!-- <p class="text-muted mb-4">Are you sure you want to disable this account? You will be able to revert this!</p> -->
+
+                        <img src="http://localhost/projects/dimplemam/rishtehirishte/upload/user.png" id="showhideimage" class="avatar-lg" style="    display: block;
+                            margin: 0 auto;
+                            border-radius: 50%;
+                            border: 4px solid red;">
+                        <h4 class="mb-3" id="showhidename">Shahrukh</h4>
+
+                        <label class="btn btn-light">
+                            <input type="checkbox" id="showhidemobile" value="1"> Mobile                        
+                        </label>
+                        <label class="btn btn-light hide">                        
+                            <input type="checkbox" id="showhideemail" value="1" checked> Email
+                        </label>
+
+                        <div class="hstack gap-2 justify-content-center">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                            <a href="javascript:void(0);" class="btn btn-danger show-hide-detail-item-btn-confirm">Submit</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
     <!--start back-to-top-->
     <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
         <i class="ri-arrow-up-line"></i>

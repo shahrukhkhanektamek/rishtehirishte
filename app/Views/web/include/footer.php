@@ -892,9 +892,16 @@ $(document).on("click", "#send-it", function () {
    $(document).on("click", ".view-contact",(function(e) {      
         event.preventDefault();
         memberId = $(this).data('id');
+        var viewType = $(this).data('type');
         loader("show");
         var form = new FormData();
         form.append("member_id", memberId);
+
+        if(viewType) viewType = 1;
+        else viewType = 0;
+
+         form.append("viewType", viewType);
+
         var settings = {
           "url": "<?=base_url(route_to('user.member.view_contact'))?>",
           "method": "POST",

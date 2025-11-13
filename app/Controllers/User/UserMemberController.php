@@ -598,6 +598,26 @@ class UserMemberController extends BaseController
         $checkrequest = $this->db->table("request")->where(["senderID"=>$user_id,"receiverID"=>$receiverID,])->get()->getFirstRow();
         if(empty($checkrequest))
         {
+
+            $countLimit = $this->db->table("request")
+            ->where("reqdatetime >= ", date("Y-m-d 00:00:00"))
+            ->where("reqdatetime <= ", date("Y-m-d 23:59:00"))
+            ->where(["senderID"=>$user_id,])->countAllResults();
+
+            if($countLimit>=5)
+            {
+                $type2 = 1;
+                $view = view('user/card/limitExpire',compact('db','type2'),[],true);
+
+                $responseCode = 200;
+                $result['status'] = $responseCode;
+                $result['message'] = 'You have used all limit!';
+                $result['action'] = 'view';
+                $result['type'] = 3;
+                $result['data'] = ["view"=>$view,];
+                return $this->response->setStatusCode($responseCode)->setJSON($result);
+            }
+
             $this->db->table('request')->insert([
                 "senderID"=>$user_id,
                 "receiverID"=>$receiverID,
@@ -690,6 +710,8 @@ class UserMemberController extends BaseController
         $session = session()->get('user');
         $user_id = $session['id'];
 
+        $viewType = $this->request->getVar('viewType');
+
         $db = $this->db;
 
         $check_any_active_plan = check_any_active_plan($user_id);
@@ -721,31 +743,55 @@ class UserMemberController extends BaseController
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }
 
+
         $member_id = decript($this->request->getPost('member_id'));
         $member = $this->db->table("users")->where(["id"=>$member_id,])->get()->getFirstRow();
         if(!empty($member))
         {
-            $user_view_contacts = $this->db->table("user_view_contacts")->where(["user_id"=>$user_id,"member_id"=>$member_id,])->get()->getFirstRow();
-            if(empty($user_view_contacts))
+            if($member->is_mobile_show==1 || $viewType==1)
             {
-                $this->db->table('user_view_contacts')->insert([
-                    "user_id"=>$user_id,
-                    "member_id"=>$member_id,
-                    "date_time"=>date("Y-m-d H:i:s"),
-                ]);
-
-                $wallet = $this->db->table('wallet')->where(["user_id"=>$user_id,])->get()->getFirstRow();
-                if(!empty($wallet))
+                $user_view_contacts = $this->db->table("user_view_contacts")->where(["user_id"=>$user_id,"member_id"=>$member_id,])->get()->getFirstRow();
+                if(empty($user_view_contacts))
                 {
-                    $this->db->table("wallet")
-                    ->where("id", $wallet->id)
-                    ->set("contact_view", "contact_view + " . 1, false)
-                    ->update();
-                }
+                    $countLimit = $this->db->table("user_view_contacts")
+                    ->where("date_time >= ", date("Y-m-d 00:00:00"))
+                    ->where("date_time <= ", date("Y-m-d 23:59:00"))
+                    ->where(["user_id"=>$user_id,])->countAllResults();
 
+                    if($countLimit>=10)
+                    {
+                        $type2 = 2;
+                        $view = view('user/card/limitExpire',compact('db','type2'),[],true);
+
+                        $responseCode = 200;
+                        $result['status'] = $responseCode;
+                        $result['message'] = 'You have used all limit!';
+                        $result['action'] = 'view';
+                        $result['type'] = 3;
+                        $result['data'] = ["view"=>$view,];
+                        return $this->response->setStatusCode($responseCode)->setJSON($result);
+                    }
+                }
+                if(empty($user_view_contacts))
+                {
+                    $this->db->table('user_view_contacts')->insert([
+                        "user_id"=>$user_id,
+                        "member_id"=>$member_id,
+                        "date_time"=>date("Y-m-d H:i:s"),
+                    ]);
+
+                    $wallet = $this->db->table('wallet')->where(["user_id"=>$user_id,])->get()->getFirstRow();
+                    if(!empty($wallet))
+                    {
+                        $this->db->table("wallet")
+                        ->where("id", $wallet->id)
+                        ->set("contact_view", "contact_view + " . 1, false)
+                        ->update();
+                    }
+                }
             }
 
-            $view = view('user/card/ViewContactCard',compact('member'),[],true);
+            $view = view('user/card/ViewContactCard',compact('member','check_any_active_plan','viewType'),[],true);
             $responseCode = 200;
             $result['status'] = $responseCode;
             $result['message'] = 'View Successfully';

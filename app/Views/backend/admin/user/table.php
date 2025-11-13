@@ -68,60 +68,77 @@
                             </div>
                             <div class="col-md-12">
                                 <!-- Actions -->
-                                <div class="mt-3 d-flex justify-content-end">
 
-                                    <a href="<?=$data['route'].'/inbox/'.encript($value->id)?>" 
-                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
-                                       <i class="ri-dashboard-2-line"></i> Inbox
-                                    </a>
+                                <div class="row">
+                                    <div class="col-12">                                                                    
+                                        <div class="mt-3 d-flex justify-content-end">
 
-                                    <a href="<?=$data['route'].'/viewed-profile/'.encript($value->id)?>" 
-                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
-                                       <i class="ri-dashboard-2-line"></i> Viewed Profiles
-                                    </a>
+                                            <a href="<?=$data['route'].'/inbox/'.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                               <i class="ri-dashboard-2-line"></i> Inbox
+                                            </a>
 
-                                    <a href="<?=base_url(route_to('website-log.list')).'?id='.encript($value->id)?>" 
-                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
-                                       <i class="ri-dashboard-2-line"></i> Website Tranvels
-                                    </a>
-                                    
-                                    <a href="<?=$data['route'].'/edit/'.encript($value->id)?>" 
-                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
-                                       <i class="ri-ball-pen-line"></i> Edit Profile
-                                    </a>
+                                            <a href="<?=$data['route'].'/viewed-profile/'.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                               <i class="ri-dashboard-2-line"></i> Viewed Profiles
+                                            </a>
 
-                                    <a href="<?=$data['route'].'/view/'.encript($value->id)?>" 
-                                       class="mt-1 btn btn-sm btn-outline-info me-2">
-                                       <i class="ri-user-line"></i> View Profile
-                                    </a>
+                                            <a href="<?=base_url(route_to('website-log.list')).'?id='.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                               <i class="ri-dashboard-2-line"></i> Website Tranvels
+                                            </a>
+                                            
+                                            <a href="<?=$data['route'].'/edit/'.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                               <i class="ri-ball-pen-line"></i> Edit Profile
+                                            </a>
 
-                                    <a href="<?=$data['route'].'/change-password/'.encript($value->id)?>" 
-                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
-                                       <i class="ri-eye-line"></i> Change Password
-                                    </a>
+                                            <a href="<?=$data['route'].'/view/'.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-outline-info me-2">
+                                               <i class="ri-user-line"></i> View Profile
+                                            </a>
+                                            
+                                            <a href="<?=$data['route'].'/change-password/'.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                               <i class="ri-eye-line"></i> Change Password
+                                            </a>
 
-                                    <a href="<?=$data['route'].'/assign-package/'.encript($value->id)?>" 
-                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
-                                       <i class="ri-inbox-line"></i> Assign Package
-                                    </a>
+                                            <a href="<?=$data['route'].'/assign-package/'.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                               <i class="ri-inbox-line"></i> Assign Package
+                                            </a>
 
-                                    <a href="<?=base_url(route_to('user-package.list')).'?id='.encript($value->id)?>" 
-                                       class="mt-1 btn btn-sm btn-outline-primary me-2">
-                                       <i class="ri-inbox-line"></i> Package History
-                                    </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12"> 
+                                        <div class="mt-1 d-flex justify-content-end">
+                                            
 
-                                    <a href="<?=$data['route'].'/block_unblock/'.encript($value->id)?>" 
-                                       data-value="<?=$value->status?>" 
-                                       class="mt-1 btn btn-sm btn-outline-warning me-2 block-item-btn">
-                                       <i class="ri-settings-6-line"></i> <?=$value->status==1?'Block Profile':'Unblock Profile' ?>
-                                    </a>
 
-                                    <a href="<?=$data['route'].'/delete/'.encript($value->id)?>" 
-                                       class="mt-1 btn btn-sm btn-danger remove-item-btn">
-                                       <i class="ri-delete-bin-4-line"></i> Delete Profile
-                                    </a>
-                                    
+                                            <a href="<?=base_url(route_to('user-package.list')).'?id='.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                               <i class="ri-inbox-line"></i> Package History
+                                            </a>
+
+                                            <a data-id="<?=encript($value->id)?>"
+                                               class="mt-1 btn btn-sm btn-outline-info me-2 show-hide-detail-item-btn">
+                                               <i class="ri-information-line"></i> Show Hide Detail
+                                            </a>
+
+                                            <a href="<?=$data['route'].'/block_unblock/'.encript($value->id)?>" 
+                                               data-value="<?=$value->status?>" 
+                                               class="mt-1 btn btn-sm btn-outline-warning me-2 block-item-btn">
+                                               <i class="ri-settings-6-line"></i> <?=$value->status==1?'Block Profile':'Unblock Profile' ?>
+                                            </a>
+
+                                            <a href="<?=$data['route'].'/delete/'.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-danger remove-item-btn">
+                                               <i class="ri-delete-bin-4-line"></i> Delete Profile
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
 
