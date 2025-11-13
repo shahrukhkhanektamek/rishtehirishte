@@ -13,7 +13,7 @@
             <div class="container">
               <div class="form-tit d-flex align-items-center">
                             <!-- <h4 class="mb-0 me-3">FAQ</h4> -->
-                            <h1 class="mb-0 text-danger">Frequently asked questions</h1>
+                            <h1 class="mb-0 text-danger">Frequently Asked Questions</h1>
                         </div>
                 <div class="row">
                     <div class="col-md-8 inn ab-faq-lhs">

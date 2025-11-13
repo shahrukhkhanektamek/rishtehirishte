@@ -32,17 +32,17 @@
 
 
     <!-- ABOUT START -->
-    <section class="pt-60 pb-60">
+    <section class="pb-60">
         <div class="ab-wel">
             <div class="container">
                 <div class="row align-items-start">
                     
                     <div class="col-lg-12">
                         <div class="ab-wel-rhs">
-                            <div class="ab-wel-tit home-tit text-center">
+                            <div class="ab-wel-tit home-tit text-center d-none">
                                 <h2 class="mb-0" style="line-height: 0.9;font-size: 45px;">Privacy Policy</h2>
                             </div>
-                            <div class="ab-wel-tit-1 mb-0">
+                            <div class="ab-wel-tit-1 mb-0 border-0">
                                 <p class="mb-3">
 
                                 <div class="accordion" id="accordionExample">
