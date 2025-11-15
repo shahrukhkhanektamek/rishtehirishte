@@ -83,23 +83,23 @@
         <div class="stepwizard">
             <div class="stepwizard-row setup-panel">
                 <div class="stepwizard-step">
-                    <a href="#step-1" type="button" class="btn-step btn-circle">1</a>
+                    <a type="button" class="btn-step btn-circle">1</a>
                     <p><span>Step 1</span> Basic Detail</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-2" type="button" class="btn-default btn-circle" disabled="disabled">2</a>
+                    <a type="button" class="btn-default btn-circle" disabled="disabled">2</a>
                     <p><span>Step 2</span> Profile Detail</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-3" type="button" class="btn-default btn-circle" disabled="disabled">3</a>
+                    <a type="button" class="btn-default btn-circle" disabled="disabled">3</a>
                     <p><span>Step 3</span> Education & Profession</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-4" type="button" class="btn-default btn-circle" disabled="disabled">4</a>
+                    <a type="button" class="btn-default btn-circle" disabled="disabled">4</a>
                     <p><span>Step 4</span> Lifestyle & Family</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-5" type="button" class="btn-default btn-circle" disabled="disabled">5</a>
+                    <a type="button" class="btn-default btn-circle" disabled="disabled">5</a>
                     <p><span>Step 5</span> Requirement for partner</p>
                 </div>
             </div>

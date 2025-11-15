@@ -40,8 +40,8 @@ class DataSet extends BaseController
 
             $image = $value->image;
             $images = [
-                ["image_path"=>$value->image2,],
-                ["image_path"=>$value->image3,],
+                ["image_path"=>$value->image2,"image_alt_text"=>"","image_name"=>"",],
+                ["image_path"=>$value->image3,"image_alt_text"=>"","image_name"=>"",],
             ];
             
             $month = @explode("-",$value->dob)[0];

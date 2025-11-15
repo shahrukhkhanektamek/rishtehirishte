@@ -30,6 +30,7 @@ else
 	{
 		$images_array = array();
 		$images = @$row[$file_data['columna_name']];
+		
 		if(!empty($images))
 		{
 			$images_array = json_decode($images);
@@ -55,9 +56,9 @@ else
 			        </svg>
 			     </button>
 			    <img src="data:image/png;base64,<?=$image ?>" name="image_string<?=$file_data['columna_name'] ?>[]">
-			    <input type="hidden" value="<?=$value_image->image_name ?>" name="image_name<?=$file_data['columna_name'] ?>[]">
+			    <input type="hidden" value="<?=@$value_image->image_name ?>" name="image_name<?=$file_data['columna_name'] ?>[]">
 			    <input type="hidden" value="data:image/png;base64,<?=$image ?>" name="image_string<?=$file_data['columna_name'] ?>[]">
-			    <input type="text" name="image_alt_text<?=$file_data['columna_name'] ?>[]" value="<?=$value_image->image_alt_text ?>" class="form-control form-control-sm" style="display:none;">
+			    <input type="text" name="image_alt_text<?=$file_data['columna_name'] ?>[]" value="<?=@$value_image->image_alt_text ?>" class="form-control form-control-sm" style="display:none;">
 			    </div>
 			  </li>
 		<?php 
