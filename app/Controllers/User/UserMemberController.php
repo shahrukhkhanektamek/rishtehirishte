@@ -742,6 +742,24 @@ class UserMemberController extends BaseController
             $result['data'] = ["view"=>$view,];
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }
+        $countLimit = $this->db->table("user_view_contacts")
+        ->where("date_time >= ", date("Y-m-d 00:00:00"))
+        ->where("date_time <= ", date("Y-m-d 23:59:00"))
+        ->where(["user_id"=>$user_id,])->countAllResults();
+
+        if($countLimit>=10)
+        {
+            $type2 = 2;
+            $view = view('user/card/limitExpire',compact('db','type2'),[],true);
+
+            $responseCode = 200;
+            $result['status'] = $responseCode;
+            $result['message'] = 'You have used all limit!';
+            $result['action'] = 'view';
+            $result['type'] = 3;
+            $result['data'] = ["view"=>$view,];
+            return $this->response->setStatusCode($responseCode)->setJSON($result);
+        }
 
 
         $member_id = decript($this->request->getPost('member_id'));
@@ -751,27 +769,7 @@ class UserMemberController extends BaseController
             if($member->is_mobile_show==1 || $viewType==1)
             {
                 $user_view_contacts = $this->db->table("user_view_contacts")->where(["user_id"=>$user_id,"member_id"=>$member_id,])->get()->getFirstRow();
-                if(empty($user_view_contacts))
-                {
-                    $countLimit = $this->db->table("user_view_contacts")
-                    ->where("date_time >= ", date("Y-m-d 00:00:00"))
-                    ->where("date_time <= ", date("Y-m-d 23:59:00"))
-                    ->where(["user_id"=>$user_id,])->countAllResults();
-
-                    if($countLimit>=10)
-                    {
-                        $type2 = 2;
-                        $view = view('user/card/limitExpire',compact('db','type2'),[],true);
-
-                        $responseCode = 200;
-                        $result['status'] = $responseCode;
-                        $result['message'] = 'You have used all limit!';
-                        $result['action'] = 'view';
-                        $result['type'] = 3;
-                        $result['data'] = ["view"=>$view,];
-                        return $this->response->setStatusCode($responseCode)->setJSON($result);
-                    }
-                }
+                
                 if(empty($user_view_contacts))
                 {
                     $this->db->table('user_view_contacts')->insert([

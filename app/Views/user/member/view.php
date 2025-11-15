@@ -23,9 +23,19 @@
         <div class="profi-pg profi-ban">
             <div class="container pt-50">
                 
-                <?php
+                <?php                
                 $check_any_active_plan = check_any_active_plan($user->id);
-                if(!empty($check_any_active_plan['status']))
+                $countLimit = $db->table("user_view_profile")
+                ->where("date_time >= ", date("Y-m-d 00:00:00"))
+                ->where("date_time <= ", date("Y-m-d 23:59:00"))
+                ->where(["user_id"=>$user->id,])->countAllResults();
+
+                if($countLimit>=15)
+                {
+                    $type2 = 3;
+                    echo $view = view('user/card/limitExpire',compact('db','type2'),[],true);
+                }
+                else if(!empty($check_any_active_plan['status']))
                 {
                 ?>
                 <div class="row">
