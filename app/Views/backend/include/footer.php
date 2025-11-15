@@ -105,8 +105,8 @@
                         <label class="btn btn-light">
                             <input type="checkbox" id="showhidemobile" value="1"> Mobile                        
                         </label>
-                        <label class="btn btn-light hide">                        
-                            <input type="checkbox" id="showhideemail" value="1" checked> Email
+                        <label class="btn btn-light">                        
+                            <input type="checkbox" id="showhideemail" value="1"> Email
                         </label>
 
                         <div class="hstack gap-2 justify-content-center">

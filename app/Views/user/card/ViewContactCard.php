@@ -28,10 +28,9 @@
                 <i class="fa fa-envelope"></i> <?=$member->email ?>                
             </a>
         <?php } ?>
-        <br>
 
         <?php if($member->is_mobile_show==0 && $viewType==0){ ?>
-            <a class="view-contact" style="cursor: pointer;font-size: 17px;margin: -15px 0 -25px 0;display: block;" data-id="<?=encript($member->id)?>" data-type='1'><b>View email address</b></a><br>
+            <a class="view-contact btn m-auto" style="cursor: pointer;background: deeppink;font-size: 17px;margin: -15px 0 -25px 0;display: block;" data-id="<?=encript($member->id)?>" data-type='1'><b>View email address</b></a>
             1 contact view will be deducted (<?=$check_any_active_plan['remaining']?> left)
         <?php } ?>
 

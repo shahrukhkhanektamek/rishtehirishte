@@ -142,8 +142,18 @@ $user = get_user();
     justify-content: space-between;
 }
 .pagination li.active a {
-    background: lightgray;
-    border-color: lightgray;
+    background: #132855;
+    border-color: #132855;
+    color: white;
+}
+.pagination li {
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.pagination {
+    align-items: center;
+    margin-top: 5px;
 }
 
 .pagination li a {
