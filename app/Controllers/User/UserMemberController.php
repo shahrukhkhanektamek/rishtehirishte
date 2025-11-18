@@ -732,7 +732,7 @@ class UserMemberController extends BaseController
         else if($check_any_active_plan['remaining']<1)
         {
             $type = 3;
-            $view = view('web/card/become-paid-member',compact('db','type'),[],true);
+            $view = view('web/card/purchase-contact',compact('db','type'),[],true);
 
             $responseCode = 200;
             $result['status'] = $responseCode;
@@ -760,7 +760,7 @@ class UserMemberController extends BaseController
 
                     if($countLimit>=10)
                     {
-                        $type2 = 2;
+                        $type2 = 3;
                         $view = view('user/card/limitExpire',compact('db','type2'),[],true);
 
                         $responseCode = 200;
@@ -792,12 +792,15 @@ class UserMemberController extends BaseController
             }
 
             $view = view('user/card/ViewContactCard',compact('member','check_any_active_plan','viewType'),[],true);
+
+            $check_any_active_plan = check_any_active_plan($user_id);
+
             $responseCode = 200;
             $result['status'] = $responseCode;
             $result['message'] = 'View Successfully';
             $result['action'] = 'view';
             $result['type'] = 1;
-            $result['data'] = ["view"=>$view,];
+            $result['data'] = ["view"=>$view,"check_any_active_plan"=>$check_any_active_plan,];
             return $this->response->setStatusCode($responseCode)->setJSON($result);
         }
         else

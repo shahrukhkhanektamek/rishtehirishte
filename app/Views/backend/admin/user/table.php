@@ -83,6 +83,11 @@
                                                <i class="ri-dashboard-2-line"></i> Viewed Profiles
                                             </a>
 
+                                            <a href="<?=$data['route'].'/viewed-contact/'.encript($value->id)?>" 
+                                               class="mt-1 btn btn-sm btn-outline-primary me-2">
+                                               <i class="ri-dashboard-2-line"></i> Viewed Contacts
+                                            </a>
+
                                             <a href="<?=base_url(route_to('website-log.list')).'?id='.encript($value->id)?>" 
                                                class="mt-1 btn btn-sm btn-outline-primary me-2">
                                                <i class="ri-dashboard-2-line"></i> Website Tranvels

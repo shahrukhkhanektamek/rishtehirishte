@@ -14,8 +14,6 @@
       --muted: rgba(255,255,255,0.8);
       --radius: 14px;
     }
-
-
     .kicker {
       display:inline-block;
       padding:6px 14px;
@@ -27,8 +25,6 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-
-
     .feature-card {
       background: rgba(255,255,255,0.05);
       border-radius: 12px;
@@ -36,14 +32,10 @@
       border: 1px solid rgba(255,255,255,0.06);
       transition: all 0.3s ease;
     }
-
     .feature-card:hover {
       background: rgba(217,180,92,0.08);
       transform: translateY(-4px);
     }
-
-    
-
     .btn-primary-grad {
       background-image: linear-gradient(90deg, var(--maroon), var(--blue));
       border: 0;
@@ -53,12 +45,10 @@
       color: white;
       transition: 0.3s;
     }
-
     .btn-primary-grad:hover {
       background-image: linear-gradient(90deg, var(--blue), var(--maroon));
       transform: scale(1.03);
     }
-
     .cta-card {
       background: linear-gradient(180deg, rgba(122,28,28,0.15), rgba(0,74,173,0.08));
       border-radius: var(--radius);
@@ -66,24 +56,21 @@
       text-align: center;
       border: 1px solid rgba(255,255,255,0.06);
     }
-
     .feature-card>.text-warning {
       font-size: 40px;
     }
-    
-    
   </style>
 </head>
 <body>
   <div class="panel">
-    
-
+    <div class="alert alert-warning" role="alert">
+      Your view contacts have been exhausted. To renew your package, please <a href="<?=base_url()?>packages">click here</a>.
+    </div>
     <div class="row g-4 align-items-center">
       <div class="col-lg-8">
         <span class="kicker">Premium Membership</span>
         <h1 class="mt-3">Become a paid member</h1>
         <!-- <p class="lead">RM ASSISTANCE PLAN -- <strong>Premium | Personalised | Confidential Matrimonial services</strong></p> -->
-
         <div class="row gy-3 mt-4">
           <div class="col-sm-6">
             <div class="feature-card d-flex gap-3 align-items-start">
@@ -94,7 +81,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-sm-6">
             <div class="feature-card d-flex gap-3 align-items-start">
               <div class="flex-shrink-0 text-warning">🌟</div>
@@ -104,7 +90,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-sm-6">
             <div class="feature-card d-flex gap-3 align-items-start">
               <div class="flex-shrink-0 text-warning">📞</div>
@@ -114,7 +99,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-sm-6">
             <div class="feature-card d-flex gap-3 align-items-start">
               <div class="flex-shrink-0 text-warning">🤝</div>
@@ -125,34 +109,27 @@
             </div>
           </div>
         </div>
-
         <div class="mt-4">
           <a href="<?=base_url()?>packages" class="btn btn-lg btn-primary-grad me-2">View Packages</a>
           <a href="#" class="btn btn-outline-light btn-lg">Learn More</a>
         </div>
       </div>
-
       <div class="col-lg-4">
         <div class="cta-card">
           <h4>Start Your Premium Journey</h4>
           <!-- <p class="text-muted small">No commitment · Cancel anytime</p> -->
-
           <div class="my-3">
             <div class="display-6 fw-bold" style="color:var(--gold);">Find Your Perfect Match</div>
             <div class="text-muted">Because love deserves the best platform</div>
           </div>
-
           <div class="d-grid gap-2">
             <!-- <a href="<?=base_url()?>packages" class="btn btn-lg btn-primary-grad">Choose a Plan</a> -->
             <a href="<?=base_url()?>contact" class="btn btn-light btn-sm">Contact Us</a>
           </div>
-
           <small class="d-block text-muted mt-3">Secure · Trusted · Since 1976</small>
         </div>
       </div>
     </div>
   </div>
-
-
 </body>
 </html>

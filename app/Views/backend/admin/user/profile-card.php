@@ -1,4 +1,9 @@
 
+<style>
+   
+</style>
+
+
 <div class="container-fluid" style="min-height: 320px;">
    <div class="profile-foreground position-relative mx-n4 mt-n15">
       <div class="profile-wid-bg"></div>

@@ -173,6 +173,9 @@ $adminEmployeeRoutes = function ($routes) {
         $routes->get('viewed-profile/(:any)', 'AdminUserController::viewed_profile/$1', ['as' => 'admin-user.viewed-profile']);
         $routes->get('load_viewed_profile_data', 'AdminUserController::load_viewed_profile_data', ['as' => 'admin-user.load_viewed_profile_data']);
 
+        $routes->get('viewed-contact/(:any)', 'AdminUserController::viewed_contact/$1', ['as' => 'admin-user.viewed-contact']);
+        $routes->get('load_viewed_contact_data', 'AdminUserController::load_viewed_contact_data', ['as' => 'admin-user.load_viewed_contact_data']);
+
         $routes->get('change-password/(:any)', 'AdminUserController::change_password/$1', ['as' => 'admin-user.change-password']);
         $routes->post('change-password-action', 'AdminUserController::change_password_action', ['as' => 'admin-user.change-password-action']);
 

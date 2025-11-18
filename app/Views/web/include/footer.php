@@ -935,6 +935,12 @@ $(document).on("click", "#send-it", function () {
                     $("#packageModal").modal("show");
                     $("#packageModal .modal-body .row").html(response.data.view);
                 }
+
+                var check_any_active_plan = response.data.check_any_active_plan;
+                $(".limit_count").html(check_any_active_plan.limit);
+                $(".contact_view_count").html(check_any_active_plan.contact_view);
+                $(".remaining_count").html(check_any_active_plan.remaining);
+
             }
         });
    }));
