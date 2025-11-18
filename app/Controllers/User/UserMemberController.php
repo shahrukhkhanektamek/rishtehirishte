@@ -769,7 +769,6 @@ class UserMemberController extends BaseController
             if($member->is_mobile_show==1 || $viewType==1)
             {
                 $user_view_contacts = $this->db->table("user_view_contacts")->where(["user_id"=>$user_id,"member_id"=>$member_id,])->get()->getFirstRow();
-<<<<<<< HEAD
                 if(empty($user_view_contacts))
                 {
                     $countLimit = $this->db->table("user_view_contacts")
@@ -791,9 +790,6 @@ class UserMemberController extends BaseController
                         return $this->response->setStatusCode($responseCode)->setJSON($result);
                     }
                 }
-=======
-                
->>>>>>> 595408525cc8bacdd698386143b5fc8aee330ef9
                 if(empty($user_view_contacts))
                 {
                     $this->db->table('user_view_contacts')->insert([
