@@ -1,5 +1,11 @@
 <!--  Start Header Area -->
-<?php include"include/header.php"; ?>
+<?php
+$user = get_user();
+if (!empty($user) && @$user->role == 2) { 
+    header('Location: ' . base_url('user/dashboard'));
+    exit; // IMPORTANT
+}
+include"include/header.php"; ?>
 <!-- End Header Area -->
 
     <div class="hom-top inner_style">

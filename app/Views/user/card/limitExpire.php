@@ -13,6 +13,10 @@
         <?php if($type2==3){ ?>
             <h2 >You have reached the Daily Limit for View Contacts</h2>
         <?php } ?>
+
+        <?php if($type2==3){ ?>
+            <h2 >You have reached the Daily Limit for View Profile</h2>            
+        <?php } ?>
         
     </div>
 </div>
