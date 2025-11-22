@@ -1101,6 +1101,7 @@ class AdminUserController extends BaseController
 
         $options = new Options();
         $options->set('isRemoteEnabled', true);
+        $options->set('isHtml5ParserEnabled', true);
         $options->set('defaultFont', 'DejaVu Sans');
         $options->set('dpi', 96); // Default screen DPI
         $dompdf = new Dompdf($options);
